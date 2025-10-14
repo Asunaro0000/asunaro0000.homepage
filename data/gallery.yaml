@@ -1,7 +1,7 @@
 gallery:
   - id: "prismcat"
     title: "PrismCat Memory"
-    cover: "/assets/gallery/prismcat/cover.webp"
+    cover: "assets/gallery/prismcat/cover.webp"
     tagline: "触れるたびに、記憶が光る。"
     color: "#b6e3ff"
     order: 1

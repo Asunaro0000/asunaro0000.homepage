@@ -1,19 +1,41 @@
-<!doctype html><html lang="ja"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Asunaro Works</title>
-<link rel="stylesheet" href="../css/header.css"> 
-<link rel="stylesheet" href="/css/style.css"/>
-<script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
-</head><body>
-<header class="nav"><a class="brand" href="/">Asunaro Works</a><nav>
-<a href="/gallery/">Gallery</a><a href="/about/">About</a><a href="/process/">Process</a><a href="/contact/">Contact</a>
-</nav></header>
-<main class="section">
-  <section class="hero">
-    <h1>絵にコードを添える。</h1>
-    <p class="lead">―― 静寂の中に、光が呼吸する。</p>
-    <p><a class="btn" href="/gallery/">作品を見る</a></p>
-  </section>
-</main>
-<footer>© 2025 Asunaro Works. All rights reserved.</footer>
-</body></html>
+<!doctype html>
+<html lang="ja">
+<head>
+  <!-- GitHub Pages（プロジェクトサイト）用：必ず最初に置く -->
+<!-- <base href="/asunaro0000.homepage/">-->
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Asunaro Works</title>
+
+  <!-- アセットは相対パスでOK -->
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <!-- 先頭スラッシュをやめ、サイトルート（=baseの位置）相対に -->
+    <a class="brand" href="./">Asunaro Works</a>
+    <nav>
+      <!-- すべて相対に（末尾スラッシュ推奨） -->
+      <a href="gallery/">Gallery</a>
+      <a href="about/">About</a>
+      <a href="process/">Process</a>
+      <a href="contact/">Contact</a>
+    </nav>
+  </header>
+
+  <main class="section">
+    <section class="hero">
+      <h1>絵にコードを添える。</h1>
+      <p class="lead">―― 静寂の中に、光が呼吸する。</p>
+      <!-- ボタンのリンクも相対に -->
+      <p><a class="btn" href="gallery/">作品を見る</a></p>
+    </section>
+  </main>
+
+  <footer>© 2025 Asunaro Works. All rights reserved.</footer>
+</body>
+</html>
