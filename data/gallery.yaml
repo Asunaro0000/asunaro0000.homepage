@@ -1,0 +1,59 @@
+gallery:
+  - id: "prismcat"
+    title: "PrismCat Memory"
+    cover: "/assets/gallery/prismcat/cover.webp"
+    tagline: "触れるたびに、記憶が光る。"
+    color: "#b6e3ff"
+    order: 1
+
+games:
+  - id: prismcat
+    #title: "PrismCat Memory — 記憶の光譜"
+    #subtitle: "Phase1–5 / Album Unlocked"
+    #cta: { label: "Play", href: "./prismcat/" } # ← ここだけ決める
+    slides:
+      - src: ./hero01.webp # href は書かない
+        thumb: ./hero01.webp
+        title: "PrismCat Memory — 記憶の光譜"
+        href: "./prismcat/" # フォルダを作ったら相対で
+      - src: ./hero02.webp # href は書かない
+        thumb: ./hero02.webp
+        title: "CyberCats — ターン制バトルゲーム"
+        href: "./cybercats/" # フォルダを作ったら相対で
+
+exhibits:
+  - id: seasonal_autumn2025
+    title: "秋風と木の葉オーケストラ"
+    slides:
+      - src: ./season/autumn/kv01.webp
+        thumb: ./season/autumn/kv01.webp
+        #href: ./seasonal_autumn2025/ # フォルダを作ったら相対で
+        title: "追い風の笑顔"
+      - src: ./season/autumn/kv02.webp
+        thumb: ./season/autumn/kv02.webp
+        #href: ./seasonal_autumn2025/
+        title: "紅葉ストリート・ラン"
+      - src: ./season/autumn/kv03.webp
+        thumb: ./season/autumn/kv03.webp
+        #href: ./seasonal_autumn2025/
+        title: "木洩れ日のテイクオフ"
+      - src: ./season/autumn/kv04.webp
+        thumb: ./season/autumn/kv04.webp
+        #href: ./seasonal_autumn2025/
+        title: "葉っぱの栞"
+      - src: ./season/autumn/kv05.webp
+        thumb: ./season/autumn/kv05.webp
+        #href: ./seasonal_autumn2025/
+        title: "風と笑いのリフティング"
+      - src: ./season/autumn/kv06.webp
+        thumb: ./season/autumn/kv06.webp
+        #href: ./seasonal_autumn2025/
+        title: "秋色ランナーズ"
+      - src: ./season/autumn/kv07.webp
+        thumb: ./season/autumn/kv07.webp
+        #href: ./seasonal_autumn2025/
+        title: "リーフ・ブレイク"
+      - src: ./season/autumn/kv08.webp
+        thumb: ./season/autumn/kv08.webp
+        #href: ./seasonal_autumn2025/
+        title: "リーフ＆スプラッシュ"

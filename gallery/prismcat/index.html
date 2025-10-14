@@ -1,0 +1,31 @@
+<!doctype html><html lang="ja"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>PrismCat Memory | Asunaro Works</title>
+<link rel="stylesheet" href="/css/style.css"/>
+<script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+</head><body>
+<header class="nav"><a class="brand" href="/">Asunaro Works</a><nav>
+<a href="/gallery/">Gallery</a><a href="/about/">About</a><a href="/process/">Process</a><a href="/contact/">Contact</a>
+</nav></header>
+<main>
+<section id="series-hero" class="section"></section>
+<section id="phases" class="cards"></section>
+</main>
+<footer>© 2025 Asunaro Works. All rights reserved.</footer>
+<script type="module">
+import { loadYAML } from '/js/util/yaml-loader.js';
+(async()=>{
+  const data = await loadYAML('/data/series/prismcat.yaml');
+  const s = data.series;
+  const hero = document.getElementById('series-hero');
+  hero.innerHTML = `<div class="figure"><img src="${s.cover||s.phases?.[0]?.hero}" alt="${s.title}"></div>
+  <h1>《${s.title} ─ 記憶の光譜》</h1>
+  <p>“光の記録は、あなたの中にだけ残る。”</p>`;
+  const phases = document.getElementById('phases');
+  phases.innerHTML = s.phases.map(p=>`
+    <a class="card" href="/gallery/prismcat/${p.id}/">
+      <img src="${p.hero||p.background}" alt="${p.title}" loading="lazy">
+      <div class="body"><h3>${p.title}</h3><p>${p.caption||''}</p></div>
+    </a>`).join('');
+})();
+</script></body></html>
