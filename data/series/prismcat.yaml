@@ -1,7 +1,10 @@
 series:
   id: "prismcat"
   title: "PrismCat Memory"
-  description: "記憶・感情・時間を5つのフェーズで体験するインタラクティブ・ビジュアルアート。"
+  description: >-
+    記憶・感情・時間を5つのフェーズで体験するインタラクティブ・ビジュアルアート。<br>
+    <a href="https://asunaro0000.github.io/PrismCat_Memory/" target="_blank">▶ 作品ページを見る</a>
+
   cover: "assets/gallery/prismcat/cover.webp"
   phases:
     - id: "phase-1"
