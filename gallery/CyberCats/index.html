@@ -5,6 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CyberCats | Asunaro Works</title>
   <link rel="stylesheet" href="cybercats.css">
+  <script>
+(function () {
+  // === 設定項目 ===
+  const LOCAL_BASE = "./";  // ローカル（file:// または開発サーバー）
+  const GITHUB_BASE = "https://asunaro0000.github.io/asunaro0000.homepage/";  // 本番GitHub Pages
+  const DEFAULT_MODE = "auto";  // "auto" | "local" | "github"
+
+  // === 自動判定 ===
+  let baseHref;
+  if (DEFAULT_MODE === "auto") {
+    // 自動モード：hostnameで判定
+    if (location.hostname.endsWith("github.io")) {
+      baseHref = GITHUB_BASE;
+    } else {
+      baseHref = LOCAL_BASE;
+    }
+  } else if (DEFAULT_MODE === "github") {
+    baseHref = GITHUB_BASE;
+  } else {
+    baseHref = LOCAL_BASE;
+  }
+
+  // === すでに base がある場合は上書き ===
+  let base = document.querySelector("base");
+  if (!base) {
+    base = document.createElement("base");
+    document.head.prepend(base);
+  }
+  base.href = baseHref;
+
+  console.log("[Base設定] " + baseHref);
+})();
+</script>
+
 </head>
 <body data-page="cybercats">
   <header class="site-header">
