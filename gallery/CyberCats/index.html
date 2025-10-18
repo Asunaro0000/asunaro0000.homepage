@@ -6,7 +6,7 @@
   <title>CyberCats | Asunaro Works</title>
   <link rel="stylesheet" href="cybercats.css">
 
-  
+
 
   <!-- headの先頭に入れる：galleryでもaboutでも同じでOK -->
 <script>
@@ -16,7 +16,7 @@
   function computeRootBase() {
     // GitHub Pages上： https://username.github.io/REPO/
     if (location.hostname.endsWith("github.io")) {
-      return `https://${location.hostname}/${REPO}/`;
+      return `https://${location.hostname}/${REPO}/gallery/`;
     }
     // ローカル or 別ホスト：URLパスの中から REPO/ までを抜き出す
     const href = location.href.replace(/\\/g, "/");
