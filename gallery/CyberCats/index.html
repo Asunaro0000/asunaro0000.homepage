@@ -5,39 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CyberCats | Asunaro Works</title>
   <link rel="stylesheet" href="cybercats.css">
-  <script>
-(function () {
-  // === 設定項目 ===
-  const LOCAL_BASE = "./";  // ローカル（file:// または開発サーバー）
-  const GITHUB_BASE = "https://asunaro0000.github.io/asunaro0000.homepage/";  // 本番GitHub Pages
-  const DEFAULT_MODE = "auto";  // "auto" | "local" | "github"
 
-  // === 自動判定 ===
-  let baseHref;
-  if (DEFAULT_MODE === "auto") {
-    // 自動モード：hostnameで判定
+  
+
+  <!-- headの先頭に入れる：galleryでもaboutでも同じでOK -->
+<script>
+(function () {
+  const REPO = "asunaro0000.homepage";  // ← リポジトリ名に合わせて1箇所だけ設定
+
+  function computeRootBase() {
+    // GitHub Pages上： https://username.github.io/REPO/
     if (location.hostname.endsWith("github.io")) {
-      baseHref = GITHUB_BASE;
-    } else {
-      baseHref = LOCAL_BASE;
+      return `https://${location.hostname}/${REPO}/`;
     }
-  } else if (DEFAULT_MODE === "github") {
-    baseHref = GITHUB_BASE;
-  } else {
-    baseHref = LOCAL_BASE;
+    // ローカル or 別ホスト：URLパスの中から REPO/ までを抜き出す
+    const href = location.href.replace(/\\/g, "/");
+    const m = href.match(new RegExp(`^(.*?/${REPO}/)`));
+    if (m) return m[1];
+    // それでも見つからないときの最後の保険（同階層）
+    return "./";
   }
 
-  // === すでに base がある場合は上書き ===
+  const root = computeRootBase();
   let base = document.querySelector("base");
   if (!base) {
     base = document.createElement("base");
     document.head.prepend(base);
   }
-  base.href = baseHref;
-
-  console.log("[Base設定] " + baseHref);
+  base.href = root;
+  // 開発確認用
+  console.log("[base] =>", root);
 })();
 </script>
+
+
 
 </head>
 <body data-page="cybercats">
@@ -50,7 +51,7 @@
     <!-- 動画：mp4直再生（広告なし） -->
     <section class="section">
       <div class="video-container">
-        <video class="video" src="././assets/video/cybercats_preview.mp4" controls playsinline preload="metadata"></video>
+        <video class="video" src="assets/video/cybercats_preview.mp4" controls playsinline preload="metadata"></video>
       </div>
     </section>
 
