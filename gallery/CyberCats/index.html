@@ -16,7 +16,7 @@
   function computeRootBase() {
     // GitHub Pages上： https://username.github.io/REPO/
     if (location.hostname.endsWith("github.io")) {
-      return `https://${location.hostname}/${REPO}/gallery/`;
+      return `https://${location.hostname}/${REPO}/gallery/CyberCats/`;
     }
     // ローカル or 別ホスト：URLパスの中から REPO/ までを抜き出す
     const href = location.href.replace(/\\/g, "/");
