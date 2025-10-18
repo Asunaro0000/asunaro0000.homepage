@@ -49,11 +49,24 @@
 
   <main class="wrap">
     <!-- 動画：mp4直再生（広告なし） -->
-    <section class="section">
-      <div class="video-container">
-        <video class="video" src="assets/video/cybercats_preview.mp4" controls playsinline preload="metadata"></video>
-      </div>
-    </section>
+<section class="section">
+  <div class="video-container">
+    <video class="video" id="cybercatsVideo" controls playsinline preload="metadata">
+      <source id="videoSource" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+<script>
+  (function(){
+    // baseURIをもとに最終的な動画URLを解決
+    const src = new URL("assets/video/cybercats_preview.mp4", document.baseURI).href;
+    document.getElementById("videoSource").src = src;
+    console.log("[video path] =>", src);
+  })();
+</script>
+
 
     <!-- 外部リンク -->
     <section class="section info">
