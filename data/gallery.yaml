@@ -19,7 +19,7 @@ games:
       - src: ./hero02.webp # href は書かない
         thumb: ./hero02.webp
         title: "CyberCats — ターン制バトルゲーム"
-        href: "./cybercats/" # フォルダを作ったら相対で
+        href: "./CyberCats/" # フォルダを作ったら相対で
 
 exhibits:
   - id: seasonal_autumn2025
