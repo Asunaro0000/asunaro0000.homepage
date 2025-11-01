@@ -27,12 +27,12 @@ exhibits:
       - src: ./story_board/kv01.png
         thumb: ./story_board/kv01.png
         #href: ./story_board/ # フォルダを作ったら相対で
-        title: "追い風の笑顔"
+        title: "ウサ子とカメコ"
       - src: ./story_board/kv02.png
         thumb: ./story_board/kv02.png
         #href: ./story_board/
-        title: "紅葉ストリート・ラン"
+        title: "森の契約更新譚"
       - src: ./story_board/kv03.png
         thumb: ./story_board/kv03.png
         #href: ./story_board/
-        title: "木洩れ日のテイクオフ"
+        title: "森の贈りもの ― リス子の小さな旅"
