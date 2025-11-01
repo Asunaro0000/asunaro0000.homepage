@@ -165,35 +165,52 @@
           gamesWrap.innerHTML = `<p class="g-empty">ゲームの展示は準備中です。</p>`;
         }
 
-        /* ===== 下段：季節展示（各展示=1スライダー） ===== */
-        const exhibits = Array.isArray(data?.exhibits)
-          ? data.exhibits
-          : Array.isArray(data?.gallery) ? data.gallery : [];
-        const exWrap = $("#exhibits");
-        exWrap.innerHTML = exhibits.map((x, xi) => `
-          <section class="g-exhibit">
-            <h3 class="g-exhibit__title">${x.title || ""}</h3>
-            <div class="sld-wrap" id="ex-sld-${xi}"></div>
-          </section>
-        `).join("");
+/* ===== 下段：季節展示（各展示=1スライダー） ===== */
+const exhibits = Array.isArray(data?.exhibits)
+  ? data.exhibits
+  : Array.isArray(data?.gallery) ? data.gallery : [];
+const exWrap = $("#exhibits");
+exWrap.innerHTML = exhibits.map((x, xi) => `
+  <section class="g-exhibit">
+    <h3 class="g-exhibit__title">${x.title || ""}</h3>
+    <div class="sld-wrap" id="ex-sld-${xi}"></div>
+  </section>
+`).join("");
 
-        exhibits.forEach((x, xi) => {
-          // ★ exhibits はデフォルトではリンクなし（必要なら各スライドで s.href を明示）
-          const slides = (x.slides || [{ src: x.cover, title: x.title }]).map(s => ({
-            src:   s.src,
-            thumb: s.thumb || s.src,
-            href:  s.href || null,   // ← フォールバックを廃止
-            title: s.title || x.title
-          }));
-          const mount = document.getElementById(`ex-sld-${xi}`);
-          createSlider(mount, slides);
-        });
+exhibits.forEach((x, xi) => {
+  const slidesSrc = (x.slides && x.slides.length)
+    ? x.slides
+    : (x.cover ? [{ src: x.cover, title: x.title }] : []);
 
-        if (!exhibits.length) {
-          exWrap.innerHTML = `<p class="g-empty">季節展示は準備中です。</p>`;
-        }
-      }
+  const slides = slidesSrc.map((s, i) => {
+    // ★ 1枚目と2枚目のスライドにそれぞれ指定リンクを設定
+    const href =
+      (i === 0)
+        ? "../gallery/Usako_and_Kameko/"
+      : (i === 1)
+        ? "../gallery/renewal-of-the-forest-covenant/"
+      : (i === 2)
+        ? "../gallery/Risko/"
+      : (s.href ?? x?.cta?.href ?? (x?.id ? `./${x.id}/` : null));
+      
+    return {
+      src:   s.src,
+      thumb: s.thumb || s.src,
+      href,     // ← ここでクリックリンクを適用
+      title: s.title || x.title,
+    };
+  });
 
+  const mount = document.getElementById(`ex-sld-${xi}`);
+  createSlider(mount, slides);
+});
+
+
+if (!exhibits.length) {
+  exWrap.innerHTML = `<p class="g-empty">季節展示は準備中です。</p>`;
+}
+
+}
       init().catch(err => {
         console.error(err);
         const el = document.getElementById("games");
@@ -225,8 +242,8 @@
 
       <!-- 下段：季節展示（各展示はスライダー） -->
       <section class="g-block">
-        <h2 class="g-block__title">Seasonal Exhibition — 季節展示</h2>
-        <p class="g-block__lead">季節テーマの作品をスライダーで展示します。</p>
+        <h2 class="g-block__title">Works — ストーリーボード</h2>
+        <p class="g-block__lead">物語の流れに沿って構成されたビジュアルワーク。シーンごとの空気、光、そして感情の変化を順に追ってご覧ください。</p>
         <div id="exhibits" class="g-stack"></div>
       </section>
     </main>

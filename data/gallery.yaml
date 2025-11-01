@@ -22,38 +22,17 @@ games:
         href: "./CyberCats/" # フォルダを作ったら相対で
 
 exhibits:
-  - id: seasonal_autumn2025
-    title: "秋風と木の葉オーケストラ"
+  - id: story_board
     slides:
-      - src: ./season/autumn/kv01.webp
-        thumb: ./season/autumn/kv01.webp
-        #href: ./seasonal_autumn2025/ # フォルダを作ったら相対で
+      - src: ./story_board/kv01.png
+        thumb: ./story_board/kv01.png
+        #href: ./story_board/ # フォルダを作ったら相対で
         title: "追い風の笑顔"
-      - src: ./season/autumn/kv02.webp
-        thumb: ./season/autumn/kv02.webp
-        #href: ./seasonal_autumn2025/
+      - src: ./story_board/kv02.png
+        thumb: ./story_board/kv02.png
+        #href: ./story_board/
         title: "紅葉ストリート・ラン"
-      - src: ./season/autumn/kv03.webp
-        thumb: ./season/autumn/kv03.webp
-        #href: ./seasonal_autumn2025/
+      - src: ./story_board/kv03.png
+        thumb: ./story_board/kv03.png
+        #href: ./story_board/
         title: "木洩れ日のテイクオフ"
-      - src: ./season/autumn/kv04.webp
-        thumb: ./season/autumn/kv04.webp
-        #href: ./seasonal_autumn2025/
-        title: "葉っぱの栞"
-      - src: ./season/autumn/kv05.webp
-        thumb: ./season/autumn/kv05.webp
-        #href: ./seasonal_autumn2025/
-        title: "風と笑いのリフティング"
-      - src: ./season/autumn/kv06.webp
-        thumb: ./season/autumn/kv06.webp
-        #href: ./seasonal_autumn2025/
-        title: "秋色ランナーズ"
-      - src: ./season/autumn/kv07.webp
-        thumb: ./season/autumn/kv07.webp
-        #href: ./seasonal_autumn2025/
-        title: "リーフ・ブレイク"
-      - src: ./season/autumn/kv08.webp
-        thumb: ./season/autumn/kv08.webp
-        #href: ./seasonal_autumn2025/
-        title: "リーフ＆スプラッシュ"
