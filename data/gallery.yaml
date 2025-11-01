@@ -36,3 +36,7 @@ exhibits:
         thumb: ./story_board/kv03.png
         #href: ./story_board/
         title: "森の贈りもの ― リス子の小さな旅"
+      - src: ./story_board/kv04.png
+        thumb: ./story_board/kv04.png
+        #href: ./story_board/
+        title: "リリと楓のHappy Halloween"
