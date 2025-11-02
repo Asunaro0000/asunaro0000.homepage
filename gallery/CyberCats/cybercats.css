@@ -66,3 +66,37 @@ body[data-page="cybercats"] .icon-gallery img{
   border-radius:8px;
   box-shadow: 0 0 10px rgba(0,255,230,0.25);
 }
+
+/* ============================
+   CyberCat タイトルセクション強調
+   ============================ */
+.highlight-title {
+  border: 2px solid var(--accent, #ffd34a); /* 既存accent色を使用 */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 211, 74, 0.08) 0%,
+    rgba(255, 211, 74, 0.02) 100%
+  );
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 1.8em;
+  box-shadow: 0 0 12px rgba(255, 211, 74, 0.25);
+}
+
+.highlight-title h2 {
+  color: #ffb300; /* より鮮やかな金色トーン。背景に映える暖色 */
+  font-size: 1.6em;
+  font-weight: 700;
+  margin-bottom: 0.4em;
+}
+
+.highlight-title a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--accent, #ffd34a);
+}
+
+.highlight-title a:hover {
+  color: var(--accent, #ffd34a);
+}
