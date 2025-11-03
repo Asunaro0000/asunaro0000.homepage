@@ -356,3 +356,39 @@ body[data-page="phase-1"] [class*="caption"] {
   }
 }
 
+/* ===== お知らせ欄 ===== */
+.news {
+  margin-top: 48px;
+  padding: 24px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-align: left;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.news h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.news ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news li {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  font-size: 15px;
+}
+
+.news li:last-child {
+  border-bottom: none;
+}
