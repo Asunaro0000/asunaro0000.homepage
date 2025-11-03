@@ -364,7 +364,7 @@ body[data-page="phase-1"] [class*="caption"] {
   border: 1px solid var(--border);
   border-radius: 12px;
   text-align: left;
-  max-width: 680px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
