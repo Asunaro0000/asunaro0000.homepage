@@ -1,0 +1,85 @@
+:root {
+  --bg: #14171a;
+  --accent: #ffd76b;
+  --shadow: 0 0 25px rgba(255,215,130,.25);
+}
+
+/* ====== 均一マージンで中央揃え ====== */
+.risuko-stamp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 80px auto;             /* 上下の隙間を統一 */
+  text-align: center;
+  gap: 12px;
+
+  padding: 18px;
+  border-radius: 18px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  max-width: 320px;
+  transform: scale(1.25);
+  animation: rs-fade-in 0.9s ease-in-out;
+}
+
+/* ====== 画像サイズ＆スムーズなフェード ====== */
+.risuko-stamp img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 14px;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.risuko-caption {
+  margin: 0;
+  font: 600 16px/1.4 system-ui, "Noto Sans JP", sans-serif;
+  color: var(--accent);
+}
+
+.risuko-btn {
+  margin-top: 4px;
+  padding: 8px 14px;
+  font: 600 13px/1 system-ui, "Noto Sans JP", sans-serif;
+  color: #0d0f10;
+  background: var(--accent);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.risuko-btn:active { transform: translateY(1px); }
+
+/* ====== アニメーション効果 ====== */
+@keyframes rs-fade-in {
+  from { opacity: 0; transform: translateY(20px) scale(1.15); }
+  to { opacity: 1; transform: translateY(0) scale(1.25); }
+}
+
+.risuko-stamp img.rs-swap-out {
+  opacity: 0;
+  transform: scale(.96);
+}
+
+/* ====== レスポンシブ微調整 ====== */
+@media (max-width: 768px) {
+  .risuko-stamp {
+    margin: 60px auto;
+    transform: scale(1.1);
+  }
+  .risuko-stamp img {
+    width: 180px;
+    height: 180px;
+  }
+}
+/* ====== 追加：親ラッパーを中央寄せにする ====== */
+.risuko-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;  /* 「作品を見る」と「お知らせ」の隙間を均等化 */
+}
