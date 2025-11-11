@@ -30,7 +30,7 @@ function applyByIndex2(i){
   img2.classList.add("rs-swap-out");
   // 少し待って差し替え → フェードイン
   setTimeout(() => {
-    img2.src = STAMP_PATH_2 + encodeURIComponent(name) + ".png";
+    img2.src = STAMP_PATH_2 + encodeURIComponent(name) + ".webp";
     img2.alt = name;
     text2.textContent = name;
     img2.onload = () => img2.classList.remove("rs-swap-out");
