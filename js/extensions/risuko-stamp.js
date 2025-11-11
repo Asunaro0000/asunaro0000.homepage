@@ -28,12 +28,12 @@ function applyByIndex(i){
   img.classList.add("rs-swap-out");
   // 少し待って差し替え → フェードイン
   setTimeout(() => {
-    img.src = STAMP_PATH + encodeURIComponent(name) + ".png";
+    img.src = STAMP_PATH + encodeURIComponent(name) + ".webp";
     img.alt = name;
     text.textContent = name;
     img.onload = () => img.classList.remove("rs-swap-out");
   }, 120);
-  window.preloadAround && window.preloadAround(stampNames, i, STAMP_PATH, ".png");
+  window.preloadAround && window.preloadAround(stampNames, i, STAMP_PATH, ".webp");
   
 
 }
