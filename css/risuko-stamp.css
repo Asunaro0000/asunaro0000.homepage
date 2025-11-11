@@ -26,8 +26,8 @@
 
 /* ====== 画像サイズ＆スムーズなフェード ====== */
 .risuko-stamp img {
-  width: 220px;
-  height: 220px;
+  width: 270px;
+  height: 270px;
   object-fit: contain;
   border-radius: 14px;
   user-select: none;
@@ -68,11 +68,11 @@
 @media (max-width: 768px) {
   .risuko-stamp {
     margin: 60px auto;
-    transform: scale(1.1);
+    
   }
   .risuko-stamp img {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
   }
 }
 /* ====== 追加：親ラッパーを中央寄せにする ====== */

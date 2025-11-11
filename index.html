@@ -17,17 +17,19 @@
     gtag('config', 'G-1NCR09VMKR');
   </script>
 
-  <!-- アセットは相対パスでOK -->
+  <!-- アセット -->
   <link rel="stylesheet" href="./css/header.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/risuko-stamp.css">
+  <link rel="stylesheet" href="./css/risuko-stamp2.css">
   <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 
+  <!-- ★ 非表示クラスを追加（切替で使用） -->
+  <style>.is-hidden{display:none!important}</style>
 </head>
 
 <body>
   <header class="nav">
-    <!-- 先頭スラッシュをやめ、サイトルート（=baseの位置）相対に -->
     <a class="brand" href="./">Asunaro Works</a>
     <nav>
       <a href="gallery/">Gallery</a>
@@ -45,32 +47,57 @@
       <p><a class="btn" href="gallery/">作品を見る</a></p>
     </section>
   </main>
-    <section class="risuko"></section>
-    <div class="risuko-wrap">
-      <div id="risuko-stamp" class="risuko-stamp" aria-live="polite">
+
+  <!-- ▼ リス子エリア -->
+  <section class="risuko"></section>
+  <div class="risuko-wrap">
+    <div id="risuko-dynamic" aria-live="polite">
+      <!-- Aモード (risuko-stamp.js が使うID) -->
+      <div id="risuko-stamp" class="risuko-stamp" aria-hidden="false">
         <img id="risuko-stamp-img" src="" alt="Risuko of the day">
         <p id="risuko-stamp-text" class="risuko-caption"></p>
-        <button id="risuko-stamp-btn" class="risuko-btn" type="button" aria-label="スタンプを切り替える">tap to change</button>
+        <button id="risuko-stamp-btn" class="risuko-btn" type="button">tap to change</button>
+      </div>
+
+      <!-- ★ Bモード (risuko-stamp2.js が使うID) を追加 -->
+      <div id="risuko-stamp-2" class="risuko-stamp is-hidden" aria-hidden="true">
+        <img id="risuko-stamp-img-2" src="" alt="Risuko alternate">
+        <p id="risuko-stamp-text-2" class="risuko-caption"></p>
+        <button id="risuko-stamp-btn-2" class="risuko-btn" type="button">tap to change</button>
       </div>
     </div>
-  </section>
+
+    <!-- 切替ボタン -->
+    <div class="controls" style="display:flex;gap:12px;justify-content:center;margin-top:8px">
+      <button id="prevMode" class="ctrl" type="button" aria-label="前の表示" style="width:34px;height:34px;border:none;border-radius:8px;background:#ffd86a;color:#333;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <button id="nextMode" class="ctrl" type="button" aria-label="次の表示" style="width:34px;height:34px;border:none;border-radius:8px;background:#ffd86a;color:#333;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ▼ お知らせ -->
   <section class="news">
     <h2>お知らせ</h2>
     <ul>
+      <li><strong>2025-11-12：</strong> 「食欲の秋リス子」登場！左右のボタンではスタンプに切り替わります🐿️</li>
       <li><strong>2025-11-11：</strong> リス子の小屋のストーリーボード、ブラウザ版を追加。BGM+動画追加。</li>
       <li><strong>2025-11-9：</strong> トップに「リス子スタンプ」登場。クリックすると表情が変わります🐿️</li>
-      <li><strong>2025-11-9：</strong> ウサ子とカメコ、森の契約更新譚のページに作品ページを開くのボタンを追加。　　　　　　　　　　　　html閲覧対応、BGM追加、森の契約更新譚の動画追加</li>       
+      <li><strong>2025-11-9：</strong> ウサ子とカメコ、森の契約更新譚のページに作品ページを開くのボタンを追加。html閲覧対応、BGM追加、森の契約更新譚の動画追加</li>       
       <li><strong>2025-11-3：</strong> Galleryの「季節展示」をストーリーボード形式に刷新しました。</li>
-      <li><strong>2025-11-3：</strong> 『PrismCat Memory — 記憶の光譜』のアルバム挙動を安定化しました。</li>
     </ul>
   </section>
-  
-
 
   <footer>
     <span>© 2025 Asunaro Works. All rights reserved.</span>
   </footer>
+
+  <!-- ▼ スクリプト群 -->
   <script type="module" src="./js/extensions/nav-toggle.js"></script>
+  <script src="./js/extensions/risuko-stamp2.js" defer></script>
   <script src="./js/extensions/risuko-stamp.js" defer></script>
+  <script src="./js/extensions/risuko-stamp-toggle.js" defer></script>
 </body>
 </html>
