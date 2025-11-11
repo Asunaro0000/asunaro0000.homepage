@@ -35,6 +35,12 @@ function applyByIndex2(i){
     text2.textContent = name;
     img2.onload = () => img2.classList.remove("rs-swap-out");
   }, 120);
+  function applyByIndex2(i){
+  // ...表示更新の処理...
+  window.preloadAround && window.preloadAround(stampNames2, i, STAMP_PATH_2, ".webp");
+}
+
+
 }
 
 applyByIndex2(currentIndex2);

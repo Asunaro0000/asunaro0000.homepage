@@ -33,6 +33,9 @@ function applyByIndex(i){
     text.textContent = name;
     img.onload = () => img.classList.remove("rs-swap-out");
   }, 120);
+  window.preloadAround && window.preloadAround(stampNames, i, STAMP_PATH, ".png");
+  
+
 }
 
 applyByIndex(currentIndex);
@@ -52,3 +55,4 @@ btn.addEventListener("click", () => {
 wrap.addEventListener("click", (e) => {
   if (e.target.id !== "risuko-stamp-btn") btn.click();
 });
+
