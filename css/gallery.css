@@ -4,7 +4,7 @@
  */
 
 :root {
-  --g-max: 1200px;
+  --g-max: 700px;
   --g-wide: 1400px;
   --g-pad: 24px;
   --g-gap: 20px;
@@ -87,6 +87,8 @@ body[data-page="gallery"] .sld-wrap {
   margin: 10px 0 18px;
 }
 body[data-page="gallery"] .sld {
+  max-width: 700px;
+  margin: 0 auto;       
   position: relative;
   background: var(--g-card);
   border: 1px solid var(--g-border);
@@ -106,6 +108,10 @@ body[data-page="gallery"] .sld__track {
 body[data-page="gallery"] .sld__slide {
   position: relative;
   padding: 0 18px;
+    display: flex;
+  align-items: center;      /* 縦方向の中央寄せ */
+  justify-content: center;  /* 横方向も中央寄せ */
+  
 }
 body[data-page="gallery"] .sld__link {
   display: block;
