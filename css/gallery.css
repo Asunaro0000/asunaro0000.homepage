@@ -108,7 +108,7 @@ body[data-page="gallery"] .sld__track {
 body[data-page="gallery"] .sld__slide {
   position: relative;
   padding: 0 18px;
-    display: flex;
+  display: flex;
   align-items: center;      /* 縦方向の中央寄せ */
   justify-content: center;  /* 横方向も中央寄せ */
   
