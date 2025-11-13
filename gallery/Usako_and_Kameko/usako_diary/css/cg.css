@@ -49,7 +49,7 @@ h1{font-size:clamp(22px,3.4vw,32px);letter-spacing:.02em;margin:18px 0 6px}
   display:block;
 }
 .card__meta{ padding:12px 14px; }
-.card__title{ margin:0; font-size:16px; font-weight:700; line-height:1.35; }
+.card__title{ margin:0; font-size:22px !important; font-weight:700; line-height:1.35; }
 .card__caption{ display:none; } /* 拡大前は非表示 */
 
 /* ==============================
@@ -71,12 +71,12 @@ h1{font-size:clamp(22px,3.4vw,32px);letter-spacing:.02em;margin:18px 0 6px}
 }
 .lb__stage{ max-width:min(92vw,1080px); max-height:86vh; margin:0; }
 .lb__stage img{
-  display:block; max-width:100%; max-height:70vh;
+  display:block; max-width:100%; max-height:85vh;
   width:auto; height:auto; object-fit:contain; margin:0 auto; background:#0b0f14;
 }
 .lb__stage figcaption{ color:var(--muted); margin-top:10px; }
-.lb__stage h3{ margin:4px 0; font-size:18px; }
-.lb__stage p{ margin:0; font-size:14px; }
+.lb__stage h3{ margin:4px 0; font-size:26px; }
+.lb__stage p{ margin:0; font-size:20px; }
 
 /* クリックゾーン（左右半分で前後遷移） */
 .lb__zone{
@@ -100,6 +100,14 @@ h1{font-size:clamp(22px,3.4vw,32px);letter-spacing:.02em;margin:18px 0 6px}
     gap:10px;
   }
   .card__meta{ padding:10px 12px; }
-  .card__title{ font-size:15px; }
+  /* スマホ用：カード内タイトル文字を小さく */
+  .card__title{
+    font-size:15px !important;
+    line-height:1.4;
+    font-weight:600;
+  }
   .lb__stage img{ max-height:64vh; }
+    /* スマホ用：タイトル・キャプションを少し小さく */
+  .lb__stage h3{ font-size:18px; }
+  .lb__stage p{ font-size:15px; line-height:1.5; }
 }
