@@ -392,3 +392,16 @@ body[data-page="phase-1"] [class*="caption"] {
 .news li:last-child {
   border-bottom: none;
 }
+
+html, body {
+  min-height: 100%;
+}
+
+/* フッター固定レイアウト */
+body {
+
+
+  background: linear-gradient(180deg, #856a51 0%, #13271d 100%);
+  color: #eee;
+}
+

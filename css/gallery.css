@@ -21,10 +21,10 @@
   --g-shadow: 0 10px 36px rgba(0,0,0,.35);
 }
 
-body[data-page="gallery"] {
+/*body[data-page="gallery"] {
   background: var(--g-bg);
   color: var(--g-fg);
-}
+}*/
 
 /* ====== Wrap / Blocks ====== */
 body[data-page="gallery"] .g-wrap {
