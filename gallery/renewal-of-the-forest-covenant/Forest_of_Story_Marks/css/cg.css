@@ -102,6 +102,12 @@ background:linear-gradient(
 .lb__zone:hover{ background:linear-gradient(90deg,rgba(255,255,255,.02),transparent); }
 .lb__zone--next:hover{ background:linear-gradient(270deg,rgba(255,255,255,.02),transparent); }
 
+.lb__stage img {
+  border: 2px solid rgba(116, 189, 94, 0.521);  /* ← これが縁 */
+  border-radius: 12px;                         /* ← 角を少しだけ丸める（好み） */
+  box-sizing: border-box;                      /* ← 画像のサイズ崩れ防止 */
+}
+
 /* ==============================
    Mobile
 ================================= */
