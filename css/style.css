@@ -399,8 +399,6 @@ html, body {
 
 /* フッター固定レイアウト */
 body {
-
-
   background: linear-gradient(180deg, #856a51 0%, #13271d 100%);
   color: #eee;
 }
