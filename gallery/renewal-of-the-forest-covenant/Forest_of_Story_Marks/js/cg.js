@@ -21,8 +21,8 @@ const items = [
   { src: './images/14.webp', title: '切り株の語り', caption: '' },
   { src: './images/15.webp', title: '木霊のさえずり', caption: '' },
   { src: './images/16.webp', title: '石灯籠のそばで', caption: '' },
-  { src: './images/17.webp', title: '道ゆく猫の背中', caption: '' },
-  { src: './images/18.webp', title: '光に染まる幹', caption: '' },
+  { src: './images/17.webp', title: '祠のそばで', caption: '' },
+  { src: './images/18.webp', title: '道ゆく猫の背中', caption: '' },
   { src: './images/19.webp', title: '森にとまる気配', caption: '' },
   { src: './images/20.webp', title: '供え台の静寂', caption: '' },
 
