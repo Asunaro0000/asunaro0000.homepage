@@ -45,7 +45,7 @@ const items = [
   { src: './images/36.webp', title: '森に響く輪音', caption: '' },
   { src: './images/37.webp', title: '高みの気配', caption: '' },
   { src: './images/38.webp', title: '帰る道', caption: '' },
-  { src: './images/39.webp', title: '森の門を越えて', caption: '' },
+  { src: './images/39.webp', title: '紋木の門', caption: '' },
   { src: './images/40.webp', title: '眠りの瞳', caption: '' },
 
   { src: './images/41.webp', title: '水音のささやき', caption: '' },
