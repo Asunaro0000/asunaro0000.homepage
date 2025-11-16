@@ -403,3 +403,66 @@ body {
   color: #eee;
 }
 
+/* ===== サイトマップ（Forest Map）セクション ===== */
+.sitemap-section {
+  max-width: 800px;
+  margin: 32px auto 0;
+  padding: 22px 26px;
+  background: rgba(0, 0, 0, .35);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-align: center;
+  box-shadow: 0 0 18px rgba(0,0,0,.35);
+}
+
+.sitemap-section h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sitemap-text {
+  margin: 0 0 16px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.sitemap-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: #ffd86a;
+  color: #222;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0,0,0,.35);
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease,
+    background .15s ease;
+}
+
+.sitemap-btn:hover {
+  transform: translateY(-1px);
+  background: #ffe38f;
+  box-shadow: 0 6px 18px rgba(0,0,0,.45);
+}
+
+/* モバイル調整 */
+@media (max-width: 768px) {
+  .sitemap-section {
+    margin-top: 28px;
+    padding: 18px 16px;
+  }
+
+  .sitemap-text {
+    font-size: 13px;
+  }
+
+  .sitemap-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
