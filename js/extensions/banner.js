@@ -30,13 +30,13 @@
     {
       src: "./assets/banner/banner4.webp",
       caption: "リス子のパノラマギャラリーはこちらから。",
-      href: "./halloween-panorama/index.html",
+      href: "./gallery/Risko/risuko_room/index.html",
       btnLabel: "▶ リス子のパノラマへ"
     },
     {
       src: "./assets/banner/banner5.webp",
       caption: "ハロウィンのパノラマギャラリーはこちらから。",
-      href: "./halloween-panorama/index.html",
+      href: "./gallery/lili_and_kaede/halloween_single/index.html",
       btnLabel: "▶ ハロウィンパノラマへ"
     }
   ];
