@@ -14,7 +14,7 @@ const slides = [
   {
     src: "./thumbnail/kv02.webp",
     thumb: "./thumbnail/kv02.webp",
-    href: "https://asunaro0000.github.io/usako-and-kameko/" ,
+    href: "./halloween_single/index.html" ,
     title: "リリと楓の Halloween Collection ― Single Scene",
     caption: "ハロウィンの夜をモチーフにしたリリと楓の展示室です。\n単作イラストを、雰囲気そのままに並べています。"
   },

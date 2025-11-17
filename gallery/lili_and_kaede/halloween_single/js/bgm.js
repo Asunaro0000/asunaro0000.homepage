@@ -1,88 +1,92 @@
-// bgm.js
-(() => {
-  const bgm = document.getElementById('bgmAudio');
-  const bgmToggle = document.getElementById('bgmToggle');
+// js/bgm.js
 
-  // ★ ここに自分のファイル名を書くだけでOK
-  const tracks = [
-    './bgm/bgm1.mp3',
-    './bgm/bgm2.mp3'
-  ];
+(function () {
+  const audio = document.getElementById("bgmAudio");
+  const btn   = document.querySelector(".pano-bgm-btn"); // index.html の BGMボタン
+  if (!audio) return;
 
-  let trackIndex = 0;
-  let started = false;
-  let playing = false;
+  let started = false;     // 一度でも「画像クリック」で再生を試みたか
+  let isOn    = false;     // 今BGMが鳴るべき状態か
+  let currentRoom = 1;     // 1 / 2 / 3
 
-  function loadTrack(i) {
-    if (!bgm || tracks.length === 0) return;
-    trackIndex = i % tracks.length;   // 最後まで行ったら先頭に戻る
-    bgm.src = tracks[trackIndex];
+  function applySrc() {
+    audio.src = `./bgm/bgm${currentRoom}.mp3`;
   }
 
-  async function play() {
-    if (!bgm || tracks.length === 0) return;
-
-    if (!bgm.src) {
-      loadTrack(0);
-    }
-
-    try {
-      await bgm.play();
-      started = true;
-      playing = true;
-      if (bgmToggle) {
-        bgmToggle.textContent = 'BGM: ON';
-        bgmToggle.classList.add('is-on');
-      }
-    } catch (err) {
-      console.warn('BGM play blocked:', err);
-    }
-  }
-
-  function pause() {
-    if (!bgm) return;
-    bgm.pause();
-    playing = false;
-    if (bgmToggle) {
-      bgmToggle.textContent = 'BGM: OFF';
-      bgmToggle.classList.remove('is-on');
-    }
-  }
-
-  // 画像側から呼ぶ用：最初のインタラクションで再生
+  // ★ 画像クリックからしか呼ばせない「スタート専用」
   function playOnFirstInteraction() {
+    if (!audio.src) {
+      applySrc();
+    }
+
     if (!started) {
-      play();
+      started = true;
+    }
+
+    isOn = true;
+    audio.play().catch(() => {
+      // ブロックされたら無視（ユーザー操作が足りない場合など）
+    });
+
+    updateButtonUI();
+  }
+
+function setRoom(roomId) {
+  currentRoom = roomId;
+
+  // ★停止させず、現在の ON/OFF 状態を維持したまま曲だけ更新
+  const wasPlaying = isOn;
+
+  applySrc(); // 曲だけ切り替える
+
+  if (wasPlaying) {
+    audio.play().catch(() => {});
+  }
+
+  updateButtonUI();
+}
+
+
+  // BGMボタンの見た目更新
+  function updateButtonUI() {
+    if (!btn) return;
+    if (isOn && started) {
+      btn.classList.add("is-on");
+      btn.textContent = "BGM: ON";
+    } else {
+      btn.classList.remove("is-on");
+      btn.textContent = "BGM: OFF";
     }
   }
 
-  // 曲が終わったら次へ（最後なら最初へ戻る）
-  if (bgm) {
-    bgm.addEventListener('ended', () => {
-      if (!playing) return;
-      loadTrack(trackIndex + 1);
-      bgm.play().catch(err =>
-        console.warn('Next track play blocked:', err)
-      );
-    });
-  }
+  // ★ BGMボタンは「初回スタートはしない」＝ただのON/OFFスイッチ
+  if (btn) {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation(); // パノラマのクリックには伝播させない
 
-  // BGMボタンでON/OFF
-  if (bgmToggle) {
-    bgmToggle.addEventListener('click', (e) => {
-      e.stopPropagation(); // パノラマのクリックイベントに干渉しない
-      if (!playing) {
-        play();
-      } else {
-        pause();
+      // まだ一度も画像クリックでスタートしていないなら何もしない
+      if (!started) {
+        return;
       }
+
+      if (isOn) {
+        isOn = false;
+        audio.pause();
+      } else {
+        isOn = true;
+        audio.play().catch(() => {});
+      }
+
+      updateButtonUI();
     });
+
+    // 初期表示
+    updateButtonUI();
   }
 
-  // ★ グローバルにハンドルを出しておく
+  // 外から呼ぶAPI（panorama.js から使う）
   window.bgmControl = {
     playOnFirstInteraction,
-    play,
-    pause,
+    setRoom
   };
 })();
