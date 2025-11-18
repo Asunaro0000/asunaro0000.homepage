@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Forest Spirits Gallery</title>
+  <link rel="stylesheet" href="./css/forest-spirit.css" />
+</head>
+
+<body data-page="forest-gallery">
+
+  <!-- 背景（森の上送り。JSが制御） -->
+  <div class="forest-bg" aria-hidden="true"></div>
+
+  <main class="fg-wrapper">
+
+    <!-- 入口セクション -->
+    <section class="fg-section fg-intro">
+      <div class="fg-intro-inner">
+        <h1 class="fg-title">森の精霊ギャラリー</h1>
+        <p class="fg-lead">
+          木漏れ日と灯りのあいだ、頁と香りとささやきが静かに重なっていく。
+        </p>
+        <p class="fg-lead-sub">スクロールして、森の奥へ進んでください。</p>
+      </div>
+    </section>
+
+    <!-- ギャラリー -->
+    <section class="fg-section fg-gallery">
+      <div class="fg-gallery-head">
+        <h2 class="fg-section-title">FOREST SPIRITS</h2>
+
+        <!-- BGMボタン -->
+        <button
+          class="bgm-toggle"
+          id="bgm-toggle"
+          type="button"
+          aria-pressed="false"
+          aria-label="BGMを再生"
+        >
+          ♪ BGM
+        </button>
+      </div>
+
+      <!-- ★ JS がここにカードを自動生成する -->
+      <div class="fg-grid" id="fg-grid"></div>
+    </section>
+
+    <!-- 奥の祠セクション -->
+    <section class="fg-section fg-lore">
+      <h2 class="fg-section-title">森のささやき</h2>
+      <p class="fg-text">
+        この森では、灯りをひとつ点すたびに、ひとつだけ願いが眠りから目を覚ます。
+      </p>
+      <p class="fg-text">
+        思い出すだけで届く、小さな約束。奥へ進めば物語や設定資料を置ける空間になります。
+      </p>
+    </section>
+
+  </main>
+
+  <!-- ===== ライトボックス（拡大表示） ===== -->
+  <div class="fg-lightbox" id="fg-lightbox" aria-hidden="true">
+    <div class="fg-lightbox-inner">
+      <button class="fg-lightbox-close" type="button" aria-label="閉じる">×</button>
+      <figure class="fg-lightbox-figure">
+        <img src="" alt="" id="fg-lightbox-img" />
+        <figcaption id="fg-lightbox-caption"></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- JS：背景の上送り + ギャラリー生成 + ライトボックス -->
+  <script src="./js/main.js"></script>
+  <!-- JS：BGM制御（別ファイルにしている場合） -->
+  <script src="./js/bgm.js"></script>
+</body>
+</html>

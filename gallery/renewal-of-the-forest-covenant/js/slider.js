@@ -18,6 +18,13 @@ const slides = [
     title: "栞の森 ― Single Scene",
     caption: "森に刻まれた一瞬を栞にして、背景美術で紡ぐ情景。"
   },
+  {
+    src: "./thumbnail/kv03.webp",
+    thumb: "./thumbnail/kv03.webp",
+    href: "./Forest-Sprits/index.html",
+    title: "精霊の森 ― Single Scene",
+    caption: "精霊×森の一場面を収めた小さな展示室。背景のゆるやかな動きが、奥へと続く森の気配をそっと示します。"
+  },
 ];
 
 function createSlider(mount, slides = []){
