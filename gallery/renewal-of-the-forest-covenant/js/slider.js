@@ -25,6 +25,13 @@ const slides = [
     title: "精霊の森 ― Single Scene",
     caption: "精霊×森の一場面を収めた小さな展示室。背景のゆるやかな動きが、奥へと続く森の気配をそっと示します。"
   },
+  {
+    src: "./thumbnail/kv04.webp",
+    thumb: "./thumbnail/kv04.webp",
+    href: "./Forest-panorama-background/index.html",
+    title: "森の営み ― panorama Scene",
+    caption: "森の形や光の流れ、倒木・切り株・祠などの要素を横に並べて整理した資料展示です。背景制作や世界観設計のために、森の一連の景観が確認できます。"
+  },
 ];
 
 function createSlider(mount, slides = []){
