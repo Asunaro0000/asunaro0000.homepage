@@ -74,7 +74,7 @@ body {
 }
 
 .fg-section {
-  padding: 56px 0;
+  padding: 40px 0;
 }
 
 /* 入口セクション */
@@ -94,7 +94,7 @@ body {
 }
 
 .fg-lead {
-  font-size: 1rem;
+  font-size: 18px;
   line-height: 1.8;
   margin: 0 0 8px;
 }

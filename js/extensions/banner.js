@@ -9,23 +9,18 @@
 
   // ★ ここを差し替えれば内容を自由に増減できる
   const banners = [
+    
     {
-      src: "./assets/banner/banner1.webp",
-      caption: "ウサ子の日常、一枚絵のギャラリーを公開しました。",
-      href: "./gallery/Usako_and_Kameko/usako_diary/index.html",
-      btnLabel: "▶ ウサ子の日常へ"
+      src: "./assets/banner/banner6.webp",
+      caption: "森の精霊ギャラリーはこちらから。",
+      href: "./gallery/renewal-of-the-forest-covenant/Forest-Sprits/index.html",
+      btnLabel: "▶ 森の精霊ギャラリーへ"
     },
     {
-      src: "./assets/banner/banner2.webp",
-      caption: "カメコの日常、一枚絵のギャラリーを公開しました。",
-      href: "./gallery/Usako_and_Kameko/kameko_diary/index.html",
-      btnLabel: "▶ カメコの日常へ"
-    },
-    {
-      src: "./assets/banner/banner3.webp",
-      caption: "栞の森の背景美術ルームをオープンしました。",
-      href: "./gallery/renewal-of-the-forest-covenant/Forest_of_Story_Marks/index.html",
-      btnLabel: "▶ 栞の森、背景美術ルームへ"
+      src: "./assets/banner/banner5.webp",
+      caption: "ハロウィンのパノラマギャラリーはこちらから。",
+      href: "./gallery/lili_and_kaede/halloween_single/index.html",
+      btnLabel: "▶ ハロウィンパノラマへ"
     },
     {
       src: "./assets/banner/banner4.webp",
@@ -34,11 +29,24 @@
       btnLabel: "▶ リス子のパノラマへ"
     },
     {
-      src: "./assets/banner/banner5.webp",
-      caption: "ハロウィンのパノラマギャラリーはこちらから。",
-      href: "./gallery/lili_and_kaede/halloween_single/index.html",
-      btnLabel: "▶ ハロウィンパノラマへ"
-    }
+      src: "./assets/banner/banner3.webp",
+      caption: "栞の森の背景美術ルームをオープンしました。",
+      href: "./gallery/renewal-of-the-forest-covenant/Forest_of_Story_Marks/index.html",
+      btnLabel: "▶ 栞の森、背景美術ルームへ"
+    },
+    {
+      src: "./assets/banner/banner2.webp",
+      caption: "カメコの日常、一枚絵のギャラリーを公開しました。",
+      href: "./gallery/Usako_and_Kameko/kameko_diary/index.html",
+      btnLabel: "▶ カメコの日常へ"
+    },
+    {
+      src: "./assets/banner/banner1.webp",
+      caption: "ウサ子の日常、一枚絵のギャラリーを公開しました。",
+      href: "./gallery/Usako_and_Kameko/usako_diary/index.html",
+      btnLabel: "▶ ウサ子の日常へ"
+    },
+
   ];
 
   let index = 0;
