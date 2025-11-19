@@ -9,7 +9,12 @@
 
   // ★ ここを差し替えれば内容を自由に増減できる
   const banners = [
-    
+     {
+      src: "./assets/banner/banner7.webp",
+      caption: "森の資料室「森の営み」はこちらから。",
+      href: "./gallery/renewal-of-the-forest-covenant/Forest-panorama-background/index.html",
+      btnLabel: "▶ 森の資料室「森の営み」へ"
+    },   
     {
       src: "./assets/banner/banner6.webp",
       caption: "森の精霊ギャラリーはこちらから。",
