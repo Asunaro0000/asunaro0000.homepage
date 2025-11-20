@@ -99,7 +99,7 @@
 @media (max-width: 959.98px) {
   .feature-row__col--main .risuko-wrap,
   .feature-row__col--side .top-banner {
-    min-height: 570px;
+    min-height: 500px;
   }
 }
 
