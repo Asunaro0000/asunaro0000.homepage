@@ -32,6 +32,13 @@ const slides = [
     title: "森の営み ― panorama Scene",
     caption: "森の形や光の流れ、倒木・切り株・祠などの要素を横に並べて整理した資料展示です。背景制作や世界観設計のために、森の一連の景観が確認できます。"
   },
+  {
+    src: "./thumbnail/kv05.webp",
+    thumb: "./thumbnail/kv05.webp",
+    href: "./Forest-calendar/index.html",
+    title: "七曜循環の壁画 ― Seven-Day Wall Gallery",
+    caption: "七つの曜日にあわせて、壁一面の景色が少しずつ入れ替わります。流れと構成でこの世界の歴史を眺める部屋です。世界の断片が毎日積みあがっていきます。"
+  },
 ];
 
 function createSlider(mount, slides = []){

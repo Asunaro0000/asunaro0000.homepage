@@ -19,12 +19,14 @@
 
   <!-- アセット -->
   <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/calendar.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/risuko-stamp.css">
   <link rel="stylesheet" href="./css/risuko-stamp2.css">
   <link rel="stylesheet" href="./css/banner_style.css">
   <link rel="stylesheet" href="./css/home_layout.css">
   <link rel="stylesheet" href="./css/enter.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
 
@@ -130,6 +132,43 @@
         </section>
       </div>
     </section>
+  <!-- ======================
+       2. Calendar
+  ====================== -->
+  <section id="forest-calendar" style="width:100%;max-width:960px;text-align:center;padding:0 16px;">
+
+    <h2 style="font-size:18px;margin-bottom:8px;">七曜循環の壁画部屋</h2>
+    <p style="font-size:13px;line-height:1.7;opacity:.8;margin:0 0 18px;">
+      七つの曜日にあわせて、壁一面の景色が少しずつ入れ替わります。<br>
+      流れと構成でこの世界の歴史を眺める部屋です。世界の断片が毎日積みあがっていきます。<br>
+      クリックするとリンク先に飛べます。
+    </p>
+
+    <!-- working calendar -->
+<section class="calendar-strip-wrapper" style="margin-top:20px;margin-bottom:0;">
+
+  <div class="month-block">
+    <figure class="month-image-frame">
+      <img id="month-image" src="assets/calendar/1-1.webp" alt="Month illustration" loading="lazy" data-index="0" />
+    </figure>
+
+    <div class="calendar-strip">
+      <div class="strip-header">
+        <span id="strip-label" class="strip-label">Year 2026 · 1</span>
+      </div>
+
+      <div class="strip-right">
+        <div id="strip-weekdays" class="strip-row strip-weekdays"></div>
+        <div id="strip-dates" class="strip-row strip-dates"></div>
+      </div>
+
+      <div class="strip-signature">Asunaro Works</div>
+    </div>
+  </div>
+
+
+
+</section>
 
     <!-- ▼ 3. サイトマップ（森マップ） -->
     <section class="sitemap-section">
@@ -147,6 +186,7 @@
     <section class="news">
       <h2>お知らせ</h2>
       <ul>
+        <li><strong>2025-11-24：</strong>「七曜循環の壁画部屋」を公開しました。曜日ごとに壁画が変化します。</li>
         <li><strong>2025-11-23：</strong> グッズ展示室をひっそり公開しました。準備が整い次第、扉を開きます。</li>
         <li><strong>2025-11-19：</strong> 森の契約更新譚の背景美術資料室「森の営み」を公開しました。</li>
         <li><strong>2025-11-19：</strong> 森の契約更新譚の「精霊の森」を公開しました。</li>
@@ -175,5 +215,6 @@
   <script src="./js/extensions/risuko-stamp-toggle.js" defer></script>
   <script src="./js/extensions/risuko-preload.js" defer></script>
   <script src="./js/extensions/banner.js" defer></script>
+  <script src="./js/extensions/calendar.js" defer></script>
 </body>
 </html>
