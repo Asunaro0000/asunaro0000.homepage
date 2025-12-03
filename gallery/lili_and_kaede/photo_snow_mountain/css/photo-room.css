@@ -4,7 +4,13 @@
 *::after {
   box-sizing: border-box;
 }
+:root {
+  /* 右端との余白（pxで調整） */
+  --bgm-right-space: 10px;
 
+  /* sceneブロックとBGMブロックの間隔 */
+  --bgm-inner-gap: 6px;
+}
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Yu Gothic", sans-serif;
@@ -49,11 +55,27 @@ body {
   
 }
 
+  /* BGM周りを横並び＆距離を詰める */
 .room-header-right {
+  margin-left: auto;                         /* 左側から押し出して右寄せ */
+  margin-right: var(--bgm-right-space);      /* 右端との距離を変数で制御 */
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: var(--bgm-inner-gap);                /* scene と BGM の間隔を変数で制御 */
 }
+
+.room-header-right .slide-control {
+  margin-right: var(--bgm-right-space);   /* ← ここで距離を調整 */
+}
+  /* ラベルの位置＆フォント微調整 */
+  .bgm-file-label {
+    font-size: 12px;
+    margin-left: 2px;
+    opacity: 0.85;
+    max-width: 140px;  /* スマホで長いタイトル対策 */
+  }
+
+
 
 .slide-control {
   display: flex;
@@ -274,10 +296,23 @@ body {
   .slide-control {
     align-items: flex-start;   /* 親コンテナを左寄せに */
   }
+@media (max-width: 720px) {
+
+
   .room-header-right {
-    align-self: stretch;
-    justify-content: space-between;
+    justify-content: flex-start;
+    margin-right: var(--header-right-space); 
+    margin-left: 0;
+    margin-right: 0;
   }
+  /* 必要ならここでサイズだけ調整 */
+  .bgm-toggle {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
+}
+
 
   .panel-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -326,6 +361,10 @@ body {
   .room-title p {
     font-size: 11px;
   }
+
+
+
+  
 }
 .room-shell {
   max-width: 1200px;
