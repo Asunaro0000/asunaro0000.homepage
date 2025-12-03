@@ -18,6 +18,13 @@ const slides = [
     title: "リリと楓の Halloween Collection ― Single Scene",
     caption: "ハロウィンの夜をモチーフにしたリリと楓の展示室です。\n単作イラストを、雰囲気そのままに並べています。"
   },
+  {
+    src: "./thumbnail/kv03.webp",
+    thumb: "./thumbnail/kv03.webp",
+    href: "./photo_snow_mountain/index.html" ,
+    title: "リリと楓の Snow Mountain ― Photo Scene",
+    caption: "ハイテンションなリリと楓の雪山登山の思い出写真展示室です。"
+  },
 ];
 
 function createSlider(mount, slides = []){
