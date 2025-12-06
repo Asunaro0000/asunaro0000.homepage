@@ -9,17 +9,23 @@
     gtag('js', new Date());
     gtag('config', 'G-1NCR09VMKR');
   </script>
-  <!-- pinterest -->
-  <meta name="p:domain_verify" content="d57a228b61f6ea3435efa630b2165165"/>
+  <!-- Pinterest Verify -->
+  <meta name="p:domain_verify" content="{{ site.data.tracking.pinterest_verify }}"/>
 
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5SJ395RM');</script>
+  <script>
+  (function(w,d,s,l,i){
+    w[l]=w[l]||[];
+    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),
+    dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id={{ site.data.tracking.gtm_id }}' + dl;
+    f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ site.data.tracking.gtm_id }}');
+  </script>
   <!-- End Google Tag Manager -->
- 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Goods | Asunaro Works</title>
@@ -38,26 +44,29 @@
   <!-- Optional: link hover polish -->
   <style>
     .goods-link {
-      font-size:13px;
-      color:#cfcfcf;
+      font-size:16px;            /* 文字を大きく */
+      font-weight:600;           /* 太字で視線を取る */
+      color:#ffd86a;             /* リス子のボタンと統一感 */
       text-decoration:none;
-      opacity:.65;
+      opacity:1;                 /* 色を薄くしない */
       display:inline-block;
       margin-top:14px;
       transition:0.25s;
     }
+
     .goods-link:hover {
-      opacity:1;
-      color:#fff;
+      color:#ffe9a8;             /* ホバーでワントーンアップ */
+      transform: translateY(-1px);
     }
+
   </style>
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJ395RM"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->  
+  <!-- End Google Tag Manager (noscript) -->
 <header class="nav">
   <a class="brand" href="../">Asunaro Works</a>
   <a class="go-up" href="../" title="一つ上の階へ">⏶</a>
@@ -74,29 +83,26 @@
 </header>
 
 
-<main style="display:flex;flex-direction:column;align-items:center;gap:48px;padding:40px 0 80px;">
+<main style="display:flex;flex-direction:column;align-items:center;gap:20px;padding:48px 0 90px;">
 
   <!-- ======================
        Page intro
   ====================== -->
-  <section style="max-width:720px;text-align:center;padding:0 16px;">
-    <h1 style="font-size:22px;margin-bottom:12px;">Goods Room</h1>
-    <p style="font-size:14px;line-height:1.8;opacity:.85;">
-      ゆっくり選んでください。<br>
-      この部屋には、日常や季節のシーンを形にした作品を並べています。<br>
-      気になったものがあれば、そっと手に取るような気持ちでご覧ください。
-    </p>
+  <section style="max-width:820px;text-align:center;padding:0 20px;">
+  <h1 style="font-size:32px;font-weight:700;margin-bottom:0px;letter-spacing:0.5px;color:#ffd86a;text-shadow:0 2px 4px rgba(0,0,0,0.35);">
+    Goods Room
+  </h1>
   </section>
 
 
   <!-- ======================
        1. Risuko Stamps
   ====================== -->
-  <section style="max-width:420px;width:100%;text-align:center;">
-    <h2 style="font-size:18px;margin-bottom:8px;">Risuko Stamps</h2>
-    <p style="font-size:13px;line-height:1.7;opacity:.8;margin:0 0 18px;">
-      日常のひと言に、森のリス子を添えるためのスタンプたちです。<br>
-      「tap to change」で、今の気分に合う表情を選べます。
+  <section style="max-width:500px;width:100%;text-align:center;">
+    <h2 style="font-size:26px;font-weight:700;margin-bottom:12px;">Risuko Stamps</h2>
+    <p style="font-size:17px;line-height:1.9;opacity:.9;margin:0 0 26px;">
+      日常のひと言に、森のリス子を添えるスタンプシリーズ。<br>
+      画像タップで気分に合う表情に切り替わります。
     </p>
 
     <!-- component -->
@@ -106,138 +112,93 @@
         <!-- A -->
         <div id="risuko-stamp" class="risuko-stamp">
           <img id="risuko-stamp-img" src="" alt="Risuko">
-          <p id="risuko-stamp-text" class="risuko-caption"></p>
-          <button id="risuko-stamp-btn" class="risuko-btn" type="button">tap to change</button>
+          <p id="risuko-stamp-text" class="risuko-caption" style="font-size:20px;"></p>
+          <button id="risuko-stamp-btn" class="risuko-btn" type="button">Go to goods</button>
         </div>
 
-        <!-- B -->
-        <!--<div id="risuko-stamp-2" class="risuko-stamp is-hidden">
-          <img id="risuko-stamp-img-2" src="" alt="Risuko alt">
-          <p id="risuko-stamp-text-2" class="risuko-caption"></p>
-          <button id="risuko-stamp-btn-2" class="risuko-btn" type="button">tap to change</button>
-        </div>
-      </div>-->
-
-      <!--<div style="display:flex;gap:12px;justify-content:center;margin-top:8px;">
-        <button id="prevMode" class="ctrl">←</button>
-        <button id="nextMode" class="ctrl">→</button>
-      </div>-->
+        <!-- B or C があっても同様に切替OK -->
+      </div>
     </div>
 
-    <a href="https://store.line.me/stickershop/product/31871806/ja" target="_blank" class="goods-link">→ Line Storeはこちら</a>
+    <a href="https://store.line.me/stickershop/product/31871806/ja"
+       target="_blank"
+       class="goods-link"
+       style="font-size:20px;font-weight:700;margin-top:20px;display:inline-block;">
+       💬 LINE STOREで見る
+    </a>
   </section>
 
 
   <!-- ======================
-       2. Calendar
+       2. Risuko Calendar
   ====================== -->
-  <!-- <section id="forest-calendar" style="width:100%;max-width:960px;text-align:center;padding:0 16px;">
-
-    <h2 style="font-size:18px;margin-bottom:8px;">Forest Calendar</h2>
-    <p style="font-size:13px;line-height:1.7;opacity:.8;margin:0 0 18px;">
-      季節ごとに変わる森の情景と、細長いカレンダー帯のシリーズです。<br>
-      月替えボタンで１年の景色をめくるように眺められます。
-    </p>-->
-
-    <!-- working calendar -->
-<!--<section class="calendar-strip-wrapper" style="margin-top:20px;margin-bottom:0;">
-
-  <div class="month-block">
-    <figure class="month-image-frame">
-      <img id="month-image" src="assets/calendar/1-1.webp" alt="Month illustration" loading="lazy" data-index="0" />
-    </figure>
-
-    <div class="calendar-strip">
-      <div class="strip-header">
-        <span id="strip-label" class="strip-label">Year 2026 · 1</span>
-      </div>
-
-      <div class="strip-right">
-        <div id="strip-weekdays" class="strip-row strip-weekdays"></div>
-        <div id="strip-dates" class="strip-row strip-dates"></div>
-      </div>
-
-      <div class="strip-signature">Asunaro Works</div>
-    </div>
-  </div>-->
-
-  <!-- ▼ ボタンは下にまとめる -->
-  <!--<div class="calendar-nav-row">
-    <button class="nav-btn nav-prev" aria-label="前の月へ">&#10094;</button>
-    <button class="nav-btn nav-next" aria-label="次の月へ">&#10095;</button>
-  </div>-->
-</section>
-    
-<!-- ======================
-     3. Risuko Calendar (Normal Edition)
-====================== -->
-
-  <section style="width:100%;max-width:960px;text-align:center;padding:0 16px;margin-top:60px;">
-    <h2 style="font-size:18px;margin-bottom:8px;">Risuko Calendar</h2>
-    <p style="font-size:13px;line-height:1.7;opacity:.8;margin:0 0 18px;">
-      リス子の一年を、季節感のある絵柄でまとめたカレンダーです。<br>
-      月ごとに、食べもの・色・森の空気が変わり、一年の移り変わりをめくるように楽しめます。
+  <section style="width:100%;max-width:960px;text-align:center;padding:0 20px;">
+    <h2 style="font-size:26px;font-weight:700;margin-bottom:12px;">Risuko Calendar</h2>
+    <p style="font-size:17px;line-height:1.9;opacity:.9;margin:0 0 24px;">
+      四季の移り変わりと、リス子の一年を描いたカレンダー。<br>
+      月ごとに、色・表情・森の空気が変化していきます。
     </p>
-<section id="risuko-calendar" class="calendar-viewer" style="margin-top:20px;margin-bottom:0;">
 
-  <div class="month-block">
-    <figure class="month-image-frame">
-      <img id="normal-calendar-image"
-           src="assets/normal-calendar/01.png"
-           alt="Forest Calendar Image"
-           loading="lazy"
-           data-index="0"
-           data-month="1" />
-    </figure>
-  </div>
+    <section id="risuko-calendar" class="calendar-viewer" style="margin-top:28px;margin-bottom:0;">
+      <div class="month-block">
+        <figure class="month-image-frame">
+          <img id="normal-calendar-image"
+               src="assets/normal-calendar/01.png"
+               alt="Forest Calendar Image"
+               loading="lazy"
+               data-index="0"
+               data-month="1" />
+        </figure>
+      </div>
 
-  <!-- ▼ Navigation buttons (残す) -->
-  <div class="calendar-nav-row">
-    <button class="nav-btn" id="normal-calendar-prev" aria-label="前へ">&#10094;</button>
-    <button class="nav-btn" id="normal-calendar-next" aria-label="次へ">&#10095;</button>
-  </div>
-  <a href="https://booth.pm" target="_blank" class="goods-link">→ BOOTHページはこちら</a>
-</section>
+      <div class="calendar-nav-row" style="margin-top:12px;">
+        <button class="nav-btn" id="normal-calendar-prev" aria-label="前へ">&#10094;</button>
+        <button class="nav-btn" id="normal-calendar-next" aria-label="次へ">&#10095;</button>
+      </div>
 
+      <a href="https://asunaro0000.booth.pm/items/7697649"
+         target="_blank"
+         class="goods-link"
+         style="font-size:20px;font-weight:700;margin-top:22px;display:inline-block;">
+         🛒 BOOTHで購入する
+      </a>
+    </section>
+  </section>
 
 
   <!-- ======================
-       3. Bookmarks (暫定)
+       3. Bookmarks
   ====================== -->
-<section id="bookmark-banner" class="bookmark-banner-section">
+  <section id="bookmark-banner" class="bookmark-banner-section" style="padding:0 20px;">
+    <h2 class="bookmark-banner-title" style="font-size:26px;font-weight:700;margin-bottom:12px;">
+      Bookmarks / 栞
+    </h2>
+    <p class="bookmark-banner-desc" style="font-size:17px;line-height:1.9;opacity:.9;margin-bottom:26px;">
+      読書の途中に、小さな森を挟める栞シリーズ。<br>
+      3枚1セットで、季節の光と静けさを閉じ込めました。
+    </p>
 
-  <h2 class="bookmark-banner-title">Bookmarks / 栞</h2>
-  <p class="bookmark-banner-desc">
-    読書の途中に、小さな森をはさむ栞のシリーズです。<br>
-    上の3枚は1セットとして入れ替わります。
-  </p>
+    <div class="top-banner top-banner--bookmarks">
+      <div class="bookmark-row">
+        <div class="top-banner__image-wrap bookmark-slot"><img id="bmImage1" src="" alt="Bookmark 1"></div>
+        <div class="top-banner__image-wrap bookmark-slot"><img id="bmImage2" src="" alt="Bookmark 2"></div>
+        <div class="top-banner__image-wrap bookmark-slot"><img id="bmImage3" src="" alt="Bookmark 3"></div>
+      </div>
 
-  <div class="top-banner top-banner--bookmarks">
-    <div class="bookmark-row">
-      <div class="top-banner__image-wrap bookmark-slot">
-        <img id="bmImage1" src="" alt="Bookmark 1">
+      <div class="top-banner__text">
+        <p id="bookmarkCaption" class="top-banner__caption" style="font-size:20px;"></p>
+        <a id="bookmarkLink" class="top-banner__btn" href="#" target="_blank"
+           style="font-size:18px;font-weight:700;padding:10px 22px;">
+          ▶ 栞セットを見る
+        </a>
       </div>
-      <div class="top-banner__image-wrap bookmark-slot">
-        <img id="bmImage2" src="" alt="Bookmark 2">
-      </div>
-      <div class="top-banner__image-wrap bookmark-slot">
-        <img id="bmImage3" src="" alt="Bookmark 3">
-      </div>
+
+      <div class="top-banner__dots" id="bookmarkDots"></div>
     </div>
-
-    <div class="top-banner__text">
-      <p id="bookmarkCaption" class="top-banner__caption"></p>
-      <a id="bookmarkLink" class="top-banner__btn" href="#" target="_blank">
-        ▶ 栞セットを見る
-      </a>
-    </div>
-
-    <div class="top-banner__dots" id="bookmarkDots"></div>
-  </div>
-</section>
-
+  </section>
 
 </main>
+
 
 
 <footer style="text-align:center;margin-top:40px;opacity:.6;">

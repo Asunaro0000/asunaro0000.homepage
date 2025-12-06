@@ -2,13 +2,12 @@
 const STAMP_PATH = "./assets/stamps/";
 
 // ファイル名（拡張子なし）。ここに追記するだけで増やせる
-
-
 const stampNames = [
   "いま行く！","おはよー！","ごめんね","しあわせ～","とまらない～！","ねむねむ…","あそぼ～","いい感じ！",
   "はぁ～…","ばっちり！","ふぇ？","またね！","もうだめ～…","もぉ～！",
   "わかんない！","今日もおつかれ！"
 ];
+
 // 要素取得
 const wrap  = document.getElementById("risuko-stamp");
 const img   = document.getElementById("risuko-stamp-img");
@@ -42,23 +41,18 @@ function applyByIndex(i){
 applyByIndex(currentIndex);
 
 // クリック（ボタン）でランダム切替
-function randomChangeStamp() {
+btn.addEventListener("click", () => {
   let r = Math.floor(Math.random() * stampNames.length);
   if (r === currentIndex) r = (r + 1) % stampNames.length;
   currentIndex = r;
   applyByIndex(currentIndex);
 
-  // GAにイベント送信したい場合
+  // （任意）GAにイベント送信する場合はコメントアウトを外す
   // if (window.gtag) gtag("event", "risuko_click", { value: currentIndex });
-}
+});
 
-
+// 画像自体のクリックでも切替したい場合は下を有効化
 wrap.addEventListener("click", (e) => {
-  // ボタン自体を押した時は何もしない（下の handler に任せる）
-  if (e.target.id === "risuko-stamp-btn") return;
-  randomChangeStamp();
+  if (e.target.id !== "risuko-stamp-btn") btn.click();
 });
 
-btn.addEventListener("click", () => {
-  window.location.href = "https://store.line.me/stickershop/product/31871806/ja";
-});

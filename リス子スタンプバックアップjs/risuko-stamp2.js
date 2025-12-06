@@ -2,18 +2,14 @@
 const STAMP_PATH_2 = "./assets/stamps2/";
 
 // ファイル名（拡張子なし）。1つ目と同じ配列を使い回すならコピペでOK
-
 const stampNames2 = [
-  "Snack time!", "Apple time♪", "So tasty!", "So toasty!", "Sweet tooth wins!",
-  "Food over flowers♪", "Freshly made!", "I like veggies too!", "Sweet happiness🍯",
-  "A cozy break☕", "Nice and warm☕",
-  "Spoil-me time", "Ice even in autumn!", "Sweet bliss🍰", "Warm milk♪",
-  "Feeling toasty🍲", "Lets share🥕",
-  "Autumn treat🍊", "All this is mine!✨", "My autumn reward♡",
-  "Warm dinner night🌙", "Freshly baked tart♪",
-  "Lunch time!", "So comforting🦉", "Perfect picnic day🍞",
-  "Happiness overload!🥞",
+  "おやつ日和！","りんごタイム♪","ほっぺが落ちそう〜♡","香ばしいっ！","甘党ばんざい！",
+  "花よりだんご♪","できたてだよっ！","野菜も好きっ！","あま〜い幸せ🍯","ほっと一息〜☕","あったかいね☕",
+  "あまやか時間～","秋でもアイス！","あま〜い幸せ🍰","ほっとミルク♪","あったまるぅ〜🍲","分けっこしよっ🥕",
+  "秋のごほうび🍊","これ、ぜんぶリス子の！？✨","秋のごほうび♡","あったか夜ごはん🌙","できたてタルトです♪",
+  "おべんとう〜！","ほっとするね🦉","ピクニック日和🍞","しあわせ暴走中！🥞",
 ];
+
 // 要素取得（※ここが1つ目と違う）
 const wrap2 = document.getElementById("risuko-stamp-2");
 const img2  = document.getElementById("risuko-stamp-img-2");
@@ -49,25 +45,18 @@ function applyByIndex2(i){
 
 applyByIndex2(currentIndex2);
 
-// ランダムにスタンプ2を切り替える共通関数
-function randomChangeStamp2() {
+// クリック（ボタン）でランダム切替
+btn2.addEventListener("click", () => {
   let r = Math.floor(Math.random() * stampNames2.length);
   if (r === currentIndex2) r = (r + 1) % stampNames2.length;
   currentIndex2 = r;
   applyByIndex2(currentIndex2);
 
-  // GAを分けたい場合
+  // GAイベント名も分けたい場合
   // if (window.gtag) gtag("event", "risuko2_click", { value: currentIndex2 });
-}
-
-// 枠（画像・テキスト）クリックで絵だけ変更
-wrap2.addEventListener("click", (e) => {
-  if (e.target.id === "risuko-stamp-btn-2") return;
-  randomChangeStamp2();
 });
 
-// ボタンクリックは goods へ移動
-btn2.addEventListener("click", (e) => {
-  e.stopPropagation();
-  window.location.href = "";
+// 画像自体のクリックでも切替（ボタン以外のクリックで反応）
+wrap2.addEventListener("click", (e) => {
+  if (e.target.id !== "risuko-stamp-btn-2") btn2.click();
 });

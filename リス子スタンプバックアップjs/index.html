@@ -97,59 +97,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
 
-    <!-- ▼ 2. Risuko + Banner -->
+    <!-- ▼ 2. リス子 ＋ バナー（PCで2カラム / SPで縦） -->
     <section class="feature-row">
 
-      <!-- Left: Risuko -->
+      <!-- 左：メイン（リス子） -->
       <div class="feature-row__col feature-row__col--main">
         <section class="risuko"></section>
         <div class="risuko-wrap">
           <div id="risuko-dynamic" aria-live="polite">
-
-            <!-- A mode (calendar) -->
-            <div id="risuko-calendar" class="risuko-stamp is-hidden" aria-hidden="true">
-              <img id="risuko-calendar-img" src="" alt="Risuko calendar">
-              <p id="risuko-calendar-text" class="risuko-caption"></p>
-              <button id="risuko-calendar-btn" class="risuko-btn" type="button">Go to shop</button>
-            </div>
-
-            <!-- B mode (stamp) -->
+            <!-- Aモード (risuko-stamp.js が使うID) -->
             <div id="risuko-stamp" class="risuko-stamp" aria-hidden="false">
               <img id="risuko-stamp-img" src="" alt="Risuko of the day">
               <p id="risuko-stamp-text" class="risuko-caption"></p>
-              <button id="risuko-stamp-btn" class="risuko-btn" type="button">Go to shop</button>
+              <button id="risuko-stamp-btn" class="risuko-btn" type="button">tap to change</button>
             </div>
 
-            <!-- C mode (stamp2) -->
-            <!--<div id="risuko-stamp-2" class="risuko-stamp is-hidden" aria-hidden="true">
+            <!-- Bモード (risuko-stamp2.js が使うID) -->
+            <div id="risuko-stamp-2" class="risuko-stamp is-hidden" aria-hidden="true">
               <img id="risuko-stamp-img-2" src="" alt="Risuko alternate">
               <p id="risuko-stamp-text-2" class="risuko-caption"></p>
-              <button id="risuko-stamp-btn-2" class="risuko-btn" type="button">Go to goods</button>
-            </div>-->
-
-
+              <button id="risuko-stamp-btn-2" class="risuko-btn" type="button">tap to change</button>
+            </div>
           </div>
 
-          <!-- Mode switch controls -->
+          <!-- リス子表示切替ボタン -->
           <div class="controls" style="display:flex;gap:12px;justify-content:center;margin-top:8px">
-            <button id="prevMode" class="ctrl" type="button" aria-label="Previous"
-              style="width:34px;height:34px;border:none;border-radius:8px;background:#ffd86a;color:#333;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-                <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-              </svg>
+            <button id="prevMode" class="ctrl" type="button" aria-label="前の表示" style="width:34px;height:34px;border:none;border-radius:8px;background:#ffd86a;color:#333;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
             </button>
-            <button id="nextMode" class="ctrl" type="button" aria-label="Next"
-              style="width:34px;height:34px;border:none;border-radius:8px;background:#ffd86a;color:#333;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-                <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
-              </svg>
+            <button id="nextMode" class="ctrl" type="button" aria-label="次の表示" style="width:34px;height:34px;border:none;border-radius:8px;background:#ffd86a;color:#333;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
             </button>
-            <a id="risuko-stamp-link" class="goods-link" href="./goods/">Goods Room</a>
           </div>
         </div>
       </div>
 
-      <!-- Right: Auto Banner -->
+      <!-- 右：サイド（自動送りバナー） -->
       <div class="feature-row__col feature-row__col--side">
         <section class="top-banner">
           <div class="top-banner__image-wrap">
@@ -162,7 +145,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <div class="top-banner__text">
             <p id="bannerCaption" class="top-banner__caption">
-              The daily life of Usako & Kameko — a new gallery is now available.
+              ウサ子とカメコの日常、一枚絵のギャラリーを公開しました。
             </p>
 
             <a
@@ -170,10 +153,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               class="top-banner__btn"
               href="./gallery/Usako_and_Kameko/"
             >
-              ▶ Visit Usako & Kameko Gallery
+              ▶ ウサ子とカメコの日常へ
             </a>
 
-            <div class="top-banner__dots" id="bannerDots" aria-label="Banner position indicator"></div>
+            <!-- 何枚あるかのランプ（ドット） -->
+            <div class="top-banner__dots" id="bannerDots" aria-label="バナーの位置インジケーター"></div>
           </div>
         </section>
       </div>
@@ -267,8 +251,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- ▼ スクリプト群 -->
   <script type="module" src="./js/extensions/nav-toggle.js"></script>
-  <script src="./js/extensions/risuko-calender.js" defer></script>
-  <!-- <script src="./js/extensions/risuko-stamp2.js" defer></script>-->
+  <script src="./js/extensions/risuko-stamp2.js" defer></script>
   <script src="./js/extensions/risuko-stamp.js" defer></script>
   <script src="./js/extensions/risuko-stamp-toggle.js" defer></script>
   <script src="./js/extensions/risuko-preload.js" defer></script>
