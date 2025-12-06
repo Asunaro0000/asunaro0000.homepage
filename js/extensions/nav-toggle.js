@@ -58,3 +58,4 @@
   mq.addEventListener ? mq.addEventListener('change', sync) : mq.addListener(sync);
   sync();
 })();
+

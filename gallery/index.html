@@ -249,6 +249,9 @@ if (!exhibits.length) {
   <!-- End Google Tag Manager (noscript) -->
   <header class="nav">
     <a class="brand" href="../">Asunaro Works</a>
+    <a class="go-up" href="../" title="一つ上の階へ">
+    ⏶
+    </a>
     <nav>
       <a href="../gallery/">Gallery</a>
       <a href="../about/">About</a>
@@ -264,6 +267,12 @@ if (!exhibits.length) {
 
 
     <main class="g-wrap">
+      <!-- 下段：季節展示（各展示はスライダー） -->
+      <section class="g-block">
+        <h2 class="g-block__title">Works — ストーリーボード</h2>
+        <p class="g-block__lead">物語の流れに沿って構成されたビジュアルワーク。シーンごとの空気、光、そして感情の変化を順に追ってご覧ください。</p>
+        <div id="exhibits" class="g-stack"></div>
+      </section>
       <!-- 上段：ゲーム（面を積み増し・各面はスライダー） -->
       <section class="g-block">
         <h1 class="g-block__title">《 Games 》</h1>
@@ -271,12 +280,7 @@ if (!exhibits.length) {
         <div id="games" class="g-stack"></div>
       </section>
 
-      <!-- 下段：季節展示（各展示はスライダー） -->
-      <section class="g-block">
-        <h2 class="g-block__title">Works — ストーリーボード</h2>
-        <p class="g-block__lead">物語の流れに沿って構成されたビジュアルワーク。シーンごとの空気、光、そして感情の変化を順に追ってご覧ください。</p>
-        <div id="exhibits" class="g-stack"></div>
-      </section>
+
     </main>
 
     <footer>© 2025 Asunaro Works. All rights reserved.</footer>
