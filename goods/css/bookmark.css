@@ -236,7 +236,7 @@
 
 /* 準備中オーバーレイ文字 */
 #bookmark-banner::after {
-  content: "Preparing for release";
+  content: "準備中";
   position: absolute;
   top: 50%;
   left: 50%;
