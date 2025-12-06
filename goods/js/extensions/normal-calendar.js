@@ -2,10 +2,10 @@
 // normal calendar mapping
 // ============================
 const NORMAL_CALENDAR_IMAGES = {
-  1:"assets/normal-calendar/01.png",
-  2:"assets/normal-calendar/02.png",
-  3:"assets/normal-calendar/03.png",
-  4:"assets/normal-calendar/04.png",
+  1:"./assets/normal-calendar/01.png",
+  2:"./assets/normal-calendar/02.png",
+  3:"./assets/normal-calendar/03.png",
+  4:"./assets/normal-calendar/04.png",
   // 必要分だけ追加してOK（数は自動で反映される）
 };
 
