@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>リリと楓の冬の雪山登山フォトルーム | Asunaro Works</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCR09VMKR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1NCR09VMKR');
+  </script>
+  <!-- pinterest -->
+  <meta name="p:domain_verify" content="d57a228b61f6ea3435efa630b2165165"/>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5SJ395RM');</script>
+  <!-- End Google Tag Manager -->
+
+
+  <!-- site header -->
+  <link rel="stylesheet" href="../../../css/header.css">
+  <link rel="stylesheet" href="../../../css/style.css">
+
+  <!-- page-specific -->
+  <link rel="stylesheet" href="./css/suzuko-room.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJ395RM"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header class="nav">
+    <a class="brand" href="../../../">Asunaro Works</a>
+    <a class="go-up" href="../" title="一つ上の階へ">⏶</a>
+    <nav aria-label="Primary">
+      <a href="../../../gallery/">Gallery</a>
+      <a href="../../../about/">About</a>
+      <a href="../../../process/">Process</a>
+      <a href="../../../contact/">Contact</a>
+      <a href="../../../link/">Link</a>
+      <a href="../../../sitemap/">Sitemap</a>
+      <a href="../../../goods/">Goods</a>
+      <a href="https://asunaro0000.github.io/asunaro0000.homepage-en/gallery/lili_and_kaede/photo_snow_mountain/index.html">🌐 EN</a>
+    </nav>
+  </header>
+
+
+  <header class="room-header">
+    <div class="room-header-left">
+      
+      <div class="room-title">
+        <h1>リリと楓の冬の雪山登山フォトルーム</h1>
+        <p>雪の記憶が一気に駆け抜ける！❄️🔥 笑って泣いて全力だった一日を9枚パネルに刻み込んだアルバム部屋！📸💫</p>
+
+      </div>
+    
+      <button id="bgm-toggle" class="bgm-toggle" type="button" aria-label="BGM on/off">
+        ♪
+      </button>
+
+  </header>
+
+    <main class="room-main">
+    <section class="suzuko-room">
+      <!-- 0: リス子による導入＋2人の画像 -->
+      <div class="suzuko-intro">
+        <figure class="suzuko-intro-main">
+          <!-- ★ここはリス子＆スズ子の2ショット画像に差し替え -->
+          <img
+            src="./assets/images/suzuko/risuko_suzuko_main.webp"
+            alt="リス子とスズ子"
+          >
+        </figure>
+        <div class="suzuko-intro-text">
+          <p class="suzuko-intro-lead">
+            今日はね、森に“冬だけ来る白いリスさん”を紹介するよ。<br>
+            雪と星と本がだ〜いすきで、光が当たるとね……ちょっとどころじゃなく妖精さんみたいなんだ。
+          </p>
+        </div>
+      </div>
+
+      <!-- ①〜⑤ スズ子紹介シーンを JS で流し込むリスト -->
+      <ul class="suzuko-scene-list" id="suzuko-scene-list">
+        <!-- JS (suzuko-room.js) が li を生成 -->
+      </ul>
+    </section>
+
+    <!-- ライトボックス（拡大＋スライダー） -->
+    <div id="lightbox" class="lightbox hidden">
+      <div class="lightbox-backdrop"></div>
+      <div class="lightbox-inner">
+        <button class="lightbox-close" type="button" aria-label="close">&times;</button>
+
+        <!-- スライダー用ナビ -->
+        <button class="lightbox-nav lightbox-prev" type="button" aria-label="previous">◀</button>
+        <img id="lightbox-img" src="" alt="">
+        <button class="lightbox-nav lightbox-next" type="button" aria-label="next">▶</button>
+
+        <p id="lightbox-caption"></p>
+      </div>
+    </div>
+
+    <audio id="bgm-audio"></audio>
+  </main>
+
+
+
+  <script src="./js/bgm.js"></script>
+  <script src="./js/suzuko-room.js"></script>
+<!-- 共通ナビ -->
+<script type="module" src="../../../js/extensions/nav-toggle.js"></script>
+
+  <footer>
+    <span>© 2025 Asunaro Works. All rights reserved.</span>
+  </footer>
+
+</body>
+</html>
