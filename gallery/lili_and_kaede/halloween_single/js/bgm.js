@@ -10,7 +10,7 @@
   let currentRoom = 1;     // 1 / 2 / 3
 
   function applySrc() {
-    audio.src = `./bgm/bgm${currentRoom}.mp3`;
+    audio.src = `./bgm/bgm${currentRoom}.m4a`;
   }
 
   // ★ 画像クリックからしか呼ばせない「スタート専用」

@@ -14,7 +14,7 @@ series:
       hero: "assets/gallery/prismcat/phase1_hero.webp"
       background: "assets/gallery/prismcat/phase1_bg.webp"
       caption: "最初の光が、静寂の中で震える。"
-      bgm: "assets/audio/phase1.mp3"
+      bgm: "assets/audio/phase1.m4a"
       album:
         - id: "p01"
           src: "assets/gallery/prismcat/phase-1/p01.webp"
@@ -53,7 +53,7 @@ series:
       hero: "assets/gallery/prismcat/phase2_hero.webp"
       background: "assets/gallery/prismcat/phase2_bg.webp"
       caption: "見えない境界を渡り、記憶が波紋を描く。"
-      bgm: "assets/audio/phase2.mp3"
+      bgm: "assets/audio/phase2.m4a"
       album:
         - id: "p01"
           src: "assets/gallery/prismcat/phase-2/p01.webp"
@@ -92,7 +92,7 @@ series:
       hero: "assets/gallery/prismcat/phase3_hero.webp"
       background: "assets/gallery/prismcat/phase3_bg.webp"
       caption: "指先の動きが、記憶を形に変える。"
-      bgm: "assets/audio/phase3.mp3"
+      bgm: "assets/audio/phase3.m4a"
       album:
         - id: "p01"
           src: "assets/gallery/prismcat/phase-3/p01.webp"
@@ -131,7 +131,7 @@ series:
       hero: "assets/gallery/prismcat/phase4_hero.webp"
       background: "assets/gallery/prismcat/phase4_bg.webp"
       caption: "光は渦を描きながら、過去と未来を結ぶ。"
-      bgm: "assets/audio/phase4.mp3"
+      bgm: "assets/audio/phase4.m4a"
       album:
         - id: "p01"
           src: "assets/gallery/prismcat/phase-4/p01.webp"
@@ -170,7 +170,7 @@ series:
       hero: "assets/gallery/prismcat/phase5_hero.webp"
       background: "assets/gallery/prismcat/phase5_bg.webp"
       caption: "世界が終わり、静かに余韻だけが残る。"
-      bgm: "assets/audio/phase5.mp3"
+      bgm: "assets/audio/phase5.m4a"
       album:
         - id: "p01"
           src: "assets/gallery/prismcat/phase-5/p01.webp"
