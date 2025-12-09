@@ -89,12 +89,10 @@ body {
 }
 
 .suzuko-intro-main {
+  
   flex: 0 0 260px;
   margin: 0;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #020617;
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0); /* 完全透明 */
 }
 
 .suzuko-intro-main img {

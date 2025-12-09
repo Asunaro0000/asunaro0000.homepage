@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!sceneListEl || !lightbox || !lightboxImg || !lightboxCaption || !btnPrev || !btnNext) return;
 
-  // ===== スズ子のシーン定義（サムネ n-0.png ＋ スライダー n-1～n-9.webp） =====
+  // ===== スズ子のシーン定義（サムネ n-0.webp ＋ スライダー n-1～n-9.webp） =====
   const SUZUKO_SCENES = [
     {
       id: "suzuko-1",
-      thumb: "./assets/images/1-0.png",
+      thumb: "./assets/images/1-0.webp",
       slides: [
         "./assets/images/1-1.webp",
         "./assets/images/1-2.webp",
@@ -24,8 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "./assets/images/1-5.webp",
         "./assets/images/1-6.webp",
         "./assets/images/1-7.webp",
-        "./assets/images/1-8.webp",
-        "./assets/images/1-9.webp"
+        "./assets/images/1-8.webp"
       ],
       title: "① この子がスズ子。",
       text: [
@@ -36,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: "suzuko-2",
-      thumb: "./assets/images/2-0.png",
+      thumb: "./assets/images/2-0.webp",
       slides: [
         "./assets/images/2-1.webp",
         "./assets/images/2-2.webp",
@@ -44,9 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "./assets/images/2-4.webp",
         "./assets/images/2-5.webp",
         "./assets/images/2-6.webp",
-        "./assets/images/2-7.webp",
-        "./assets/images/2-8.webp",
-        "./assets/images/2-9.webp"
+        "./assets/images/2-7.webp"
+
       ],
       title: "② 一緒に山登り。光が当たると妖精さんみたい。",
       text: [
@@ -57,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: "suzuko-3",
-      thumb: "./assets/images/3-0.png",
+      thumb: "./assets/images/3-0.webp",
       slides: [
         "./assets/images/3-1.webp",
         "./assets/images/3-2.webp",
@@ -66,8 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "./assets/images/3-5.webp",
         "./assets/images/3-6.webp",
         "./assets/images/3-7.webp",
-        "./assets/images/3-8.webp",
-        "./assets/images/3-9.webp"
+        "./assets/images/3-8.webp"
       ],
       title: "③ スズ子の家で本を一緒に読む。",
       text: [
@@ -79,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: "suzuko-4",
-      thumb: "./assets/images/4-0.png",
+      thumb: "./assets/images/4-0.webp",
       slides: [
         "./assets/images/4-1.webp",
         "./assets/images/4-2.webp",
@@ -101,17 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: "suzuko-5",
-      thumb: "./assets/images/5-0.png",
+      thumb: "./assets/images/5-0.webp",
       slides: [
-        "./assets/images/5-1.webp",
-        "./assets/images/5-2.webp",
-        "./assets/images/5-3.webp",
-        "./assets/images/5-4.webp",
-        "./assets/images/5-5.webp",
-        "./assets/images/5-6.webp",
-        "./assets/images/5-7.webp",
-        "./assets/images/5-8.webp",
-        "./assets/images/5-9.webp"
+        "./assets/images/5-0.webp"
       ],
       title: "⑤ おまけ：一緒に作った雪だるま。",
       text: [

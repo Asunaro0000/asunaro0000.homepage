@@ -18,6 +18,13 @@ const slides = [
     title: "リス子の自然散歩 ― Single Scene",
     caption: "明るく元気なリス子の世界を楽しめるギャラリーです。"
   },
+  {
+    src: "./thumbnail/kv03.webp",
+    thumb: "./thumbnail/kv03.webp",
+    href: "./suzuko_room/index.html",
+    title: "リス子の友だち自慢部屋:白リスのスズ子 ― Single Scene",
+    caption: "リス子がキラッキラの白リス“スズ子”連れてきた！"
+  },
 
 ];
 

@@ -10,6 +10,12 @@
   // ★ ここを差し替えれば内容を自由に増減できる
   const banners = [
     {
+      src: "./assets/banner/banner9.webp",
+      caption: "リス子の友だち自慢部屋「白リスのスズ子」はこちらから。",
+      href: "./gallery/Risko/suzuko_room/index.html",
+      btnLabel: "▶ リス子の友だち自慢部屋「白リスのスズ子」へ"
+    }, 
+    {
       src: "./assets/banner/banner8.webp",
       caption: "フォトルーム「リリと楓の雪山登山」はこちらから。",
       href: "./gallery/lili_and_kaede/photo_snow_mountain/index.html",
