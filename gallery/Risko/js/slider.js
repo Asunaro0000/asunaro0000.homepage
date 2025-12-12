@@ -7,9 +7,9 @@ const slides = [
   {
     src: "./thumbnail/kv01.webp",
     thumb: "./thumbnail/kv01.webp",
-    href: "https://asunaro0000.github.io/risuko/" ,
-    title: "リス子 ― Storyboard",
-    caption: "森の贈りもの ― リス子の小さな旅"
+    href: "./storyboard_room/index.html",
+    title: "リス子 ― Storyboard room",
+    caption: "リス子のストーリーボードをまとめています。"
   },
   {
     src: "./thumbnail/kv02.webp",
