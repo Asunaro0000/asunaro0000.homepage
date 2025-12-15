@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // 各シーンの外部リンク
   const SCENE_LINKS = {
     "scene-001": "https://asunaro0000.github.io/risuko/",
-    "scene-002": "./scenes/The-Winter-Encounter/index.html"
+    "scene-002": "./scenes/The-Winter-Encounter/index.html",
+    "scene-003": "./scenes/This-Is-Our-Place/index.html"
   };
 
   const SCENES = [
@@ -28,10 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: "scene-003",
-      thumb: "./assets/images/3-0.webp",
-      title: "",
+      thumb: "./assets/images/02.webp",
+      title: "#02 ここが、わたしたちの場所。",
       text: [
-
+        "秘密基地を作ろうと決めた日。",
+        "目印をつけたら、そこはもう帰ってこれる場所だった。"
       ]
     },
 
