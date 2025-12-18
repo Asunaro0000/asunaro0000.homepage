@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const SCENE_LINKS = {
     "scene-001": "https://asunaro0000.github.io/risuko/",
     "scene-002": "./scenes/The-Winter-Encounter/index.html",
-    "scene-003": "./scenes/This-Is-Our-Place/index.html"
+    "scene-003": "./scenes/This-Is-Our-Place/index.html",
+    "scene-004": "./scenes/Aiming-for-the-summit/index.html"
   };
 
   const SCENES = [
@@ -34,6 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
       text: [
         "秘密基地を作ろうと決めた日。",
         "目印をつけたら、そこはもう帰ってこれる場所だった。"
+      ]
+    },
+    {
+      id: "scene-004",
+      thumb: "./assets/images/03.webp",
+      title: "#03 山頂を目指して。",
+      text: [
+        "昔見た絵本の景色が、ふいに現実と重なった。",
+        "今行かないと、きっと後悔すると思った。",
+        "ふたりの足はもう弾んでいた。"
       ]
     },
 
