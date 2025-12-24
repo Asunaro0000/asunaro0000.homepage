@@ -141,7 +141,7 @@
 }
 
 /* 画像を暗くする */
-.storyboard-scene-image img {
+/* .storyboard-scene-image img {
   transition: filter 0.3s ease;
 }
 
@@ -162,8 +162,9 @@
 
   pointer-events: none;
 }
-
+ */
 /* バッジがあるときだけ暗転 */
-.storyboard-scene-image:has(.kdp-exclusive-badge) img {
+/* .storyboard-scene-image:has(.kdp-exclusive-badge) img {
   filter: brightness(0.55);
 }
+ */

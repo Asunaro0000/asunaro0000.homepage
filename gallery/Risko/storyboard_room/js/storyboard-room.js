@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // 各シーンの外部リンク
   const SCENE_LINKS = {
     "scene-001": "https://asunaro0000.github.io/risuko/",
-/*     "scene-002": "./scenes/The-Winter-Encounter/index.html",
+     "scene-002": "./scenes/The-Winter-Encounter/index.html",
     "scene-003": "./scenes/This-Is-Our-Place/index.html",
-    "scene-004": "./scenes/Aiming-for-the-summit/index.html" */
-    "scene-002": "https://www.amazon.co.jp/dp/B0GC8KM6YZ",
+    "scene-004": "./scenes/Aiming-for-the-summit/index.html" 
+/*     "scene-002": "https://www.amazon.co.jp/dp/B0GC8KM6YZ",
     "scene-003": "https://www.amazon.co.jp/dp/B0GC8KM6YZ",
-    "scene-004": "https://www.amazon.co.jp/dp/B0GC8KM6YZ" 
+    "scene-004": "https://www.amazon.co.jp/dp/B0GC8KM6YZ"  */
 
   };
 
@@ -72,7 +72,7 @@ const KDP_EXCLUSIVE_IDS = new Set([
 
       const link = SCENE_LINKS[scene.id] ?? null;
 
-/*       li.innerHTML = `
+       li.innerHTML = `
         <figure class="storyboard-scene-image">
           ${link
             ? `<a href="${link}" class="scene-link"><img src="${scene.thumb}" alt="${scene.title}"></a>`
@@ -84,8 +84,8 @@ const KDP_EXCLUSIVE_IDS = new Set([
           <p class="storyboard-scene-title">${scene.title}</p>
           ${scene.text.map(t => `<p>${t}</p>`).join("")}
         </div>
-      `; */
-      li.innerHTML = `
+      `; 
+/*       li.innerHTML = `
   <figure class="storyboard-scene-image">
     ${link
       ? `<a href="${link}" class="scene-link">
@@ -102,7 +102,7 @@ const KDP_EXCLUSIVE_IDS = new Set([
     <p class="storyboard-scene-title">${scene.title}</p>
     ${scene.text.map(t => `<p>${t}</p>`).join("")}
   </div>
-`;
+`; */
 
 
       sceneListEl.appendChild(li);

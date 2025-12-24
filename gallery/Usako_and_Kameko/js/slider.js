@@ -9,8 +9,8 @@ const slides = [
   {
     src: "./thumbnail/usako_and_kameko.webp",
     thumb: "./thumbnail/usako_and_kameko.webp",
-    //href: "https://asunaro0000.github.io/usako-and-kameko/" ,
-    href: "https://www.amazon.co.jp/dp/B0GCD4SCSL" ,
+    href: "https://asunaro0000.github.io/usako-and-kameko/" ,
+    //href: "https://www.amazon.co.jp/dp/B0GCD4SCSL" ,
     title: "ウサ子とカメコ ― Storyboard",
     caption: "雨上がりの森を旅する、ウサ子とカメコ。\n二人の一日を81枚の情景詩として綴りました。"
   },
@@ -38,7 +38,7 @@ function createSlider(mount, slides = []){
   const capEl  = mount.querySelector("#caption");
 
   // slides -> DOM
-/*   track.innerHTML = slides.map(s => `
+   track.innerHTML = slides.map(s => `
     <div class="sld__slide">
       ${s.href ? `<a class="sld__link" href="${s.href}">` : `<span class="sld__link">`}
         <img src="${s.src}" alt="${s.title || ''}" loading="eager">
@@ -51,12 +51,12 @@ function createSlider(mount, slides = []){
     <button class="sld__th" data-i="${i}" aria-label="Preview ${i+1}">
       <img src="${s.thumb || s.src}" alt="">
     </button>
-  `).join(""); */
+  `).join(""); 
 
 const KDP_EXCLUSIVE_HREF = "https://www.amazon.co.jp/dp/B0GCD4SCSL";
 
 // slides -> DOM
-track.innerHTML = slides.map(s => {
+/* track.innerHTML = slides.map(s => {
   const isExclusive = s.href === KDP_EXCLUSIVE_HREF;
 
   return `
@@ -74,7 +74,7 @@ track.innerHTML = slides.map(s => {
       ${s.href ? `</a>` : `</span>`}
     </div>
   `;
-}).join("");
+}).join(""); */
 
 // dots（元に戻す）
 dots.innerHTML = slides

@@ -193,7 +193,7 @@ footer{
    Kindle Exclusive (Slider)
 ================================= */
 
-.sld__slide.kdp-exclusive img {
+/* .sld__slide.kdp-exclusive img {
   filter: brightness(0.45);
 }
 
@@ -217,4 +217,4 @@ footer{
 
 .sld__slide.kdp-exclusive {
   position: relative;
-}
+} */
