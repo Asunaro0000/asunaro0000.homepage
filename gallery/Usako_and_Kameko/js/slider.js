@@ -2,12 +2,15 @@
 const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
+const KDP_EXCLUSIVE_HREF = "https://www.amazon.co.jp/dp/B0GCD4SCSL";
+
 // ---- 編集ポイント：この配列を書き換えて使う ----
 const slides = [
   {
     src: "./thumbnail/usako_and_kameko.webp",
     thumb: "./thumbnail/usako_and_kameko.webp",
-    href: "https://asunaro0000.github.io/usako-and-kameko/" ,
+    //href: "https://asunaro0000.github.io/usako-and-kameko/" ,
+    href: "https://www.amazon.co.jp/dp/B0GCD4SCSL" ,
     title: "ウサ子とカメコ ― Storyboard",
     caption: "雨上がりの森を旅する、ウサ子とカメコ。\n二人の一日を81枚の情景詩として綴りました。"
   },
@@ -35,7 +38,7 @@ function createSlider(mount, slides = []){
   const capEl  = mount.querySelector("#caption");
 
   // slides -> DOM
-  track.innerHTML = slides.map(s => `
+/*   track.innerHTML = slides.map(s => `
     <div class="sld__slide">
       ${s.href ? `<a class="sld__link" href="${s.href}">` : `<span class="sld__link">`}
         <img src="${s.src}" alt="${s.title || ''}" loading="eager">
@@ -48,7 +51,46 @@ function createSlider(mount, slides = []){
     <button class="sld__th" data-i="${i}" aria-label="Preview ${i+1}">
       <img src="${s.thumb || s.src}" alt="">
     </button>
-  `).join("");
+  `).join(""); */
+
+const KDP_EXCLUSIVE_HREF = "https://www.amazon.co.jp/dp/B0GCD4SCSL";
+
+// slides -> DOM
+track.innerHTML = slides.map(s => {
+  const isExclusive = s.href === KDP_EXCLUSIVE_HREF;
+
+  return `
+    <div class="sld__slide ${isExclusive ? "kdp-exclusive" : ""}">
+      ${s.href ? `<a class="sld__link" href="${s.href}" target="_blank" rel="noopener noreferrer">`
+               : `<span class="sld__link">`}
+        <img src="${s.src}" alt="${s.title || ''}" loading="eager">
+        ${isExclusive ? `
+          <span class="kdp-badge">
+            2026年3月25日までKindle独占配信中<br>
+            Kindle Unlimited対応<br>
+            Link Amazon
+          </span>
+        ` : ``}
+      ${s.href ? `</a>` : `</span>`}
+    </div>
+  `;
+}).join("");
+
+// dots（元に戻す）
+dots.innerHTML = slides
+  .map((_, i) => `<button class="sld__dot" data-i="${i}" aria-label="Go to slide ${i + 1}"></button>`)
+  .join("");
+
+// thumbs（元に戻す）
+thumbs.innerHTML = slides.map((s, i) => `
+  <button class="sld__th" data-i="${i}" aria-label="Preview ${i + 1}">
+    <img src="${s.thumb || s.src}" alt="">
+  </button>
+`).join("");
+
+
+
+
 
   let idx = 0, n = slides.length;
   function update(i){
