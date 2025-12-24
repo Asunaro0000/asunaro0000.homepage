@@ -133,3 +133,37 @@
 
 
 
+/* ===== Kindle Exclusive Badge ===== */
+/* ===== Kindle Exclusive Overlay ===== */
+.storyboard-scene-image {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 画像を暗くする */
+.storyboard-scene-image img {
+  transition: filter 0.3s ease;
+}
+
+.storyboard-scene-image .kdp-exclusive-badge {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+
+  pointer-events: none;
+}
+
+/* バッジがあるときだけ暗転 */
+.storyboard-scene-image:has(.kdp-exclusive-badge) img {
+  filter: brightness(0.55);
+}
