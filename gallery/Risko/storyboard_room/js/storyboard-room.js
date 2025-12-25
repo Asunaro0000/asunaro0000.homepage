@@ -4,20 +4,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // 各シーンの外部リンク
   const SCENE_LINKS = {
     "scene-001": "https://asunaro0000.github.io/risuko/",
-     "scene-002": "./scenes/The-Winter-Encounter/index.html",
+    "scene-002": "./scenes/The-Winter-Encounter/index.html",
     "scene-003": "./scenes/This-Is-Our-Place/index.html",
-    "scene-004": "./scenes/Aiming-for-the-summit/index.html" 
+    "scene-004": "./scenes/Aiming-for-the-summit/index.html" ,
+    "scene-005": "./scenes/04_The-Songstresses-and-Their-First-Fan/index.html" 
+
+
 /*     "scene-002": "https://www.amazon.co.jp/dp/B0GC8KM6YZ",
     "scene-003": "https://www.amazon.co.jp/dp/B0GC8KM6YZ",
     "scene-004": "https://www.amazon.co.jp/dp/B0GC8KM6YZ"  */
 
   };
 
-const KDP_EXCLUSIVE_IDS = new Set([
+/* const KDP_EXCLUSIVE_IDS = new Set([
   "scene-002",
   "scene-003",
   "scene-004"
-]);
+]); */
 
 
   const SCENES = [
@@ -57,6 +60,16 @@ const KDP_EXCLUSIVE_IDS = new Set([
         "いま目の前の景色が、ぴったり重なった。",
         "「いま行かなきゃ！」",
         "そう思ったら、もう止まれなかった。"
+      ]
+    },
+    {
+      id: "scene-005",
+      thumb: "./assets/images/04.webp",
+      title: "#04 歌姫達と初めてのファン。",
+      text: [
+        "雪の森で、リス子とスズ子は音を探しました。",
+        "笛を吹くと、いつもタヌキが聞きに来ます。",
+        "気づけば今度は歌が始まり、森が客席になりました。"
       ]
     },
 
