@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "scene-003": "./scenes/This-Is-Our-Place/index.html",
     "scene-004": "./scenes/Aiming-for-the-summit/index.html" ,
     "scene-005": "./scenes/04_The-Songstresses-and-Their-First-Fan/index.html" ,
-    "scene-006": "./scenes/05_Feather-Letter-and-the-Forest-Signposts/index.html" 
+    "scene-006": "./scenes/05_Feather-Letter-and-the-Forest-Signposts/index.html" ,
+    "scene-007": "./scenes/06_Busy-Day-at-the-Chicken-Coop/index.html" 
 
 
 /*     "scene-002": "https://www.amazon.co.jp/dp/B0GC8KM6YZ",
@@ -81,6 +82,16 @@ document.addEventListener("DOMContentLoaded", () => {
         "雪の森で、リス子とスズ子は白紙の手紙を預かりました。",
         "理由は分からないけれど、フクロウの顔はやけに真剣です。",
         "どうやら森では、文字より気持ちが先に届くらしい。"
+      ]
+    },
+    {
+      id: "scene-007",
+      thumb: "./assets/images/06.webp",
+      title: "#06 鶏小屋での慌ただしい一日。",
+      text: [
+        "掃除中の油断から鶏が雪原へ逃げ出し、リス子とスズ子は追いかけることに。",
+        "近づけば逃げ、落ち込んではやり方を変え、少しずつ距離が縮まっていく。",
+        "別の鶏、卵を守る行動、新しい作戦――対応はまだ続いていきます。"
       ]
     },
 
