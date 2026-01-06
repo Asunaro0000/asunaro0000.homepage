@@ -168,3 +168,13 @@
   filter: brightness(0.55);
 }
  */
+
+ .storyboard-intro-note a {
+  color: #41e9e9;          /* 控えめなリンク色 */
+  text-decoration: underline;
+}
+
+.storyboard-intro-note a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
