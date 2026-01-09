@@ -18,7 +18,7 @@
         "./assets/bookmarks/set1_3.webp",
       ],
       caption: "森と冬の空気を閉じ込めた、静かな色合いの栞です。",
-      href: "https://booth.pm",         // 実際のBOOTH URLに差し替え
+      href: "https://asunaro0000.booth.pm/items/7743487",         // 実際のBOOTH URLに差し替え
       btnLabel: "▶ セットAを見る"
     },
     {
@@ -28,7 +28,7 @@
         "./assets/bookmarks/set2_2.webp",
       ],
       caption: "栞の背面デザインです。",
-      href: "https://booth.pm",
+      href: "https://asunaro0000.booth.pm/items/7743487",
       btnLabel: "▶ セットAを見る"
 
     },
