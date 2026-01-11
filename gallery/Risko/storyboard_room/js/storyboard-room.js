@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "scene-004": "./scenes/Aiming-for-the-summit/index.html" ,
     "scene-005": "./scenes/04_The-Songstresses-and-Their-First-Fan/index.html" ,
     "scene-006": "./scenes/05_Feather-Letter-and-the-Forest-Signposts/index.html" ,
-    "scene-007": "./scenes/06_Busy-Day-at-the-Chicken-Coop/index.html" 
+    "scene-007": "./scenes/06_Busy-Day-at-the-Chicken-Coop/index.html" ,
+    "scene-008": "./scenes/07_Warm-Moment-in-Winter/index.html" 
 
 
 /*     "scene-002": "https://www.amazon.co.jp/dp/B0GC8KM6YZ",
@@ -94,6 +95,16 @@ document.addEventListener("DOMContentLoaded", () => {
         "別の鶏、卵を守る行動、新しい作戦――対応はまだ続いていきます。"
       ]
     },
+  {
+    id: "scene-008",
+    thumb: "./assets/images/07.webp",
+    title: "#07 冬のもふもふと、あたたかな居場所。",
+    text: [
+      "寒い冬の森で、リス子とスズ子はコーヒーやもふもふを頼りに体を温めます。",
+      "雨の中で出会った子羊をきっかけに、夜の森を進み、群れを探すことに。",
+      "たどり着いた先で見つけたのは、体も心も落ち着く、安心できる場所でした。"
+    ]
+  },
 
   ];
 
