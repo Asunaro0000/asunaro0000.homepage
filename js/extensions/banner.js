@@ -17,9 +17,9 @@
     }, 
     {
       src: "./assets/banner/banner12.webp",
-      caption: "リス子のストーリーボードはこちらへ",
+      caption: "リス子のストーリーボードはこちら",
       href: "./gallery/Risko/storyboard_room/index.html",
-      btnLabel: "▶ リス子の友だち自慢部屋「白リスのスズ子」へ"
+      btnLabel: "▶ リス子のストーリーボードルームへ"
     }, 
     /*{
       src: "./assets/banner/banner8.webp",
