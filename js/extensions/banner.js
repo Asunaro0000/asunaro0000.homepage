@@ -10,12 +10,18 @@
   // ★ ここを差し替えれば内容を自由に増減できる
   const banners = [
     {
-      src: "./assets/banner/banner9.webp",
-      caption: "リス子の友だち自慢部屋「白リスのスズ子」はこちらから。",
-      href: "./gallery/Risko/suzuko_room/index.html",
-      btnLabel: "▶ リス子の友だち自慢部屋「白リスのスズ子」へ"
+      src: "./assets/banner/banner11.webp",
+      caption: "Xの日々のつぶやきをまとめています。",
+      href: "./gallery/Risko/risuko_X/index.html",
+      btnLabel: "▶ X投稿まとめ「森のつぶやき部屋」へ"
     }, 
     {
+      src: "./assets/banner/banner12.webp",
+      caption: "リス子のストーリーボードはこちらへ",
+      href: "./gallery/Risko/storyboard_room/index.html",
+      btnLabel: "▶ リス子の友だち自慢部屋「白リスのスズ子」へ"
+    }, 
+    /*{
       src: "./assets/banner/banner8.webp",
       caption: "フォトルーム「リリと楓の雪山登山」はこちらから。",
       href: "./gallery/lili_and_kaede/photo_snow_mountain/index.html",
@@ -45,7 +51,7 @@
       href: "./gallery/Risko/risuko_room/index.html",
       btnLabel: "▶ リス子のパノラマへ"
     },
-    /*{
+    {
       src: "./assets/banner/banner3.webp",
       caption: "栞の森の背景美術ルームをオープンしました。",
       href: "./gallery/renewal-of-the-forest-covenant/Forest_of_Story_Marks/index.html",
@@ -56,13 +62,13 @@
       caption: "カメコの日常、一枚絵のギャラリーを公開しました。",
       href: "./gallery/Usako_and_Kameko/kameko_diary/index.html",
       btnLabel: "▶ カメコの日常へ"
-    },
+    },*/
     {
       src: "./assets/banner/banner1.webp",
       caption: "ウサ子の日常、一枚絵のギャラリーを公開しました。",
       href: "./gallery/Usako_and_Kameko/usako_diary/index.html",
       btnLabel: "▶ ウサ子の日常へ"
-    },*/
+    },
 
   ];
 

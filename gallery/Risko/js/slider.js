@@ -25,6 +25,13 @@ const slides = [
     title: "リス子の友だち自慢部屋:白リスのスズ子 ― Single Scene",
     caption: "リス子がキラッキラの白リス“スズ子”連れてきた！"
   },
+  {
+    src: "./thumbnail/kv04.webp",
+    thumb: "./thumbnail/kv04.webp",
+    href: "./risuko_X/index.html",
+    title: "森のつぶやき部屋",
+    caption: "Xで綴ってきた日々のつぶやきをまとめました。リス子とスズ子の、森での楽しい時間をお楽しみください。"
+  },
 
 ];
 

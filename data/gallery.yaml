@@ -28,14 +28,17 @@ exhibits:
         thumb: ./story_board/kv01.png
         #href: ./story_board/ # フォルダを作ったら相対で
         title: "ウサ子とカメコ"
+
+      - src: ./story_board/kv01.webp
+        thumb: ./story_board/kv01.webp
+        #href: ./story_board/
+        title: "森の贈りもの ― リス子の小さな旅"
+
       - src: ./story_board/kv02.png
         thumb: ./story_board/kv02.png
         #href: ./story_board/
         title: "森の契約更新譚"
-      - src: ./story_board/kv03.png
-        thumb: ./story_board/kv03.png
-        #href: ./story_board/
-        title: "森の贈りもの ― リス子の小さな旅"
+
       - src: ./story_board/kv04.png
         thumb: ./story_board/kv04.png
         #href: ./story_board/
