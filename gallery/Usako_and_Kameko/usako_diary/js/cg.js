@@ -7,9 +7,10 @@ const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
  * 番号（ファイル名の頭文字）: "表示したい名前"
  */
 const groupNames = {
-  "1": "日常アート：ウサ子の日常",
-  "2": "舞踊アート：ウサ子の舞踊",
-  "3": "風景アート：ウサ子の街角",
+  "1": "日常アート",
+  "2": "舞踊アート",
+  "2ab": "演舞アート", // 2aと2bをここにまとめます
+  "3": "風景アート",
   // 4, 5... と増えたらここに追加するだけ
 };
 
@@ -205,6 +206,46 @@ const items = [
   { src: './images/2-66.webp', title: '団扇に込める気韻' },
   { src: './images/2-67.webp', title: 'しなやかな背の反り' },
 
+{ src: './images/2a-1.webp', title: '地を蹴る、熱を編む', caption: '' },
+  { src: './images/2a-2.webp', title: '思考を研ぐ、無音の空間', caption: '' },
+  { src: './images/2a-3.webp', title: '夢の淵、熱をほどく', caption: '' },
+  { src: './images/2a-4.webp', title: '爪先から、空を泳ぐ', caption: '' },
+  { src: './images/2a-5.webp', title: '青い袖、自由を謳歌', caption: '' },
+  { src: './images/2a-6.webp', title: '風を切り、光を束ねる', caption: '' },
+  { src: './images/2a-7.webp', title: '重力を脱ぎ、天を蹴る', caption: '' },
+  { src: './images/2a-8.webp', title: '静止、揺れる心の輪郭', caption: '' },
+  { src: './images/2a-9.webp', title: '微笑、鼓動が花開く', caption: '' },
+  { src: './images/2a-10.webp', title: '仰ぐ、金のさざめき', caption: '' },
+{ src: './images/2a-11.webp', title: '枝に遊び、春を招く', caption: '' },
+  { src: './images/2a-12.webp', title: '正対、青に溶ける私', caption: '' },
+  { src: './images/2a-13.webp', title: '黄金の扇、風を飼う', caption: '' },
+  { src: './images/2a-14.webp', title: '鏡合わせ、意志を研ぐ', caption: '' },
+  { src: './images/2a-15.webp', title: '面影、蒼き獣の咆哮', caption: '' },
+  { src: './images/2a-16.webp', title: '森閑、霊獣と歩む道', caption: '' },
+  { src: './images/2a-17.webp', title: '光射す、舞の余韻', caption: '' },
+  { src: './images/2a-18.webp', title: '朱を背負い、天を舞う', caption: '' },
+{ src: './images/2a-19.webp', title: '旋風、紅の残像をまとう', caption: '' },
+  { src: './images/2a-20.webp', title: '春光、呼吸が透き通る', caption: '' },
+
+{ src: './images/2b-1.webp', title: 'リズム跳ねる、打楽の音。', caption: '' },
+  { src: './images/2b-2.webp', title: '窓際の光、柔らかな音', caption: '' },
+  { src: './images/2b-3.webp', title: '竹笛が震わす、喉の熱', caption: '' },
+  { src: './images/2b-4.webp', title: '春風とハミング、三味線', caption: '' },
+  { src: './images/2b-5.webp', title: '撥が叩く、空気の膜', caption: '' },
+  { src: './images/2b-6.webp', title: '指の腹、弦の震えと熱', caption: '' },
+  { src: './images/2b-7.webp', title: '爆ぜる音、胸を叩く律', caption: '' },
+  { src: './images/2b-8.webp', title: '水面を渡る、笛の吐息', caption: '' },
+  { src: './images/2b-9.webp', title: '高鳴る胸、跳ねる撥音', caption: '' },
+  { src: './images/2b-11.webp', title: '青空に響く、三線の音', caption: '' },
+  { src: './images/2b-12.webp', title: '秋風を叩く、紅の鼓動', caption: '' },
+  { src: './images/2b-13.webp', title: '霊獣と舞う、月下の弦', caption: '' },
+  { src: './images/2b-14.webp', title: '竹林を抜ける、笛の風', caption: '' },
+  { src: './images/2b-15.webp', title: '乱舞する、勇壮なる鼓', caption: '' },
+  { src: './images/2b-16.webp', title: '水面に溶ける、竪琴の詩', caption: '' },
+  { src: './images/2b-17.webp', title: '桜舞う、春陽の調べ', caption: '' },
+  { src: './images/2b-18.webp', title: '夕映えに踊る、琵琶の情', caption: '' },
+  { src: './images/2b-19.webp', title: '天を仰ぐ、歓喜の旋律', caption: '' },
+
   { src: './images/3-1.webp', title: '光の深呼吸', caption: '背筋を伸ばすと、木の香りが胸に満ちていく。' },
 { src: './images/3-2.webp', title: '指先に宿る物語', caption: '棚に並ぶお面に触れると、懐かしい鼓動が伝わってくる。' },
 { src: './images/3-3.webp', title: '空を仰ぐ決意', caption: '幕を握りしめ、高鳴る胸と一緒に青い空へ飛び出す。' },
@@ -277,9 +318,17 @@ const zoneNext = $(".lb__zone--next");
 const btnClose = $(".lb__close");
 
 // ファイル名からグループ番号を抽出
+// 【修正後】
 function getGroupId(src) {
   const filename = src.split('/').pop();
-  return filename.split('-')[0];
+  let id = filename.split('-')[0];
+  
+  // 「2a」または「2b」の場合は「2ab」というグループに統合する
+  if (id === "2a" || id === "2b") {
+    return "2ab";
+  }
+  
+  return id;
 }
 
 // ギャラリー描画
