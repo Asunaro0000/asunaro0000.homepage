@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>七曜循環の壁画 — Asunaro Works</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.data.tracking.ga_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.data.tracking.ga_id }}');
+  </script>
+
+  <!-- Pinterest Verify -->
+  <meta name="p:domain_verify" content="{{ site.data.tracking.pinterest_verify }}"/>
+
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){
+  w[l]=w[l]||[];
+  w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+  var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),
+  dl=l!='dataLayer'?'&l='+l:'';
+  j.async=true;
+  j.src='https://www.googletagmanager.com/gtm.js?id={{ site.data.tracking.gtm_id }}' + dl;
+  f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','{{ site.data.tracking.gtm_id }}');
+</script>
+<!-- End Google Tag Manager -->
+
+  <!-- Optional: project header -->
+  <link rel="stylesheet" href="../../../css/header.css">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJ395RM"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header class="nav">
+      <a class="brand" href="../../../">Asunaro Works</a>
+      <a class="go-up" href="../" title="一つ上の階へ">⏶</a>
+      <nav aria-label="Primary">
+        <a href="../../../gallery/">Gallery</a>
+        <a href="../../../about/">About/Contact</a>
+<!--         <a href="../../../process/">Process</a>
+        <a href="../../../contact/">Contact</a> -->
+        <a href="../../../link/">Link</a>
+        <a href="../../../sitemap/">Sitemap</a>
+        <a href="../../../goods/">Goods</a>
+        <a href="https://www.patreon.com/Asunaro0000" style="color:#ffd54a;">
+        Patreon: Archive Updates
+      </a>
+       
+      </nav>
+  </header>
+<body>
+<div class="room-header-line">
+  <span class="room-title">Seven-Day Rotating Wall Gallery</span>
+  <span class="divider">—</span>
+  <span class="room-subtitle">A room where the wall shifts with the seven-day cycle.
+  Today's arrangement marks the world's current position.</span>
+</div>
+
+   
+    
+    <!-- デバッグ用：曜日切り替えボタン 
+    <div class="day-debug">
+      <span class="day-debug__label">Debug:</span>
+      <button type="button" class="day-btn" data-day="1">Mon</button>
+      <button type="button" class="day-btn" data-day="2">Tue</button>
+      <button type="button" class="day-btn" data-day="3">Wed</button>
+      <button type="button" class="day-btn" data-day="4">Thu</button>
+      <button type="button" class="day-btn" data-day="5">Fri</button>
+      <button type="button" class="day-btn" data-day="6">Sat</button>
+      <button type="button" class="day-btn" data-day="0">Sun</button>
+    </div>-->
+
+    <!-- 1行2枚レイアウト -->
+    <div id="grid-rows" class="grid-rows"></div>
+  </div>
+
+  <!-- クリックで最大化表示するライトボックス -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <img id="lightboxImage" src="" alt="full view" />
+  </div>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
+
+

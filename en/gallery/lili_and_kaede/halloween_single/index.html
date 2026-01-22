@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lili & Kaede — Happy Halloween! Panorama | Asunaro Works</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.data.tracking.ga_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.data.tracking.ga_id }}');
+  </script>
+
+  <!-- Pinterest Verify -->
+  <meta name="p:domain_verify" content="{{ site.data.tracking.pinterest_verify }}"/>
+
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){
+    w[l]=w[l]||[];
+    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),
+    dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id={{ site.data.tracking.gtm_id }}' + dl;
+    f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ site.data.tracking.gtm_id }}');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Global header / base styles -->
+  <link rel="stylesheet" href="../../../css/header.css">
+  <link rel="stylesheet" href="../../../css/style.css">
+
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="./css/panorama.css">
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJ395RM"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Global header -->
+  <header class="nav">
+    <a class="brand" href="../../../">Asunaro Works</a>
+    <a class="go-up" href="../" title="一つ上の階へ">⏶</a>
+    <nav aria-label="Primary">
+      <a href="../../../gallery/">Gallery</a>
+      <a href="../../../about/">About/Contact</a>
+<!--       <a href="../../../process/">Process</a>
+      <a href="../../../contact/">Contact</a> -->
+      <a href="../../../link/">Link</a>
+      <a href="../../../sitemap/">Sitemap</a>
+      <a href="../../../goods/">Goods</a>
+      <a href="https://www.patreon.com/Asunaro0000" style="color:#ffd54a;">
+        Patreon: Archive Updates
+      </a>
+      <a href="https://asunaro0000.github.io/asunaro0000.homepage/gallery/lili_and_kaede/halloween_single/index.html">🌐 JP</a>
+    </nav>
+  </header>
+
+<main class="pano-container">
+  <h1>Lili & Kaede — Happy Halloween! Panorama Gallery</h1>
+
+  <p class="pano-lead">
+    A panoramic exhibition featuring three Halloween stories.<br>
+    Click or swipe to move through each scene.
+  </p>
+
+  <!-- Tabs -->
+  <div class="pano-tabs" role="tablist" aria-label="Panorama sets">
+    <button class="pano-tab is-active" type="button" data-pano-set="1">Room 1</button>
+    <button class="pano-tab" type="button" data-pano-set="2">Room 2</button>
+    <button class="pano-tab" type="button" data-pano-set="3">Room 3</button>
+    <button id="bgmToggle" class="pano-bgm-btn" type="button">
+      BGM: OFF
+    </button>
+  </div>
+
+  <!-- Panorama body -->
+  <section class="panorama-wrap">
+    <div class="panorama" id="panorama"></div>
+  </section>
+
+  <!-- End button -->
+  <div class="pano-goto">
+    <a id="panoGotoBtn" class="pano-goto__btn pano-disabled" href="#">
+      
+    </a>
+  </div>
+
+  <!-- BGM -->
+  <audio id="bgmAudio" preload="auto" loop></audio>
+</main>
+
+<!-- Scripts -->
+<script src="./js/bgm.js"></script>
+<script src="./js/panorama.js"></script>
+<script type="module" src="../../../js/extensions/nav-toggle.js"></script>
+
+<footer>
+  <span>© 2025 Asunaro Works. All rights reserved.</span>
+</footer>
+
+</body>
+</html>

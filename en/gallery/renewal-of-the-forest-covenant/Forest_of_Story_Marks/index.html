@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forest of Story Marks — Asunaro Works</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.data.tracking.ga_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.data.tracking.ga_id }}');
+  </script>
+
+  <!-- Pinterest Verify -->
+  <meta name="p:domain_verify" content="{{ site.data.tracking.pinterest_verify }}"/>
+
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){
+    w[l]=w[l]||[];
+    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),
+    dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id={{ site.data.tracking.gtm_id }}' + dl;
+    f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ site.data.tracking.gtm_id }}');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Optional: project header -->
+  <link rel="stylesheet" href="../../../css/header.css">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <link rel="stylesheet" href="./css/cg.css">
+
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJ395RM"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header class="nav">
+      <a class="brand" href="../../../">Asunaro Works</a>
+      <a class="go-up" href="../" title="一つ上の階へ">⏶</a>
+      <nav aria-label="Primary">
+        <a href="../../../gallery/">Gallery</a>
+        <a href="../../../about/">About/Contact</a>
+<!--         <a href="../../../process/">Process</a>
+        <a href="../../../contact/">Contact</a> -->
+        <a href="../../../link/">Link</a>
+        <a href="../../../sitemap/">Sitemap</a>
+        <a href="../../../goods/">Goods</a>
+        <a href="https://www.patreon.com/Asunaro0000" style="color:#ffd54a;">
+        Patreon: Archive Updates
+      </a>
+        <a href="https://asunaro0000.github.io/asunaro0000.homepage/gallery/renewal-of-the-forest-covenant/Forest_of_Story_Marks/index.html">🌐 JP</a>
+      </nav>
+  </header>
+
+  <main class="container">
+    <h1>Forest of Story Marks</h1>
+    <p class="lead">
+      A collection of moments preserved like bookmarks —  
+      scenes drawn through quiet, atmospheric background art.
+    </p>
+
+    <section id="cardGallery" class="cards"></section>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-modal="true" role="dialog" hidden>
+    <button class="lb__close" type="button" aria-label="Close">×</button>
+    <figure class="lb__stage">
+      <img id="lbImg" alt="">
+      <figcaption>
+        <h3 id="lbTitle"></h3>
+        <p id="lbCaption"></p>
+      </figcaption>
+    </figure>
+
+    <!-- click zones -->
+    <div class="lb__zone lb__zone--prev" aria-hidden="true"></div>
+    <div class="lb__zone lb__zone--next" aria-hidden="true"></div>
+  </div>
+
+  <script src="./js/cg.js"></script>
+  <script type="module" src="../../../js/extensions/nav-toggle.js"></script>
+
+</body>
+</html>

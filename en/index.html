@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- GitHub Pages（プロジェクトサイト）用：必ず最初に置く -->
+  <!-- <base href="/asunaro0000.homepage/">-->
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Asunaro Works</title>
+
+  <!-- Open Graph (for Pinterest and social previews) -->
+  <meta property="og:site_name" content="Asunaro Works" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta property="og:title" content="Asunaro Works" />
+  <meta property="og:description" content="Interactive art galleries and storyboards by Asunaro Works." />
+  <meta property="og:url" content="https://asunaro0000.github.io/asunaro0000.homepage-en/" />
+
+  <meta property="og:image" content="https://asunaro0000.github.io/asunaro0000.homepage-en/assets/banner/banner1.webp" />
+  <meta property="og:image:alt" content="Asunaro Works banner" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCR09VMKR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1NCR09VMKR');
+  </script>
+
+  <!-- Pinterest Verify -->
+ <meta name="p:domain_verify" content="d57a228b61f6ea3435efa630b2165165"/>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5SJ395RM');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- アセット -->
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/calendar.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/risuko-stamp.css">
+  <link rel="stylesheet" href="./css/risuko-stamp2.css">
+  <link rel="stylesheet" href="./css/banner_style.css">
+  <link rel="stylesheet" href="./css/home_layout.css">
+  <link rel="stylesheet" href="./css/enter.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+</head>
+<style>
+/*body {
+  margin: 0;
+  background-image: url("assets/backgrounds/top-bg.jpg"); 
+  background-size: cover;     
+  background-position: center; 
+  background-repeat: no-repeat;  
+  background-attachment: fixed;
+}*/
+</style>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJ395RM"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+
+  <header class="nav">
+    <a class="brand" href="./">Asunaro Works</a>
+    <nav>
+      <a href="gallery/">Gallery</a>
+      <a href="about/">About/Contact</a>
+<!--       <a href="process/">Process</a>
+      <a href="contact/">Contact</a> -->
+      <a href="link/">Link</a>
+      <a href="sitemap/">Sitemap</a>
+      <a href="goods/">Goods</a>
+      <a href="https://www.patreon.com/Asunaro0000" style="color:#ffd54a;">
+        Patreon: Archive Updates
+      </a>
+      <a href="https://asunaro0000.github.io/asunaro0000.homepage/">🌐 JP</a>
+    </nav>
+  </header>
+
+  <main class="section">
+
+    <!-- ▼ 1. Hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>AI Art Story Exhibition</h1> 
+        <p class="lead">—— Exploring Character Versatility through Composition and AI ——</p>
+        <a class="btn-enter" href="gallery/">ENTER</a>
+        <a class="patreon" href="https://www.patreon.com/Asunaro0000">Patreon: Production materials & rough sketches now being released.</a>
+        <a class="latest-update" href="gallery/Risko/storyboard_room/index.html">
+          Latest Update: Risuko's Storyboard, #08 The Start of a New Feast.
+        </a>
+        <a class="latest-update" href="gallery/Usako_and_Kameko/usako_diary/index.html">
+          Latest Update: New additions to Usako's Everyday, Dance, and Scenery Art.
+        </a>
+      </div>
+    </section>
+
+    <!-- ▼ 2. Risuko + Banner -->
+    <section class="feature-row">
+
+      <!-- Left: Risuko -->
+      <div class="feature-row__col feature-row__col--main">
+        <section class="risuko"></section>
+        <div class="risuko-wrap">
+          <div id="risuko-dynamic" aria-live="polite">
+
+            <!-- A mode (calendar) -->
+            <div id="risuko-calendar" class="risuko-stamp is-hidden" aria-hidden="true">
+              <img id="risuko-calendar-img" src="" alt="Risuko calendar">
+              <p id="risuko-calendar-text" class="risuko-caption"></p>
+	            <p>Risko Calendar 2026 — now available on BOOTH 🐿️</p>
+              <button id="risuko-calendar-btn" class="risuko-btn" type="button">Go to shop</button>
+            </div>
+
+            <!-- B mode (stamp) -->
+            <div id="risuko-stamp" class="risuko-stamp" aria-hidden="false">
+              <img id="risuko-stamp-img" src="" alt="Risuko of the day">
+              <p id="risuko-stamp-text" class="risuko-caption"></p>
+              <p>Risko Stamps — now available on Line Store 🐿️</p>
+              <button id="risuko-stamp-btn" class="risuko-btn" type="button">Go to shop</button>
+            </div>
+
+            <!-- C mode (stamp2) -->
+            <!--<div id="risuko-stamp-2" class="risuko-stamp is-hidden" aria-hidden="true">
+              <img id="risuko-stamp-img-2" src="" alt="Risuko alternate">
+              <p id="risuko-stamp-text-2" class="risuko-caption"></p>
+              <button id="risuko-stamp-btn-2" class="risuko-btn" type="button">Go to goods</button>
+            </div>-->
+
+
+          </div>
+
+          <!-- Mode switch controls -->
+          <div class="controls" style="display:flex;gap:12px;justify-content:center;margin-top:8px">
+            <button id="prevMode" class="ctrl" type="button" aria-label="Previous"
+              style="width:34px;height:34px;border:none;border-radius:8px;background:#ffd86a;color:#333;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+              </svg>
+            </button>
+            <button id="nextMode" class="ctrl" type="button" aria-label="Next"
+              style="width:34px;height:34px;border:none;border-radius:8px;background:#ffd86a;color:#333;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
+              </svg>
+            </button>
+            <a id="risuko-stamp-link" class="goods-link" href="./goods/">Goods Room</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Auto Banner -->
+      <div class="feature-row__col feature-row__col--side">
+        <section class="top-banner">
+          <div class="top-banner__image-wrap">
+            <img
+              id="bannerImage"
+              src="./assets/banner/banner1.webp"
+              alt="Asunaro Works banner"
+            >
+          </div>
+
+          <div class="top-banner__text">
+            <p id="bannerCaption" class="top-banner__caption">
+              The daily life of Usako & Kameko — a new gallery is now available.
+            </p>
+
+            <a
+              id="bannerLink"
+              class="top-banner__btn"
+              href="./gallery/Usako_and_Kameko/"
+            >
+              ▶ Visit Usako & Kameko Gallery
+            </a>
+            Regularly updated
+            <div class="top-banner__dots" id="bannerDots" aria-label="Banner position indicator"></div>
+          </div>
+        </section>
+      </div>
+    </section>
+  <!-- ======================
+       2. Calendar
+  ====================== -->
+  <section id="forest-calendar" style="width:100%;max-width:960px;text-align:center;padding:0 16px;">
+
+  <h2 style="font-size:18px;margin-bottom:8px;">Seven-Day Rotating Wall Gallery</h2>
+  <p style="font-size:13px;line-height:1.7;opacity:.8;margin:0 0 18px;">
+    The wall's scenery shifts gently with each day of the week.<br>
+    This room allows you to observe the world's slow formation — its flow, structure, and quiet history.<br>
+    A fragment of the story is added every day.<br>
+    Click to enter the gallery.
+  </p>
+
+
+    <!-- working calendar -->
+<section class="calendar-strip-wrapper" style="margin-top:20px;margin-bottom:0;">
+
+  <div class="month-block">
+    <figure class="month-image-frame">
+      <img id="month-image" src="assets/calendar/1-1.webp" alt="Month illustration" loading="lazy" data-index="0" />
+    </figure>
+
+    <div class="calendar-strip">
+      <div class="strip-header">
+        <span id="strip-label" class="strip-label">Year 2026 · 1</span>
+      </div>
+
+      <div class="strip-right">
+        <div id="strip-weekdays" class="strip-row strip-weekdays"></div>
+        <div id="strip-dates" class="strip-row strip-dates"></div>
+      </div>
+
+      <div class="strip-signature">Asunaro Works</div>
+    </div>
+  </div>
+<!-- ★ デバッグ用：曜日切り替えボタン 
+<div class="debug-week-switch">
+  <button data-week="0">Sun</button>
+  <button data-week="1">Mon</button>
+  <button data-week="2">Tue</button>
+  <button data-week="3">Wed</button>
+  <button data-week="4">Thu</button>
+  <button data-week="5">Fri</button>
+  <button data-week="6">Sat</button>
+</div>-->
+
+
+</section>
+
+
+    <!-- ▼ 3. Forest Map -->
+    <section class="sitemap-section">
+      <h2>Site Map – Forest Map</h2>
+      <p class="sitemap-text">
+        This index page maps the Asunaro Works series as a forest trail.<br>
+        You can explore each entrance such as “CyberCats”, “PrismCat”, “Risuko”, and “Usako & Kameko”.
+      </p>
+      <a class="sitemap-btn" href="./sitemap/">
+        🗺️ Open Forest Map
+      </a>
+    </section>
+
+    <!-- ▼ 4. News -->
+    <section class="news">
+      <h2>News</h2>
+      <ul>
+        <li><strong>2026-1-22:</strong> Added Lisko’s storyboard room, "#08 The Start of a New Feast." 🐿️</li>
+        <li><strong>2026-1-20:</strong> Added Usako’s daily life, "The Art of Performance." </li>        
+        <li><strong>2026-1-17:</strong> The Forest Murmur Room of Risuko is now open. Daily posts from X are featured.</li>
+        <li><strong>2026-1-15:</strong> Added Usako's Daily Life Art, "Dance Art," and "Scenery Art." </li>
+        <li><strong>2026-1-11:</strong> Added Risuko's storyboard room "#07 Warm Moment in Winter." 🐿️</li>
+   <!--        <li><strong>2026-1-10:</strong> Started selling "Risuko & Usako Wallpaper Art" on Itch. Updated the Goods page.</li>
+        <li><strong>2026-1-8:</strong> Started selling "Risuko Pose Collection and Storyboard Asset Pack" on BOOTH. Updated the Goods page.</li>
+        <li><strong>2026-1-3:</strong> Added Risuko's storyboard room "#06 Busy Day at the Chicken Coop." 🐿️</li>
+        <li><strong>2025-12-28:</strong> Added Risuko's storyboard room "#05 Feather Letter and the Forest Signposts." 🐿️</li>
+        <li><strong>2025-12-25:</strong> Started Kindle distribution of the Usako and Kameko storyboard.</li>
+        <li><strong>2025-12-25:</strong> Started Kindle distribution of Risuko's storyboard #01–#03. 🐿️</li>
+        <li><strong>2025-12-18：</strong> Added Risuko's storyboard room "#03 Aiming for the summit. " 🐿️</li>
+        <li><strong>2025-12-15：</strong> Added Risuko's storyboard room "#02 This Is Our Place." 🐿️</li>
+      <li><strong>2025-12-12:</strong> Added Risuko's storyboard room, "#01 The Day We Met in the Snowy Forest." 🐿️</li>
+        <li><strong>2025-12-12:</strong> Renewed Risuko's storyboard room. The story will be expanded with numbered entries. 🐿️</li>
+	      <li><strong>2025-12-09:</strong> Risuko’s “Friend-Brag” Room: “Snow-White Squirrel Suzuko” is now open. 🐿️</li>
+        <li><strong>2025-12-03:</strong> Started selling "Risuko Calendar 2026" on BOOTH 🐿️</li>
+       <li><strong>2025-12-03:</strong> Released the "Lili and Kaede’s Snow-Mountain Climb” Photo Room. </li>  
+        <li><strong>2025-11-24:</strong> Released the “Seven-Day Rotating Wall Gallery”. The mural changes with each day of the week. </li>  
+        <li><strong>2025-11-19:</strong> Released “Forest Activity Room”, the background art archive of <em>Renewal of the Forest Covenant</em>.</li>
+         <li><strong>2025-11-19:</strong> Published “Spirit Forest” from <em>Renewal of the Forest Covenant</em>.</li>
+        <li><strong>2025-11-18:</strong> Added site map and top banner.</li>
+   <li><strong>2025-11-18:</strong> Released Lili & Kaede “Halloween Panorama Gallery”.</li>
+        <li><strong>2025-11-18:</strong> Released Risuko “Panorama Gallery”.</li>
+        <li><strong>2025-11-14:</strong> Released “Shiori no Mori”, background art from <em>Renewal of the Forest Covenant</em>.</li>-->
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© 2025 Asunaro Works. All rights reserved.</span>
+  </footer>
+
+  <!-- ▼ Scripts -->
+  <script type="module" src="./js/extensions/nav-toggle.js"></script>
+  <script src="./js/extensions/risuko-stamp2.js" defer></script>
+  <script src="./js/extensions/risuko-calender.js" defer></script> 
+  <script src="./js/extensions/risuko-stamp.js" defer></script>
+  <script src="./js/extensions/risuko-stamp-toggle.js" defer></script>
+  <script src="./js/extensions/risuko-preload.js" defer></script>
+  <script src="./js/extensions/banner.js" defer></script>
+  <script src="./js/extensions/calendar.js" defer></script>
+</body>
+</html>

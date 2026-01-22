@@ -1,0 +1,45 @@
+gallery:
+  - id: "prismcat"
+    title: "PrismCat Memory"
+    cover: "assets/gallery/prismcat/cover.webp"
+    tagline: "Every touch makes a memory glow."
+    color: "#b6e3ff"
+    order: 1
+
+games:
+  - id: prismcat
+    #title: "PrismCat Memory — Spectrum of Memory"
+    #subtitle: "Phase 1–5 / Album Unlocked"
+    #cta: { label: "Play", href: "./prismcat/" } # Only decide this part
+    slides:
+      - src: ./hero01.webp
+        thumb: ./hero01.webp
+        title: "PrismCat Memory — Spectrum of Memory"
+        href: "./prismcat/"
+      - src: ./hero02.webp
+        thumb: ./hero02.webp
+        title: "CyberCats — Turn-based Battle Game"
+        href: "./CyberCats/"
+
+exhibits:
+  - id: story_board
+    slides:
+      - src: ./story_board/kv01.png
+        thumb: ./story_board/kv01.png
+        #href: ./story_board/
+        title: "Usako & Kameko"
+
+      - src: ./story_board/kv01.webp
+        thumb: ./story_board/kv01.webp
+        #href: ./story_board/
+        title: "Forest Gifts — Risuko's Little Journey"
+
+      - src: ./story_board/kv02.png
+        thumb: ./story_board/kv02.png
+        #href: ./story_board/
+        title: "Renewal of the Forest Covenant"
+
+      - src: ./story_board/kv04.png
+        thumb: ./story_board/kv04.png
+        #href: ./story_board/
+        title: "Lili & Kaede's Happy Halloween"

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCR09VMKR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1NCR09VMKR');
+  </script>
+  <!-- Pinterest Verify -->
+  <meta name="p:domain_verify" content="{{ site.data.tracking.pinterest_verify }}"/>
+
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){
+    w[l]=w[l]||[];
+    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),
+    dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id={{ site.data.tracking.gtm_id }}' + dl;
+    f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ site.data.tracking.gtm_id }}');
+  </script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberCats | Asunaro Works</title>
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="cybercats.css">
+
+
+  <!-- Base-path auto detection -->
+<script>
+(function () {
+  const REPO = "asunaro0000.homepage";  // set your repo name here
+
+  function computeRootBase() {
+    // On GitHub Pages: https://username.github.io/REPO/
+    if (location.hostname.endsWith("github.io")) {
+      return `https://${location.hostname}/${REPO}/gallery/CyberCats/`;
+    }
+    // Local or other host
+    const href = location.href.replace(/\\/g, "/");
+    const m = href.match(new RegExp(`^(.*?/${REPO}/)`));
+    if (m) return m[1];
+    return "./";  // fallback
+  }
+
+  const root = computeRootBase();
+  let base = document.querySelector("base");
+  if (!base) {
+    base = document.createElement("base");
+    document.head.prepend(base);
+  }
+  base.href = root;
+  console.log("[base] =>", root);
+})();
+</script>
+
+</head>
+<body data-page="cybercats">
+    <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJ395RM"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header class="nav">
+    <a class="brand" href="../../">Asunaro Works</a>
+    <a class="go-up" href="../" title="一つ上の階へ">⏶</a>
+    <nav>
+      <a href="../../gallery/">Gallery</a>
+      <a href="../../about/">About/Contact</a>
+<!--       <a href="../../process/">Process</a>
+      <a href="../../contact/">Contact</a> -->
+      <a href="../../link/">Link</a>
+      <a href="../../sitemap/">Sitemap</a>
+      <a href="../../goods/">Goods</a>
+      <a href="https://www.patreon.com/Asunaro0000" style="color:#ffd54a;">
+        Patreon: Archive Updates
+      </a>
+      <a href="https://asunaro0000.github.io/asunaro0000.homepage/gallery/CyberCats/">🌐 JP</a>
+      
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <!-- Video -->
+<section class="section">
+  <div class="video-container">
+    <video class="video" id="cybercatsVideo" controls playsinline muted preload="metadata" style="max-width:100%">
+      <source src="/asunaro0000.homepage/gallery/CyberCats/assets/video/cybercats_preview.mp4?v=2" type="video/mp4">
+      <source src="/asunaro0000.homepage/gallery/CyberCats/assets/video/cybercats_preview.webm?v=2" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+
+<script>
+  (function(){
+    // Resolve baseURI for video path
+    const src = new URL("assets/video/cybercats_preview.mp4", document.baseURI).href;
+    document.getElementById("videoSource").src = src;
+    console.log("[video path] =>", src);
+  })();
+</script>
+
+
+    <!-- External link -->
+    <section class="section info highlight-title">
+      <h2>Cyber Cat Battle</h2>
+      <p>
+        <a href="https://asunaro-0000.itch.io/cyber-cat-battle" target="_blank" rel="noopener">
+          https://asunaro-0000.itch.io/cyber-cat-battle
+        </a>
+      </p>
+    </section>
+
+    <!-- Game description -->
+    <section class="section info">
+      <h2>About This Work</h2>
+      <p>
+        CyberCats is a simple turn-based battle game made entirely with AI-generated characters, backgrounds, and UI assets.<br>
+        Attack, use skills, defend, evade—unleash flashy cyber-style effects and enjoy fast, stylish battles.<br>
+        Best experienced in landscape mode on smartphones.
+      </p>
+    </section>
+
+    <!-- How to Play -->
+    <section class="section info">
+      <h2>How to Play</h2>
+
+      <h3>⏱ Master the basics in 1 minute!</h3>
+      <p class="lead">
+        Defeat enemies from Lv.1 to Lv.5 and take down the final boss!<br>
+        Clearing the game unlocks the Album.
+      </p>
+
+      <h3>🔄 Battle Flow</h3>
+      <ul class="list">
+        <li>Each turn: <strong>+3 Energy</strong> (max 10)</li>
+        <li>Select <strong>one action</strong> (consumes Energy)</li>
+        <li>Enemy counterattacks — but if <strong>Evade succeeds</strong>, you take no damage ✨</li>
+      </ul>
+
+      <h3>🪄 Action List (Cost / Effect)</h3>
+
+      <div class="icon-gallery">
+        <img src="assets/img/action_icons.png" alt="Action icon list">
+        <p>Icons from left: Attack, Skill, Guard, Evade, Special Skill, Ultimate</p>
+      </div>
+
+      <ul class="list">
+        <li>Attack (2): Standard attack</li>
+        <li>Skill (4): A powerful strike!</li>
+        <li>Guard (0): Reduces incoming damage by 30%</li>
+        <li>Evade (2): Success → No enemy attack + Energy fully restored / Fail → 1.2× damage 😨</li>
+        <li>Special Skill (5): Unique character buff (e.g., 2× damage dealt, 0 damage taken, etc.)</li>
+        <li>Ultimate (6): Triggered when HP falls below 25% — dramatic awakening! 🔥</li>
+        <p>※ Numbers in parentheses indicate Energy cost.</p>
+      </ul>
+
+      <h3>⚔️ Progress & Victory</h3>
+      <ul class="list">
+        <li>Defeat Lv.1–4 → Automatically move to next enemy (HP fully restored)</li>
+        <li>Defeat Lv.5 → Ending + Album unlocked</li>
+        <li>If all allies fall → Game Over</li>
+      </ul>
+
+      <h3>👀 Screen Overview</h3>
+      <ul class="list">
+        <li>Top: Battle screen (Enemy: left / Player: right)</li>
+        <li>Bottom: Action buttons, Energy, Battle log</li>
+        <li>Top buttons: Change character / Reload / Surrender / Album</li>
+      </ul>
+    </section>
+  </main>
+
+  <script type="module" src="../../js/extensions/nav-toggle.js"></script>
+
+  <footer>© 2025 Asunaro Works. All rights reserved.</footer>
+</body>
+</html>

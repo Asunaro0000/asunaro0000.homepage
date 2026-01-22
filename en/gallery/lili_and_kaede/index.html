@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lili & Kaede — Adventure Room | Asunaro Works</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCR09VMKR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1NCR09VMKR');
+  </script>
+  <!-- Pinterest Verify -->
+  <meta name="p:domain_verify" content="{{ site.data.tracking.pinterest_verify }}"/>
+
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){
+    w[l]=w[l]||[];
+    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),
+    dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;
+    j.src='https://www.googletagmanager.com/gtm.js?id={{ site.data.tracking.gtm_id }}' + dl;
+    f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ site.data.tracking.gtm_id }}');
+  </script>
+<!-- End Google Tag Manager -->
+  <!-- site header -->
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- page-specific -->
+  <link rel="stylesheet" href="./css/slider.css">
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJ395RM"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header class="nav">
+
+      <a class="brand" href="../../">Asunaro Works</a>
+      <a class="go-up" href="../" title="一つ上の階へ">⏶</a>
+      <nav aria-label="Primary">
+        <a href="../../gallery/">Gallery</a>
+        <a href="../../about/">About/Contact</a>
+<!--         <a href="../../process/">Process</a>
+        <a href="../../contact/">Contact</a> -->
+        <a href="../../link/">Link</a>
+        <a href="../../sitemap/">Sitemap</a>
+        <a href="../../goods/">Goods</a>
+        <a href="https://www.patreon.com/Asunaro0000" style="color:#ffd54a;">
+        Patreon: Archive Updates
+      </a>
+        <a href="https://asunaro0000.github.io/asunaro0000.homepage/gallery/lili_and_kaede/">🌐 JP</a>
+      </nav>
+
+  </header>
+
+  <main class="container">
+    <h1>Lili & Kaede — Adventure Room</h1>
+    <p class="lead">Click an image to open its artwork page.</p>
+
+    <section class="sld-wrap" id="work-slider">
+      <div class="sld">
+        <div class="sld__viewport" aria-roledescription="carousel">
+          <div class="sld__track"></div>
+        </div>
+
+        <div class="sld__meta">
+          <h3 class="sld__title"></h3>
+          <div class="sld__dots" role="tablist" aria-label="Slides"></div>
+        </div>
+
+        <div class="caption" id="caption"></div>
+      </div>
+
+      <div class="sld__thumbs"></div>
+    </section>
+
+    <div class="link-bar" style="margin:40px 0 20px; text-align:center; opacity:0.8;">
+      <a href="https://asunaro0000.booth.pm/items/7588888" target="_blank">BOOTH</a> ／
+      <a href="https://asunaro-0000.itch.io/usako-kameko-between-motion-and-stillness" target="_blank">itch.io</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <span>© 2025 Asunaro Works. All rights reserved.</span>
+  </footer>
+
+  <script src="./js/slider.js"></script>
+  <script type="module" src="../../js/extensions/nav-toggle.js"></script>
+
+</body>
+</html>
