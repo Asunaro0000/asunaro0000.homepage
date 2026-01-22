@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "scene-005": "./scenes/04_The-Songstresses-and-Their-First-Fan/index.html" ,
     "scene-006": "./scenes/05_Feather-Letter-and-the-Forest-Signposts/index.html" ,
     "scene-007": "./scenes/06_Busy-Day-at-the-Chicken-Coop/index.html" ,
-    "scene-008": "./scenes/07_Warm-Moment-in-Winter/index.html" 
+    "scene-008": "./scenes/07_Warm-Moment-in-Winter/index.html" ,
+    "scene-009": "./scenes/08_The-beginning-of-a-new-feast" 
 
 
 /*     "scene-002": "https://www.amazon.co.jp/dp/B0GC8KM6YZ",
@@ -105,6 +106,16 @@ document.addEventListener("DOMContentLoaded", () => {
       "たどり着いた先で見つけたのは、体も心も落ち着く、安心できる場所でした。"
     ]
   },
+{
+  "id": "scene-009",
+  "thumb": "./assets/images/08.webp",
+  "title": "#08 新しいごちそうの始まり",
+  "text": [
+    "雪のキッチンでクッキー作り。つまみ食いするリス子とスズ子の賑やかな料理が始まります。",
+    "オーブンを目指す道中、香りに誘われた鹿やヤギたちも加わり、いつしかおやつパレードに。",
+    "最後は仲間みんなで食卓を囲み、寒さを忘れるほど満腹で幸せな一日になりました。"
+  ]
+}
 
   ];
 
