@@ -51,13 +51,13 @@ const banners = [
     caption: "The background art room of Shiori no Mori is now open.",
     href: "./gallery/renewal-of-the-forest-covenant/Forest_of_Story_Marks/index.html",
     btnLabel: "▶ Open Shiori no Mori Room"
-  },
+  },*/
   {
     src: "./assets/banner/banner2.webp",
     caption: "Kameko's daily-life gallery has been released.",
     href: "./gallery/Usako_and_Kameko/kameko_diary/index.html",
     btnLabel: "▶ Visit Kameko's Daily Life"
-  },*/
+  },
   {
     src: "./assets/banner/banner1.webp",
     caption: "Usako's daily-life gallery has been released.",

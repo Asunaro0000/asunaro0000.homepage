@@ -56,13 +56,13 @@
       caption: "栞の森の背景美術ルームをオープンしました。",
       href: "./gallery/renewal-of-the-forest-covenant/Forest_of_Story_Marks/index.html",
       btnLabel: "▶ 栞の森、背景美術ルームへ"
-    },
+    },*/
     {
       src: "./assets/banner/banner2.webp",
       caption: "カメコの日常、一枚絵のギャラリーを公開しました。",
       href: "./gallery/Usako_and_Kameko/kameko_diary/index.html",
       btnLabel: "▶ カメコの日常へ"
-    },*/
+    },
     {
       src: "./assets/banner/banner1.webp",
       caption: "ウサ子の日常、一枚絵のギャラリーを公開しました。",
