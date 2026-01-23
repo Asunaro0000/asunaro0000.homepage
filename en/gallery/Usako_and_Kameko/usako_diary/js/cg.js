@@ -7,9 +7,10 @@ const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
  * 番号（ファイル名の頭文字）: "表示したい名前"
  */
 const groupNames = {
-  "1": "Daily Life Art: Usako's Everyday Moments",
-  "2": "Dance Art: Usako's Performance",
-  "3": "Scenery Art: Usako's Street Corners"
+  "1": "Usako's Everyday Moments",
+  "2": "Usako's Dance",
+  "2ab": "Usako's Performance",
+  "3": "Usako's Street Corners"
   // 4, 5... と増えたらここに追加するだけ
 };
 
@@ -205,6 +206,49 @@ const items = [
   { src: './images/2-66.webp', title: 'Spiritual Grace in the Hand Fan' },
   { src: './images/2-67.webp', title: 'Supple Arch of the Back' },
 
+{ src: './images/2a-1.webp', title: 'Kicking the Earth, Weaving Heat', caption: '' },
+{ src: './images/2a-2.webp', title: 'Sharpening Thought, A Silent Space', caption: '' },
+{ src: './images/2a-3.webp', title: 'At the Edge of Dreams, Releasing Heat', caption: '' },
+{ src: './images/2a-4.webp', title: 'From the Toes, Swimming Through the Sky', caption: '' },
+{ src: './images/2a-5.webp', title: 'Blue Sleeves, Celebrating Freedom', caption: '' },
+{ src: './images/2a-6.webp', title: 'Cutting the Wind, Gathering Light', caption: '' },
+{ src: './images/2a-7.webp', title: 'Shedding Gravity, Kicking the Heavens', caption: '' },
+{ src: './images/2a-8.webp', title: 'Stillness, The Swaying Outline of the Heart', caption: '' },
+{ src: './images/2a-9.webp', title: 'A Smile, Heartbeats Bloom', caption: '' },
+{ src: './images/2a-10.webp', title: 'Gazing Up, Golden Murmurs', caption: '' },
+
+{ src: './images/2a-11.webp', title: 'Playing on Branches, Inviting Spring', caption: '' },
+{ src: './images/2a-12.webp', title: 'Facing Forward, I Melt into Blue', caption: '' },
+{ src: './images/2a-13.webp', title: 'Golden Fan, Taming the Wind', caption: '' },
+{ src: './images/2a-14.webp', title: 'Mirror Reflections, Honing the Will', caption: '' },
+{ src: './images/2a-15.webp', title: 'Fading Image, The Roar of the Azure Beast', caption: '' },
+{ src: './images/2a-16.webp', title: 'Deep Stillness, Walking the Path with a Spirit Beast', caption: '' },
+{ src: './images/2a-17.webp', title: 'Light Pouring In, The Afterglow of the Dance', caption: '' },
+{ src: './images/2a-18.webp', title: 'Bearing Crimson, Dancing Across the Sky', caption: '' },
+{ src: './images/2a-19.webp', title: 'Whirlwind, Draped in Crimson Afterimages', caption: '' },
+{ src: './images/2a-20.webp', title: 'Spring Light, Breathing Turns Clear', caption: '' },
+
+{ src: './images/2b-1.webp', title: 'Bouncing Rhythm, Percussive Sounds', caption: '' },
+{ src: './images/2b-2.webp', title: 'Window Light, Gentle Tones', caption: '' },
+{ src: './images/2b-3.webp', title: 'The Bamboo Flute Trembles, Heat in the Throat', caption: '' },
+{ src: './images/2b-4.webp', title: 'Spring Breeze and Humming, Shamisen', caption: '' },
+{ src: './images/2b-5.webp', title: 'The Plectrum Strikes, A Membrane of Air', caption: '' },
+{ src: './images/2b-6.webp', title: 'Fingertips, The Heat and Vibration of Strings', caption: '' },
+{ src: './images/2b-7.webp', title: 'Exploding Sound, A Rhythm Beating the Chest', caption: '' },
+{ src: './images/2b-8.webp', title: 'Crossing the Water’s Surface, A Flute’s Breath', caption: '' },
+{ src: './images/2b-9.webp', title: 'A Racing Heart, Leaping Plectrum Sounds', caption: '' },
+
+{ src: './images/2b-11.webp', title: 'Resonating in the Blue Sky, Sanshin Sounds', caption: '' },
+{ src: './images/2b-12.webp', title: 'Striking the Autumn Wind, Crimson Heartbeats', caption: '' },
+{ src: './images/2b-13.webp', title: 'Dancing with Spirit Beasts, Moonlit Strings', caption: '' },
+{ src: './images/2b-14.webp', title: 'Passing Through the Bamboo Grove, The Wind of the Flute', caption: '' },
+{ src: './images/2b-15.webp', title: 'A Frenzied Dance, Heroic Drums', caption: '' },
+{ src: './images/2b-16.webp', title: 'Melting into the Water’s Surface, A Lyre’s Poem', caption: '' },
+{ src: './images/2b-17.webp', title: 'Cherry Blossoms Falling, A Spring Sun Melody', caption: '' },
+{ src: './images/2b-18.webp', title: 'Dancing in the Evening Glow, The Sentiment of the Biwa', caption: '' },
+{ src: './images/2b-19.webp', title: 'Looking Up to the Heavens, A Melody of Joy', caption: '' },
+
+
   { src: './images/3-1.webp', title: 'Deep Breath of Light', caption: 'As I straighten my back, the scent of wood fills my chest.' },
   { src: './images/3-2.webp', title: 'Stories Dwell in Fingertips', caption: 'Touching the masks lined up on the shelf, a nostalgic heartbeat is transmitted.' },
   { src: './images/3-3.webp', title: 'Resolve to Gaze at the Sky', caption: 'Gripping the curtain, I jump out into the blue sky along with my racing heart.' },
@@ -275,9 +319,17 @@ const zoneNext = $(".lb__zone--next");
 const btnClose = $(".lb__close");
 
 // ファイル名からグループ番号を抽出
+// 【修正後】
 function getGroupId(src) {
   const filename = src.split('/').pop();
-  return filename.split('-')[0];
+  let id = filename.split('-')[0];
+  
+  // 「2a」または「2b」の場合は「2ab」というグループに統合する
+  if (id === "2a" || id === "2b") {
+    return "2ab";
+  }
+  
+  return id;
 }
 
 // ギャラリー描画
