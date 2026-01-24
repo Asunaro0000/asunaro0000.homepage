@@ -1,0 +1,60 @@
+<script>
+(function() {
+    const initLightbox = () => {
+        // スタイルを注入
+        if (!document.getElementById('lightbox-style')) {
+            const style = document.createElement('style');
+            style.id = 'lightbox-style';
+            style.innerHTML = `
+                .lightbox-overlay {
+                    display: none; position: fixed; z-index: 99999; top: 0; left: 0;
+                    width: 100vw; height: 100vh; background: rgba(0,0,0,0.9);
+                    cursor: zoom-out; align-items: center; justify-content: center;
+                }
+                .lightbox-overlay img { 
+                    max-width: 95%; max-height: 95%; 
+                    object-fit: contain; pointer-events: none;
+                }
+                .lightbox-overlay.active { display: flex; }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // オーバーレイ作成
+        let overlay = document.querySelector('.lightbox-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'lightbox-overlay';
+            overlay.innerHTML = '<img src="">';
+            document.body.appendChild(overlay);
+        }
+
+        const overlayImg = overlay.querySelector('img');
+
+        // クリックイベント
+        document.addEventListener('click', (e) => {
+            const img = e.target.closest('img');
+            
+            // 拡大表示
+            if (img && !overlay.classList.contains('active')) {
+                // グラフのノードなどは除外（必要に応じて）
+                if (img.closest('.graph-view-container')) return; 
+
+                overlayImg.src = img.src;
+                overlay.classList.add('active');
+                e.preventDefault();
+            } 
+            // 閉じる
+            else if (overlay.classList.contains('active')) {
+                overlay.classList.remove('active');
+            }
+        }, true); // イベントキャプチャを有効に
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLightbox);
+    } else {
+        initLightbox();
+    }
+})();
+</script>
