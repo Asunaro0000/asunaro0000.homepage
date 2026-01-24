@@ -21,7 +21,7 @@ const items = [
 { src: './images/1-1.webp', title: '',
 caption:
 `#1
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 The sunlight filtering through the leaves felt so warm,
 my tail got all fluffy… and I fell asleep right there. 🌿✨
 
@@ -31,7 +31,7 @@ my tail got all fluffy… and I fell asleep right there. 🌿✨
 { src: './images/1-2.webp', title: '',
 caption:
 `#2
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 Suzuko seems to be in a hurry.
 Risuko is not.
 Because the coffee would get cold. ☕❄️
@@ -42,7 +42,7 @@ Because the coffee would get cold. ☕❄️
 { src: './images/1-3.webp', title: '',
 caption:
 `#3
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 
 Risuko looks ahead, Suzuko looks around.
 “That way looks fun.”
@@ -54,7 +54,7 @@ With that one sentence, today’s path is decided. 🍁
 { src: './images/1-4.webp', title: '',
 caption:
 `#4
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 It’s a little scary, but I won’t stop.
 It’s a little high, but it’s fun.
 So today again, I choose this path. 🌙
@@ -65,7 +65,7 @@ So today again, I choose this path. 🌙
 { src: './images/1-5.webp', title: '',
 caption:
 `#5
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 When I played the flute, the tanuki listened with a serious face.
 Yeah, feels like I passed today.
 
@@ -75,7 +75,7 @@ Yeah, feels like I passed today.
 { src: './images/1-6.webp', title: '',
 caption:
 `#6
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 Dash dash, sharan♪
 One runs, one plays.
 
@@ -111,7 +111,7 @@ Maybe this is how friendship starts.
 { src: './images/1-9.webp', title: '',
 caption:
 `#9
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Snack time! 🍪✨
 For now, everything is still up for grabs!
 
@@ -121,7 +121,7 @@ For now, everything is still up for grabs!
 { src: './images/1-10.webp', title: '',
 caption:
 `#10
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 On cold days,
 the correct answer is eating close together. 🍔❄️
 
@@ -131,7 +131,7 @@ the correct answer is eating close together. 🍔❄️
 { src: './images/1-11.webp', title: '',
 caption:
 `#11
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 Cheeks all red,
 fuu.
 The sound comes later.
@@ -153,7 +153,7 @@ will be prepared properly.
 { src: './images/1-13.webp', title: '',
 caption:
 `#13
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 The sound of the river feels nice.
 Otter, wait for me.
 Now is a time to relax.
@@ -164,7 +164,7 @@ Now is a time to relax.
 { src: './images/1-14.webp', title: '',
 caption:
 `#14
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 Mission complete!
 Otter, were you watching?
 I did it properly.
@@ -175,7 +175,7 @@ I did it properly.
 { src: './images/1-15.webp', title: '',
 caption:
 `#15
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 A quiet room,
 good tea.
 I’m not moving anymore.
@@ -186,7 +186,7 @@ I’m not moving anymore.
 { src: './images/1-16.webp', title: '',
 caption:
 `#16
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 The room is fully Christmas.
 Only the cake
 hasn’t arrived yet.
@@ -197,7 +197,7 @@ hasn’t arrived yet.
 { src: './images/1-17.webp', title: '',
 caption:
 `#17
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 Drum practice starts!
 Tanuki is on tambourine duty ✨🥁
 
@@ -207,7 +207,7 @@ Tanuki is on tambourine duty ✨🥁
 { src: './images/1-18.webp', title: '',
 caption:
 `#18
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 While practicing drums,
 the tanuki got the most excited 🥁✨
 
@@ -217,7 +217,7 @@ the tanuki got the most excited 🥁✨
 { src: './images/1-19.webp', title: '',
 caption:
 `#19
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Merry Cookie Christmas! 🍪
 Winter light and the smell of fresh baking.
 This is what Christmas feels like 🎄
@@ -228,7 +228,7 @@ This is what Christmas feels like 🎄
 { src: './images/1-20.webp', title: '',
 caption:
 `#20
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 A holy night, one big leap.
 Going to catch the light of the stars ✨🎄
 
@@ -238,7 +238,7 @@ Going to catch the light of the stars ✨🎄
 { src: './images/1-21.webp', title: '',
 caption:
 `#21
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Santa is in the sky,
 I’m in charge of the forest 🎄🌲
 
@@ -259,7 +259,7 @@ means it’s going well.
 { src: './images/1-23.webp', title: '',
 caption:
 `#23
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Worked too hard on night delivery.
 Sleepy. But satisfied.
 
@@ -269,7 +269,7 @@ Sleepy. But satisfied.
 { src: './images/1-24.webp', title: '',
 caption:
 `#24
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 A present from Suzuko.
 Christmas arrived properly 🎄
 
@@ -279,7 +279,7 @@ Christmas arrived properly 🎄
 { src: './images/1-25.webp', title: '',
 caption:
 `#25
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Posture matters most.
 Second is posture.
 Third… luck.
@@ -290,7 +290,7 @@ Third… luck.
 { src: './images/1-26.webp', title: '',
 caption:
 `#26
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 We watch the surface.
 The otter watches the flow.
 
@@ -303,7 +303,7 @@ years of experience.
 { src: './images/1-27.webp', title: '',
 caption:
 `#27
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Same river, same time.
 Only the results were different.
 
@@ -313,7 +313,7 @@ Only the results were different.
 { src: './images/1-28.webp', title: '',
 caption:
 `#28
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 If the giver leans in too much,
 the receiver watches carefully.
 
@@ -356,7 +356,7 @@ I don’t feel watched.
 { src: './images/1-31.webp', title: '',
 caption:
 `#31
-It’s Risuko and Suzuko! 🐿️
+It’s Risuko and Suzuko! 🐿️️
 We’re visiting a forest gathering today!
 
 The upright ears say “yeah!” and jump to the next topic.
@@ -370,7 +370,7 @@ Only my head can’t keep up.
 { src: './images/1-32.webp', title: '',
 caption:
 `#32
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 We are the legs.
 Up above is the supervisor.
 
@@ -380,7 +380,7 @@ Up above is the supervisor.
 { src: './images/1-33.webp', title: '',
 caption:
 `#33
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Driving.
 Lending my legs.
 
@@ -390,7 +390,7 @@ Lending my legs.
 { src: './images/1-34.webp', title: '',
 caption:
 `#34
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Chicken: “I can fly.”
 Suzuko: “That wasn’t mentioned!”
 Me: “This forest is high-level!”
@@ -401,7 +401,7 @@ Me: “This forest is high-level!”
 { src: './images/1-35.webp', title: '',
 caption:
 `#35
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Snow is quiet.
 The chicken stays close.
 I keep my distance.
@@ -412,7 +412,7 @@ I keep my distance.
 { src: './images/1-36.webp', title: '',
 caption:
 `#36
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Right behind Suzuko.
 Why?
 Hehe… secret ✨🌲
@@ -437,7 +437,7 @@ But not right now.
 { src: './images/1-38.webp', title: '',
 caption:
 `#38
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 
 A year-end greeting delivery to the snowy shrine.
 The horse is calm, Suzuko is energetic, and I’m the guide.
@@ -453,7 +453,7 @@ Wishing everyone a happy New Year 🌲❄️
 { src: './images/1-39.webp', title: '',
 caption:
 `#39
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Same old jokes in the new year.
 Forest and mochi.
 Looking forward to 2026 🎍
@@ -475,7 +475,7 @@ Here’s to 2026 ⛩️
 { src: './images/1-41.webp', title: '',
 caption:
 `#41
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 I drew great fortune.
 Smiles, now being distributed.
 
@@ -485,7 +485,7 @@ Smiles, now being distributed.
 { src: './images/1-42.webp', title: '',
 caption:
 `#42
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 My mouth is stuffed with mandarins.
 Suzuko, I really can’t take any more…
 
@@ -495,7 +495,7 @@ Suzuko, I really can’t take any more…
 { src: './images/1-43.webp', title: '',
 caption:
 `#43
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Distance measured.
 Presence read.
 Permission denied.
@@ -506,7 +506,7 @@ Permission denied.
 { src: './images/1-44.webp', title: '',
 caption:
 `#44
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Forest winter gear ranking:
 this year’s number one is sheep.
 Faster than wearing clothes.
@@ -517,7 +517,7 @@ Faster than wearing clothes.
 { src: './images/1-45.webp', title: '',
 caption:
 `#45
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Cat pose in front of a cat.
 In the forest,
 this is probably a challenge.
@@ -528,7 +528,7 @@ this is probably a challenge.
 { src: './images/1-46.webp', title: '',
 caption:
 `#46
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 
 The catcher,
 the reader,
@@ -548,7 +548,7 @@ caption:
 `#47
 Good morning ☀️
 
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 I must have tried too hard at fishing.
 Book open, already dreaming.
 
@@ -561,7 +561,7 @@ In my sleep I mutter,
 { src: './images/1-48.webp', title: '',
 caption:
 `#48
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 
 Practice while awake.
 Performance while asleep.
@@ -573,7 +573,7 @@ First prize is in dreams.
 { src: './images/1-49.webp', title: '',
 caption:
 `#49
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 I don’t count apples.
 If I do,
 they usually decrease.
@@ -584,7 +584,7 @@ they usually decrease.
 { src: './images/1-50.webp', title: '',
 caption:
 `#50
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 About to feed the rabbit.
 Discussing who hands it over.
 Suzuko is smiling.
@@ -596,7 +596,7 @@ The carrot is still not released.
 { src: './images/1-51.webp', title: '',
 caption:
 `#51
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Food is light.
 The goat’s expectations are heavy.
 Probably thinks it’ll get some.
@@ -607,7 +607,7 @@ Probably thinks it’ll get some.
 { src: './images/1-52.webp', title: '',
 caption:
 `#52
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Outside is still winter.
 Cat is warm on my lap, body cool.
 We all agree with this scene.
@@ -618,7 +618,7 @@ We all agree with this scene.
 { src: './images/1-53.webp', title: '',
 caption:
 `#53
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 “Is it ready yet?”
 “Just a bit more!”
 This exchange
@@ -630,7 +630,7 @@ might be the sweetest part.
 { src: './images/1-54.webp', title: '',
 caption:
 `#54
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Upstairs is a tea party.
 Down below,
 a romance drama.
@@ -641,7 +641,7 @@ a romance drama.
 { src: './images/1-55.webp', title: '',
 caption:
 `#55
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 It was so cold,
 I thought the cozy spots increased.
 …but the goat
@@ -653,7 +653,7 @@ wasn’t supposed to be one of them.
 { src: './images/1-56.webp', title: '',
 caption:
 `#56
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Freshly caught
 isn’t cold.
 Warm,
@@ -665,7 +665,7 @@ and gently flavored.
 { src: './images/1-57.webp', title: '',
 caption:
 `#57
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Thought Suzuko was missing during work.
 
 Sleeping in the shed,
@@ -678,7 +678,7 @@ probably couldn’t resist the cuteness.
 { src: './images/1-58.webp', title: '',
 caption:
 `#58
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Perfect for cold days,
 this one cup.
 
@@ -691,7 +691,7 @@ right here.
 { src: './images/1-59.webp', title: '',
 caption:
 `#59
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Grand mountains, flute, deer.
 The cast is ready.
 Now the epic fantasy waits backstage.
@@ -702,7 +702,7 @@ Now the epic fantasy waits backstage.
 { src: './images/1-60.webp', title: '',
 caption:
 `#60
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 This view, this height, this flute.
 Today’s role: bard.
 Adding BGM to the world.
@@ -713,7 +713,7 @@ Adding BGM to the world.
 { src: './images/1-61.webp', title: '',
 caption:
 `#61
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 A tanuki singing is already an incident,
 but Suzuko naturally harmonizing.
 
@@ -726,7 +726,7 @@ I’m the only one out of the loop.
 { src: './images/1-62.webp', title: '',
 caption:
 `#62
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 If there’s something to draw, I draw it.
 Even if it’s a tanuki, no hesitation.
 
@@ -736,7 +736,7 @@ Even if it’s a tanuki, no hesitation.
 { src: './images/1-63.webp', title: '',
 caption:
 `#63
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Forest picnics
 are not invitation-only.
 
@@ -749,7 +749,7 @@ That’s the rule.
 { src: './images/1-64.webp', title: '',
 caption:
 `#64
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 
 Cooking is judged by body shape, not words.
 
@@ -762,7 +762,7 @@ gives Suzuko full marks.
 { src: './images/1-65.webp', title: '',
 caption:
 `#65
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 Flame Chef Tanuki, opening act. 🔥
 I know it’s unreasonable.
 I know—but I won’t lower my expectations.
@@ -773,7 +773,7 @@ I know—but I won’t lower my expectations.
 { src: './images/1-66.webp', title: '',
 caption:
 `#66
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 Drop it and you lose.
 Win and you get snacks.
 
@@ -783,7 +783,7 @@ Win and you get snacks.
 { src: './images/1-67.webp', title: '',
 caption:
 `#67
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 This guilty pleasure where the fork won’t stop.
 When Suzuko starts cooking,
 the forest fills with good smells.
@@ -795,7 +795,7 @@ Roll it, roll it, make a whirlpool of happiness.
 { src: './images/1-68.webp', title: '',
 caption:
 `#68
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 
 Suzuko’s proud Napolitan, finished.
 My belly is full—I can’t move another step.
@@ -808,7 +808,7 @@ but I’m already a squirrel, so I’ll roll around freely.
 { src: './images/1-69.webp', title: '',
 caption:
 `#69
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 Baking failed.
 Overbaked.
 Didn’t rise.
@@ -820,7 +820,7 @@ Flour stayed cutely on my nose.
 { src: './images/1-70.webp', title: '',
 caption:
 `#70
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 
 We are flutes.
 Tanuki is whistling.
@@ -834,7 +834,7 @@ caption:
 `#71
 Good morning ☀️
 
-It’s Risuko! 🐿️️
+It’s Risuko! 🐿️️️
 The lights, the smells, the voices—
 everything is fun.
 Enjoying the town together with a fox.
@@ -845,13 +845,133 @@ Enjoying the town together with a fox.
 { src: './images/1-72.webp', title: '',
 caption:
 `#72
-It’s Risuko! 🐿️
+It’s Risuko! 🐿️️
 I found the fluffiest VIP seat.
 I’m not moving from here today!
 
 #BlissfulMoment #MagicOfFluff`
 },
+{ src: './images/1-73.webp', title: 'A New Family Member',
+  caption:
+`#73
+It's Risuko! 🐿️️
+Look, look! A tiny, snowy-white baby has joined our home! ✨
+It's a major event of cuteness.
+Big sister Risuko is now officially on bodyguard duty! *Salute* 🐿️️💨
 
+#DailyCuteness #GuardianRisuko`
+},
+ { src: './images/1-74.webp', title: 'Forest Judge',
+  caption:
+`#74
+It's Risuko! 🐿️️
+Mr. Tanuki, the judge, is silent.
+Is this... a pass, or is it on hold?
+
+#ForestJudge #HighTension`
+},
+ { src: './images/1-75.webp', title: 'Playing Baby',
+  caption:
+`#75
+We found an old stroller, so 
+suddenly it's "playing baby" time! 
+Big sister Suzuko looks like she's about to cry, thinking "Is this some kind of training...?" 
+But she never stops helping—she really is the best big sister!
+
+#RattleSound #RisukoIsThrilled`
+},
+ { src: './images/1-76.webp', title: 'Snowy Mountain Hike',
+  caption:
+`#76
+It's Risuko!
+
+Today is snowy mountain climbing! While looking through my binoculars, 
+I made friends with a cool Mr. Hawk.
+This view is absolutely thrilling!
+
+#StunningViews #ExcitingExpedition`
+},
+ { src: './images/1-77.webp', title: 'White Moustache Championship',
+  caption:
+`#77
+It's Risuko! 🐿️
+Drinking it all at once gives me a brain freeze, 
+but I can't back down from this challenge! Refills are more than welcome!
+
+#WinterShowdown #WhiteMoustacheChampionship`
+},
+ { src: './images/1-78.webp', title: 'Dancing by the Water',
+  caption:
+`#78
+It's Risuko! 🐿️️
+Dancing by the water with Mr. Swan!
+The splashes are sparkling...
+it's like being in a magic spring!
+
+#HopTime #HappyStroll`
+},
+ { src: './images/1-79.webp', title: 'Fluffy Duo',
+  caption:
+`#79
+It's Risuko! 🐿️
+He’s pure white and fluffy, but his beak is so flat and cute!
+Is he a "long-necked duck" or a "big-mouthed swan"? 
+Either way, he's adorable!
+
+#CuteEitherWay #FluffyDuo`
+},
+ { src: './images/1-80.webp', title: 'Wishing on a Star',
+  caption:
+`#80
+It's Risuko! 🐿️
+
+The moment the star shot across the sky, 
+I yelled "Acorns, Walnuts, Pistachios!" 
+Suzuko snapped at me, "That's just a food order!"
+
+#ShootingStarWish #HungryList`
+},
+ { src: './images/1-81.webp', title: 'Sharing the Happiness',
+  caption:
+`#81
+It's Risuko! 🐿️
+My squirrel friends gathered around, and we can't stop munching!
+Packing in all the "yummy" moments of winter.
+
+#SharingHappiness #DonutHolesAreZeroCalories`
+},
+ { src: './images/1-82.webp', title: 'Night Picnic',
+  caption:
+`#82
+It's Risuko! 🐿️
+
+Before I can say "The stars are beautiful," 
+the popcorn might be all gone!
+Crunching away on the snow—this is the best part of winter.
+
+#NightPicnic #NonstopMunching`
+},
+ { src: './images/1-83.webp', title: 'Head Over Heels for Fluff',
+  caption:
+`#83
+It's Risuko! 🐿️️
+Done brushing Mr. Rabbit!
+Now he's all set for shedding season.
+He's so fluffy, I'm totally head over heels!
+
+#BunnyLovers #PetOfTheDay`
+},
+ { src: './images/1-84.webp', title: 'The Temptation of Food Stalls',
+  caption:
+`#84
+It's Risuko! 🐿️️
+
+Sweet castella, juicy grilled meat...
+There are too many temptations at these stalls!
+I'm so hungry, I want to eat everything in sight!
+
+#SoHungry #FoodStallHopping`
+},
 
 
 
