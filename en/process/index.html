@@ -1,11 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Process | Asunaro Works</title>
-
-  <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCR09VMKR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,60 +12,48 @@
     gtag('js', new Date());
     gtag('config', 'G-1NCR09VMKR');
   </script>
-  <!-- Pinterest Verify -->
-  <meta name="p:domain_verify" content="{{ site.data.tracking.pinterest_verify }}"/>
+  
+<!-- pinterest -->
+<meta name="p:domain_verify" content="d57a228b61f6ea3435efa630b2165165"/>
 
-  <!-- Google Tag Manager -->
-  <script>
-  (function(w,d,s,l,i){
-    w[l]=w[l]||[];
-    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-    var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),
-    dl=l!='dataLayer'?'&l='+l:'';
-    j.async=true;
-    j.src='https://www.googletagmanager.com/gtm.js?id={{ site.data.tracking.gtm_id }}' + dl;
-    f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','{{ site.data.tracking.gtm_id }}');
-  </script>
-  <!-- End Google Tag Manager -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5SJ395RM');</script>
+<!-- End Google Tag Manager -->
 
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/style.css">
   <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJ395RM"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
   <header class="nav">
     <a class="brand" href="../">Asunaro Works</a>
     <a class="go-up" href="../" title="一つ上の階へ">⏶</a>
     <nav>
       <a href="../gallery/">Gallery</a>
       <a href="../about/">About/Contact</a>
-<!--       <a href="../process/">Process</a>
-      <a href="../contact/">Contact</a> -->
+      <a href="../process/">Process</a>
+      <!-- <a href="../contact/">Contact</a> -->
       <a href="../link/">Link</a>
       <a href="../sitemap/">Sitemap</a>
       <a href="../goods/">Goods</a>
-            <a href="https://www.patreon.com/Asunaro0000" style="color:#ffd54a;">
-        Patreon: Archive Updates
-      </a>
-      <a href="https://asunaro0000.github.io/asunaro0000.homepage/process/">🌐 JP</a>
-      
+      <a href="https://www.patreon.com/Asunaro0000">Patreon</a>
+      <a href="../en/">🌐 EN</a>
     </nav>
   </header>
 
   <main class="section">
-    <h1>Process – Behind the Artwork</h1>
-    <p>
-      How each piece is born, and how it seems to breathe on its own.  
-      Here I archive the making process, technical research, and the ideas behind the work.  
-      Each article is explained in more detail on Note.
-    </p>
-
+    <h1>Process – 制作の裏側</h1>
+    <p>ComfyUIを使った画像生成、画像編集ソフトを使ったレタッチ術についての技術情報を載せています。</p>
+    <p>noteはアーカイブとして、最新情報はHPに乗せています。</p>
     <a href="https://note.com/lovely_rhino8940" style="font-size: 1.3em; color: #5de6ff;">
       https://note.com/lovely_rhino8940
     </a>
@@ -79,7 +66,7 @@
   <script type="module">
     import { loadYAML } from '../js/util/yaml-loader.js';
     (async () => {
-      const data = await loadYAML('../data/process.yaml');
+      const data = await loadYAML('process.yaml');
       const wrap = document.getElementById('logs');
       if (!data?.logs) return;
       wrap.innerHTML = data.logs.map(l => `

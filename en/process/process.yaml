@@ -1,0 +1,7 @@
+logs:
+  - title: "Basics of Retouching and Inpainting"
+    summary: "Foundational techniques for detail control using retouching and inpainting."
+    url: "./article/レタッチとインペイントによる細部制御の基本_en.html"
+  - title: "Case Studies: Inpainting and Retouching"
+    summary: "A behind-the-scenes look at the creation of Risu-ko's storyboard."
+    url: "./article/インペイントとレタッチの実例_en.html"
