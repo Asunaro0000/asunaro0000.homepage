@@ -40,7 +40,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <nav>
       <a href="../gallery/">Gallery</a>
       <a href="../about/">About/Contact</a>
-      <!-- <a href="../process/">Process</a> -->
+      <a href="../process/">Process</a>
       <a href="../contact/">Contact</a>
       <a href="../link/">Link</a>
       <a href="../sitemap/">Sitemap</a>
@@ -66,7 +66,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script type="module">
     import { loadYAML } from '../js/util/yaml-loader.js';
     (async () => {
-      const data = await loadYAML('../data/process.yaml');
+      const data = await loadYAML('process.yaml');
       const wrap = document.getElementById('logs');
       if (!data?.logs) return;
       wrap.innerHTML = data.logs.map(l => `
