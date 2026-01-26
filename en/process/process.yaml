@@ -8,3 +8,6 @@ logs:
   - title: "How I Create Storyboards"
     summary: "My approach to structuring Risuko's storyboards."
     url: "./article/ストーリーボードの作り方_en.html"
+  - title: "How to Fix Broken Hands with Simple Retouching"
+    summary: "A practical retouching method using selection tools and the clone stamp."
+    url: "./article/簡単なレタッチで手の破綻を修正する方法_en.html"
