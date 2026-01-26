@@ -1,0 +1,22 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Asunaro]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>site-lib/media/favicon.png</url><title>Asunaro</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 26 Jan 2026 16:06:49 GMT</lastBuildDate><atom:link href="site-lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 26 Jan 2026 16:06:49 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[簡単なレタッチで手の破綻を修正する方法]]></title><description><![CDATA[AI生成画像では、手や指の破綻が起こりやすく、特に指の本数が増えてしまうケースはよく見られます。
+一見すると「余分な指を1本消せば直りそう」に見えますが、実際には指全体の間隔や太さのバランスが崩れているため、単純に削除するだけでは違和感が残ります。この記事では、指が6本になってしまった画像を、自然な5本指に整えるためのレタッチ手順を、具体例を交えて解説します。
+部分的な修正で質感を保つ方法として、選択ツール・ブラシ・コピースタンプを中心にした実践的な手法を紹介します。<img alt="スクリーンショット 2026-01-26 233106.png" src="スクリーンショット-2026-01-26-233106.png" target="_self">左の画像の指が6本ある状態を、5本にレタッチしていきます。
+指が6本になる場合、手のひらの大きさ自体は通常で、指が1本多い分だけ指の間隔が詰まり、形状が破綻しているケースが多く見られます。このような破綻では、指を1本消しただけでは不自然さが残るため、
+指全体の太さや配置バランスを調整する必要があります。
+その対策として、今回はこの方法を用います。左の画像では中指の形状に違和感があるため、そこを基準に修正します。
+まず、選択ツールで小指側の指3本を囲みます。次に、中指側へ詰めるように移動し、
+角度の調整や拡大・縮小を行って、指1本分を消したスペースを自然に埋めます。最後に、ブラシツールで形状を整えて完成です。<br><img alt="スクリーンショット 2026-01-26 232856.png" src="スクリーンショット-2026-01-26-232856.png" target="_self">整形後、ブラシ跡が気になる場合は、
+コピースタンプツールを使用すると便利です。「スタンプ」という名前の通り、
+サンプリングポイント（コピー元）として指定した箇所のピクセル情報を、
+別の場所（コピー先）にそのまま貼り付ける仕組みです。
+コピー元（ソース）
+参照したいテクスチャや色がある場所 コピー先（ターゲット）
+修正したい場所、または消したい部分 詳細な使い方は、以下を参照してください。<br>
+<a rel="noopener nofollow" class="external-link is-unresolved" href="https://dentakumanga.com/clipstudiopaint-copystamp/" target="_self">https://dentakumanga.com/clipstudiopaint-copystamp/</a>この方法を使うことで、AI生成特有の細密な描き込みや質感を崩さずに、周囲を自然に修復できます。
+大きな変更が必要な場合はインペイント処理が適していますが、
+指の本数を調整する程度であれば、この方法で十分に対応可能です。インペイント前の下処理としても有効で、 事前に整えておくことで破綻を大きく減らせます。
+形状が明確にイメージできる部分は、私は手動で修正しています。<br><img alt="Pasted image 20260127005802.png" src="pasted-image-20260127005802.png" target="_self">
+この絵では、左上の抜け部分をコピースタンプで埋めています。
+髪のアクセサリの移動後にできた欠けも、形置きとして修復しています。
+ここまで整えておけば、あとはインペイントでほとんど違和感なく描画できます。
+同じモデル由来の形状は再現されやすく、コピーによる修復はAI生成画像のレタッチで非常に有効です。]]></description><link>簡単なレタッチで手の破綻を修正する方法.html</link><guid isPermaLink="false">簡単なレタッチで手の破綻を修正する方法.md</guid><pubDate>Mon, 26 Jan 2026 16:04:37 GMT</pubDate><enclosure url="." length="0" type="false"/><content:encoded>&lt;figure&gt;&lt;img src="."&gt;&lt;/figure&gt;</content:encoded></item></channel></rss>
