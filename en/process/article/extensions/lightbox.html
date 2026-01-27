@@ -1,52 +1,130 @@
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCR09VMKR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-1NCR09VMKR');
-</script>
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Process | Asunaro Works</title>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NCR09VMKR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1NCR09VMKR');
+  </script>
 
-<meta name="p:domain_verify" content="d57a228b61f6ea3435efa630b2165165"/>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5SJ395RM');</script>
 
-<script>
-(function() {
-    const initLightbox = () => {
-        if (!document.getElementById('lightbox-style')) {
-            const style = document.createElement('style');
-            style.id = 'lightbox-style';
-            style.innerHTML = `
-                .lightbox-overlay {
-                    display: none; position: fixed; z-index: 99999; top: 0; left: 0;
-                    width: 100vw; height: 100vh; background: rgba(0,0,0,0.9);
-                    cursor: zoom-out; align-items: center; justify-content: center;
-                }
-                .lightbox-overlay img { max-width: 95%; max-height: 95%; object-fit: contain; pointer-events: none; }
-                .lightbox-overlay.active { display: flex; }
-            `;
-            document.head.appendChild(style);
-        }
-        let overlay = document.querySelector('.lightbox-overlay') || document.createElement('div');
-        if (!overlay.className) {
-            overlay.className = 'lightbox-overlay';
-            overlay.innerHTML = '<img src="">';
-            document.body.appendChild(overlay);
-        }
-        document.addEventListener('click', (e) => {
-            const img = e.target.closest('img');
-            if (img && !overlay.classList.contains('active')) {
-                if (img.closest('.graph-view-container')) return; 
-                overlay.querySelector('img').src = img.src;
-                overlay.classList.add('active');
-                e.preventDefault();
-            } else if (overlay.classList.contains('active')) {
-                overlay.classList.remove('active');
-            }
-        }, true);
-    };
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initLightbox);
-    } else {
-        initLightbox();
+  <link rel="stylesheet" href="../../../css/header.css">
+  <link rel="stylesheet" href="../../../css/style.css">
+
+  <style>
+    /* Obsidianのテーマ変数を強制的に上書き */
+    :root {
+        --background-primary: #000000 !important;
+        --background-secondary: #000000 !important;
+        --text-normal: #ffffff !important;
+        --text-muted: #dddddd !important;
+        --text-accent: #ffffff !important;
     }
-})();
-</script>
+
+    /* ページ全体の基本色設定 */
+    html, body {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+    }
+
+    /* 全てのテキスト要素を白にする */
+    body *, main *, .markdown-rendered *, p, span, div, h1, h2, h3, li, a {
+        color: #ffffff !important;
+    }
+
+    /* ヘッダーのスタイル */
+    .nav {
+        background-color: #000000 !important;
+        border-bottom: 1px solid #333333 !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+    }
+
+    .nav a {
+        text-decoration: none !important;
+        color: #ffffff !important;
+    }
+
+    .nav nav a {
+        margin-left: 15px;
+    }
+
+    /* ライトボックス */
+    .lightbox-overlay {
+        display: none; position: fixed; z-index: 99999; top: 0; left: 0;
+        width: 100vw; height: 100vh; background: rgba(0,0,0,0.9);
+        cursor: zoom-out; align-items: center; justify-content: center;
+    }
+    .lightbox-overlay img { max-width: 95%; max-height: 95%; object-fit: contain; pointer-events: none; }
+    .lightbox-overlay.active { display: flex; }
+  </style>
+
+  <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+  <script>
+  (function() {
+      const initLightbox = () => {
+          let overlay = document.querySelector('.lightbox-overlay') || document.createElement('div');
+          if (!overlay.className) {
+              overlay.className = 'lightbox-overlay';
+              overlay.innerHTML = '<img src="">';
+              document.body.appendChild(overlay);
+          }
+          document.addEventListener('click', (e) => {
+              const img = e.target.closest('img');
+              if (img && !overlay.classList.contains('active')) {
+                  if (img.closest('.graph-view-container')) return; 
+                  overlay.querySelector('img').src = img.src;
+                  overlay.classList.add('active');
+                  e.preventDefault();
+              } else if (overlay.classList.contains('active')) {
+                  overlay.classList.remove('active');
+              }
+          }, true);
+      };
+      if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initLightbox);
+      } else {
+          initLightbox();
+      }
+  })();
+  </script>
+</head>
+<body class="publish">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SJ395RM"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="nav">
+    <a class="brand" href="../">Asunaro Works</a>
+    <a class="go-up" href="../" title="一つ上の階へ">⏶</a>
+    <nav>
+      <a href="../../../gallery/">Gallery</a>
+      <a href="../../../about/">About/Contact</a>
+      <a href="../../../process/">Process</a>
+      <a href="../../../link/">Link</a>
+      <a href="../../../sitemap/">Sitemap</a>
+      <a href="../../../goods/">Goods</a>
+      <a href="https://www.patreon.com/Asunaro0000">Patreon</a>
+    </nav>
+  </header>
+
+  <main>
+    </main>
+</body>
+</html>
