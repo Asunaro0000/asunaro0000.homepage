@@ -11,3 +11,6 @@ logs:
   - title: "How to Fix Broken Hands with Simple Retouching"
     summary: "A practical retouching method using selection tools and the clone stamp."
     url: "./article/20260126_簡単なレタッチで手の破綻を修正する方法_en/簡単なレタッチで手の破綻を修正する方法_en.html"
+  - title: "[For Beginners] Creating Highly Consistent Characters with LoRA"
+    summary: "A restoration method using retouching with selection tools and the clone stamp tool."
+    url: "./article/20260126_【初心者向け】LoRAで一貫性の高いキャラクターを作成する/【初心者向け】LoRAで一貫性の高いキャラクターを作成する_en.html"
