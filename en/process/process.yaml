@@ -14,3 +14,7 @@ logs:
   - title: "[For Beginners] Creating Highly Consistent Characters with LoRA"
     summary: "A restoration method using retouching with selection tools and the clone stamp tool."
     url: "./article/20260126_【初心者向け】LoRAで一貫性の高いキャラクターを作成する/【初心者向け】LoRAで一貫性の高いキャラクターを作成する_en.html"
+  - title: "Useful ComfyUI Nodes List"
+    summary: "A list of convenient ComfyUI nodes that are helpful to know."
+    url: "./article/20260128_comfyuiの便利ノード一覧/comfyuiの便利ノード一覧_en.html"
+

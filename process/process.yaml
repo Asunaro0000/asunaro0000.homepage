@@ -14,3 +14,6 @@ logs:
   - title: "【初心者向け】LoRAで一貫性の高いキャラクターを作成する"
     summary: "選択ツールとコピースタンプを使ったレタッチによる修復方法です。"
     url: "./article/20260126【初心者向け】loraで一貫性の高いキャラクターを作成する/【初心者向け】loraで一貫性の高いキャラクターを作成する.html"
+  - title: "ComfyUIの便利ノード一覧"
+    summary: "知っておくと得するComfyUIの便利ノードです。"
+    url: "./article/20260128_comfyuiの便利ノード一覧/comfyuiの便利ノード一覧.html"
