@@ -1,3 +1,5 @@
+
+
 // suzuko-room.js
 document.addEventListener("DOMContentLoaded", () => {
   const sceneListEl = document.getElementById("suzuko-scene-list");
@@ -11,20 +13,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!sceneListEl || !lightbox || !lightboxImg || !lightboxCaption || !btnPrev || !btnNext) return;
 
+  // file: プロトコルではない、かつ hostname に github が含まれるなら GitHub とみなす
+const isGitHub = window.location.hostname.includes('github.io');
+const isLocal = window.location.protocol === 'file:';
+
+// GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
+// ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
+const base = (isGitHub && !isLocal) 
+  ? '/asunaro0000.homepage/gallery/Risko/suzuko_room' 
+  : '/gallery/Risko/suzuko_room';
+
+const mainVisual = document.getElementById("suzuko-main-visual");
+  if (mainVisual) {
+    mainVisual.src = `${base}/assets/images/main.png`;
+  }
+  
   // ===== スズ子のシーン定義（サムネ n-0.webp ＋ スライダー n-1～n-9.webp） =====
 const SUZUKO_SCENES = [
   {
     id: "suzuko-1",
-    thumb: "./assets/images/1-0.webp",
+    thumb: `${base}/assets/images/1-0.webp`,
     slides: [
-      "./assets/images/1-1.webp",
-      "./assets/images/1-2.webp",
-      "./assets/images/1-3.webp",
-      "./assets/images/1-4.webp",
-      "./assets/images/1-5.webp",
-      "./assets/images/1-6.webp",
-      "./assets/images/1-7.webp",
-      "./assets/images/1-8.webp"
+      `${base}/assets/images/1-1.webp`,
+      `${base}/assets/images/1-2.webp`,
+      `${base}/assets/images/1-3.webp`,
+      `${base}/assets/images/1-4.webp`,
+      `${base}/assets/images/1-5.webp`,
+      `${base}/assets/images/1-6.webp`,
+      `${base}/assets/images/1-7.webp`,
+      `${base}/assets/images/1-8.webp`
     ],
     title: "① This is Suzuko.",
     text: [
@@ -35,15 +52,15 @@ const SUZUKO_SCENES = [
   },
   {
     id: "suzuko-2",
-    thumb: "./assets/images/2-0.webp",
+    thumb: `${base}/assets/images/2-0.webp`,
     slides: [
-      "./assets/images/2-1.webp",
-      "./assets/images/2-2.webp",
-      "./assets/images/2-3.webp",
-      "./assets/images/2-4.webp",
-      "./assets/images/2-5.webp",
-      "./assets/images/2-6.webp",
-      "./assets/images/2-7.webp"
+      `${base}/assets/images/2-1.webp`,
+      `${base}/assets/images/2-2.webp`,
+      `${base}/assets/images/2-3.webp`,
+      `${base}/assets/images/2-4.webp`,
+      `${base}/assets/images/2-5.webp`,
+      `${base}/assets/images/2-6.webp`,
+      `${base}/assets/images/2-7.webp`
     ],
     title: "② Hiking together — she looks like a fairy in the sunlight.",
     text: [
@@ -54,16 +71,16 @@ const SUZUKO_SCENES = [
   },
   {
     id: "suzuko-3",
-    thumb: "./assets/images/3-0.webp",
+    thumb: `${base}/assets/images/3-0.webp`,
     slides: [
-      "./assets/images/3-1.webp",
-      "./assets/images/3-2.webp",
-      "./assets/images/3-3.webp",
-      "./assets/images/3-4.webp",
-      "./assets/images/3-5.webp",
-      "./assets/images/3-6.webp",
-      "./assets/images/3-7.webp",
-      "./assets/images/3-8.webp"
+      `${base}/assets/images/3-1.webp`,
+      `${base}/assets/images/3-2.webp`,
+      `${base}/assets/images/3-3.webp`,
+      `${base}/assets/images/3-4.webp`,
+      `${base}/assets/images/3-5.webp`,
+      `${base}/assets/images/3-6.webp`,
+      `${base}/assets/images/3-7.webp`,
+      `${base}/assets/images/3-8.webp`
     ],
     title: "③ Reading books together at Suzuko’s home.",
     text: [
@@ -75,17 +92,17 @@ const SUZUKO_SCENES = [
   },
   {
     id: "suzuko-4",
-    thumb: "./assets/images/4-0.webp",
+    thumb: `${base}/assets/images/4-0.webp`,
     slides: [
-      "./assets/images/4-1.webp",
-      "./assets/images/4-2.webp",
-      "./assets/images/4-3.webp",
-      "./assets/images/4-4.webp",
-      "./assets/images/4-5.webp",
-      "./assets/images/4-6.webp",
-      "./assets/images/4-7.webp",
-      "./assets/images/4-8.webp",
-      "./assets/images/4-9.webp"
+      `${base}/assets/images/4-1.webp`,
+      `${base}/assets/images/4-2.webp`,
+      `${base}/assets/images/4-3.webp`,
+      `${base}/assets/images/4-4.webp`,
+      `${base}/assets/images/4-5.webp`,
+      `${base}/assets/images/4-6.webp`,
+      `${base}/assets/images/4-7.webp`,
+      `${base}/assets/images/4-8.webp`,
+      `${base}/assets/images/4-9.webp`
     ],
     title: "④ Stargazing together.",
     text: [
@@ -97,9 +114,9 @@ const SUZUKO_SCENES = [
   },
   {
     id: "suzuko-5",
-    thumb: "./assets/images/5-0.webp",
+    thumb: `${base}/assets/images/5-0.webp`,
     slides: [
-      "./assets/images/5-0.webp"
+      `${base}/assets/images/5-0.webp`
     ],
     title: "⑤ Bonus: We made a snowman together.",
     text: [

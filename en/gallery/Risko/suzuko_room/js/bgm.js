@@ -1,3 +1,13 @@
+// file: プロトコルではない、かつ hostname に github が含まれるなら GitHub とみなす
+const isGitHub = window.location.hostname.includes('github.io');
+const isLocal = window.location.protocol === 'file:';
+
+// GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
+// ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
+const base = (isGitHub && !isLocal) 
+  ? '/asunaro0000.homepage/gallery/Risko/suzuko_room' 
+  : '/gallery/Risko/suzuko_room';
+
 // js/bgm.js
 document.addEventListener("DOMContentLoaded", () => {
   const audioEl = document.getElementById("bgm-audio");
@@ -6,12 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!audioEl || !toggleBtn) return;
 
   // 再生するBGMリスト（順番再生 → ループ）
-  const PLAYLIST = [
-    "./assets/bgm/bgm1.m4a",
-    "./assets/bgm/bgm2.m4a",
-    "./assets/bgm/bgm3.m4a"
-  ];
-
+const PLAYLIST = [
+  `${base}/assets/bgm/bgm1.m4a`,
+  `${base}/assets/bgm/bgm2.m4a`,
+  `${base}/assets/bgm/bgm3.m4a`
+];
   let currentIndex = 0;
   let isPlaying = false;
 

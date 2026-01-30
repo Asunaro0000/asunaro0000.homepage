@@ -4,32 +4,42 @@ const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
 // ---- 編集ポイント：この配列を書き換えて使う ----
 // ---- EDIT HERE: English version ----
+  // file: プロトコルではない、かつ hostname に github が含まれるなら GitHub とみなす
+const isGitHub = window.location.hostname.includes('github.io');
+const isLocal = window.location.protocol === 'file:';
+
+// GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
+// ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
+const base = (isGitHub && !isLocal) 
+  ? '/asunaro0000.homepage/gallery/Risko' 
+  : '/gallery/Risko';
+
 const slides = [
   {
-    src: "./thumbnail/kv01.webp",
-    thumb: "./thumbnail/kv01.webp",
-    href: "./storyboard_room/index.html",
+    src: `${base}/thumbnail/kv01.webp`,
+    thumb: `${base}/thumbnail/kv01.webp`,
+    href: `./storyboard_room/index.html`,
     title: "Risuko — Storyboard",
     caption: "This page features a collection of Risuko's storyboards."
   },
   {
-    src: "./thumbnail/kv02.webp",
-    thumb: "./thumbnail/kv02.webp",
-    href: "./risuko_room/index.html",
+    src: `${base}/thumbnail/kv02.webp`,
+    thumb: `${base}/thumbnail/kv02.webp`,
+    href: `./risuko_room/index.html`,
     title: "Risuko's Nature Walk — Single Scene",
     caption: "A bright and lively gallery filled with Risuko's world."
   },
-{
-  src: "./thumbnail/kv03.webp",
-  thumb: "./thumbnail/kv03.webp",
-  href: "./suzuko_room/index.html",
-  title: "Risuko’s Friend-Brag Room: Suzuko the White Squirrel — Single Scene",
-  caption: "Risuko brought the dazzling white squirrel Suzuko to show off!"
-},
   {
-    src: "./thumbnail/kv04.webp",
-    thumb: "./thumbnail/kv04.webp",
-    href: "./risuko_X/index.html",
+    src: `${base}/thumbnail/kv03.webp`,
+    thumb: `${base}/thumbnail/kv03.webp`,
+    href: `./suzuko_room/index.html`,
+    title: "Risuko’s Friend-Brag Room: Suzuko the White Squirrel — Single Scene",
+    caption: "Risuko brought the dazzling white squirrel Suzuko to show off!"
+  },
+  {
+    src: `${base}/thumbnail/kv04.webp`,
+    thumb: `${base}/thumbnail/kv04.webp`,
+    href: `./risuko_X/index.html`,
     title: "Forest Whispers Room",
     caption: "A collection of daily thoughts and musings from X. Please enjoy the delightful moments spent by Risuko and Suzuko in the forest."
   },

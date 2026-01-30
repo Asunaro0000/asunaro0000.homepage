@@ -1,3 +1,13 @@
+// file: プロトコルではない、かつ hostname に github が含まれるなら GitHub とみなす
+const isGitHub = window.location.hostname.includes('github.io');
+const isLocal = window.location.protocol === 'file:';
+
+// GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
+// ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
+const base = (isGitHub && !isLocal) 
+  ? '/asunaro0000.homepage/gallery/Usako_and_Kameko' 
+  : '/gallery/Usako_and_Kameko';
+
 // tiny helpers
 const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
@@ -5,25 +15,25 @@ const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 // ---- Replace the text here ----
 const slides = [
   {
-    src: "./thumbnail/usako_and_kameko.webp",
-    thumb: "./thumbnail/usako_and_kameko.webp",
+    src: `${base}/thumbnail/usako_and_kameko.webp`,
+    thumb: `${base}/thumbnail/usako_and_kameko.webp`,
     href: "https://asunaro-0000.itch.io/usako-kameko-between-motion-and-stillness",
     title: "Usako & Kameko — Storyboard",
     caption:
       "A journey through the forest after the rain.\nTheir day is woven into 81 scenes of quiet moments and emotion."
   },
   {
-    src: "./thumbnail/usako_diary.webp",
-    thumb: "./thumbnail/usako_diary.webp",
-    href: "./usako_diary/index.html",
+    src: `${base}/thumbnail/usako_diary.webp`,
+    thumb: `${base}/thumbnail/usako_diary.webp`,
+    href: `./usako_diary/index.html`,
     title: "Usako's Daily Life — Single Scene",
     caption:
       "Meals, walks, and little breaks.\nA day filled with the small joys Usako treasures."
   },
   {
-    src: "./thumbnail/kameko_diary.webp",
-    thumb: "./thumbnail/kameko_diary.webp",
-    href: "./kameko_diary/index.html",
+    src: `${base}/thumbnail/kameko_diary.webp`,
+    thumb: `${base}/thumbnail/kameko_diary.webp`,
+    href: `./kameko_diary/index.html`,
     title: "Kameko's Daily Life — Single Scene",
     caption:
       "Today again, she picks up her brush.\nKameko's days unfold in calm, focused hours of creation."
