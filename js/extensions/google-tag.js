@@ -1,48 +1,84 @@
 /**
- * Asunaro Works 統合計測スクリプト (イベント奪取・最優先版)
+ * Asunaro Works 統合計測スクリプト (最終安定版)
+ * GA4 / Pinterest / Click / Scroll / Debug 全盛り
  */
 
-// --- (1) 基本設定 (GA4 & Pinterest) ---
-var gaScript = document.createElement('script');
-gaScript.async = true;
-gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-1NCR09VMKR';
-document.head.appendChild(gaScript);
+// --- (1) タグの読み込みと初期化 ---
+const initAsunaroTags = () => {
+  // GA4
+  var gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-1NCR09VMKR';
+  document.head.appendChild(gaScript);
 
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-1NCR09VMKR', { 'debug_mode': true });
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){dataLayer.push(arguments);};
+  gtag('js', new Date());
+  
+  // 自動スクロール計測をオフにし、手動の監視と衝突させない
+  gtag('config', 'G-1NCR09VMKR', { 
+    'debug_mode': true,
+    'enhanced_measurement': false 
+  });
 
-!function(e){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var n=window.pintrk;n.queue=[],n.version="3.0";var t=document.createElement("script");t.async=!0,t.src=e;var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/lib/main.js");
-pintrk('load', '2612917956775');
-
-// --- (2) 送信関数 ---
-window.sendGAEvent = function(label) {
-  const params = {
-    event_category: 'user_interaction',
-    event_label: label,
-    ts: Date.now()
-  };
-  console.log("%c📊 計測実行: " + label, "color: #00ff00; font-weight: bold; border: 1px solid #00ff00; padding: 2px;");
-  gtag('event', 'click_action', params);
-  pintrk('track', 'click_action', params);
+  // Pinterest
+  !function(e){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var n=window.pintrk;n.queue=[],n.version="3.0";var t=document.createElement("script");t.async=!0,t.src=e;var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/lib/main.js");
+  pintrk('load', '2612917956775');
+  pintrk('page');
 };
 
-// --- (3) 【重要】最優先のクリック監視 ---
-// 第3引数を true にすることで、他のスクリプトが動く「前」に割り込みます
+// 実行開始
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAsunaroTags);
+} else {
+  initAsunaroTags();
+}
+
+// --- (2) 統合送信関数 ---
+window.logEvent = function(name, label, extra = {}) {
+  const ts = new Date().toLocaleTimeString() + "." + new Date().getMilliseconds();
+  const params = { event_label: label, ts: Date.now(), ...extra };
+
+  // コンソールに目立つように表示 (デバッグ用)
+  console.log(`%c[EVENT] ${ts} | ${name} | ${label}`, "background: #222; color: #00ff00; font-weight: bold; border-left: 4px solid #00ff00; padding: 2px 8px;");
+
+  // 各プラットフォームへ送信
+  if (typeof gtag === 'function') gtag('event', name, params);
+  if (typeof pintrk === 'function') pintrk('track', name, params);
+};
+
+// --- (3) 全クリック監視 (最優先割り込みモード) ---
 window.addEventListener('click', (e) => {
-  // クリックされた地点の要素を特定
-  const target = e.target.closest('button, a, [onclick], [data-image-id], .ctrl, .btn, img');
-  
+  const target = e.target.closest('button, a, [onclick], [data-image-id], .ctrl, .btn, img, .ga-track');
   if (target) {
     const label = target.innerText.trim() || 
                   target.getAttribute('data-image-id') || 
+                  target.getAttribute('onclick') || 
                   target.getAttribute('aria-label') ||
-                  target.getAttribute('src') ||
-                  'interactive_element';
+                  target.getAttribute('src')?.split('/').pop() ||
+                  'interaction';
 
-    window.sendGAEvent(label);
+    window.logEvent('user_click', label, { element: target.tagName });
   }
-}, true); // ← この 'true' が、横取りを可能にする魔法のパラメータです
+}, { capture: true, passive: true });
 
-console.log('%c🔥 [緊急対策] クリック横取りモード起動完了', 'color: #ff0000; font-weight: bold;');
+// --- (4) スクロール継続監視 (最初の一回で終わらせない) ---
+let lastLoggedPos = 0;
+let isScrolling = false;
+
+window.addEventListener('scroll', () => {
+  if (!isScrolling) {
+    window.requestAnimationFrame(() => {
+      const currentPos = window.scrollY;
+      // 200px動くごとに「動いていること」を証明するログを出す
+      if (Math.abs(currentPos - lastLoggedPos) > 200) {
+        window.logEvent('user_scroll', `Pos: ${Math.round(currentPos)}px`);
+        lastLoggedPos = currentPos;
+      }
+      isScrolling = false;
+    });
+    isScrolling = true;
+  }
+}, { passive: true });
+
+console.log('%c🚀 System Online: All events are being monitored.', 'color: #00ccff; font-weight: bold;');
