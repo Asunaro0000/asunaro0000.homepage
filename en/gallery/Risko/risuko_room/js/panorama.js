@@ -1,14 +1,21 @@
 // panorama.js
 const pano = document.getElementById('panorama');
 const gotoBtn = document.querySelector('#panoGoto .pano-goto__btn');
-// --- ベースパスの自動解決 ---
 
-const isLocal = window.location.protocol === 'file:';
+// --- ベースパスの自動解決（修正版） ---
+// file: プロトコルではない、かつ hostname に github が含まれるなら GitHub とみなす
 const isGitHub = window.location.hostname.includes('github.io');
+const isLocal = window.location.protocol === 'file:';
 
-// ローカルなら現在のHTMLからの相対(./)、GitHubならリポジトリ名を入れる
+// GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
+// ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
+const base = (isGitHub && !isLocal) 
+  ? '/asunaro0000.homepage/gallery/Risko/risuko_room' 
+  : '/gallery/Risko/risuko_room';
 
-const base = isLocal ? '/asunaro0000.homepage/gallery/Risko/risuko_room' : '/gallery/Risko/risuko_room';
+console.log("Current Mode: ", isGitHub ? "GitHub" : "Local");
+console.log("Base Path: ", base);
+
 // --- 画像を横に並べる ---
 for (let i = 1; i <= 21; i++) {
   const img = document.createElement('img');

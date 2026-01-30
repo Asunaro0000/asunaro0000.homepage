@@ -2,11 +2,17 @@
 (() => {
   const bgm = document.getElementById('bgmAudio');
   const bgmToggle = document.getElementById('bgmToggle');
+// --- ベースパスの自動解決：ローカルとGitHubで切り替え ---
+const isLocal = window.location.protocol === 'file:';
+const isGitHub = window.location.hostname.includes('github.io');
+
+// ローカルならリポジトリ名あり、GitHub（本番）ならルートからのパスを使用
+const base = isLocal ? '/asunaro0000.homepage/gallery/Risko/risuko_room' : '/gallery/Risko/risuko_room';
 
   // ★ ここに自分のファイル名を書くだけでOK
   const tracks = [
-    './bgm/bgm1.m4a',
-    './bgm/bgm2.m4a'
+    `${base}/bgm/bgm1.m4a`,
+    `${base}/bgm/bgm2.m4a`
   ];
 
   let trackIndex = 0;
