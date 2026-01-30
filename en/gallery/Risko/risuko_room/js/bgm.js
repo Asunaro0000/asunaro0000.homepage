@@ -2,12 +2,16 @@
 (() => {
   const bgm = document.getElementById('bgmAudio');
   const bgmToggle = document.getElementById('bgmToggle');
-// --- ベースパスの自動解決：ローカルとGitHubで切り替え ---
-const isLocal = window.location.protocol === 'file:';
+// --- ベースパスの自動解決（修正版） ---
+// file: プロトコルではない、かつ hostname に github が含まれるなら GitHub とみなす
 const isGitHub = window.location.hostname.includes('github.io');
+const isLocal = window.location.protocol === 'file:';
 
-// ローカルならリポジトリ名あり、GitHub（本番）ならルートからのパスを使用
-const base = isLocal ? '/asunaro0000.homepage/gallery/Risko/risuko_room' : '/gallery/Risko/risuko_room';
+// GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
+// ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
+const base = (isGitHub && !isLocal) 
+  ? '/asunaro0000.homepage/gallery/Risko/risuko_room' 
+  : '/gallery/Risko/risuko_room';
 
   // ★ ここに自分のファイル名を書くだけでOK
   const tracks = [

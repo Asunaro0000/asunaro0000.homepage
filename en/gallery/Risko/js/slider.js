@@ -26,6 +26,13 @@ const slides = [
   title: "Risuko’s Friend-Brag Room: Suzuko the White Squirrel — Single Scene",
   caption: "Risuko brought the dazzling white squirrel Suzuko to show off!"
 },
+  {
+    src: "./thumbnail/kv04.webp",
+    thumb: "./thumbnail/kv04.webp",
+    href: "./risuko_X/index.html",
+    title: "Forest Whispers Room",
+    caption: "A collection of daily thoughts and musings from X. Please enjoy the delightful moments spent by Risuko and Suzuko in the forest."
+  },
 ];
 
 

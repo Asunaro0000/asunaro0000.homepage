@@ -1,3 +1,14 @@
+// file: プロトコルではない、かつ hostname に github が含まれるなら GitHub とみなす
+const isGitHub = window.location.hostname.includes('github.io');
+const isLocal = window.location.protocol === 'file:';
+
+// GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
+// ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
+const base = (isGitHub && !isLocal) 
+  ? '/asunaro0000.homepage/gallery/Risko/risuko_X' 
+  : '/gallery/Risko/risuko_X';
+
+
 // Minimal card gallery with lightbox navigation
 const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
@@ -18,7 +29,7 @@ const groupNames = {
  * srcのファイル名を '1-1.webp', '2-1.webp' ... という形式で判別します
  */
 const items = [
-{ src: './images/1-1.webp', title: '',
+{ src: `${base}/images/1-1.webp`, title: '',
 caption:
 `#1
 It’s Risuko! 🐿️️️
@@ -28,7 +39,7 @@ my tail got all fluffy… and I fell asleep right there. 🌿✨
 #BorrowMyTail #ForestRestSpot`
 },
 
-{ src: './images/1-2.webp', title: '',
+{ src: `${base}/images/1-2.webp`, title: '',
 caption:
 `#2
 It’s Risuko! 🐿️️️
@@ -39,7 +50,7 @@ Because the coffee would get cold. ☕❄️
 #OneSipBreak #WinterMoments`
 },
 
-{ src: './images/1-3.webp', title: '',
+{ src: `${base}/images/1-3.webp`, title: '',
 caption:
 `#3
 It’s Risuko! 🐿️️️
@@ -51,7 +62,7 @@ With that one sentence, today’s path is decided. 🍁
 #WalkingIsTheMainStory #DetoursAreJustice`
 },
 
-{ src: './images/1-4.webp', title: '',
+{ src: `${base}/images/1-4.webp`, title: '',
 caption:
 `#4
 It’s Risuko! 🐿️️️
@@ -62,7 +73,7 @@ So today again, I choose this path. 🌙
 #FunFirst #ForestSenseOfBalance`
 },
 
-{ src: './images/1-5.webp', title: '',
+{ src: `${base}/images/1-5.webp`, title: '',
 caption:
 `#5
 It’s Risuko! 🐿️️️
@@ -72,7 +83,7 @@ Yeah, feels like I passed today.
 #ForestConcert #ForestJudge`
 },
 
-{ src: './images/1-6.webp', title: '',
+{ src: `${base}/images/1-6.webp`, title: '',
 caption:
 `#6
 It’s Risuko! 🐿️️️
@@ -82,7 +93,7 @@ One runs, one plays.
 #RunningSoundsAndStrings #ForestTeamwork`
 },
 
-{ src: './images/1-7.webp', title: '',
+{ src: `${base}/images/1-7.webp`, title: '',
 caption:
 `#7
 It’s Suzuko. 🤍
@@ -95,7 +106,7 @@ but I’ll keep watching until the end.
 #ForestConcert #ForestJudge`
 },
 
-{ src: './images/1-8.webp', title: '',
+{ src: `${base}/images/1-8.webp`, title: '',
 caption:
 `#8
 Risuko and Suzuko.
@@ -108,7 +119,7 @@ Maybe this is how friendship starts.
 #ForestPassSign #AfterTheMusic`
 },
 
-{ src: './images/1-9.webp', title: '',
+{ src: `${base}/images/1-9.webp`, title: '',
 caption:
 `#9
 It’s Risuko! 🐿️️
@@ -118,7 +129,7 @@ For now, everything is still up for grabs!
 #FirstComeFirstServed #SweetsAreJustice`
 },
 
-{ src: './images/1-10.webp', title: '',
+{ src: `${base}/images/1-10.webp`, title: '',
 caption:
 `#10
 It’s Risuko! 🐿️️
@@ -128,7 +139,7 @@ the correct answer is eating close together. 🍔❄️
 #WinterWisdom #WarmMoments`
 },
 
-{ src: './images/1-11.webp', title: '',
+{ src: `${base}/images/1-11.webp`, title: '',
 caption:
 `#11
 It’s Risuko! 🐿️️️
@@ -139,7 +150,7 @@ The sound comes later.
 #DoingMyBestRisuko #FluteDependsOnMood #CozyForest`
 },
 
-{ src: './images/1-12.webp', title: '',
+{ src: `${base}/images/1-12.webp`, title: '',
 caption:
 `#12
 The river is frozen,
@@ -150,7 +161,7 @@ will be prepared properly.
 #WinterKindness #ForestLife`
 },
 
-{ src: './images/1-13.webp', title: '',
+{ src: `${base}/images/1-13.webp`, title: '',
 caption:
 `#13
 It’s Risuko! 🐿️️️
@@ -161,7 +172,7 @@ Now is a time to relax.
 #SlowTime #FeetInTheWater`
 },
 
-{ src: './images/1-14.webp', title: '',
+{ src: `${base}/images/1-14.webp`, title: '',
 caption:
 `#14
 It’s Risuko! 🐿️️️
@@ -172,7 +183,7 @@ I did it properly.
 #ForestMoment #GentleAchievement`
 },
 
-{ src: './images/1-15.webp', title: '',
+{ src: `${base}/images/1-15.webp`, title: '',
 caption:
 `#15
 It’s Risuko! 🐿️️️
@@ -183,7 +194,7 @@ I’m not moving anymore.
 #WinterRoom #ChoosingStillness`
 },
 
-{ src: './images/1-16.webp', title: '',
+{ src: `${base}/images/1-16.webp`, title: '',
 caption:
 `#16
 It’s Risuko! 🐿️️️
@@ -194,7 +205,7 @@ hasn’t arrived yet.
 #Countdown #WaitingIsPartOfIt`
 },
 
-{ src: './images/1-17.webp', title: '',
+{ src: `${base}/images/1-17.webp`, title: '',
 caption:
 `#17
 It’s Risuko! 🐿️️️
@@ -204,7 +215,7 @@ Tanuki is on tambourine duty ✨🥁
 #ForestFriends #InstantBand`
 },
 
-{ src: './images/1-18.webp', title: '',
+{ src: `${base}/images/1-18.webp`, title: '',
 caption:
 `#18
 It’s Risuko! 🐿️️️
@@ -214,7 +225,7 @@ the tanuki got the most excited 🥁✨
 #HypeManager #RoleSwap`
 },
 
-{ src: './images/1-19.webp', title: '',
+{ src: `${base}/images/1-19.webp`, title: '',
 caption:
 `#19
 It’s Risuko! 🐿️️
@@ -225,7 +236,7 @@ This is what Christmas feels like 🎄
 #MerryChristmas #FreshBakedHappiness`
 },
 
-{ src: './images/1-20.webp', title: '',
+{ src: `${base}/images/1-20.webp`, title: '',
 caption:
 `#20
 It’s Risuko! 🐿️️
@@ -235,7 +246,7 @@ Going to catch the light of the stars ✨🎄
 #HolyNight #SacredForest`
 },
 
-{ src: './images/1-21.webp', title: '',
+{ src: `${base}/images/1-21.webp`, title: '',
 caption:
 `#21
 It’s Risuko! 🐿️️
@@ -245,7 +256,7 @@ I’m in charge of the forest 🎄🌲
 #ForestSanta #TailWigglingDelivery`
 },
 
-{ src: './images/1-22.webp', title: '',
+{ src: `${base}/images/1-22.webp`, title: '',
 caption:
 `#22
 It’s Suzuko.
@@ -256,7 +267,7 @@ means it’s going well.
 #ForestDelivery #TheArtOfNotBeingSeen`
 },
 
-{ src: './images/1-23.webp', title: '',
+{ src: `${base}/images/1-23.webp`, title: '',
 caption:
 `#23
 It’s Risuko! 🐿️️
@@ -266,7 +277,7 @@ Sleepy. But satisfied.
 #AfterNightShift #SleepyButHappy`
 },
 
-{ src: './images/1-24.webp', title: '',
+{ src: `${base}/images/1-24.webp`, title: '',
 caption:
 `#24
 It’s Risuko! 🐿️️
@@ -276,7 +287,7 @@ Christmas arrived properly 🎄
 #ForestChristmas #WinterStory`
 },
 
-{ src: './images/1-25.webp', title: '',
+{ src: `${base}/images/1-25.webp`, title: '',
 caption:
 `#25
 It’s Risuko! 🐿️️
@@ -287,7 +298,7 @@ Third… luck.
 #PostureIsEverything #FishingPhilosophy`
 },
 
-{ src: './images/1-26.webp', title: '',
+{ src: `${base}/images/1-26.webp`, title: '',
 caption:
 `#26
 It’s Risuko! 🐿️️
@@ -300,7 +311,7 @@ years of experience.
 #ForestWisdom #WeightOfTime`
 },
 
-{ src: './images/1-27.webp', title: '',
+{ src: `${base}/images/1-27.webp`, title: '',
 caption:
 `#27
 It’s Risuko! 🐿️️
@@ -310,7 +321,7 @@ Only the results were different.
 #TalentGap #DailyDuo`
 },
 
-{ src: './images/1-28.webp', title: '',
+{ src: `${base}/images/1-28.webp`, title: '',
 caption:
 `#28
 It’s Risuko! 🐿️️
@@ -320,7 +331,7 @@ the receiver watches carefully.
 #ForestRules #CarefulEnthusiasm`
 },
 
-{ src: './images/1-29.webp', title: '',
+{ src: `${base}/images/1-29.webp`, title: '',
 caption:
 `#29
 It’s Suzuko.
@@ -337,7 +348,7 @@ Cute things are meant to be admired. ❄️🐰
 #SuzukoDistance #ArtOfNotChasing`
 },
 
-{ src: './images/1-30.webp', title: '',
+{ src: `${base}/images/1-30.webp`, title: '',
 caption:
 `#30
 It’s Suzuko.
@@ -353,7 +364,8 @@ I don’t feel watched.
 
 #SuzukoDistance #BecomingScenery`
 },
-{ src: './images/1-31.webp', title: '',
+
+{ src: `${base}/images/1-31.webp`, title: '',
 caption:
 `#31
 It’s Risuko and Suzuko! 🐿️️
@@ -367,7 +379,7 @@ Only my head can’t keep up.
 #KemomimiEarsProject #ForestGathering`
 },
 
-{ src: './images/1-32.webp', title: '',
+{ src: `${base}/images/1-32.webp`, title: '',
 caption:
 `#32
 It’s Risuko! 🐿️️
@@ -377,7 +389,7 @@ Up above is the supervisor.
 #SubcontractPosition #ForestRoles`
 },
 
-{ src: './images/1-33.webp', title: '',
+{ src: `${base}/images/1-33.webp`, title: '',
 caption:
 `#33
 It’s Risuko! 🐿️️
@@ -387,7 +399,7 @@ Lending my legs.
 #ForestVehicle #BusinessAsUsual`
 },
 
-{ src: './images/1-34.webp', title: '',
+{ src: `${base}/images/1-34.webp`, title: '',
 caption:
 `#34
 It’s Risuko! 🐿️️
@@ -398,7 +410,7 @@ Me: “This forest is high-level!”
 #ForestSeriousMode #PeacefulChaos`
 },
 
-{ src: './images/1-35.webp', title: '',
+{ src: `${base}/images/1-35.webp`, title: '',
 caption:
 `#35
 It’s Risuko! 🐿️️
@@ -409,7 +421,7 @@ I keep my distance.
 #ForestAtmosphere #PersonalSpace`
 },
 
-{ src: './images/1-36.webp', title: '',
+{ src: `${base}/images/1-36.webp`, title: '',
 caption:
 `#36
 It’s Risuko! 🐿️️
@@ -420,7 +432,7 @@ Hehe… secret ✨🌲
 #DeerPleaseBeQuiet #ForestWitness`
 },
 
-{ src: './images/1-37.webp', title: '',
+{ src: `${base}/images/1-37.webp`, title: '',
 caption:
 `#37
 It’s Suzuko.
@@ -434,7 +446,7 @@ But not right now.
 #PriorityProblem #WaitAMoment`
 },
 
-{ src: './images/1-38.webp', title: '',
+{ src: `${base}/images/1-38.webp`, title: '',
 caption:
 `#38
 It’s Risuko! 🐿️️
@@ -450,7 +462,7 @@ Wishing everyone a happy New Year 🌲❄️
 #AIart #SeeYouNextYear`
 },
 
-{ src: './images/1-39.webp', title: '',
+{ src: `${base}/images/1-39.webp`, title: '',
 caption:
 `#39
 It’s Risuko! 🐿️️
@@ -461,7 +473,7 @@ Looking forward to 2026 🎍
 #NewYearGreetings #ItsRisuko`
 },
 
-{ src: './images/1-40.webp', title: '',
+{ src: `${base}/images/1-40.webp`, title: '',
 caption:
 `#40
 It’s Suzuko.
@@ -472,7 +484,7 @@ Here’s to 2026 ⛩️
 #NewYearGreetings #Suzuko`
 },
 
-{ src: './images/1-41.webp', title: '',
+{ src: `${base}/images/1-41.webp`, title: '',
 caption:
 `#41
 It’s Risuko! 🐿️️
@@ -482,7 +494,7 @@ Smiles, now being distributed.
 #CheekPouchSmile #ForestGoodLuck`
 },
 
-{ src: './images/1-42.webp', title: '',
+{ src: `${base}/images/1-42.webp`, title: '',
 caption:
 `#42
 It’s Risuko! 🐿️️
@@ -492,7 +504,7 @@ Suzuko, I really can’t take any more…
 #HoardingHabit #InstinctOverReason`
 },
 
-{ src: './images/1-43.webp', title: '',
+{ src: `${base}/images/1-43.webp`, title: '',
 caption:
 `#43
 It’s Risuko! 🐿️️
@@ -503,7 +515,7 @@ Permission denied.
 #MoodyType #ButThatIsFine`
 },
 
-{ src: './images/1-44.webp', title: '',
+{ src: `${base}/images/1-44.webp`, title: '',
 caption:
 `#44
 It’s Risuko! 🐿️️
@@ -514,7 +526,7 @@ Faster than wearing clothes.
 #NaturalHeater #TotallyUnfair`
 },
 
-{ src: './images/1-45.webp', title: '',
+{ src: `${base}/images/1-45.webp`, title: '',
 caption:
 `#45
 It’s Risuko! 🐿️️
@@ -525,7 +537,7 @@ this is probably a challenge.
 #SilentPressure #ForestIsStrict`
 },
 
-{ src: './images/1-46.webp', title: '',
+{ src: `${base}/images/1-46.webp`, title: '',
 caption:
 `#46
 It’s Risuko! 🐿️️
@@ -543,7 +555,7 @@ it’s time to give up.
 #ForestMasters #OurBattleContinues`
 },
 
-{ src: './images/1-47.webp', title: '',
+{ src: `${base}/images/1-47.webp`, title: '',
 caption:
 `#47
 Good morning ☀️
@@ -558,7 +570,7 @@ In my sleep I mutter,
 #HardWorker #ForestMoment`
 },
 
-{ src: './images/1-48.webp', title: '',
+{ src: `${base}/images/1-48.webp`, title: '',
 caption:
 `#48
 It’s Risuko! 🐿️️
@@ -570,7 +582,7 @@ First prize is in dreams.
 #DreamPodium #NightMoment`
 },
 
-{ src: './images/1-49.webp', title: '',
+{ src: `${base}/images/1-49.webp`, title: '',
 caption:
 `#49
 It’s Risuko! 🐿️️
@@ -581,7 +593,7 @@ they usually decrease.
 #ForestCommonThings #SuspiciousSnacking`
 },
 
-{ src: './images/1-50.webp', title: '',
+{ src: `${base}/images/1-50.webp`, title: '',
 caption:
 `#50
 It’s Risuko! 🐿️️
@@ -593,7 +605,7 @@ The carrot is still not released.
 #SmileStrategy #PressureOfSmiles`
 },
 
-{ src: './images/1-51.webp', title: '',
+{ src: `${base}/images/1-51.webp`, title: '',
 caption:
 `#51
 It’s Risuko! 🐿️️
@@ -604,7 +616,7 @@ Probably thinks it’ll get some.
 #SilentPressure #NeverSaidIdGive`
 },
 
-{ src: './images/1-52.webp', title: '',
+{ src: `${base}/images/1-52.webp`, title: '',
 caption:
 `#52
 It’s Risuko! 🐿️️
@@ -615,7 +627,7 @@ We all agree with this scene.
 #SupplyAndDemand #WarmthAgreement`
 },
 
-{ src: './images/1-53.webp', title: '',
+{ src: `${base}/images/1-53.webp`, title: '',
 caption:
 `#53
 It’s Risuko! 🐿️️
@@ -627,7 +639,7 @@ might be the sweetest part.
 #SweetConversation #WinterSnackMeeting`
 },
 
-{ src: './images/1-54.webp', title: '',
+{ src: `${base}/images/1-54.webp`, title: '',
 caption:
 `#54
 It’s Risuko! 🐿️️
@@ -638,7 +650,7 @@ a romance drama.
 #MainStoryAtYourFeet #UnseenNarrative`
 },
 
-{ src: './images/1-55.webp', title: '',
+{ src: `${base}/images/1-55.webp`, title: '',
 caption:
 `#55
 It’s Risuko! 🐿️️
@@ -650,7 +662,7 @@ wasn’t supposed to be one of them.
 #ConfusedGoat #CozyMisunderstanding`
 },
 
-{ src: './images/1-56.webp', title: '',
+{ src: `${base}/images/1-56.webp`, title: '',
 caption:
 `#56
 It’s Risuko! 🐿️️
@@ -662,7 +674,7 @@ and gently flavored.
 #ForestBlessings #WarmRecharge`
 },
 
-{ src: './images/1-57.webp', title: '',
+{ src: `${base}/images/1-57.webp`, title: '',
 caption:
 `#57
 It’s Risuko! 🐿️️
@@ -675,7 +687,7 @@ probably couldn’t resist the cuteness.
 #HeadHiddenTailOut #MissionPaused`
 },
 
-{ src: './images/1-58.webp', title: '',
+{ src: `${base}/images/1-58.webp`, title: '',
 caption:
 `#58
 It’s Risuko! 🐿️️
@@ -688,7 +700,7 @@ right here.
 #ChosenCup #ForestCoffeeArrived`
 },
 
-{ src: './images/1-59.webp', title: '',
+{ src: `${base}/images/1-59.webp`, title: '',
 caption:
 `#59
 It’s Risuko! 🐿️️
@@ -699,7 +711,7 @@ Now the epic fantasy waits backstage.
 #BeforeTheClimax #FantasyWaitingRoom`
 },
 
-{ src: './images/1-60.webp', title: '',
+{ src: `${base}/images/1-60.webp`, title: '',
 caption:
 `#60
 It’s Risuko! 🐿️️
@@ -710,7 +722,7 @@ Adding BGM to the world.
 #FantasyInPreparation #StayTuned`
 },
 
-{ src: './images/1-61.webp', title: '',
+{ src: `${base}/images/1-61.webp`, title: '',
 caption:
 `#61
 It’s Risuko! 🐿️️
@@ -723,7 +735,7 @@ I’m the only one out of the loop.
 #ForestDuo #ForestUnit`
 },
 
-{ src: './images/1-62.webp', title: '',
+{ src: `${base}/images/1-62.webp`, title: '',
 caption:
 `#62
 It’s Risuko! 🐿️️
@@ -733,7 +745,7 @@ Even if it’s a tanuki, no hesitation.
 #TanukiCanvas #FreedomOfExpression`
 },
 
-{ src: './images/1-63.webp', title: '',
+{ src: `${base}/images/1-63.webp`, title: '',
 caption:
 `#63
 It’s Risuko! 🐿️️
@@ -746,7 +758,7 @@ That’s the rule.
 #SuddenlyFriends #ForestDailyLife`
 },
 
-{ src: './images/1-64.webp', title: '',
+{ src: `${base}/images/1-64.webp`, title: '',
 caption:
 `#64
 It’s Risuko! 🐿️️
@@ -759,7 +771,7 @@ gives Suzuko full marks.
 #PerfectScoreBody #SkilledKitchen`
 },
 
-{ src: './images/1-65.webp', title: '',
+{ src: `${base}/images/1-65.webp`, title: '',
 caption:
 `#65
 It’s Risuko! 🐿️️️
@@ -770,7 +782,7 @@ I know—but I won’t lower my expectations.
 #CampfireCooking #TanukiStruggles`
 },
 
-{ src: './images/1-66.webp', title: '',
+{ src: `${base}/images/1-66.webp`, title: '',
 caption:
 `#66
 It’s Risuko! 🐿️️️
@@ -780,7 +792,7 @@ Win and you get snacks.
 #AppleChallenge #AnotherPeacefulDay`
 },
 
-{ src: './images/1-67.webp', title: '',
+{ src: `${base}/images/1-67.webp`, title: '',
 caption:
 `#67
 It’s Risuko! 🐿️️
@@ -792,7 +804,7 @@ Roll it, roll it, make a whirlpool of happiness.
 #RisukoEatingJoy #GuiltyPasta`
 },
 
-{ src: './images/1-68.webp', title: '',
+{ src: `${base}/images/1-68.webp`, title: '',
 caption:
 `#68
 It’s Risuko! 🐿️️️
@@ -805,7 +817,7 @@ but I’m already a squirrel, so I’ll roll around freely.
 #RisukoDreamComeTrue #AfterNapolitan`
 },
 
-{ src: './images/1-69.webp', title: '',
+{ src: `${base}/images/1-69.webp`, title: '',
 caption:
 `#69
 It’s Risuko! 🐿️️
@@ -817,7 +829,7 @@ Flour stayed cutely on my nose.
 #NoseMemo #SweetnessOnly`
 },
 
-{ src: './images/1-70.webp', title: '',
+{ src: `${base}/images/1-70.webp`, title: '',
 caption:
 `#70
 It’s Risuko! 🐿️️
@@ -829,7 +841,7 @@ The only requirement is a happy face.
 #SoundIsEnough #RelaxedTime`
 },
 
-{ src: './images/1-71.webp', title: '',
+{ src: `${base}/images/1-71.webp`, title: '',
 caption:
 `#71
 Good morning ☀️
@@ -842,7 +854,7 @@ Enjoying the town together with a fox.
 #FestivalMood #CityWalkPair`
 },
 
-{ src: './images/1-72.webp', title: '',
+{ src: `${base}/images/1-72.webp`, title: '',
 caption:
 `#72
 It’s Risuko! 🐿️️
@@ -851,7 +863,8 @@ I’m not moving from here today!
 
 #BlissfulMoment #MagicOfFluff`
 },
-{ src: './images/1-73.webp', title: 'A New Family Member',
+
+{ src: `${base}/images/1-73.webp`, title: 'A New Family Member',
   caption:
 `#73
 It's Risuko! 🐿️️
@@ -861,7 +874,8 @@ Big sister Risuko is now officially on bodyguard duty! *Salute* 🐿️️💨
 
 #DailyCuteness #GuardianRisuko`
 },
- { src: './images/1-74.webp', title: 'Forest Judge',
+
+{ src: `${base}/images/1-74.webp`, title: 'Forest Judge',
   caption:
 `#74
 It's Risuko! 🐿️️
@@ -870,7 +884,8 @@ Is this... a pass, or is it on hold?
 
 #ForestJudge #HighTension`
 },
- { src: './images/1-75.webp', title: 'Playing Baby',
+
+{ src: `${base}/images/1-75.webp`, title: 'Playing Baby',
   caption:
 `#75
 We found an old stroller, so 
@@ -880,7 +895,8 @@ But she never stops helping—she really is the best big sister!
 
 #RattleSound #RisukoIsThrilled`
 },
- { src: './images/1-76.webp', title: 'Snowy Mountain Hike',
+
+{ src: `${base}/images/1-76.webp`, title: 'Snowy Mountain Hike',
   caption:
 `#76
 It's Risuko!
@@ -891,16 +907,18 @@ This view is absolutely thrilling!
 
 #StunningViews #ExcitingExpedition`
 },
- { src: './images/1-77.webp', title: 'White Moustache Championship',
+
+{ src: `${base}/images/1-77.webp`, title: 'White Moustache Championship',
   caption:
 `#77
-It's Risuko! 🐿️
+It's Risuko! 🐿
 Drinking it all at once gives me a brain freeze, 
 but I can't back down from this challenge! Refills are more than welcome!
 
 #WinterShowdown #WhiteMoustacheChampionship`
 },
- { src: './images/1-78.webp', title: 'Dancing by the Water',
+
+{ src: `${base}/images/1-78.webp`, title: 'Dancing by the Water',
   caption:
 `#78
 It's Risuko! 🐿️️
@@ -910,20 +928,22 @@ it's like being in a magic spring!
 
 #HopTime #HappyStroll`
 },
- { src: './images/1-79.webp', title: 'Fluffy Duo',
+
+{ src: `${base}/images/1-79.webp`, title: 'Fluffy Duo',
   caption:
 `#79
-It's Risuko! 🐿️
+It's Risuko! 🐿
 He’s pure white and fluffy, but his beak is so flat and cute!
 Is he a "long-necked duck" or a "big-mouthed swan"? 
 Either way, he's adorable!
 
 #CuteEitherWay #FluffyDuo`
 },
- { src: './images/1-80.webp', title: 'Wishing on a Star',
+
+{ src: `${base}/images/1-80.webp`, title: 'Wishing on a Star',
   caption:
 `#80
-It's Risuko! 🐿️
+It's Risuko! 🐿
 
 The moment the star shot across the sky, 
 I yelled "Acorns, Walnuts, Pistachios!" 
@@ -931,19 +951,21 @@ Suzuko snapped at me, "That's just a food order!"
 
 #ShootingStarWish #HungryList`
 },
- { src: './images/1-81.webp', title: 'Sharing the Happiness',
+
+{ src: `${base}/images/1-81.webp`, title: 'Sharing the Happiness',
   caption:
 `#81
-It's Risuko! 🐿️
+It's Risuko! 🐿
 My squirrel friends gathered around, and we can't stop munching!
 Packing in all the "yummy" moments of winter.
 
 #SharingHappiness #DonutHolesAreZeroCalories`
 },
- { src: './images/1-82.webp', title: 'Night Picnic',
+
+{ src: `${base}/images/1-82.webp`, title: 'Night Picnic',
   caption:
 `#82
-It's Risuko! 🐿️
+It's Risuko! 🐿
 
 Before I can say "The stars are beautiful," 
 the popcorn might be all gone!
@@ -951,7 +973,8 @@ Crunching away on the snow—this is the best part of winter.
 
 #NightPicnic #NonstopMunching`
 },
- { src: './images/1-83.webp', title: 'Head Over Heels for Fluff',
+
+{ src: `${base}/images/1-83.webp`, title: 'Head Over Heels for Fluff',
   caption:
 `#83
 It's Risuko! 🐿️️
@@ -961,7 +984,8 @@ He's so fluffy, I'm totally head over heels!
 
 #BunnyLovers #PetOfTheDay`
 },
- { src: './images/1-84.webp', title: 'The Temptation of Food Stalls',
+
+{ src: `${base}/images/1-84.webp`, title: 'The Temptation of Food Stalls',
   caption:
 `#84
 It's Risuko! 🐿️️
@@ -972,9 +996,6 @@ I'm so hungry, I want to eat everything in sight!
 
 #SoHungry #FoodStallHopping`
 },
-
-
-
 ];
 
 const gallery = $("#cardGallery");
