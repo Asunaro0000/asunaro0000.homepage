@@ -1,3 +1,14 @@
+// file: プロトコルではない、かつ hostname に github が含まれるなら GitHub とみなす
+const isGitHub = window.location.hostname.includes('github.io');
+const isLocal = window.location.protocol === 'file:';
+
+// GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
+// ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
+const base = (isGitHub && !isLocal) 
+  ? '/asunaro0000.homepage//gallery/Risko/storyboard_room/scenes/06_Busy-Day-at-the-Chicken-Coop' 
+  : '/gallery/Risko/storyboard_room/scenes/06_Busy-Day-at-the-Chicken-Coop';
+
+
 const el = {
   stage: document.getElementById('stage'),
   img: document.getElementById('img'),
@@ -120,7 +131,7 @@ function renderAt(idx){
     el.img.style.display = 'block';
 
     // ここから下は元の画像更新ロジック
-    const nextSrc = s.src;
+    const nextSrc = `${base}/${s.src}`;
     if (el.img.getAttribute('src') === nextSrc){
       el.cap.textContent = s.cap || '';
       el.scrub.value = String(i);
