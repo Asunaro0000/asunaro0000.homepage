@@ -5,12 +5,22 @@
   const btn   = document.querySelector(".pano-bgm-btn"); // index.html の BGMボタン
   if (!audio) return;
 
+  // --- パス判定の追加 (panorama.js と同じロジック) ---
+  const isGitHub = window.location.hostname.includes('github.io');
+  const isLocal = window.location.protocol === 'file:';
+
+  const base = (isGitHub && !isLocal) 
+    ? '/asunaro0000.homepage/gallery/lili_and_kaede/halloween_single' 
+    : '/gallery/lili_and_kaede/halloween_single';
+  // ----------------------------------------------
+
   let started = false;     // 一度でも「画像クリック」で再生を試みたか
   let isOn    = false;     // 今BGMが鳴るべき状態か
   let currentRoom = 1;     // 1 / 2 / 3
 
   function applySrc() {
-    audio.src = `./bgm/bgm${currentRoom}.mp3`;
+    // base を使用してパスを構築
+    audio.src = `${base}/bgm/bgm${currentRoom}.mp3`;
   }
 
   // ★ 画像クリックからしか呼ばせない「スタート専用」
@@ -31,21 +41,20 @@
     updateButtonUI();
   }
 
-function setRoom(roomId) {
-  currentRoom = roomId;
+  function setRoom(roomId) {
+    currentRoom = roomId;
 
-  // ★停止させず、現在の ON/OFF 状態を維持したまま曲だけ更新
-  const wasPlaying = isOn;
+    // ★停止させず、現在の ON/OFF 状態を維持したまま曲だけ更新
+    const wasPlaying = isOn;
 
-  applySrc(); // 曲だけ切り替える
+    applySrc(); // 曲だけ切り替える
 
-  if (wasPlaying) {
-    audio.play().catch(() => {});
+    if (wasPlaying) {
+      audio.play().catch(() => {});
+    }
+
+    updateButtonUI();
   }
-
-  updateButtonUI();
-}
-
 
   // BGMボタンの見た目更新
   function updateButtonUI() {

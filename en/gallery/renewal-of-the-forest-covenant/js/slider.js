@@ -3,44 +3,52 @@ const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
 // ---- 編集ポイント：この配列を書き換えて使う ----
+  // file: プロトコルではない、かつ hostname に github が含まれるなら GitHub とみなす
+  const isGitHub = window.location.hostname.includes('github.io');
+  const isLocal = window.location.protocol === 'file:';
+
+  // GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
+  // ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
+  const base = (isGitHub && !isLocal) 
+    ? '/asunaro0000.homepage/gallery/renewal-of-the-forest-covenant' 
+    : '/gallery/renewal-of-the-forest-covenant';
 
 const slides = [
   {
-    src: "./thumbnail/kv01.webp",
-    thumb: "./thumbnail/kv01.webp",
+    src: `${base}/thumbnail/kv01.webp`,
+    thumb: `${base}/thumbnail/kv01.webp`,
     href: "https://asunaro-0000.itch.io/renewal-of-the-forest-covenant-inherited-customs",
     title: "Renewal of the Forest Covenant — Storyboard",
     caption: "The ancient promise dwelling in the forest stirs once more. A sequence of scenes depicting the renewal through background art and atmospheric storytelling."
   },
   {
-    src: "./thumbnail/kv02.webp",
-    thumb: "./thumbnail/kv02.webp",
-    href: "./Forest_of_Story_Marks/index.html",
+    src: `${base}/thumbnail/kv02.webp`,
+    thumb: `${base}/thumbnail/kv02.webp`,
+    href: `./Forest_of_Story_Marks/index.html`,
     title: "Forest of Story Marks — Single Scene",
     caption: "Moments preserved like bookmarks, expressed through quiet, atmospheric background art."
   },
   {
-    src: "./thumbnail/kv03.webp",
-    thumb: "./thumbnail/kv03.webp",
-    href: "./Forest-Sprits/index.html",
+    src: `${base}/thumbnail/kv03.webp`,
+    thumb: `${base}/thumbnail/kv03.webp`,
+    href: `./Forest-Sprits/index.html`,
     title: "Forest of Spirits — Single Scene",
     caption: "A small gallery capturing one-scene glimpses of spirits within the forest. The gentle background motion subtly suggests a path leading deeper inside."
   },
   {
-    src: "./thumbnail/kv04.webp",
-    thumb: "./thumbnail/kv04.webp",
-    href: "./Forest-panorama-background/index.html",
+    src: `${base}/thumbnail/kv04.webp`,
+    thumb: `${base}/thumbnail/kv04.webp`,
+    href: `./Forest-panorama-background/index.html`,
     title: "Life of the Forest — Panorama",
     caption: "A horizontal reference exhibit organizing forest structures, flows of light, fallen logs, stumps, and shrines. Useful for background creation and worldbuilding, allowing a clear view of the forest’s continuous landscape."
   },
   {
-    src: "./thumbnail/kv05.webp",
-    thumb: "./thumbnail/kv05.webp",
-    href: "./Forest-calendar/index.html",
+    src: `${base}/thumbnail/kv05.webp`,
+    thumb: `${base}/thumbnail/kv05.webp`,
+    href: `./Forest-calendar/index.html`,
     title: "Seven-Day Wall Gallery",
     caption: "The mural changes with each day of the week. Here, the world's history reveals itself through subtle changes in form and flow — one fragment added each day."
   },
-
 ];
 
 

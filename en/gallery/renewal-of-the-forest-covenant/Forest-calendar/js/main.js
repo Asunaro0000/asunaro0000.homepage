@@ -1,6 +1,16 @@
 // 画像のベースパスと拡張子（webpでテスト）
-const IMAGE_ROOT = "./assets/images/forest-room";
+
 const IMAGE_EXT = ".webp";
+
+// file: プロトコルではない、かつ hostname に github が含まれるなら GitHub とみなす
+const isGitHub = window.location.hostname.includes('github.io');
+const isLocal = window.location.protocol === 'file:';
+
+// GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
+// ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
+const IMAGE_ROOT = (isGitHub && !isLocal) 
+  ? '/asunaro0000.homepage/gallery/renewal-of-the-forest-covenant/Forest-calendar/assets/images/forest-room' 
+  : '/gallery/renewal-of-the-forest-covenant/Forest-calendar/assets/images/forest-room';
 
 // JSの曜日: 0=日,1=月,2=火,3=水,4=木,5=金,6=土
 // 各曜日のフォルダ名・ラベル・背景色・文字色

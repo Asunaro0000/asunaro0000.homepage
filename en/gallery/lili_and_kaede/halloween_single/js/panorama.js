@@ -4,6 +4,15 @@ const pano = document.getElementById("panorama");
 const gotoBtn = document.getElementById("panoGotoBtn");
 const tabButtons = document.querySelectorAll(".pano-tab");
 
+  // file: プロトコルではない、かつ hostname に github が含まれるなら GitHub とみなす
+  const isGitHub = window.location.hostname.includes('github.io');
+  const isLocal = window.location.protocol === 'file:';
+
+  // GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
+  // ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
+  const base = (isGitHub && !isLocal) 
+    ? '/asunaro0000.homepage/gallery/lili_and_kaede/halloween_single' 
+    : '/gallery/lili_and_kaede/halloween_single';
 // ============================
 // 各セットの画像リスト
 // ============================
@@ -34,7 +43,7 @@ function buildPanorama(setId) {
 
   for (let i = 1; i <= cfg.count; i++) {
     const img = document.createElement("img");
-    img.src = `./images/${cfg.prefix}${i}.webp`;
+    img.src = `${base}/images/${cfg.prefix}${i}.webp`;
     img.alt = `${cfg.prefix}${i}`;
     img.loading = "lazy";
     pano.appendChild(img);

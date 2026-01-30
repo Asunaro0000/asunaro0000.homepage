@@ -10,7 +10,16 @@ const captionTitleEl = document.getElementById('panoTitle');
 const captionTextEl = document.getElementById('panoText');
 const progressDots = document.querySelectorAll('.pano-progress-dot');
 
-const IMAGE_BASE = './assets/images/';
+const isGitHub = window.location.hostname.includes('github.io');
+const isLocal = window.location.protocol === 'file:';
+
+// GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
+// ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
+const IMAGE_BASE = (isGitHub && !isLocal) 
+  ? '/asunaro0000.homepage/gallery/renewal-of-the-forest-covenant/Forest-calendar/assets/images/' 
+  : '/gallery/renewal-of-the-forest-covenant/Forest-panorama-background/assets/images/';
+
+
 
 // Panorama sets
 const panoSets = [

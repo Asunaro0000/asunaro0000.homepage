@@ -2,56 +2,64 @@
 const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
+// file: プロトコルではない、かつ hostname に github が含まれるなら GitHub とみなす
+const isGitHub = window.location.hostname.includes('github.io');
+const isLocal = window.location.protocol === 'file:';
+
+// GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
+// ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
+const base = (isGitHub && !isLocal) 
+  ? '/asunaro0000.homepage/gallery/renewal-of-the-forest-covenant/Forest_of_Story_Marks' 
+  : '/gallery/renewal-of-the-forest-covenant/Forest_of_Story_Marks';
 // 画像ごとに個別キャプションを設定
 // 画像ごとに個別キャプションを設定
 const items = [
-  { src: './images/1.webp',  title: 'At the Forest Shrine', caption: '' },
-  { src: './images/2.webp',  title: 'Light of the Tree Shrine', caption: '' },
-  { src: './images/3.webp',  title: 'Sprout on the Old Stump', caption: '' },
-  { src: './images/4.webp',  title: 'Prayer by the Waterside', caption: '' },
-  { src: './images/5.webp',  title: 'Lanterns Lighting the Forest', caption: '' },
-  { src: './images/6.webp',  title: 'Corridor Along the Stream', caption: '' },
-  { src: './images/7.webp',  title: 'Stone Gate of the Forest', caption: '' },
-  { src: './images/8.webp',  title: 'Young Leaves Resting on a Stump', caption: '' },
-  { src: './images/9.webp',  title: 'Path of the Water Mirror', caption: '' },
-  { src: './images/10.webp', title: 'At the Forest Entrance', caption: '' },
+  { src: `${base}/images/1.webp`,  title: 'At the Forest Shrine', caption: '' },
+  { src: `${base}/images/2.webp`,  title: 'Light of the Tree Shrine', caption: '' },
+  { src: `${base}/images/3.webp`,  title: 'Sprout on the Old Stump', caption: '' },
+  { src: `${base}/images/4.webp`,  title: 'Prayer by the Waterside', caption: '' },
+  { src: `${base}/images/5.webp`,  title: 'Lanterns Lighting the Forest', caption: '' },
+  { src: `${base}/images/6.webp`,  title: 'Corridor Along the Stream', caption: '' },
+  { src: `${base}/images/7.webp`,  title: 'Stone Gate of the Forest', caption: '' },
+  { src: `${base}/images/8.webp`,  title: 'Young Leaves Resting on a Stump', caption: '' },
+  { src: `${base}/images/9.webp`,  title: 'Path of the Water Mirror', caption: '' },
+  { src: `${base}/images/10.webp`, title: 'At the Forest Entrance', caption: '' },
 
-  { src: './images/11.webp', title: 'Stillness by the Water', caption: '' },
-  { src: './images/12.webp', title: 'Altar of Prayer', caption: '' },
-  { src: './images/13.webp', title: 'Garden of Ripples', caption: '' },
-  { src: './images/14.webp', title: 'Stories of the Old Stump', caption: '' },
-  { src: './images/15.webp', title: 'Whisper of the Wood Spirits', caption: '' },
-  { src: './images/16.webp', title: 'Beside the Stone Lantern', caption: '' },
-  { src: './images/17.webp', title: 'Beside the Shrine', caption: '' },
-  { src: './images/18.webp', title: 'Back of a Wandering Cat', caption: '' },
-  { src: './images/19.webp', title: 'Presence Resting in the Forest', caption: '' },
-  { src: './images/20.webp', title: 'Quiet Offering Stand', caption: '' },
+  { src: `${base}/images/11.webp`, title: 'Stillness by the Water', caption: '' },
+  { src: `${base}/images/12.webp`, title: 'Altar of Prayer', caption: '' },
+  { src: `${base}/images/13.webp`, title: 'Garden of Ripples', caption: '' },
+  { src: `${base}/images/14.webp`, title: 'Stories of the Old Stump', caption: '' },
+  { src: `${base}/images/15.webp`, title: 'Whisper of the Wood Spirits', caption: '' },
+  { src: `${base}/images/16.webp`, title: 'Beside the Stone Lantern', caption: '' },
+  { src: `${base}/images/17.webp`, title: 'Beside the Shrine', caption: '' },
+  { src: `${base}/images/18.webp`, title: 'Back of a Wandering Cat', caption: '' },
+  { src: `${base}/images/19.webp`, title: 'Presence Resting in the Forest', caption: '' },
+  { src: `${base}/images/20.webp`, title: 'Quiet Offering Stand', caption: '' },
 
-  { src: './images/21.webp', title: 'Cloth Crossing the Autumn Sky', caption: '' },
-  { src: './images/22.webp', title: 'Path of Soft Light', caption: '' },
-  { src: './images/23.webp', title: 'Calm Beside the Water', caption: '' },
-  { src: './images/24.webp', title: 'Gaze from the Treetops', caption: '' },
-  { src: './images/25.webp', title: 'Trail of Stumps', caption: '' },
-  { src: './images/26.webp', title: 'Warm Spring by the Forest', caption: '' },
-  { src: './images/27.webp', title: 'Guiding Lanterns', caption: '' },
-  { src: './images/28.webp', title: 'Breath Rising Through the Green', caption: '' },
-  { src: './images/29.webp', title: 'Traveler in Ritual Garments', caption: '' },
-  { src: './images/30.webp', title: 'Bird on the Treetop', caption: '' },
+  { src: `${base}/images/21.webp`, title: 'Cloth Crossing the Autumn Sky', caption: '' },
+  { src: `${base}/images/22.webp`, title: 'Path of Soft Light', caption: '' },
+  { src: `${base}/images/23.webp`, title: 'Calm Beside the Water', caption: '' },
+  { src: `${base}/images/24.webp`, title: 'Gaze from the Treetops', caption: '' },
+  { src: `${base}/images/25.webp`, title: 'Trail of Stumps', caption: '' },
+  { src: `${base}/images/26.webp`, title: 'Warm Spring by the Forest', caption: '' },
+  { src: `${base}/images/27.webp`, title: 'Guiding Lanterns', caption: '' },
+  { src: `${base}/images/28.webp`, title: 'Breath Rising Through the Green', caption: '' },
+  { src: `${base}/images/29.webp`, title: 'Traveler in Ritual Garments', caption: '' },
+  { src: `${base}/images/30.webp`, title: 'Bird on the Treetop', caption: '' },
 
-  { src: './images/31.webp', title: 'Morning Echoes', caption: '' },
-  { src: './images/32.webp', title: 'Passing Through the Birch Trees', caption: '' },
-  { src: './images/33.webp', title: 'Two Presences Leaning Close', caption: '' },
-  { src: './images/34.webp', title: 'Guided by the Blue Flame', caption: '' },
-  { src: './images/35.webp', title: 'Preparing in the Shade', caption: '' },
-  { src: './images/36.webp', title: 'Rings Resonating in the Forest', caption: '' },
-  { src: './images/37.webp', title: 'Presence from Above', caption: '' },
-  { src: './images/38.webp', title: 'Road Toward Home', caption: '' },
-  { src: './images/39.webp', title: 'Gate of Inscribed Wood', caption: '' },
-  { src: './images/40.webp', title: 'Eyes Drifting Into Sleep', caption: '' },
+  { src: `${base}/images/31.webp`, title: 'Morning Echoes', caption: '' },
+  { src: `${base}/images/32.webp`, title: 'Passing Through the Birch Trees', caption: '' },
+  { src: `${base}/images/33.webp`, title: 'Two Presences Leaning Close', caption: '' },
+  { src: `${base}/images/34.webp`, title: 'Guided by the Blue Flame', caption: '' },
+  { src: `${base}/images/35.webp`, title: 'Preparing in the Shade', caption: '' },
+  { src: `${base}/images/36.webp`, title: 'Rings Resonating in the Forest', caption: '' },
+  { src: `${base}/images/37.webp`, title: 'Presence from Above', caption: '' },
+  { src: `${base}/images/38.webp`, title: 'Road Toward Home', caption: '' },
+  { src: `${base}/images/39.webp`, title: 'Gate of Inscribed Wood', caption: '' },
+  { src: `${base}/images/40.webp`, title: 'Eyes Drifting Into Sleep', caption: '' },
 
-  { src: './images/41.webp', title: 'Whisper of Water Sounds', caption: '' },
+  { src: `${base}/images/41.webp`, title: 'Whisper of Water Sounds', caption: '' },
 ];
-
 
 
 

@@ -3,11 +3,21 @@
   const bgm = document.getElementById('bgmAudio');
   const bgmToggle = document.getElementById('bgmToggle');
 
+const isGitHub = window.location.hostname.includes('github.io');
+const isLocal = window.location.protocol === 'file:';
+
+// GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
+// ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
+const IMAGE_BASE = (isGitHub && !isLocal) 
+  ? '/asunaro0000.homepage/gallery/renewal-of-the-forest-covenant/Forest-panorama-background/' 
+  : '/gallery/renewal-of-the-forest-covenant/Forest-panorama-background/';
+
+
   // ★ ここに自分のファイル名を書くだけでOK
-  const tracks = [
-    './assets/bgm/bgm1.m4a',
-    './assets/bgm/bgm2.m4a'
-  ];
+const tracks = [
+  `${IMAGE_BASE}/assets/bgm/bgm1.m4a`,
+  `${IMAGE_BASE}/assets/bgm/bgm2.m4a`
+];
 
   let trackIndex = 0;
   let started = false;

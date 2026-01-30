@@ -1,21 +1,27 @@
 // bgm.js
-// 森ギャラリー用 BGM コントローラ
-// - 初回タップで再生開始（モバイル対策）
-// - ボタンで ON / OFF トグル
-// - ページが裏に行ったら一時停止
+
+// 既に他で base が定義されている場合はそれを使う。なければ定義。
+if (typeof base === 'undefined') {
+  const isGitHub = window.location.hostname.includes('github.io');
+  const isLocal = window.location.protocol === 'file:';
+  window.base = (isGitHub && !isLocal) 
+    ? '/asunaro0000.homepage/gallery/renewal-of-the-forest-covenant/Forest-Sprits' 
+    : '/gallery/renewal-of-the-forest-covenant/Forest-Sprits';
+}
 
 (() => {
   const btn = document.getElementById("bgm-toggle");
   if (!btn) return;
 
-  const BGM_SRC = "assets/bgm/bgm.m4a";
+  // 重要：パスが正しいかコンソールで確認できるようにする
+  const BGM_SRC = `${base}/assets/bgm/bgm.m4a`;
+  console.log("Attempting to load BGM from:", BGM_SRC);
 
   let audio = null;
   let isPlaying = false;
   let isInitialized = false;
 
   function updateButton() {
-    if (!btn) return;
     btn.classList.toggle("is-on", isPlaying);
     btn.setAttribute("aria-pressed", isPlaying ? "true" : "false");
     btn.textContent = isPlaying ? "♪ BGM ON" : "♪ BGM";
@@ -27,19 +33,15 @@
 
     audio = new Audio(BGM_SRC);
     audio.loop = true;
-    audio.preload = "auto";
-    audio.volume = 0.6; // 音量はお好みで 0.0〜1.0
+    audio.volume = 0.6;
 
-    // 再生が終わることはないが、一応エラーハンドリング
-    audio.addEventListener("error", () => {
-      console.warn("BGM の読み込みに失敗しました:", BGM_SRC);
+    audio.addEventListener("error", (e) => {
+      console.error("BGM load error. Path might be wrong:", BGM_SRC);
     });
   }
 
   async function togglePlay() {
-    if (!audio) {
-      initAudio();
-    }
+    if (!audio) initAudio();
     if (!audio) return;
 
     if (!isPlaying) {
@@ -47,25 +49,21 @@
         await audio.play();
         isPlaying = true;
       } catch (err) {
-        console.warn("BGM の再生がブロックされました:", err);
-        // 失敗した場合は状態を戻す
+        console.warn("Playback blocked by browser. User interaction required.");
         isPlaying = false;
       }
     } else {
       audio.pause();
       isPlaying = false;
     }
-
     updateButton();
   }
 
-  // ボタンタップで BGM トグル
   btn.addEventListener("click", (e) => {
     e.preventDefault();
     togglePlay();
   });
 
-  // ページが裏に行ったら一時停止（戻ったときは手動で再ON）
   document.addEventListener("visibilitychange", () => {
     if (document.hidden && audio && isPlaying) {
       audio.pause();
@@ -74,6 +72,5 @@
     }
   });
 
-  // 初期表示
   updateButton();
 })();

@@ -1,16 +1,28 @@
 // =====================================
 // 1. 背景の森スクロール（PC / スマホで速度分岐）
 // =====================================
+  // file: プロトコルではない、かつ hostname に github が含まれるなら GitHub とみなす
+  const isGitHub = window.location.hostname.includes('github.io');
+  const isLocal = window.location.protocol === 'file:';
+
+  // GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
+  // ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
+  const base = (isGitHub && !isLocal) 
+    ? '/asunaro0000.homepage/gallery/renewal-of-the-forest-covenant/Forest-Sprits' 
+    : '/gallery/renewal-of-the-forest-covenant/Forest-Sprits';
+
+
 (() => {
   const bg = document.querySelector(".forest-bg");
   if (!bg) return;
 
-  const images = [
-    "assets/images/bg-forest1.webp",
-    "assets/images/bg-forest2.webp",
-    "assets/images/bg-forest3.webp",
-    // 必要ならここに追加
-  ];
+
+const images = [
+  `${base}/assets/images/bg-forest1.webp`,
+  `${base}/assets/images/bg-forest2.webp`,
+  `${base}/assets/images/bg-forest3.webp`,
+  // 必要ならここに追加
+];
 
   let index = 0;
   let posY = 100;
@@ -49,137 +61,126 @@
 // =====================================
 const galleryItems = [
   {
-    src: "assets/images/1.webp",
+    src: `${base}/assets/images/1.webp`,
     alt: "A girl reading in the autumn forest with an owl nearby",
     caption: "Pages breathe softly between the rustling wind."
   },
-
   {
-    src: "assets/images/2.webp",
+    src: `${base}/assets/images/2.webp`,
     alt: "A girl illuminated by moonlight and drifting autumn glow",
     caption: "The filling light gently warms the quiet space within."
   },
   {
-    src: "assets/images/3.webp",
+    src: `${base}/assets/images/3.webp`,
     alt: "A girl receiving light in her hands beneath the autumn sky",
     caption: "A flicker of light begins to outline the world."
   },
-
   {
-    src: "assets/images/4.webp",
+    src: `${base}/assets/images/4.webp`,
     alt: "A girl sitting on a stump embraced by forest spirits",
     caption: "A calm breath shimmers blue in the forest depths."
   },
-
   {
-    src: "assets/images/5.webp",
+    src: `${base}/assets/images/5.webp`,
     alt: "A girl sharing nuts with small companions under soft sunlight",
     caption: "A warm scent gathers small circles of life together."
   },
-
   {
-    src: "assets/images/6.webp",
+    src: `${base}/assets/images/6.webp`,
     alt: "A girl resting beneath a large leaf",
     caption: "Listening to the sparkle of dew, she drifts through the sea of leaves."
   },
   {
-    src: "assets/images/7.webp",
+    src: `${base}/assets/images/7.webp`,
     alt: "A girl receiving the wind atop a branch, with spirits by her side",
     caption: "Wrapped in wind, the blue flame leans in with a smile."
   },
   {
-    src: "assets/images/8.webp",
+    src: `${base}/assets/images/8.webp`,
     alt: "A girl with rainbow-colored wings and forest spirits",
     caption: "Wings of light illuminate the forest as blue voices rise."
   },
   {
-    src: "assets/images/9.webp",
+    src: `${base}/assets/images/9.webp`,
     alt: "A girl in blue standing quietly with a great owl",
     caption: "A calm gaze signals the forest to deepen its presence."
   },
   {
-    src: "assets/images/10.webp",
+    src: `${base}/assets/images/10.webp`,
     alt: "A girl holding a lotus lantern while walking through a flower field",
     caption: "Gathering light in the flower breeze, she releases a gentle prayer."
   },
-
   {
-    src: "assets/images/11.webp",
+    src: `${base}/assets/images/11.webp`,
     alt: "A girl sleeping within a bed of flowers",
     caption: "Wrapped in floral breath, only dreams softly swayed."
   },
   {
-    src: "assets/images/12.webp",
+    src: `${base}/assets/images/12.webp`,
     alt: "Rabbit-eared shrine maidens at a morning sanctuary",
     caption: "Small footsteps gather at the dawn shrine as the forest awakens."
   },
   {
-    src: "assets/images/13.webp",
+    src: `${base}/assets/images/13.webp`,
     alt: "A girl resting under birch trees with spirits and a great serpent",
     caption: "In the birch shadows, the old guardians draw near."
   },
   {
-    src: "assets/images/14.webp",
+    src: `${base}/assets/images/14.webp`,
     alt: "A shrine maiden wearing a deer mask",
     caption: "A quiet presence stirs behind the mask as leaf-whispers gently bind the air."
   },
   {
-    src: "assets/images/15.webp",
+    src: `${base}/assets/images/15.webp`,
     alt: "A green-clad shrine maiden walking with forest spirits",
     caption: "Clad in green breath, blue shadows sway in harmony."
   },
-
   {
-    src: "assets/images/16.webp",
+    src: `${base}/assets/images/16.webp`,
     alt: "A fox-eared girl holding blue fire atop a shrine roof",
     caption: "The flame of prayer flickers in tranquil silence."
   },
   {
-    src: "assets/images/17.webp",
+    src: `${base}/assets/images/17.webp`,
     alt: "A girl gazing at foxfire beneath hanging bells",
     caption: "A summoned presence sends a tremble through her chest."
   },
   {
-    src: "assets/images/18.webp",
+    src: `${base}/assets/images/18.webp`,
     alt: "A fox-eared girl turning back with floating blue foxfire",
     caption: "The wind opens the door, revealing the path ahead."
   },
   {
-    src: "assets/images/19.webp",
+    src: `${base}/assets/images/19.webp`,
     alt: "A small masked being sitting on a great tree branch",
     caption: "The forest's quiet eyes keep watch from above."
   },
   {
-    src: "assets/images/20.webp",
+    src: `${base}/assets/images/20.webp`,
     alt: "Green light dwelling in a tree trunk with many carved windows",
     caption: "Deep within the trunk, ancient memories sleep."
   },
-
   {
-    src: "assets/images/21.webp",
+    src: `${base}/assets/images/21.webp`,
     alt: "A green-haired girl facing a small black creature on a branch",
     caption: "A shadowed voice rustles the leaves around them."
   },
   {
-    src: "assets/images/22.webp",
+    src: `${base}/assets/images/22.webp`,
     alt: "White and black stag spirits standing side by side",
     caption: "The forest’s rulers appear in silent dignity."
   },
   {
-    src: "assets/images/23.webp",
+    src: `${base}/assets/images/23.webp`,
     alt: "A small white creature leaping through the forest wrapped in flame",
     caption: "A single trail of fire lights the darkness."
   },
   {
-    src: "assets/images/24.webp",
+    src: `${base}/assets/images/24.webp`,
     alt: "A girl standing on the water’s surface, watching a blue fish spirit approach",
     caption: "Beyond the rippling rings, a voice quietly calls."
   },
-
-  // Add more items here
 ];
-
-
 
 // =====================================
 // 3. ギャラリーDOM生成
