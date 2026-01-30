@@ -16,7 +16,7 @@ const isLocal = window.location.protocol === 'file:';
 // GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
 // ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
 const IMAGE_BASE = (isGitHub && !isLocal) 
-  ? '/asunaro0000.homepage/gallery/renewal-of-the-forest-covenant/Forest-calendar/assets/images/' 
+  ? '/asunaro0000.homepage/gallery/renewal-of-the-forest-covenant/Forest-panorama-background/assets/images/' 
   : '/gallery/renewal-of-the-forest-covenant/Forest-panorama-background/assets/images/';
 
 
