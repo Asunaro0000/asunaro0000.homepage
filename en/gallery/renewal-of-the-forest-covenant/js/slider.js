@@ -3,6 +3,7 @@ const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
 // ---- 編集ポイント：この配列を書き換えて使う ----
+
 const slides = [
   {
     src: "./thumbnail/kv01.webp",

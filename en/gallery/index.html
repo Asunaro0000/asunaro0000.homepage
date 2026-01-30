@@ -32,9 +32,11 @@
       const $  = (s, r=document) => r.querySelector(s);
       const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
+      
       /* =========================
        *  Universal Slider
        * ========================= */
+      
       function createSlider(container, slides = []) {
         container.innerHTML = `
           <div class="sld">

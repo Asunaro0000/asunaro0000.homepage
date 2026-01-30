@@ -1,11 +1,18 @@
 // panorama.js
 const pano = document.getElementById('panorama');
 const gotoBtn = document.querySelector('#panoGoto .pano-goto__btn');
+// --- ベースパスの自動解決 ---
+
+const isLocal = window.location.protocol === 'file:';
+const isGitHub = window.location.hostname.includes('github.io');
+
+// ローカルなら現在のHTMLからの相対(./)、GitHubならリポジトリ名を入れる
+const base = '/gallery/Risko/risuko_room';
 
 // --- 画像を横に並べる ---
 for (let i = 1; i <= 21; i++) {
   const img = document.createElement('img');
-  img.src = `./images/${i}.webp`;
+  img.src = `${base}/images/${i}.webp`;
   img.alt = `Risuko panorama ${i}`;
   pano.appendChild(img);
 }
