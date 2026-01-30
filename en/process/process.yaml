@@ -17,4 +17,7 @@ logs:
   - title: "Useful ComfyUI Nodes List"
     summary: "A list of convenient ComfyUI nodes that are helpful to know."
     url: "./article/20260128_comfyuiの便利ノード一覧/comfyuiの便利ノード一覧_en.html"
+  - title: "The Importance of 'Horizontal and Vertical' in Supporting a Character's Presence, Immersion, and Emotional Attachment"
+    summary: "A useful ComfyUI node that is good to know and beneficial in practice."
+    url: "./article/20260130_キャラクターの存在感・没入感・愛着を支える「水平垂直」の重要性_en/キャラクターの存在感・没入感・愛着を支える「水平垂直」の重要性_en.html"
 
