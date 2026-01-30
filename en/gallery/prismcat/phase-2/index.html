@@ -1,19 +1,15 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
 
-  <!-- Pinterest Verify -->
   <meta name="p:domain_verify" content="{{ site.data.tracking.pinterest_verify }}"/>
-
 
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>PrismCat – phase-2</title>
-  <!-- /gallery/prismcat/phase-2/ からルートへは ../../../ -->
+  <title>PrismCat – Phase 2 | Asunaro Works</title>
   <link rel="stylesheet" href="../../../css/style.css"/>
   <link rel="stylesheet" href="../../../css/header.css">
   <script src="https://asunaro0000.github.io/asunaro0000.homepage/js/extensions/google-tag.js" defer></script>
-
   <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 </head>
 <body>
@@ -25,8 +21,7 @@
       <a href="../../../gallery/">Gallery</a>
       <a href="../../../about/">About/Contact</a>
       <a href="../../../process/">Process</a>
-<!--       <a href="../../../contact/">Contact</a>
- -->      <a href="../../../link/">Link</a>
+      <a href="../../../link/">Link</a>
       <a href="../../../sitemap/">Sitemap</a>
       <a href="../../../goods/">Goods</a>
       <a href="https://www.patreon.com/Asunaro0000" style="color:#ffd54a;">
@@ -68,8 +63,27 @@
     const DATA_URL = '../../../data/series/prismcat.yaml';
     const PHASE_ID = 'phase-2';
 
-    // YAMLの 'assets/...' や '/assets/...' を phaseページ用に '../assets/...' へ補正
-    const urlFromPhase = (p) => p ? '../' + String(p).replace(/^\/+/, '') : p;
+    /**
+     * 【修正の肝】
+     * どんなに深い階層(en/gallery/...)にいても、
+     * 強制的にドメインのルートから assets を探させます。
+     */
+    function resolvePath(p) {
+      if (!p) return "";
+      if (p.startsWith('http')) return p;
+
+      // YAML内のパスから先頭の / や ./ を除去して統一
+      const cleanPath = p.replace(/^(\.\/|\/)/, '');
+
+      // 1. GitHub Pages (asunaro0000.github.io/asunaro0000.homepage/) の場合
+      if (window.location.hostname.includes('github.io')) {
+        return `/asunaro0000.homepage/${cleanPath}`;
+      }
+
+      // 2. ローカル環境 (Live Server 等) の場合
+      // 先頭にスラッシュを付けることで、enフォルダを無視してルート直下の assets を見に行きます。
+      return `/${cleanPath}`;
+    }
 
     const $  = (s, r=document) => r.querySelector(s);
     const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
@@ -93,18 +107,26 @@
       $$('#dots .dot').forEach((d,k)=>d.classList.toggle('active',k===i));
       $$('#thumbs .th').forEach((t,k)=>t.classList.toggle('active',k===i));
     }
+
     function go(n){
       if(!items.length) return;
       idx = (n + items.length) % items.length;
       el.track.style.transform = `translateX(${ -100 * idx }%)`;
+      
+      // ステージ（メイン表示エリア）の更新
+      const current = items[idx];
+      el.stage.innerHTML = `<img src="${resolvePath(current.src)}" alt="">`;
+      
       setDotsActive(idx);
     }
+
     function play(){
       if(timer || items.length<=1) return;
       el.play.textContent='⏸ Auto';
       el.play.setAttribute('aria-pressed','true');
       timer=setInterval(()=>go(idx+1),4000);
     }
+
     function pause(){
       if(!timer) return;
       clearInterval(timer); timer=null;
@@ -115,35 +137,38 @@
     async function init(){
       const spec = await loadYAML(DATA_URL);
       const phases = spec?.series?.phases || spec?.phases || [];
-      const p = phases.find(x => String(x.id)===PHASE_ID || String(x.id)==='2' || x.key===PHASE_ID);
+      const p = phases.find(x => String(x.id)===PHASE_ID);
       if(!p) throw new Error('phase-2 not found in YAML');
 
-      // タイトル＆キャプション
-      el.stage.innerHTML = '';
       el.caption.innerHTML = `<h1>${p.title ?? 'Phase 2'}</h1><p>${p.caption ?? ''}</p>`;
 
-      // アルバム（URLは必ず urlFromPhase を通す）
+      // アルバム構築（URLは必ず resolvePath を通す）
       items = Array.isArray(p.album) ? p.album : [];
       el.track.innerHTML = items.map(i => `
         <div class="slide">
-          <img src="${urlFromPhase(i.src)}" alt="${i.title ?? ''}">
+          <img src="${resolvePath(i.src)}" alt="${i.title ?? ''}">
           <div class="legend"><h3>${i.title ?? ''}</h3><p>${i.text ?? ''}</p></div>
         </div>`).join('');
-      el.dots.innerHTML = items.map((_,k)=>`<button class="dot" role="tab" data-i="${k}" aria-label="Go to slide ${k+1}"></button>`).join('');
+
+      el.dots.innerHTML = items.map((_,k)=>
+        `<button class="dot" role="tab" data-i="${k}" aria-label="Go to slide ${k+1}"></button>`
+      ).join('');
+
       el.thumbs.innerHTML = items.map((i,k)=>`
         <button class="th" data-i="${k}" aria-label="Preview ${k+1}">
-          <img src="${urlFromPhase(i.src)}" alt="">
+          <img src="${resolvePath(i.src)}" alt="">
         </button>`).join('');
 
       const navDisabled = items.length<=1;
       [el.prev, el.next, el.dots, el.thumbs, el.play].forEach(b=>{ if(b) b.disabled=navDisabled; });
 
+      // ナビゲーション
       el.prev?.addEventListener('click', ()=>{ pause(); go(idx-1); });
       el.next?.addEventListener('click', ()=>{ pause(); go(idx+1); });
       el.dots?.addEventListener('click', e=>{ const b=e.target.closest('.dot'); if(b){ pause(); go(+b.dataset.i); }});
       el.thumbs?.addEventListener('click', e=>{ const b=e.target.closest('.th'); if(b){ pause(); go(+b.dataset.i); }});
 
-      // スワイプ
+      // スワイプ操作
       let sx=null;
       el.track.addEventListener('pointerdown', e=>{ sx=e.clientX; el.track.setPointerCapture(e.pointerId); pause(); });
       el.track.addEventListener('pointerup', e=>{
@@ -159,14 +184,16 @@
         if(e.key==='ArrowRight'){pause();go(idx+1);}
       });
 
-      // BGM（これも補正を忘れずに）
+      // BGM
       if(p.bgm){
-        audio = new Audio(urlFromPhase(p.bgm));
+        audio = new Audio(resolvePath(p.bgm));
         audio.loop=true; audio.volume=0.25;
-        el.bgm?.addEventListener('click', async()=>{ try{
-          if(audio.paused){ await audio.play(); el.bgm.textContent='♪ BGM: ON'; el.bgm.setAttribute('aria-pressed','true'); }
-          else{ audio.pause(); el.bgm.textContent='♪ BGM'; el.bgm.setAttribute('aria-pressed','false'); }
-        }catch(err){ console.warn('Autoplay blocked or audio error:',err); }});
+        el.bgm?.addEventListener('click', async ()=>{
+          try {
+            if(audio.paused){ await audio.play(); el.bgm.textContent='♪ BGM: ON'; el.bgm.setAttribute('aria-pressed','true'); }
+            else{ audio.pause(); el.bgm.textContent='♪ BGM'; el.bgm.setAttribute('aria-pressed','false'); }
+          } catch(err) { console.warn('Audio error:', err); }
+        });
       }else{
         el.bgm?.setAttribute('disabled','true');
       }
@@ -175,14 +202,7 @@
     }
 
     el.play.addEventListener('click', ()=> (timer?pause():play()));
-
-    init().catch(err=>{
-      console.error(err);
-      const m=document.createElement('p');
-      m.style.color='#f66';
-      m.textContent='読み込みでエラーが発生しました。コンソールを確認してください。';
-      el.caption.appendChild(m);
-    });
+    init().catch(err=> console.error(err));
   </script>
   <script type="module" src="../../../js/extensions/nav-toggle.js"></script>
 

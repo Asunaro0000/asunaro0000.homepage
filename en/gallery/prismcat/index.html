@@ -1,24 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-
-  <!-- Pinterest Verify -->
-  <meta name="p:domain_verify" content="{{ site.data.tracking.pinterest_verify }}"/>
-
-
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>PrismCat Memory | Asunaro Works</title>
-
-  <!-- This page is under /gallery/prismcat/, so shared CSS is referenced with ../../ -->
   <link rel="stylesheet" href="../../css/style.css"/>
   <link rel="stylesheet" href="../../css/header.css">
   <script src="https://asunaro0000.github.io/asunaro0000.homepage/js/extensions/google-tag.js" defer></script>
-
   <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 </head>
 <body>
-
   <header class="nav">
     <a class="brand" href="../../">Asunaro Works</a>
     <a class="go-up" href="../" title="一つ上の階へ">⏶</a>
@@ -26,12 +17,9 @@
       <a href="../../gallery/">Gallery</a>
       <a href="../../about/">About</a>
       <a href="../../process/">Process</a>
-<!--       <a href="../../contact/">Contact</a>
- -->      <a href="../../link/">Link</a>
+      <a href="../../link/">Link</a>
       <a href="../../sitemap/">Sitemap</a>
-      <a href="https://www.patreon.com/Asunaro0000" style="color:#ffd54a;">
-        Patreon: Archive Updates
-      </a>
+      <a href="https://www.patreon.com/Asunaro0000" style="color:#ffd54a;">Patreon: Archive Updates</a>
       <a href="https://asunaro0000.github.io/asunaro0000.homepage/gallery/prismcat/">🌐 JP</a>
     </nav>
   </header>
@@ -46,60 +34,44 @@
   <script type="module">
     import { loadYAML } from '../../js/util/yaml-loader.js';
 
-    /** Build a relative URL based on current directory depth */
-    function relToRoot(p){
-      if (!p) return p;
-      p = String(p).replace(/^\/+/, '');
-      const path = location.pathname.replace(/index\.html$/,'');
-      const depth = Math.max(path.split('/').filter(Boolean).length - 1, 0);
-      return (depth ? '../'.repeat(depth) : './') + p;
-    }
-
-    /** Convert to relative path inside this work (/gallery/prismcat/) */
-    function relToWork(p){
-      if (!p) return p;
-      p = String(p).replace(/^\/+/, '');
-      if (p.startsWith('assets/')) return './' + p;
-      return p;
+    /**
+     * 【自分専用・超シンプル版】
+     * YAMLに書いてある "assets/..." というパスの前に、
+     * 強制的に "../../../" を付けて en フォルダを脱出させます。
+     */
+    function resolvePath(p) {
+      if (!p) return "";
+      // もしURL（http）ならそのまま、そうでなければ3つ上に戻って繋ぐ
+      return p.startsWith('http') ? p : "../../../" + p.replace(/^(\.\/|\/)/, '');
     }
 
     (async ()=>{
-      // YAML at data/series/prismcat.yaml
-      const data = await loadYAML('../../data/series/prismcat.yaml');
-      const s = data.series;
+      try {
+        // YAMLの読み込み
+        const data = await loadYAML('../../data/series/prismcat.yaml');
+        const s = data.series;
 
-      // Cover image
-      const cover = s.cover || (s.phases?.[0]?.hero ?? '');
-      const heroImg = relToWork(cover) || relToRoot(cover);
-
-      const hero = document.getElementById('series-hero');
-      hero.innerHTML = `
-        <div class="figure">
-          <img src="${heroImg}" alt="${s.title}">
-        </div>
-        <h1>${s.title}</h1>
-        <p class="muted">${s.description || ''}</p>
-      `;
-
-      // Phase List
-      const phases = document.getElementById('phases');
-      phases.innerHTML = (s.phases || []).map(p => {
-        const raw = p.hero || p.background || '';
-        const thumb = relToWork(raw) || relToRoot(raw);
-        const link  = `./${p.id}/`;
-        return `
-          <a class="card" href="${link}">
-            ${thumb ? `<img src="${thumb}" alt="${p.title}" loading="lazy">` : ''}
-            <div class="body">
-              <h3>${p.title}</h3>
-              <p>${p.caption || ''}</p>
-            </div>
-          </a>
+        // ヒーロー画像
+        const cover = s.cover || (s.phases?.[0]?.hero ?? '');
+        document.getElementById('series-hero').innerHTML = `
+          <div class="figure"><img src="${resolvePath(cover)}" alt=""></div>
+          <h1>${s.title}</h1>
+          <p class="muted">${s.description || ''}</p>
         `;
-      }).join('');
+
+        // フェーズカード
+        document.getElementById('phases').innerHTML = (s.phases || []).map(p => {
+          const thumb = resolvePath(p.hero || p.background);
+          return `
+            <a class="card" href="./${p.id}/">
+              <img src="${thumb}" alt="${p.title}" loading="lazy">
+              <div class="body"><h3>${p.title}</h3><p>${p.caption || ''}</p></div>
+            </a>`;
+        }).join('');
+      } catch (e) {
+        console.error("表示エラー:", e);
+      }
     })();
   </script>
-
-  <script type="module" src="../../js/extensions/nav-toggle.js"></script>
 </body>
 </html>

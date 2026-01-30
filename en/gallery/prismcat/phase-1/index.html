@@ -1,20 +1,15 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
-
-  <!-- Pinterest Verify -->
   <meta name="p:domain_verify" content="{{ site.data.tracking.pinterest_verify }}"/>
-
 
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>PrismCat – phase-1</title>
+  <title>PrismCat – Phase 1 | Asunaro Works</title>
 
-  <!-- /gallery/prismcat/phase-1/ からルートへは ../../../ -->
   <link rel="stylesheet" href="../../../css/style.css"/>
   <link rel="stylesheet" href="../../../css/header.css">
   <script src="https://asunaro0000.github.io/asunaro0000.homepage/js/extensions/google-tag.js" defer></script>
-
   <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 </head>
 <body>
@@ -26,13 +21,10 @@
       <a href="../../../gallery/">Gallery</a>
       <a href="../../../about/">About/Contact</a>
       <a href="../../../process/">Process</a>
-<!--       <a href="../../../contact/">Contact</a>
- -->      <a href="../../../link/">Link</a>
+      <a href="../../../link/">Link</a>
       <a href="../../../sitemap/">Sitemap</a>
       <a href="../../../goods/">Goods</a>
-      <a href="https://www.patreon.com/Asunaro0000" style="color:#ffd54a;">
-        Patreon: Archive Updates
-      </a>
+      <a href="https://www.patreon.com/Asunaro0000" style="color:#ffd54a;">Patreon: Archive Updates</a>
       <a href="https://asunaro0000.github.io/asunaro0000.homepage/gallery/prismcat/phase-1/">🌐 JP</a>
     </nav>
   </header>
@@ -43,7 +35,7 @@
 
     <div class="toolbar" style="margin:12px 0 8px; display:flex; gap:10px;">
       <button id="playToggle" class="btn" type="button" aria-pressed="false" aria-label="Auto slide toggle">▶ Auto</button>
-      <button id="bgmToggle" class="btn" type="button" aria-pressed="false" aria-label="BGM toggle">♪ BGM</button>
+      <button id="bgmToggle"  class="btn" type="button" aria-pressed="false" aria-label="BGM toggle">♪ BGM</button>
     </div>
 
     <h2 style="margin:18px 0 10px">Album</h2>
@@ -66,19 +58,34 @@
   <script type="module">
     import { loadYAML } from '../../../js/util/yaml-loader.js';
 
-    // パス定義（phase-1 からの相対）
     const DATA_URL = '../../../data/series/prismcat.yaml';
     const PHASE_ID = 'phase-1';
 
-    // YAMLが 'assets/...'(作品内) や '/assets/...' でも、
-    // phase ページからは '../assets/...' に補正して使う
-    const urlFromPhase = (p) => p ? '../' + String(p).replace(/^\/+/, '') : p;
+    /**
+     * 【修正の核心】
+     * YAML内の assets/... を、現在の深い階層(en/gallery/prismcat/phase-1/)からではなく、
+     * サイトのルート（ドメイン直下）から直接参照するようにパスを解決します。
+     */
+    function resolvePath(p) {
+      if (!p) return "";
+      if (p.startsWith('http')) return p;
 
-    // util
-    const $  = (sel, root=document) => root.querySelector(sel);
-    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+      // パスから先頭の / や ./ を除去して統一
+      const cleanPath = p.replace(/^(\.\/|\/)/, '');
 
-    // 要素参照
+      // GitHub Pages環境の場合
+      if (window.location.hostname.includes('github.io')) {
+        return `/asunaro0000.homepage/${cleanPath}`;
+      }
+
+      // ローカル環境（Live Server 等）の場合
+      // 先頭に / を付けることで、現在の en フォルダを無視してルートから解決させます
+      return `/${cleanPath}`;
+    }
+
+    const $  = (s, r=document) => r.querySelector(s);
+    const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+
     const el = {
       stage:   $('#stage'),
       caption: $('#caption'),
@@ -92,131 +99,110 @@
       next:    $('.next'),
     };
 
-    let idx = 0;
-    let items = [];
-    let timer = null;
-    let audio = null;
+    let idx = 0, items = [], timer = null, audio = null;
 
-    function setDotsActive(i) {
-      $$('#dots .dot').forEach((d, k) => d.classList.toggle('active', k === i));
-      $$('#thumbs .th').forEach((t, k) => t.classList.toggle('active', k === i));
+    function setDotsActive(i){
+      $$('#dots .dot').forEach((d,k)=>d.classList.toggle('active',k===i));
+      $$('#thumbs .th').forEach((t,k)=>t.classList.toggle('active',k===i));
     }
-    function go(n) {
-      if (!items.length) return;
+
+    function go(n){
+      if(!items.length) return;
       idx = (n + items.length) % items.length;
       el.track.style.transform = `translateX(${ -100 * idx }%)`;
+      
+      // ステージ（メイン表示エリア）の更新
+      const current = items[idx];
+      el.stage.innerHTML = `<img src="${resolvePath(current.src)}" alt="">`;
+      
       setDotsActive(idx);
     }
-    function play() {
-      if (timer || items.length <= 1) return;
+
+    function play(){
+      if(timer || items.length <= 1) return;
       el.play.textContent = '⏸ Auto';
-      el.play.setAttribute('aria-pressed', 'true');
-      timer = setInterval(() => go(idx + 1), 4000);
-    }
-    function pause() {
-      if (!timer) return;
-      clearInterval(timer);
-      timer = null;
-      el.play.textContent = '▶ Auto';
-      el.play.setAttribute('aria-pressed', 'false');
+      el.play.setAttribute('aria-pressed','true');
+      timer = setInterval(()=>go(idx+1), 4000);
     }
 
-    async function init() {
+    function pause(){
+      if(!timer) return;
+      clearInterval(timer); timer=null;
+      el.play.textContent = '▶ Auto';
+      el.play.setAttribute('aria-pressed','false');
+    }
+
+    async function init(){
       const spec = await loadYAML(DATA_URL);
       const phases = spec?.series?.phases || spec?.phases || [];
-      const p = phases.find(x => String(x.id) === PHASE_ID || String(x.id) === '1' || x.key === 'phase-1');
-      if (!p) throw new Error('phase-1 not found in YAML');
+      const p = phases.find(x => String(x.id)===PHASE_ID);
+      if(!p) throw new Error('Phase-1 not found in YAML');
 
-      // 背景&キャプション
-      el.stage.innerHTML = '';
-      el.caption.innerHTML = `
-        <h1>${p.title ?? 'Phase 1'}</h1>
-        <p>${p.caption ?? ''}</p>
-      `;
+      el.caption.innerHTML = `<h1>${p.title ?? 'Phase 1'}</h1><p>${p.caption ?? ''}</p>`;
 
-      // アルバム（URLは必ず urlFromPhase を通す）
+      // アルバム構築
       items = Array.isArray(p.album) ? p.album : [];
       el.track.innerHTML = items.map(i => `
         <div class="slide">
-          <img src="${urlFromPhase(i.src)}" alt="${i.title ?? ''}">
-          <div class="legend">
-            <h3>${i.title ?? ''}</h3>
-            <p>${i.text ?? ''}</p>
-          </div>
-        </div>
-      `).join('');
+          <img src="${resolvePath(i.src)}" alt="${i.title ?? ''}">
+          <div class="legend"><h3>${i.title ?? ''}</h3><p>${i.text ?? ''}</p></div>
+        </div>`).join('');
 
-      el.dots.innerHTML = items.map((_, k) =>
-        `<button class="dot" role="tab" data-i="${k}" aria-label="Go to slide ${k+1}"></button>`).join('');
-      el.thumbs.innerHTML = items.map((i, k) =>
-        `<button class="th" data-i="${k}" aria-label="Preview ${k+1}">
-           <img src="${urlFromPhase(i.src)}" alt="">
-         </button>`).join('');
+      el.dots.innerHTML = items.map((_,k)=>
+        `<button class="dot" role="tab" data-i="${k}" aria-label="Go to slide ${k+1}"></button>`
+      ).join('');
 
-      // 1枚以下ならナビ無効化
+      el.thumbs.innerHTML = items.map((i,k)=>`
+        <button class="th" data-i="${k}" aria-label="Preview ${k+1}">
+          <img src="${resolvePath(i.src)}" alt="">
+        </button>`).join('');
+
       const navDisabled = items.length <= 1;
-      [el.prev, el.next, el.dots, el.thumbs, el.play].forEach(b => { if (b) b.disabled = navDisabled; });
+      [el.prev, el.next, el.dots, el.thumbs, el.play].forEach(b=>{ if(b) b.disabled = navDisabled; });
 
-      // イベント
-      el.prev?.addEventListener('click', () => { pause(); go(idx - 1); });
-      el.next?.addEventListener('click', () => { pause(); go(idx + 1); });
-      el.dots?.addEventListener('click', e => {
-        const b = e.target.closest('.dot');
-        if (b) { pause(); go(parseInt(b.dataset.i, 10)); }
-      });
-      el.thumbs?.addEventListener('click', e => {
-        const b = e.target.closest('.th');
-        if (b) { pause(); go(parseInt(b.dataset.i, 10)); }
-      });
+      // イベントリスナー
+      el.prev?.addEventListener('click', ()=>{ pause(); go(idx-1); });
+      el.next?.addEventListener('click', ()=>{ pause(); go(idx+1); });
+      el.dots?.addEventListener('click', e=>{ const b=e.target.closest('.dot'); if(b){ pause(); go(+b.dataset.i); }});
+      el.thumbs?.addEventListener('click', e=>{ const b=e.target.closest('.th'); if(b){ pause(); go(+b.dataset.i); }});
 
-      // スワイプ
-      let sx = null;
-      el.track.addEventListener('pointerdown', e => {
-        sx = e.clientX; el.track.setPointerCapture(e.pointerId); pause();
-      });
-      el.track.addEventListener('pointerup', e => {
-        if (sx === null) return;
-        const dx = e.clientX - sx;
-        if (Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1));
-        sx = null;
+      // スワイプ操作
+      let sx=null;
+      el.track.addEventListener('pointerdown', e=>{ sx=e.clientX; el.track.setPointerCapture(e.pointerId); pause(); });
+      el.track.addEventListener('pointerup',   e=>{
+        if(sx===null) return;
+        const dx=e.clientX-sx;
+        if(Math.abs(dx)>40) go(idx+(dx<0?1:-1));
+        sx=null;
       });
 
       // キー操作
-      window.addEventListener('keydown', e => {
-        if (e.key === 'ArrowLeft')  { pause(); go(idx - 1); }
-        if (e.key === 'ArrowRight') { pause(); go(idx + 1); }
+      window.addEventListener('keydown', e=>{
+        if(e.key==='ArrowLeft'){  pause(); go(idx-1); }
+        if(e.key==='ArrowRight'){ pause(); go(idx+1); }
       });
 
-      // BGM（URL補正を忘れずに）
-      if (p.bgm) {
-        audio = new Audio(urlFromPhase(p.bgm));
-        audio.loop   = true;
-        audio.volume = 0.25;
-        el.bgm?.addEventListener('click', async () => {
-          try {
-            if (audio.paused) { await audio.play(); el.bgm.textContent = '♪ BGM: ON'; el.bgm.setAttribute('aria-pressed','true'); }
-            else { audio.pause(); el.bgm.textContent = '♪ BGM'; el.bgm.setAttribute('aria-pressed','false'); }
-          } catch (err) {
-            console.warn('Autoplay blocked or audio error:', err);
-          }
+      // BGM
+      if(p.bgm){
+        audio = new Audio(resolvePath(p.bgm));
+        audio.loop = true; audio.volume = 0.25;
+        el.bgm?.addEventListener('click', async ()=>{
+          try{
+            if(audio.paused){ await audio.play(); el.bgm.textContent='♪ BGM: ON'; el.bgm.setAttribute('aria-pressed','true'); }
+            else{ audio.pause(); el.bgm.textContent='♪ BGM'; el.bgm.setAttribute('aria-pressed','false'); }
+          }catch(err){ console.warn('Audio error:', err); }
         });
-      } else {
-        el.bgm?.setAttribute('disabled', 'true');
+      }else{
+        el.bgm?.setAttribute('disabled','true');
       }
 
       go(0);
     }
 
-    el.play.addEventListener('click', () => (timer ? pause() : play()));
-
-    init().catch(err => {
-      console.error(err);
-      const msg = document.createElement('p');
-      msg.style.color = '#f66';
-      msg.textContent = '読み込みでエラーが発生しました。コンソールを確認してください。';
-      el.caption.appendChild(msg);
-    });
+    el.play.addEventListener('click', ()=> (timer ? pause() : play()));
+    init().catch(err => console.error(err));
   </script>
   <script type="module" src="../../../js/extensions/nav-toggle.js"></script>
+
 </body>
 </html>
