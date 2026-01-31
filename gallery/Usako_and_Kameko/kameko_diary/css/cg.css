@@ -111,3 +111,24 @@ h1{font-size:clamp(22px,3.4vw,32px);letter-spacing:.02em;margin:18px 0 6px}
   .lb__stage h3{ font-size:18px; }
   .lb__stage p{ font-size:15px; line-height:1.5; }
 }
+.storyboard-link {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background-color: #8cffdc;
+  color: #333;
+  text-decoration: none; /* aタグの下線を消す */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;  /* 改行を防ぐ */
+}
+
+/* ホバー・アクティブ時のスタイル */
+.filter-btn:hover, .storyboard-link:hover, .filter-btn.active {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
