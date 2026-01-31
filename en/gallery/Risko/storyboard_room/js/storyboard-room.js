@@ -26,6 +26,12 @@ const base = (isGitHub && !isLocal)
   ? '/asunaro0000.homepage/gallery/Risko/storyboard_room' 
   : '/gallery/Risko/storyboard_room';
 
+  // メイン画像のパスを更新
+const mainImage = document.querySelector('.storyboard-intro-main img');
+if (mainImage) {
+  mainImage.src = `${base}/assets/images/main.png`;
+}
+
 const SCENES = [
   {
     id: "scene-001",
