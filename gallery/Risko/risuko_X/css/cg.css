@@ -213,3 +213,35 @@ h1{
 .lb__stage p{
   white-space: pre-wrap;
 }
+/* ボタンを包むコンテナのスタイル */
+.filter-wrap {
+  display: flex;
+  flex-wrap: wrap;      /* 折り返しを許可 */
+  gap: 12px;           /* ボタン同士の間隔（ここでお好みに調整） */
+  justify-content: center; /* 中央揃え */
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* リンクボタン個別のスタイル（aタグでもbuttonでも共通） */
+.storyboard-link {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background-color: #8cffdc;
+  color: #333;
+  text-decoration: none; /* aタグの下線を消す */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;  /* 改行を防ぐ */
+}
+
+/* ホバー・アクティブ時のスタイル */
+.filter-btn:hover, .storyboard-link:hover, .filter-btn.active {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
