@@ -23,3 +23,6 @@ logs:
   - title: "What Is CFG in AI Image Generation? Understanding It as Vector Acceleration Rather Than Prompt Adherence"
     summary: "This article takes a deep dive into the actual behavior of CFG, which is commonly described as prompt adherence."
     url: "./article/20260201_画像生成aiの「cfg」とは何か？――「適用率」ではなく「ベクトルの加速」で理解する/cfg-in-ai-image-generation-understanding-it-as-vector-acceleration-not-prompt-adherence.html"
+  - title: "Character Profiles of Usako and Kameko and the img2img Base Setup"
+    summary: "This article introduces the characters Usako and Kameko and outlines the artistic direction of their character art. On Patreon, the img2img base images are shared as exclusive content."
+    url: "./article/20260201_🌿ウサ子とカメコの人物紹介とimg2imgの下地について/🌿-character-profiles-of-usako-and-kameko-and-the-img2img-base-setup.html"
