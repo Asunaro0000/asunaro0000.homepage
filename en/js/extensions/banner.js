@@ -10,7 +10,7 @@
   // ★ ここを差し替えれば内容を自由に増減できる
 const banners = [
 {
-  src: "./assets/banner/banner11.webp",
+  src: "../assets/banner/banner11.webp",
   caption: "A collection of daily posts from X.",
   href: "./gallery/Risko/risuko_X/index.html",
   btnLabel: "▶ X Post Collection 'Forest Murmur Room'"
@@ -53,13 +53,13 @@ const banners = [
     btnLabel: "▶ Open Shiori no Mori Room"
   },*/
   {
-    src: "./assets/banner/banner2.webp",
+    src: "../assets/banner/banner2.webp",
     caption: "Kameko's daily-life gallery has been released.",
     href: "./gallery/Usako_and_Kameko/kameko_diary/index.html",
     btnLabel: "▶ Visit Kameko's Daily Life"
   },
   {
-    src: "./assets/banner/banner1.webp",
+    src: "../assets/banner/banner1.webp",
     caption: "Usako's daily-life gallery has been released.",
     href: "./gallery/Usako_and_Kameko/usako_diary/index.html",
     btnLabel: "▶ Visit Usako's Daily Life"

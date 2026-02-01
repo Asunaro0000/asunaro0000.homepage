@@ -7,10 +7,11 @@ const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
  * 番号（ファイル名の頭文字）: "表示したい名前"
  */
 const groupNames = {
-  "1": "日常アート",
-  "2": "舞踊アート",
-  "2ab": "演舞アート", // 2aと2bをここにまとめます
-  "3": "風景アート",
+  "1": "日常",
+  "2": "舞踊",
+  "2ab": "演舞", // 2aと2bをここにまとめます
+  "3": "風景",
+  "4": "煌めく日",
   // 4, 5... と増えたらここに追加するだけ
 };
 
@@ -300,6 +301,46 @@ const items = [
   { src: './images/3-52.webp', title: '見つけた光', caption: '腰を落として覗き込むと、夜の匂いがふわりとした。' },
   { src: './images/3-53.webp', title: '光射す石畳', caption: '眩しさに目を細めて、踏み出す足が軽くなるんだ。' },
   { src: './images/3-54.webp', title: '灯る回廊', caption: '背中を丸めて光を追う。この先に何があるのかな。' },
+  { "src": "./images/4-1.webp", "title": "陽だまり、背中に溶ける", "caption": "" },
+  { "src": "./images/4-2.webp", "title": "光の粒、指ですくう", "caption": "" },
+  { "src": "./images/4-3.webp", "title": "風の道、髪が泳ぐ", "caption": "" },
+  { "src": "./images/4-4.webp", "title": "膝の熱、丸めた背中", "caption": "" },
+  { "src": "./images/4-5.webp", "title": "扇の風、空を仰ぐ", "caption": "" },
+  { "src": "./images/4-6.webp", "title": "畳を蹴る、凛の鼓動", "caption": "" },
+  { "src": "./images/4-7.webp", "title": "灯る体温、影のささやき", "caption": "" },
+  { "src": "./images/4-8.webp", "title": "扉の先、指先が踊る", "caption": "" },
+  { "src": "./images/4-9.webp", "title": "布の波、高く手を伸ばす", "caption": "" },
+  { "src": "./images/4-10.webp", "title": "青に沈む、午後の微睡み", "caption": "" },
+  { "src": "./images/4-11.webp", "title": "畳の匂い、爪先で弾く", "caption": "" },
+  { "src": "./images/4-12.webp", "title": "銀の毛並み、掌に余る", "caption": "" },
+  { "src": "./images/4-13.webp", "title": "仮面越し、呼吸が白む", "caption": "" },
+  { "src": "./images/4-14.webp", "title": "風を孕む、袴の重なり", "caption": "" },
+  { "src": "./images/4-15.webp", "title": "星のしずく、指が触れる", "caption": "" },
+  { "src": "./images/4-16.webp", "title": "開け放つ、光が喉を焼く", "caption": "" },
+  { "src": "./images/4-17.webp", "title": "眠る骨格、重力に甘えて", "caption": "" },
+  { "src": "./images/4-18.webp", "title": "組んだ指、熱の居場所", "caption": "" },
+  { "src": "./images/4-19.webp", "title": "陽だまりを、踵で踏む", "caption": "" },
+  { "src": "./images/4-20.webp", "title": "灯火、芯を温める", "caption": "" },
+  { "src": "./images/4-21.webp", "title": "踏み出す、鼓動", "caption": "" },
+  { "src": "./images/4-22.webp", "title": "背筋に光が溶ける", "caption": "" },
+  { "src": "./images/4-23.webp", "title": "床の冷たさ、微睡", "caption": "" },
+  { "src": "./images/4-24.webp", "title": "膝を包む、春の陽", "caption": "" },
+  { "src": "./images/4-25.webp", "title": "舞い踊る、身の軽さ", "caption": "" },
+  { "src": "./images/4-26.webp", "title": "花の香、肺を満たす", "caption": "" },
+  { "src": "./images/4-27.webp", "title": "足裏に伝わる涼気", "caption": "" },
+  { "src": "./images/4-28.webp", "title": "風を掴む、指先", "caption": "" },
+  { "src": "./images/4-29.webp", "title": "頬を撫でる面筋", "caption": "" },
+  { "src": "./images/4-30.webp", "title": "お面の冷たさ", "caption": "" },
+  { "src": "./images/4-31.webp", "title": "風を切る足先", "caption": "" },
+  { "src": "./images/4-32.webp", "title": "弦が指に食い込む", "caption": "" },
+  { "src": "./images/4-33.webp", "title": "喉が震える歓び", "caption": "" },
+  { "src": "./images/4-34.webp", "title": "宙に浮く重力", "caption": "" },
+  { "src": "./images/4-35.webp", "title": "絹が肌を滑る", "caption": "" },
+  { "src": "./images/4-36.webp", "title": "光を仰ぐ首筋", "caption": "" },
+  { "src": "./images/4-37.webp", "title": "鼓動に響く太鼓", "caption": "" },
+  { "src": "./images/4-38.webp", "title": "弾む指先の熱", "caption": "" },
+  { "src": "./images/4-39.webp", "title": "床を蹴る瞬発力", "caption": "" }
+
 
 ];
 

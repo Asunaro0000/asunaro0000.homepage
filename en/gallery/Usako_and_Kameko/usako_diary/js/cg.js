@@ -20,7 +20,8 @@ const groupNames = {
   "1": "Usako's Everyday Moments",
   "2": "Usako's Dance",
   "2ab": "Usako's Performance",
-  "3": "Usako's Street Corners"
+  "3": "Usako's Street Corners",
+  "4": "Usako's Sparkling Day"
   // 4, 5... と増えたらここに追加するだけ
 };
 
@@ -312,6 +313,47 @@ const items = [
   { src: `${base}/images/3-52.webp`, title: 'Found Light', caption: 'As I lowered my hips and peered in, the scent of the night wafted softly.' },
   { src: `${base}/images/3-53.webp`, title: 'Cobblestones in the Light', caption: 'Squinting at the brightness, my stepping feet become lighter.' },
   { src: `${base}/images/3-54.webp`, title: 'Illuminated Corridor', caption: 'Curving my back to chase the light. I wonder what lies ahead.' },
+  { src: `${base}/images/4-1.webp`, title: 'Sunlight Melting Into My Back', caption: '' },
+  { src: `${base}/images/4-2.webp`, title: 'Scooping Grains of Light With My Fingers', caption: '' },
+  { src: `${base}/images/4-3.webp`, title: 'A Path of Wind, Hair Drifting', caption: '' },
+  { src: `${base}/images/4-4.webp`, title: 'Warm Knees, A Curled Back', caption: '' },
+  { src: `${base}/images/4-5.webp`, title: 'Fan Breeze, Gazing Up at the Sky', caption: '' },
+  { src: `${base}/images/4-6.webp`, title: 'Kicking the Tatami, A Dignified Heartbeat', caption: '' },
+  { src: `${base}/images/4-7.webp`, title: 'Lit Body Heat, Whispers of Shadow', caption: '' },
+  { src: `${base}/images/4-8.webp`, title: 'Beyond the Door, Fingertips Dancing', caption: '' },
+  { src: `${base}/images/4-9.webp`, title: 'Waves of Fabric, Reaching High', caption: '' },
+  { src: `${base}/images/4-10.webp`, title: 'Sinking Into Blue, An Afternoon Doze', caption: '' },
+  { src: `${base}/images/4-11.webp`, title: 'The Scent of Tatami, Bouncing on Tiptoes', caption: '' },
+  { src: `${base}/images/4-12.webp`, title: 'Silver Fur, Overflowing the Palm', caption: '' },
+  { src: `${base}/images/4-13.webp`, title: 'Through the Mask, Breath Turns White', caption: '' },
+  { src: `${base}/images/4-14.webp`, title: 'Holding the Wind, Layered Hakama', caption: '' },
+  { src: `${base}/images/4-15.webp`, title: 'Drops of Stars, Fingers Touching', caption: '' },
+  { src: `${base}/images/4-16.webp`, title: 'Thrown Open, Light Scorching the Throat', caption: '' },
+  { src: `${base}/images/4-17.webp`, title: 'A Resting Frame, Leaning Into Gravity', caption: '' },
+  { src: `${base}/images/4-18.webp`, title: 'Interlaced Fingers, Where Warmth Rests', caption: '' },
+  { src: `${base}/images/4-19.webp`, title: 'Stepping on Sunlight With My Heels', caption: '' },
+  { src: `${base}/images/4-20.webp`, title: 'Lamplight, Warming the Wick', caption: '' },
+  { src: `${base}/images/4-21.webp`, title: 'Stepping Forward, A Heartbeat', caption: '' },
+  { src: `${base}/images/4-22.webp`, title: 'Light Melting Along the Spine', caption: '' },
+  { src: `${base}/images/4-23.webp`, title: 'The Coolness of the Floor, Drowsiness', caption: '' },
+  { src: `${base}/images/4-24.webp`, title: 'Spring Sunlight Wrapping the Knees', caption: '' },
+  { src: `${base}/images/4-25.webp`, title: 'Dancing Lightly, A Weightless Body', caption: '' },
+  { src: `${base}/images/4-26.webp`, title: 'The Scent of Flowers Filling the Lungs', caption: '' },
+  { src: `${base}/images/4-27.webp`, title: 'Coolness Felt Through the Soles', caption: '' },
+  { src: `${base}/images/4-28.webp`, title: 'Grasping the Wind With Fingertips', caption: '' },
+  { src: `${base}/images/4-29.webp`, title: 'Facial Muscles Brushed by the Cheek', caption: '' },
+  { src: `${base}/images/4-30.webp`, title: 'The Chill of the Mask', caption: '' },
+  { src: `${base}/images/4-31.webp`, title: 'Toes Cutting Through the Wind', caption: '' },
+  { src: `${base}/images/4-32.webp`, title: 'Strings Biting Into the Fingers', caption: '' },
+  { src: `${base}/images/4-33.webp`, title: 'The Joy of a Trembling Throat', caption: '' },
+  { src: `${base}/images/4-34.webp`, title: 'Gravity Floating in Midair', caption: '' },
+  { src: `${base}/images/4-35.webp`, title: 'Silk Gliding Across the Skin', caption: '' },
+  { src: `${base}/images/4-36.webp`, title: 'A Nape Lifted Toward the Light', caption: '' },
+  { src: `${base}/images/4-37.webp`, title: 'A Drum Echoing With the Heartbeat', caption: '' },
+  { src: `${base}/images/4-38.webp`, title: 'The Heat of Bouncing Fingertips', caption: '' },
+  { src: `${base}/images/4-39.webp`, title: 'Explosive Force Kicking Off the Floor', caption: '' },
+
+
 ];
 const gallery = $("#cardGallery");
 const filterContainer = $("#filterButtons");
