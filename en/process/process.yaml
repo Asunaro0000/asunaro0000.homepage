@@ -20,3 +20,6 @@ logs:
   - title: "The Importance of 'Horizontal and Vertical' in Supporting a Character's Presence, Immersion, and Emotional Attachment"
     summary: "This article summarizes the meaning and effects of horizontal and vertical alignment, which are simple yet among the most important elements within an image."
     url: "./article/20260130_キャラクターの存在感・没入感・愛着を支える「水平垂直」の重要性_en/キャラクターの存在感・没入感・愛着を支える「水平垂直」の重要性_en.html"
+  - title: "What Is CFG in AI Image Generation? Understanding It as Vector Acceleration Rather Than Prompt Adherence"
+    summary: "This article takes a deep dive into the actual behavior of CFG, which is commonly described as prompt adherence."
+    url: "./article/20260201_画像生成aiの「cfg」とは何か？――「適用率」ではなく「ベクトルの加速」で理解する/cfg-in-ai-image-generation-understanding-it-as-vector-acceleration-not-prompt-adherence.html"
