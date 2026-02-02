@@ -21,7 +21,7 @@ const groupNames = {
   "2": "Usako's Dance",
   "2ab": "Usako's Performance",
   "3": "Usako's Street Corners",
-  "4": "Usako's Sparkling Day"
+  "4": "The Shimmer of Usako"
   // 4, 5... と増えたらここに追加するだけ
 };
 

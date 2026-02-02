@@ -327,19 +327,19 @@ const items = [
   { "src": "./images/4-24.webp", "title": "膝を包む、春の陽", "caption": "" },
   { "src": "./images/4-25.webp", "title": "舞い踊る、身の軽さ", "caption": "" },
   { "src": "./images/4-26.webp", "title": "花の香、肺を満たす", "caption": "" },
-  { "src": "./images/4-27.webp", "title": "足裏に伝わる涼気", "caption": "" },
-  { "src": "./images/4-28.webp", "title": "風を掴む、指先", "caption": "" },
-  { "src": "./images/4-29.webp", "title": "頬を撫でる面筋", "caption": "" },
-  { "src": "./images/4-30.webp", "title": "お面の冷たさ", "caption": "" },
-  { "src": "./images/4-31.webp", "title": "風を切る足先", "caption": "" },
-  { "src": "./images/4-32.webp", "title": "弦が指に食い込む", "caption": "" },
-  { "src": "./images/4-33.webp", "title": "喉が震える歓び", "caption": "" },
-  { "src": "./images/4-34.webp", "title": "宙に浮く重力", "caption": "" },
-  { "src": "./images/4-35.webp", "title": "絹が肌を滑る", "caption": "" },
+  { "src": "./images/4-27.webp", "title": "扇とまどろみ", "caption": "" },
+  { "src": "./images/4-28.webp", "title": "天を仰ぐ青", "caption": "" },
+  { "src": "./images/4-29.webp", "title": "狐面と緋の袴", "caption": "" },
+  { "src": "./images/4-30.webp", "title": "静寂の祈り", "caption": "" },
+  { "src": "./images/4-31.webp", "title": "陽光の中を駆ける", "caption": "" },
+  { "src": "./images/4-32.webp", "title": "静寂に響く弦の音", "caption": "" },
+  { "src": "./images/4-33.webp", "title": "畳の上での微笑み", "caption": "" },
+  { "src": "./images/4-34.webp", "title": "桜舞う空の調べ 満開の桜の下", "caption": "" },
+  { "src": "./images/4-35.webp", "title": "憩いのひととき", "caption": "" },
   { "src": "./images/4-36.webp", "title": "光を仰ぐ首筋", "caption": "" },
   { "src": "./images/4-37.webp", "title": "鼓動に響く太鼓", "caption": "" },
   { "src": "./images/4-38.webp", "title": "弾む指先の熱", "caption": "" },
-  { "src": "./images/4-39.webp", "title": "床を蹴る瞬発力", "caption": "" }
+  { "src": "./images/4-39.webp", "title": "扉の向こうの光 扇子を手に", "caption": "" }
 
 
 ];
