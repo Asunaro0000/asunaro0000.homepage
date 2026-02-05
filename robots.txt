@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# サイトマップの場所を指定
+Sitemap: https://asunaro0000.github.io/asunaro0000.homepage/sitemap.xml
