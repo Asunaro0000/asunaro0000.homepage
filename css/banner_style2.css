@@ -1,0 +1,85 @@
+/* 2つ目のバナー（森のチャット部屋）：最適化バランス版 */
+
+.top-banner2 {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 20px;
+  padding: 20px;                  /* 余白を標準サイズに */
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+  
+  width: 100%;
+  max-width: 380px;               /* 420pxから380pxへ少しスリムに */
+  min-height: 600px;              /* 他のカード（リス子等）の高さにピタリと合わせる */
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* --- 画像エリア：適度な大きさに調整 --- */
+.top-banner2 .top-banner__image-wrap {
+  width: 100%;
+  flex: 1;                        /* 縦の余白を埋めるが、巨大化させない */
+  max-height: 380px;              /* 画像が伸びすぎないよう制限 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #111;
+  margin-bottom: 16px;
+}
+
+.top-banner2 .top-banner__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;            /* 画面全体を表示 */
+  transition: transform 0.3s ease;
+}
+
+.top-banner2:hover .top-banner__image-wrap img {
+  transform: scale(1.04);
+}
+
+/* --- テキスト・ボタンエリア --- */
+.top-banner2 .top-banner__text {
+  width: 100%;
+  text-align: center;
+}
+
+.top-banner2 .top-banner__caption {
+  font-size: 0.95rem;             /* 少しコンパクトに */
+  line-height: 1.5;
+  color: #eee;
+  margin-bottom: 15px;
+}
+
+/* ボタンのサイズ感を標準的に */
+.top-banner2 .top-banner__btn {
+  display: inline-block;
+  width: 90%;                     /* 100%から少し絞る */
+  max-width: 280px;
+  padding: 12px 0;
+  background: #ffd769;
+  color: #2a2100;
+  border-radius: 999px;
+  font-size: 1rem;                /* 標準的な大きさに */
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: all 0.2s ease;
+}
+
+.top-banner2 .top-banner__btn:hover {
+  background: #ffeb3b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+.top-banner__update-info {
+  display: block;
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+}
