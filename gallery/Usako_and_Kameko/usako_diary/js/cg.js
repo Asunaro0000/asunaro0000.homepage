@@ -470,3 +470,46 @@ document.addEventListener("keydown", (e)=>{
 
 // 実行
 setupFilters();
+
+/**
+ * Google SEO対策: 全作品のメタデータを検索エンジンに一括送信
+ * フィルタで非表示になっているグループの画像・文字もすべてGoogleの評価対象になります。
+ */
+function injectGoogleSEOData() {
+    const pageTitle = document.title;
+    const pageDescription = document.querySelector('meta[name="description"]')?.content 
+                             || "ウサ子の毎日を一枚絵で日常の物語アート。幻想的な背景と物語のコレクション。";
+
+    const ldJson = {
+        "@context": "https://schema.org",
+        "@type": "ImageGallery",
+        "name": pageTitle,
+        "description": pageDescription,
+        "author": {
+            "@type": "Person",
+            "name": "Asunaro Works"
+        },
+        // items配列の全データ（700枚以上）を一つのリストとしてGoogleに渡す
+        "hasPart": items.map(it => ({
+            "@type": "ImageObject",
+            "name": it.title,
+            "description": it.caption,
+            "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
+        }))
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.innerHTML = JSON.stringify(ldJson);
+    document.head.appendChild(script);
+
+    // バックアップ: JSが実行される前のクローラー向けテキスト
+    const noscript = document.createElement('noscript');
+    noscript.innerHTML = `<div style="display:none;"><h2>作品目録</h2><ul>` + 
+        items.map(it => `<li>${it.title}: ${it.caption}</li>`).join('') + 
+        `</ul></div>`;
+    document.body.appendChild(noscript);
+}
+
+// 初期化の最後に実行
+injectGoogleSEOData();

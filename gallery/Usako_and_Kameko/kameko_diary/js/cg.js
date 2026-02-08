@@ -4,6 +4,77 @@ const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
 // 画像ごとに個別キャプションを設定
 const items = [
+  { src: './images/114.webp', title: '藤の降る書庫', 
+    caption: '紫の花房が天井を彩る。透き通る薬液に、春の記憶を閉じ込める。' },
+
+  { src: './images/113.webp', title: '星霜の小部屋', 
+    caption: '星図の壁に背を預ける。開かれた扉から、庭の薫香が流れ込む。' },
+
+  { src: './images/112.webp', title: '蒼い柱の傍ら', 
+    caption: '影の網目が頬をなぞる。静かな館の呼吸を、背中で感じていた。' },
+
+  { src: './images/111.webp', title: '筆に灯る紅', 
+    caption: '筆先に想いを一滴。縁側の陽光が、白い紙を優しく包んでいた。' },
+
+  { src: './images/110.webp', title: '扇と木漏れ日', 
+    caption: '風を仰ぎ、青い帳を揺らす。窓の外の緑が、瞳に鮮やかに映る。' },
+
+  { src: './images/109.webp', title: '色彩の薬棚', 
+    caption: '小瓶の影が床に伸びる。午後の光の中で、調合の時を待っていた。' },
+
+  { src: './images/108.webp', title: '牡丹灯籠の縁', 
+    caption: '灯火が紅を引く。格子戸に触れる指先に、夜の涼しさが忍び寄る。' },
+
+  { src: './images/107.webp', title: '陽光と青の幕', 
+    caption: '木漏れ日が畳を刻む。揺れる暖簾の向こう、新しい季節が待っていた。' },
+
+  { src: './images/106.webp', title: '花の灯る棚', 
+    caption: '瓶に閉じ込めた春を眺める。マフラーを直し、冬の気配を感じていた。' },
+
+  { src: './images/105.webp', title: '本と蔦の書庫', 
+    caption: '緑の天蓋の下で背表紙をなぞる。古びた紙の香りが、時を止めていた。' },
+
+  { src: './images/104.webp', title: '翠緑の調合', 
+    caption: '茶を淹れる湯気が、緑の壁に溶ける。午後の静寂を飲み干していた。' },
+
+  { src: './images/103.webp', title: '硝子瓶の回廊', 
+    caption: '標本が並ぶ棚を通り抜ける。瓶の中の彩りが、歩みを静かに見守る。' },
+
+  { src: './images/102.webp', title: '紅葉の窓辺', 
+    caption: '緋色の葉が揺れる。文にしたためる想いが、陽光に透けていた。' },
+
+  { src: './images/101.webp', title: '朝露の採集', caption: '輝く雫を小瓶に詰め、森の目覚めを共にする。' },
+  { src: './images/100.webp', title: '碧の筆跡', caption: '瑞々しい緑を墨に、心に咲く花を描き記す。' },
+  { src: './images/99.webp', title: '宵待の彩り', caption: '並ぶ薬瓶に灯が落ち、秘密の時間が始まる。' },
+  { src: './images/98.webp', title: '調合の小部屋', caption: '色とりどりの瓶に囲まれ、新しい香を想う。' },
+  { src: './images/97.webp', title: '書庫の探索者', caption: '背表紙をなぞり、物語の断片を拾い集める。' },
+  { src: './images/96.webp', title: '虹色の硝子戸', caption: '色硝子を透かす光。瞳に万華鏡が映り込む。' },
+  { src: './images/95.webp', title: '陽だまりの休息', caption: '膝を抱え微睡む。光の粒が肩を優しく撫でる。' },
+  { src: './images/94.webp', title: '深緑의 展望', caption: '窓いっぱいの緑を背に、静かな朝を見つめる。' },
+  { src: './images/93.webp', title: '書架の森', caption: '本に囲まれた床に座り、静かな時に身を浸す。' },
+  { src: './images/92.webp', title: '赤い手紙', caption: '白い花に見守られ、届いた便りに心を躍らせる。' },
+  { src: './images/91.webp', title: '瓶の中の庭', caption: '小さな森を瓶に詰め、揺れる火影に瞳を潤す。' },
+  { src: './images/90.webp', title: '仰ぐ光', caption: '高い窓から差す陽光に、心の澱を預けていた。' },
+  { src: './images/89.webp', title: '硝子の温室', caption: '瓶の中に咲く青い花へ、静かな祈りを捧げる。' },
+  { src: './images/88.webp', title: '水鉢の呼吸', caption: '透明な鉢に触れ、揺れる緑を愛おしく見つめる。' },
+  { src: './images/87.webp', title: '筆跡の記憶', caption: '散る光の中で、大切な誰かへ言葉を紡いでゆく。' },
+  { src: './images/86.webp', title: '物語の鍵', caption: '朱色の床に置かれた鍵が、次の扉の予感を運ぶ。' },
+  { src: './images/85.webp', title: '緑光の窓辺', caption: '窓いっぱいの緑に包まれ、遠い空へ想いを馳せる。' },
+  { src: './images/84.webp', title: '午後の読書', caption: '開いた頁に光が落ち、静かな思考が満ちていく。' },
+  { src: './images/83.webp', title: '花影の回廊', caption: '壁の花模様に、木漏れ日の影が静かに重なる。' },
+  { src: './images/82.webp', title: '白菊と櫛の音', caption: '光射す書架の前で、日々の輪郭を整えていく。' },
+  { src: './images/81.webp', title: '緑光に浸る午後', caption: '瓶の灯りを見つめ、深緑の海に想いを馳せる。' },
+  { src: './images/80.webp', title: '竹林の筆跡', caption: '静寂のなか、緋色の鏡を傍らに墨を躍らせる。' },
+  { src: './images/79.webp', title: '青き棚の追憶', caption: '茶杯を手に、格子戸から溢れる光を惜しむ。' },
+  { src: './images/78.webp', title: '彩花灯る室内', caption: '赤き灯に手を添え、草木の息吹を愛でる。' },
+  { src: './images/77.webp', title: '月光と茶の香り', caption: '丸窓の夜を眺め、温かな湯気に心を預ける。' },
+  { src: './images/76.webp', title: '星図と瞬く窓', caption: '木漏れ日の格子を抜け、心はすでに銀河の彼方へ。' },
+  { src: './images/75.webp', title: '光射す回廊の扉', caption: '杖が光を捉え、閉ざされた時を静かに開く。' },
+  { src: './images/74.webp', title: '緋色の道標', caption: '紅い布を整え、来るべき季節を迎え入れる。' },
+  { src: './images/73.webp', title: '紺碧と紅の書斎', caption: '箒を手に、色鮮やかな静寂の中を歩む。' },
+  { src: './images/72.webp', title: '叡智の書架を仰ぐ', caption: '陽光に躍る埃さえ、古き記録の一部のように。' },
+  { src: './images/71.webp', title: '木漏れ日の守り人', caption: '新緑の灯火を背に、静かな決意が瞳に宿る。' },
+
   { src: './images/70.webp', title: '灯火と広がる記',
     caption: 'ランタンが紙を橙に染める。微笑む瞳に、明日の予感が小さく灯っていた。' },
 
@@ -315,3 +386,23 @@ lb.addEventListener("pointerup", (e)=>{
   if(Math.abs(dx) > 40) move(dx < 0 ? 1 : -1);
   sx = null;
 });
+// Google検索エンジンに文字情報を一括で認識させるための構造化データ
+const scriptLD = document.createElement('script');
+scriptLD.type = 'application/ld+json';
+scriptLD.innerHTML = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "Kameko’s Workshop — 森の静かな作業部屋",
+  "description": "森の光が差し込む部屋で、静かに手を動かすカメコの日常アート。100枚以上の幻想的な背景と物語。",
+  "author": {
+    "@type": "Person",
+    "name": "Asunaro Works"
+  },
+  "hasPart": items.map(it => ({
+    "@type": "ImageObject",
+    "name": it.title,
+    "description": it.caption,
+    "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
+  }))
+});
+document.head.appendChild(scriptLD);

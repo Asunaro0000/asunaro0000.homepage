@@ -15,6 +15,138 @@ const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 // 画像ごとに個別キャプションを設定
 
 const items = [
+    { src: `${base}/images/114.webp`, title: 'The Wisteria-Falling Library',
+    caption: 'Clusters of violet blossoms adorn the ceiling. Within the clear solution, memories of spring are sealed away.' },
+
+  { src: `${base}/images/113.webp`, title: 'A Chamber of Passing Years',
+    caption: 'Leaning against walls of star charts. From the open door, fragrant incense from the garden drifts inside.' },
+
+  { src: `${base}/images/112.webp`, title: 'Beside the Azure Pillars',
+    caption: 'A lattice of shadows brushes the cheek. The quiet breathing of the manor is felt through the back.' },
+
+  { src: `${base}/images/111.webp`, title: 'Crimson Lit Upon the Brush',
+    caption: 'A single drop of feeling rests on the brush tip. Sunlight on the veranda gently wraps the white paper.' },
+
+  { src: `${base}/images/110.webp`, title: 'Fan and Dappled Light',
+    caption: 'Fanning the breeze, blue curtains sway. The greenery beyond the window reflects vividly in the eyes.' },
+
+  { src: `${base}/images/109.webp`, title: 'The Shelf of Chromatic Elixirs',
+    caption: 'Shadows of small bottles stretch across the floor. In the afternoon light, they wait for the moment of blending.' },
+
+  { src: `${base}/images/108.webp`, title: 'By the Peony Lantern',
+    caption: 'The flame draws lines of crimson. Cool night air creeps toward fingertips touching the lattice door.' },
+
+  { src: `${base}/images/107.webp`, title: 'Sunlight and Blue Drapes',
+    caption: 'Dappled light marks the tatami. Beyond the swaying noren, a new season waits.' },
+
+  { src: `${base}/images/106.webp`, title: 'A Shelf Where Flowers Glow',
+    caption: 'Gazing at spring sealed within bottles. Adjusting a scarf, the presence of winter is felt.' },
+
+  { src: `${base}/images/105.webp`, title: 'Library of Books and Vines',
+    caption: 'Tracing spines beneath a green canopy. The scent of aged paper stills time.' },
+
+  { src: `${base}/images/104.webp`, title: 'Emerald Blending',
+    caption: 'Steam from freshly poured tea melts into green walls. The quiet of afternoon is slowly consumed.' },
+
+  { src: `${base}/images/103.webp`, title: 'The Corridor of Glass Bottles',
+    caption: 'Passing through shelves of specimens. Colors within the bottles quietly watch each step.' },
+
+  { src: `${base}/images/102.webp`, title: 'By the Autumn Window',
+    caption: 'Crimson leaves sway. Feelings written into letters shine through the sunlight.' },
+
+  { src: `${base}/images/101.webp`, title: 'Collecting Morning Dew',
+    caption: 'Bright droplets are gathered into small vials, sharing in the forest’s awakening.' },
+
+  { src: `${base}/images/100.webp`, title: 'Azure Brushstrokes',
+    caption: 'Fresh greens become ink, recording flowers blooming within the heart.' },
+
+  { src: `${base}/images/99.webp`, title: 'Colors Awaiting Dusk',
+    caption: 'Light settles upon rows of bottles, and secret hours begin.' },
+
+  { src: `${base}/images/98.webp`, title: 'The Alchemist’s Small Room',
+    caption: 'Surrounded by colorful bottles, thoughts turn to a new fragrance.' },
+
+  { src: `${base}/images/97.webp`, title: 'The Library Explorer',
+    caption: 'Tracing book spines, gathering fragments of stories.' },
+
+  { src: `${base}/images/96.webp`, title: 'The Rainbow Glass Door',
+    caption: 'Light passing through colored glass. A kaleidoscope reflects in the eyes.' },
+
+  { src: `${base}/images/95.webp`, title: 'Rest in the Sunlit Spot',
+    caption: 'Knees drawn close in a light doze. Particles of light gently stroke the shoulders.' },
+
+  { src: `${base}/images/94.webp`, title: 'Outlook in Deep Green',
+    caption: 'With a wall of greenery behind, a quiet morning is observed.' },
+
+  { src: `${base}/images/93.webp`, title: 'A Forest of Bookshelves',
+    caption: 'Seated on the floor among books, the body sinks into quiet time.' },
+
+  { src: `${base}/images/92.webp`, title: 'The Red Letter',
+    caption: 'Watched over by white flowers, the heart leaps at a delivered message.' },
+
+  { src: `${base}/images/91.webp`, title: 'A Garden Inside a Bottle',
+    caption: 'A small forest sealed in glass, eyes moistened by flickering firelight.' },
+
+  { src: `${base}/images/90.webp`, title: 'Gazing at the Light',
+    caption: 'Into the sunlight pouring from a high window, the heart’s sediment is entrusted.' },
+
+  { src: `${base}/images/89.webp`, title: 'The Glass Conservatory',
+    caption: 'A quiet prayer is offered to the blue flowers blooming inside bottles.' },
+
+  { src: `${base}/images/88.webp`, title: 'The Breath of the Water Basin',
+    caption: 'Touching the clear basin, tenderly watching the swaying greenery.' },
+
+  { src: `${base}/images/87.webp`, title: 'Memories of Brushstrokes',
+    caption: 'Within scattered light, words are woven for someone dear.' },
+
+  { src: `${base}/images/86.webp`, title: 'The Key to the Story',
+    caption: 'A key placed on a vermilion floor carries the premonition of the next door.' },
+
+  { src: `${base}/images/85.webp`, title: 'Window Bathed in Green Light',
+    caption: 'Wrapped in greenery filling the window, thoughts drift toward a distant sky.' },
+
+  { src: `${base}/images/84.webp`, title: 'Afternoon Reading',
+    caption: 'Light falls upon open pages, and quiet thoughts begin to fill the space.' },
+
+  { src: `${base}/images/83.webp`, title: 'The Corridor of Floral Shadows',
+    caption: 'Shadows of dappled light softly overlap floral patterns on the walls.' },
+
+  { src: `${base}/images/82.webp`, title: 'White Chrysanthemums and the Sound of a Comb',
+    caption: 'Before a sunlit bookshelf, the contours of daily life are gently arranged.' },
+
+  { src: `${base}/images/81.webp`, title: 'An Afternoon Immersed in Green Light',
+    caption: 'Gazing at glowing bottles, thoughts wander through a sea of deep green.' },
+
+  { src: `${base}/images/80.webp`, title: 'Brushstrokes in the Bamboo Grove',
+    caption: 'In silence, ink dances beside a vermilion mirror.' },
+
+  { src: `${base}/images/79.webp`, title: 'Recollections of the Blue Shelf',
+    caption: 'With a teacup in hand, light spilling through the lattice door is savored.' },
+
+  { src: `${base}/images/78.webp`, title: 'A Room Lit by Colored Flowers',
+    caption: 'Hands rest near crimson light, admiring the breath of plants.' },
+
+  { src: `${base}/images/77.webp`, title: 'Moonlight and the Scent of Tea',
+    caption: 'Gazing at the night through a round window, the heart is entrusted to warm steam.' },
+
+  { src: `${base}/images/76.webp`, title: 'Star Charts and a Flickering Window',
+    caption: 'Passing through latticed light, the mind already drifts beyond the galaxy.' },
+
+  { src: `${base}/images/75.webp`, title: 'The Door at the Sunlit Corridor',
+    caption: 'A staff catches the light, quietly opening sealed time.' },
+
+  { src: `${base}/images/74.webp`, title: 'The Vermilion Guidepost',
+    caption: 'Adjusting red cloth, welcoming the season yet to come.' },
+
+  { src: `${base}/images/73.webp`, title: 'A Study of Deep Blue and Crimson',
+    caption: 'With a broom in hand, walking through vividly colored stillness.' },
+
+  { src: `${base}/images/72.webp`, title: 'Looking Up at the Shelves of Wisdom',
+    caption: 'Even dust dancing in sunlight feels like part of ancient records.' },
+
+  { src: `${base}/images/71.webp`, title: 'Guardian of Dappled Light',
+    caption: 'With the glow of fresh green behind, quiet resolve dwells in the eyes.' },
+
   { src: `${base}/images/70.webp`, title: 'Records Spread by Lamplight', 
     caption: 'The lantern stains the paper in shades of orange. In her smiling eyes, a small flicker of tomorrow’s premonition was lit.' },
 
@@ -328,3 +460,24 @@ lb.addEventListener("pointerup", (e)=>{
   if(Math.abs(dx) > 40) move(dx < 0 ? 1 : -1);
   sx = null;
 });
+
+// Google検索エンジンに文字情報を一括で認識させるための構造化データ
+const scriptLD = document.createElement('script');
+scriptLD.type = 'application/ld+json';
+scriptLD.innerHTML = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "Kameko’s Workshop — A Quiet Forest Atelier",
+  "description": "Daily fantasy art of Kameko, quietly creating in a sun-drenched forest studio. A collection of over 100 enchanting backgrounds and stories.",
+  "author": {
+    "@type": "Person",
+    "name": "Asunaro Works"
+  },
+  "hasPart": items.map(it => ({
+    "@type": "ImageObject",
+    "name": it.title,
+    "description": it.caption,
+    "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
+  }))
+});
+document.head.appendChild(scriptLD);
