@@ -1,0 +1,170 @@
+/* --- 全体設定 --- */
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+  background: #fdf5e6;
+  color: #5d4037;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* --- ヘッダー共存レイアウト --- */
+
+/* 1. 共通ナビ(header.nav) 背景を不透明にして最前面に */
+header.nav {
+  z-index: 2000 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #4a4a4a; /* 透かし無しの背景色を指定（既存の設定に合わせる） */
+  height: 50px; /* 高さを明示的に固定 */
+}
+
+/* 2. 日記ヘッダーコンテナ (共通ナビの直後から開始) */
+.diary-fixed-container {
+  position: fixed;
+  top: 50px; /* 共通ナビの高さ分だけ下げる */
+  left: 0;
+  width: 100%;
+  background: #fdf5e6; /* 背景色と同じ色で透過なし */
+  z-index: 1000;
+  padding: 15px 0 10px 0;
+  border-bottom: 2px solid #e0d5c1;
+}
+
+/* 3. タイトルが切れないための調整 */
+.diary-header { 
+  text-align: center; 
+  margin-bottom: 8px; 
+}
+
+.diary-header h1 { 
+  font-size: 1.1rem; 
+  color: #8d6e63; 
+  margin: 0 0 4px 0; /* 上下のマージンを確保 */
+  display: block;
+}
+
+.diary-header p { 
+  font-size: 0.7rem; 
+  color: #a1887f; 
+  margin: 0; 
+}
+
+/* --- 操作エリア --- */
+.controls {
+  max-width: 460px;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.setting-row {
+  margin-bottom: 8px;
+  font-size: 0.75rem;
+  color: #8d6e63;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+#limit-select {
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid #e0d5c1;
+  background-color: #fff;
+  color: #5d4037;
+  font-size: 0.75rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+#gen-btn, .link-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+#gen-btn { background: #fbc02d; color: white; }
+.link-btn { background: #81c784; color: white; }
+
+#gen-btn:hover, .link-btn:hover { opacity: 0.8; transform: translateY(-1px); }
+#gen-btn:disabled { background: #ccc; cursor: not-allowed; }
+
+#status-msg { font-size: 10px; color: #888; margin-top: 5px; height: 12px; }
+
+/* --- チャット表示エリア：ヘッダーに被らないように余白を確保 --- */
+.chat-container { 
+  max-width: 500px; 
+  margin: 0 auto; 
+  display: flex; 
+  flex-direction: column; 
+  /* 共通ナビ(50px) + 日記コンテナ(約150px) + 余裕分 */
+  padding: 220px 15px 60px 15px; 
+}
+
+/* --- チャットバブル設定 --- */
+.timestamp {
+  font-size: 0.7rem; color: #bcaaa4; text-align: center;
+  margin-top: 40px; margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px; padding: 3px 12px; align-self: center;
+}
+
+.bubble {
+  padding: 12px 16px; border-radius: 18px; margin: 10px 0;
+  max-width: 85%; position: relative; font-size: 0.95rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.risuko { background: #fff9c4; align-self: flex-start; color: #5d4037; border-top-left-radius: 2px; }
+.suzuko { background: #e1f5fe; align-self: flex-end; color: #01579b; border-top-right-radius: 2px; }
+
+.risuko::before { content: "リス子"; position: absolute; top: -18px; left: 5px; font-size: 0.7rem; color: #fbc02d; font-weight: bold; }
+.suzuko::before { content: "スズ子"; position: absolute; top: -18px; right: 5px; font-size: 0.7rem; color: #03a9f4; font-weight: bold; }
+
+.scene-img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 15px;
+  margin: 18px auto;
+  display: block;
+  border: 5px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 480px) {
+  .chat-container { padding-top: 240px; }
+}
+
+/* --- 抜粋：名前表示の切り替え --- */
+
+/* 日本語モード */
+.bubble.risuko.lang-ja::before { content: "リス子"; }
+.bubble.suzuko.lang-ja::before { content: "スズ子"; }
+
+/* 英語モード */
+.bubble.risuko.lang-en::before { content: "Risuko"; }
+.bubble.suzuko.lang-en::before { content: "Suzuko"; }
+
+/* 共通設定（既存のものを微調整） */
+.risuko::before { position: absolute; top: -18px; left: 5px; font-size: 0.7rem; color: #fbc02d; font-weight: bold; }
+.suzuko::before { position: absolute; top: -18px; right: 5px; font-size: 0.7rem; color: #03a9f4; font-weight: bold; }

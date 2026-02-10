@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>リス子チャット</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リス子とスズ子の観察日記</title>
 
   <meta name="msvalidate.01" content="E3F43A180B49E6499200CE3AF81A637C" />
-
   <meta property="og:site_name" content="Asunaro Works" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ja_JP" />
-
   <meta property="og:title" content="Asunaro Works" />
   <meta property="og:description" content="Asunaro Worksによるインタラクティブアートとストーリーボードの世界。" />
   <meta property="og:url" content="https://asunaro0000.github.io/asunaro0000.homepage/" />
-
   <meta property="og:image" content="https://asunaro0000.github.io/asunaro0000.homepage/assets/banner/banner1.webp" />
   <meta property="og:image:alt" content="Asunaro Works バナー" />
   <meta name="p:domain_verify" content="d57a228b61f6ea3435efa630b2165165"/>
@@ -28,30 +24,10 @@
   <script src="https://asunaro0000.github.io/asunaro0000.homepage/js/extensions/google-tag.js" defer></script>
   <script src="../js/extensions/google-tag.js" defer></script>
   <script type="module" src="../js/extensions/nav-toggle.js"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      
-      const isJapanese = navigator.language.startsWith('ja');
-      if (!isJapanese) {
-        // 最初の挨拶
-        const greeting = document.querySelector(".bubble.ai");
-        if (greeting) {
-          greeting.innerHTML = 'Hi there! I\'m Risuko. Let\'s chat!<img src="./assets/main.jpg" >';
-        }
-        // 入力欄
-        const msgInput = document.getElementById("msg");
-        if (msgInput) msgInput.placeholder = "Chat with Risuko...";
-        // 送信ボタン
-        const sendBtn = document.getElementById("send-btn");
-        if (sendBtn) sendBtn.textContent = "Send";
-        // デバッグログ
-        const debugLog = document.getElementById("debug-log");
-        if (debugLog) debugLog.textContent = "Debug Log: Ready to chat";
-      }
-    });
-  </script>
 </head>
+
+<body>
+
   <header class="nav">
     <a class="brand" href="../">Asunaro Works</a>
     <a class="go-up" href="../" title="一つ上の階へ">⏶</a>
@@ -66,29 +42,39 @@
     </nav>
   </header>
 
+<div class="diary-fixed-container">
+  <header class="diary-header">
+    <h1 id="diary-title">🐿️ リス子とスズ子の観察日記</h1>
+    <p id="diary-desc">森の二人の日常をのぞき見できます。1、2時間毎に会話してます。</p>
+  </header>
 
-<body>
+  <div class="controls">
+    <div class="setting-row">
+      <label for="lang-select">Language：</label>
+      <select id="lang-select" onchange="updateLanguage()">
+        <option value="ja" selected>日本語</option>
+        <option value="en">English</option>
+      </select>
 
-
-
-  <div id="chat-container">
-    <div id="chat">
-      <div class="bubble ai">やっほー！リス子だよ。お話ししよ！<img src="./assets/main.jpg" ></div>
+      <label for="limit-select" id="label-limit">表示する履歴：</label>
+      <select id="limit-select" onchange="fetchLogs(false)">
+        <option value="5">最新 5 件</option>
+        <option value="10" selected>最新 10 件</option>
+        <option value="20">最新 20 件</option>
+        <option value="50">最新 50 件</option>
+        <option value="100">最新 100 件</option>
+      </select>
     </div>
-  </div>
 
-  <div id="input-area">
-    <input type="text" id="msg" placeholder="リス子にお話しして..." autocomplete="off">
-    <button id="send-btn">送信</button>
+    <div class="button-group">
+      <button id="gen-btn" onclick="fetchLogs(true)">🐿️ お喋りさせる</button>
+      <a href="https://asunaro0000.github.io/asunaro0000.homepage/risuko_bot/index.html" class="link-btn" id="talk-btn">💬 二人と話す</a>
+    </div>
+    <div id="status-msg"></div>
   </div>
+</div>
 
-  <div id="debug-log">
-    デバッグログ: まだ通信していません
-  </div>
-
-  <div id="lightbox" onclick="this.style.display='none'">
-    <img id="lightbox-img">
-  </div>
+  <div class="chat-container" id="log-display"></div>
 
   <script src="script.js"></script>
 </body>
