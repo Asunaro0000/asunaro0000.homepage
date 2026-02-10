@@ -50,7 +50,7 @@ const items = [
   { src: './images/97.webp', title: '書庫の探索者', caption: '背表紙をなぞり、物語の断片を拾い集める。' },
   { src: './images/96.webp', title: '虹色の硝子戸', caption: '色硝子を透かす光。瞳に万華鏡が映り込む。' },
   { src: './images/95.webp', title: '陽だまりの休息', caption: '膝を抱え微睡む。光の粒が肩を優しく撫でる。' },
-  { src: './images/94.webp', title: '深緑의 展望', caption: '窓いっぱいの緑を背に、静かな朝を見つめる。' },
+  { src: './images/94.webp', title: '深緑の展望', caption: '窓いっぱいの緑を背に、静かな朝を見つめる。' },
   { src: './images/93.webp', title: '書架の森', caption: '本に囲まれた床に座り、静かな時に身を浸す。' },
   { src: './images/92.webp', title: '赤い手紙', caption: '白い花に見守られ、届いた便りに心を躍らせる。' },
   { src: './images/91.webp', title: '瓶の中の庭', caption: '小さな森を瓶に詰め、揺れる火影に瞳を潤す。' },
