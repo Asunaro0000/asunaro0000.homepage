@@ -21,7 +21,7 @@
     en: {
           src: "../../assets/banner/risuko_bot.png", 
           caption: "Chat with Risuko! She understands both English and Japanese. Ask 'What are you doing?' and she will share stories from the forest.",
-          href: "../../risuko_bot/index.html",
+          href: "../../chat_room/risuko_bot/index.html",
           btnLabel: "▶ Visit Risuko's Forest Chat"
         }
   };
