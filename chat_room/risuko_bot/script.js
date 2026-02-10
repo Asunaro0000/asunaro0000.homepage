@@ -2,6 +2,24 @@
  * 設定エリア
  */
 const GAS_URL = "https://script.google.com/macros/s/AKfycbzTCcgpN10qdWm83UTH0_rV21nu-DK4X1croX-UQE6avoRPdWIJ4ixyAlTtrUolCRjVIw/exec";
+/**
+ * 案内板（リンク集）のデータ
+ */
+const GUIDE_LINKS = {
+  ja: [
+    { name: "📅 リス子とスズ子の観察日記", url: "https://asunaro0000.github.io/asunaro0000.homepage/chat_room/risuko_logroom/index.html" },
+    { name: "🎨 ギャラリー", url: "https://asunaro0000.github.io/asunaro0000.homepage/gallery/Risko/index.html" },
+    { name: "📖 ストーリーボード", url: "https://asunaro0000.github.io/asunaro0000.homepage/gallery/Risko/storyboard_room/index.html" },
+  
+  ],
+  en: [
+    { name: "📅 Observation Diary", url: "https://asunaro0000.github.io/asunaro0000.homepage/chat_room/risuko_logroom/index.html" },
+    { name: "🎨 Gallery", url: "https://asunaro0000.github.io/asunaro0000.homepage/en/gallery/Risko/" },
+    { name: "📖 Storyboard", url: "https://asunaro0000.github.io/asunaro0000.homepage/en/gallery/Risko/storyboard_room/index.html" },
+  ]
+};
+
+
 
 // ★ここを false にすると画面下のデバッグログが完全に消えます
 const IS_DEBUG = false; 
@@ -109,3 +127,48 @@ document.getElementById('msg').addEventListener('keypress', (e) => {
         send();
     }
 });
+
+
+/**
+ * 初期化処理
+ */
+window.addEventListener('DOMContentLoaded', () => {
+    // 言語判定
+    const params = new URLSearchParams(window.location.search);
+    const isEn = params.get('lang') === 'en' || (!navigator.language.startsWith('ja'));
+    const lang = isEn ? 'en' : 'ja';
+
+    // デバッグログ表示設定
+    const debugElement = document.getElementById('debug-log');
+    if (debugElement) {
+        debugElement.style.display = IS_DEBUG ? 'block' : 'none';
+    }
+
+    // 案内板の描画
+    renderGuideBoard(lang);
+    
+    // 英語アクセス時のUI初期化（HTML内のscriptタグで行っていた処理を統合）
+    if (isEn) {
+        const greeting = document.querySelector(".bubble.ai");
+        if (greeting) greeting.innerHTML = 'Hi there! I\'m Risuko. Let\'s chat!<img src="./assets/main.jpg" >';
+        document.getElementById("msg").placeholder = "Chat with Risuko...";
+        document.getElementById("send-btn").textContent = "Send";
+    }
+});
+
+/**
+ * 案内板（リンク集）を描画する
+ */
+function renderGuideBoard(lang) {
+    const board = document.getElementById('guide-board');
+    if (!board) return;
+
+    board.innerHTML = ""; // クリア
+    GUIDE_LINKS[lang].forEach(link => {
+        const a = document.createElement('a');
+        a.href = link.url;
+        a.className = 'guide-chip';
+        a.innerText = link.name;
+        board.appendChild(a);
+    });
+}

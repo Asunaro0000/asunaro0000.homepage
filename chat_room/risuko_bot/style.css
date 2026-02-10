@@ -149,3 +149,34 @@ button {
     border-top: 1px solid #ccc;
     /* 初期状態はJSで制御するため、念のためそのまま */
 }
+/* 追加：作品案内板のスタイル */
+#guide-board {
+    display: flex;
+    flex-wrap: wrap;       /* 数が増えても折り返せるように */
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 15px 20px 15px; /* 下に少し余裕を持たせる */
+    background: #fff;      /* 入力欄と同じ背景色 */
+}
+
+.guide-chip {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+    background: #fff;
+    color: #8d6e63;
+    border: 1px solid #ffcc80;
+    border-radius: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+/* マウスホバー時（PC） */
+@media (hover: hover) {
+    .guide-chip:hover {
+        background: #ffcc80;
+        color: #5d4037;
+        transform: translateY(-1px);
+    }
+}

@@ -15,7 +15,7 @@
     ja: {
       src: "./assets/banner/risuko_bot.png",
       caption: "リス子とお話しできます。何している？と聞けば話題を振ってくれるのでぜひ話し相手になって上げてください",
-      href: "./risuko_bot/index.html",
+      href: "./chat_room/risuko_bot/index.html",
       btnLabel: "▶ リス子の森のチャット部屋"
     },
     en: {
