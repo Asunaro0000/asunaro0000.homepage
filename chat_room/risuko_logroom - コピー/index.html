@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リス子とスズ子の観察日記</title>
+
+  <meta name="msvalidate.01" content="E3F43A180B49E6499200CE3AF81A637C" />
+  <meta property="og:site_name" content="Asunaro Works" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:title" content="Asunaro Works" />
+  <meta property="og:description" content="Asunaro Worksによるインタラクティブアートとストーリーボードの世界。" />
+  <meta property="og:url" content="https://asunaro0000.github.io/asunaro0000.homepage/" />
+  <meta property="og:image" content="https://asunaro0000.github.io/asunaro0000.homepage/assets/banner/banner1.webp" />
+  <meta property="og:image:alt" content="Asunaro Works バナー" />
+  <meta name="p:domain_verify" content="d57a228b61f6ea3435efa630b2165165"/>
+
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script src="https://asunaro0000.github.io/asunaro0000.homepage/js/extensions/google-tag.js" defer></script>
+  <script src="../../js/extensions/google-tag.js" defer></script>
+  <script type="module" src="../../js/extensions/nav-toggle.js"></script>
+</head>
+
+<body>
+
+  <header class="nav">
+    <a class="brand" href="../../">Asunaro Works</a>
+    <a class="go-up" href="../../" title="一つ上の階へ">⏶</a>
+    <nav>
+      <a href="../../gallery/">Gallery</a>
+      <a href="../../about/">About/Contact</a>
+      <a href="../../process/">制作技術blog</a>
+      <a href="../../link/">Link</a>
+      <a href="../../sitemap/">Sitemap</a>
+      <a href="../../goods/">Goods</a>
+      <a href="https://www.patreon.com/Asunaro0000" style="color:#ffd54a;">Patreonで資料更新中</a>
+    </nav>
+  </header>
+
+<div class="diary-fixed-container">
+  <header class="diary-header">
+    <h1 id="diary-title">🐿️ リス子とスズ子の観察日記</h1>
+    <p id="diary-desc">森の二人の日常をのぞき見できます。1、2時間毎に会話してます。</p>
+  </header>
+
+  <div class="controls">
+    <div class="setting-row">
+      <label for="lang-select">Language：</label>
+      <select id="lang-select" onchange="updateLanguage()">
+        <option value="ja" selected>日本語</option>
+        <option value="en">English</option>
+      </select>
+
+      <label for="limit-select" id="label-limit">表示する履歴：</label>
+      <select id="limit-select" onchange="fetchLogs(false)">
+        <option value="5">最新 5 件</option>
+        <option value="10" selected>最新 10 件</option>
+        <option value="20">最新 20 件</option>
+        <option value="50">最新 50 件</option>
+        <option value="100">最新 100 件</option>
+      </select>
+    </div>
+
+    <div class="button-group">
+      <button id="gen-btn" onclick="fetchLogs(true)">🐿️ お喋りさせる</button>
+      <a href="https://asunaro0000.github.io/asunaro0000.homepage/chat_room/risuko_bot/index.html" class="link-btn" id="talk-btn">💬 二人と話す</a>
+    </div>
+    <div id="status-msg"></div>
+  </div>
+</div>
+
+  <div class="chat-container" id="log-display"></div>
+<div id="guide-board"></div>
+  <script src="script.js"></script>
+</body>
+</html>

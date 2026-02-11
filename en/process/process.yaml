@@ -29,3 +29,6 @@ logs:
   - title: "Expressive and Diverse Poses! How to Create a Custom Character Asset Pack"
     summary: "I created a 100-pose asset pack for Risu-ko and explain the process behind how it was made."
     url: "./article/20260204_表情豊かで多種多様なポーズ！自キャラ素材集の作り方/expressive-and-diverse-poses!-how-to-create-a-custom-character-asset-pack.html"
+  - title: "Chat with AI Risuko & The Behind-the-Scenes of the Autonomous Squirrel Forest"
+    summary: "An introduction to the technology behind Risuko's AI chat and the automated talking room for the observation diary."
+    url: "./article/20260211_aiリス子とお喋り＆最新aiで動き続ける「自走するリスたちの森」の舞台裏/chat-with-ai-risuko-&-the-behind-the-scenes-of-the-autonomous-squirrel-forest.html"
