@@ -8,15 +8,15 @@ const GAS_URL = "https://script.google.com/macros/s/AKfycbyw8KuPAQifE85osH6RKUBl
  */
 const GUIDE_LINKS = {
   ja: [
-    { name: "🎨 ギャラリー", url: "https://asunaro0000.github.io/asunaro0000.homepage/gallery/" },
+    { name: "🎨 ギャラリー", url: "https://asunaro0000.github.io/asunaro0000.homepage/gallery/Usako_and_Kameko/usako_diary/index.html" },
     { name: "📖 制作ブログ", url: "https://asunaro0000.github.io/asunaro0000.homepage/process/" },
     { name: "🛍️ グッズショップ", url: "https://asunaro0000.github.io/asunaro0000.homepage/goods/" },
     { name: "✨ Patreon (資料更新中)", url: "https://www.patreon.com/Asunaro0000" }
   ],
   en: [
-    { name: "🎨 Gallery", url: "https://asunaro0000.github.io/asunaro0000.homepage/gallery/" },
-    { name: "📖 Dev Blog", url: "https://asunaro0000.github.io/asunaro0000.homepage/process/" },
-    { name: "🛍️ Shop", url: "https://asunaro0000.github.io/asunaro0000.homepage/goods/" },
+    { name: "🎨 Gallery", url: "https://asunaro0000.github.io/asunaro0000.homepage/en/gallery/Usako_and_Kameko/usako_diary/index.html" },
+    { name: "📖 Dev Blog", url: "https://asunaro0000.github.io/asunaro0000.homepage/en/process/" },
+    { name: "🛍️ Shop", url: "https://asunaro0000.github.io/asunaro0000.homepage/en/goods/" },
     { name: "✨ Patreon", url: "https://www.patreon.com/Asunaro0000" }
   ]
 };
@@ -102,20 +102,20 @@ async function initGreeting(lang) {
     const msg2 = document.createElement('div');
     msg2.className = 'bubble ai';
     if (isEn) {
-        msg2.innerHTML = `If you're not sure what to talk about, try sending these words✨<br><br>
-・"What do you usually do?" ... Self-introduction<br>
-・"Tell me a story" ... Daily life episodes<br>
-・"Tell me about the scenery" ... Memories of scenery<br>
-・"Dance (Perform)" ... I'll perform shamisen or dance<br>
-・"Fortune-telling" ... I'll tell your fortune🌸<br><br>I'm looking forward to chatting with you🍵`;
+        msg2.innerHTML = `If you're not sure what to talk about, try sending these words✨<br>
+・"What do you usually do?" ... Self-introduction
+・"Tell me a story" ... Daily life episodes
+・"Tell me about the scenery" ... Memories of scenery
+・"Dance (Perform)" ... I'll perform shamisen or dance
+・"Fortune-telling" ... I'll tell your fortune🌸<br>I'm looking forward to chatting with you🍵`;
     } else {
-        msg2.innerHTML = `何をお話しするか迷ったら、この言葉をそのまま送ってみてくださいね✨<br><br>
-・「普段は何してるの？（好きなことは？）」 … 私自身の自己紹介<br>
-・「日常を話して」 … 私の周りで起きた面白い小話<br>
-・「景色を教えて」 … 私の思い出の風景<br>
-・「踊って（演奏して）」 … 舞や三味線を披露します<br>
-・「占って」 … あなたの運勢を舞いで占います。自慢の宝物もお見せするね🪭✨<br><br>
-あなたとのお喋り、楽しみにしています🍵`;
+        msg2.innerHTML = `何をお話しするか迷ったら、この言葉をそのまま送ってみてくださいね✨<br>
+・「普段は何してるの？（好きなことは？）」 … 私自身の自己紹介
+・「日常を話して」 … 私の周りで起きた面白い小話
+・「景色を教えて」 … 私の思い出の風景
+・「踊って（演奏して）」 … 舞や三味線を披露します
+・「占って」 … あなたの運勢を舞いで占います。自慢の宝物もお見せするね🪭✨<br>
+あなたとのお喋り、楽しみにしていますよ🍵`;
     }
     chat.appendChild(msg2);
     container.scrollTop = container.scrollHeight;

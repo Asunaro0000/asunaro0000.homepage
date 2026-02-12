@@ -3,6 +3,7 @@ const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
 // 画像ごとに個別キャプションを設定
+// ここにある全データに自動で「カメコ」のaltが付与されます
 const items = [
   { src: './images/114.webp', title: '藤の降る書庫', 
     caption: '紫の花房が天井を彩る。透き通る薬液に、春の記憶を閉じ込める。' },
@@ -285,12 +286,16 @@ const items = [
   { src: './images/1.webp', title: '葉を記す朝',
     caption: '札を確かめる指先に淡い色が落ちる。瓶を前にした朝の作業が、ひと区切りの気配を帯びていた。' },
 ];
-
 const gallery = $("#cardGallery");
+
+/**
+ * 【修正ポイント】ギャラリー描画
+ * 全ての画像に「カメコ」を冠したaltを自動で生成・付与します
+ */
 gallery.innerHTML = items.map((it, i)=>`
   <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title}">
     <div class="card__imgwrap">
-      <img src="${it.src}" alt="${it.title}" loading="lazy">
+      <img src="${it.src}" alt="カメコのアート作品: ${it.title} - ${it.caption}" loading="lazy">
     </div>
     <figcaption class="card__meta">
       <h3 class="card__title">${it.title}</h3>
@@ -313,7 +318,7 @@ function openLB(i){
   idx = (i + items.length) % items.length;
   const it = items[idx];
   lbImg.src = it.src;
-  lbImg.alt = it.title || "";
+  lbImg.alt = `カメコ: ${it.title}`; // ライトボックス内にもaltを付与
   lbTitle.textContent = it.title || "";
   lbCaption.textContent = it.caption || "";
   lb.hidden = false;
@@ -386,23 +391,33 @@ lb.addEventListener("pointerup", (e)=>{
   if(Math.abs(dx) > 40) move(dx < 0 ? 1 : -1);
   sx = null;
 });
-// Google検索エンジンに文字情報を一括で認識させるための構造化データ
+
+/**
+ * 【修正ポイント】Google検索エンジンに「カメコ」情報を一括認識させるための構造化データ
+ */
 const scriptLD = document.createElement('script');
 scriptLD.type = 'application/ld+json';
 scriptLD.innerHTML = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "ImageGallery",
   "name": "Kameko’s Workshop — 森の静かな作業部屋",
-  "description": "森の光が差し込む部屋で、静かに手を動かすカメコの日常アート。100枚以上の幻想的な背景と物語。",
+  "description": "森の光が差し込む部屋で、静かに手を動かすカメコの日常アート。幻想的な背景と物語のコレクション。",
   "author": {
     "@type": "Person",
     "name": "Asunaro Works"
   },
   "hasPart": items.map(it => ({
     "@type": "ImageObject",
-    "name": it.title,
+    "name": `カメコ: ${it.title}`, // 名前を「カメコ」で統一
     "description": it.caption,
     "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
   }))
 });
 document.head.appendChild(scriptLD);
+
+// noscript（クローラー向けテキスト）
+const noscript = document.createElement('noscript');
+noscript.innerHTML = `<div style="display:none;"><h2>カメコ 作品目録</h2><ul>` + 
+    items.map(it => `<li>カメコのアート作品 - ${it.title}: ${it.caption}</li>`).join('') + 
+    `</ul></div>`;
+document.body.appendChild(noscript);

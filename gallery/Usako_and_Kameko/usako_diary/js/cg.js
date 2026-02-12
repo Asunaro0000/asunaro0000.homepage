@@ -4,20 +4,18 @@ const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
 /**
  * 【ここを編集】グループごとの表示名を個別に設定します
- * 番号（ファイル名の頭文字）: "表示したい名前"
  */
 const groupNames = {
   "1": "日常",
   "2": "舞踊",
-  "2ab": "演舞", // 2aと2bをここにまとめます
+  "2ab": "演舞",
   "3": "風景",
   "4": "煌めく日",
-  // 4, 5... と増えたらここに追加するだけ
 };
 
 /**
  * データの管理
- * srcのファイル名を '1-1.webp', '2-1.webp' ... という形式で判別します
+ * ここにある全データに自動で「ウサ子」のaltが付与されます
  */
 const items = [
   { src: './images/1-1.webp',  title: '木漏れ日の中で',
@@ -343,7 +341,6 @@ const items = [
 
 
 ];
-
 const gallery = $("#cardGallery");
 const filterContainer = $("#filterButtons");
 
@@ -359,42 +356,38 @@ const zoneNext = $(".lb__zone--next");
 const btnClose = $(".lb__close");
 
 // ファイル名からグループ番号を抽出
-// 【修正後】
 function getGroupId(src) {
   const filename = src.split('/').pop();
   let id = filename.split('-')[0];
-  
-  // 「2a」または「2b」の場合は「2ab」というグループに統合する
-  if (id === "2a" || id === "2b") {
-    return "2ab";
-  }
-  
+  if (id === "2a" || id === "2b") return "2ab";
   return id;
 }
 
-// ギャラリー描画
+/**
+ * 【修正ポイント】ギャラリー描画
+ * 表示される画像すべてに「ウサ子」を含むaltを自動付与します
+ */
 function renderGallery(groupId) {
   currentGroupItems = items.filter(it => getGroupId(it.src) === groupId);
 
   gallery.innerHTML = currentGroupItems.map((it, i)=>`
     <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title}">
       <div class="card__imgwrap">
-        <img src="${it.src}" alt="${it.title}" loading="lazy">
+        <img src="${it.src}" alt="ウサ子のアート作品: ${it.title} - ${it.caption || ''}" loading="lazy">
       </div>
       <figcaption class="card__meta">
         <h3 class="card__title">${it.title}</h3>
-        <p class="card__caption">${it.caption}</p>
+        <p class="card__caption">${it.caption || ''}</p>
       </figcaption>
     </figure>
   `).join("");
 }
 
-// 切り替えボタンの生成
+// フィルタボタン設定
 function setupFilters() {
   const groupIds = [...new Set(items.map(it => getGroupId(it.src)))].sort((a, b) => a - b);
   
   filterContainer.innerHTML = groupIds.map(id => {
-    // groupNamesに定義があればそれを使う、なければデフォルトを表示
     const label = groupNames[id] || `Group ${id}`;
     return `<button class="filter-btn" data-group="${id}">${label}</button>`;
   }).join("");
@@ -402,10 +395,8 @@ function setupFilters() {
   filterContainer.addEventListener("click", (e) => {
     const btn = e.target.closest(".filter-btn");
     if(!btn) return;
-    
     $$(".filter-btn").forEach(b => b.classList.remove("is-active"));
     btn.classList.add("is-active");
-    
     renderGallery(btn.dataset.group);
   });
 
@@ -418,7 +409,7 @@ function openLB(i){
   idx = (i + currentGroupItems.length) % currentGroupItems.length;
   const it = currentGroupItems[idx];
   lbImg.src = it.src;
-  lbImg.alt = it.title || "";
+  lbImg.alt = `ウサ子: ${it.title}`; // ライトボックス内にもaltを付与
   lbTitle.textContent = it.title || "";
   lbCaption.textContent = it.caption || "";
   lb.hidden = false;
@@ -468,31 +459,29 @@ document.addEventListener("keydown", (e)=>{
   if(e.key === "ArrowRight") move(1);
 });
 
-// 実行
 setupFilters();
 
 /**
- * Google SEO対策: 全作品のメタデータを検索エンジンに一括送信
- * フィルタで非表示になっているグループの画像・文字もすべてGoogleの評価対象になります。
+ * 【修正ポイント】Google SEO対策
+ * 700枚以上の全データを「ウサ子」という名前と共にGoogleへ一括送信します
  */
 function injectGoogleSEOData() {
     const pageTitle = document.title;
-    const pageDescription = document.querySelector('meta[name="description"]')?.content 
-                             || "ウサ子の毎日を一枚絵で日常の物語アート。幻想的な背景と物語のコレクション。";
+    const pageDescription = "ウサ子の毎日を一枚絵で描く日常の物語アート。幻想的な背景とウサ子のコレクション。";
 
     const ldJson = {
         "@context": "https://schema.org",
         "@type": "ImageGallery",
-        "name": pageTitle,
+        "name": "ウサ子の森 アートギャラリー",
         "description": pageDescription,
         "author": {
             "@type": "Person",
             "name": "Asunaro Works"
         },
-        // items配列の全データ（700枚以上）を一つのリストとしてGoogleに渡す
+        // 全アイテムに「ウサ子」を冠してGoogleに登録
         "hasPart": items.map(it => ({
             "@type": "ImageObject",
-            "name": it.title,
+            "name": `ウサ子: ${it.title}`,
             "description": it.caption,
             "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
         }))
@@ -503,13 +492,13 @@ function injectGoogleSEOData() {
     script.innerHTML = JSON.stringify(ldJson);
     document.head.appendChild(script);
 
-    // バックアップ: JSが実行される前のクローラー向けテキスト
+    // noscript: JavaScript無効時やクローラー向けの目録
     const noscript = document.createElement('noscript');
-    noscript.innerHTML = `<div style="display:none;"><h2>作品目録</h2><ul>` + 
-        items.map(it => `<li>${it.title}: ${it.caption}</li>`).join('') + 
+    noscript.innerHTML = `<div style="display:none;"><h2>ウサ子 作品目録</h2><ul>` + 
+        items.map(it => `<li>ウサ子のアート作品 - ${it.title}: ${it.caption}</li>`).join('') + 
         `</ul></div>`;
     document.body.appendChild(noscript);
 }
 
-// 初期化の最後に実行
+// 最後に実行
 injectGoogleSEOData();
