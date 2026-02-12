@@ -19,70 +19,47 @@
   <meta property="og:image" content="https://asunaro0000.github.io/asunaro0000.homepage/assets/banner/banner1.webp" />
   <meta property="og:image:alt" content="Asunaro Works バナー" />
   <meta name="p:domain_verify" content="d57a228b61f6ea3435efa630b2165165"/>
-　<!-- アイコン -->
+  
   <link rel="icon" href="https://asunaro0000.github.io/asunaro0000.homepage/favicon.png" type="image/png">
   <link rel="icon" href="https://asunaro0000.github.io/asunaro0000.homepage/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="../css/header.css">
-  <link rel="stylesheet" href="../css/style.css">
+  
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="style.css">
 
   <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
   <script src="https://asunaro0000.github.io/asunaro0000.homepage/js/extensions/google-tag.js" defer></script>
-  <script src="./js/extensions/google-tag.js" defer></script>
-  <script type="module" src="../js/extensions/nav-toggle.js"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      
-      const isJapanese = navigator.language.startsWith('ja');
-      if (!isJapanese) {
-        // 最初の挨拶
-        const greeting = document.querySelector(".bubble.ai");
-        if (greeting) {
-          greeting.innerHTML = 'Hi there! I\'m Risuko. Let\'s chat!<img src="./assets/main.jpg" >';
-        }
-        // 入力欄
-        const msgInput = document.getElementById("msg");
-        if (msgInput) msgInput.placeholder = "Chat with Risuko...";
-        // 送信ボタン
-        const sendBtn = document.getElementById("send-btn");
-        if (sendBtn) sendBtn.textContent = "Send";
-        // デバッグログ
-        const debugLog = document.getElementById("debug-log");
-        if (debugLog) debugLog.textContent = "Debug Log: Ready to chat";
-      }
-    });
-  </script>
+  <script type="module" src="../../js/extensions/nav-toggle.js"></script>
 </head>
 
 <body>
 
   <header class="nav">
-    <a class="brand" href="../">Asunaro Works</a>
-    <a class="go-up" href="../" title="一つ上の階へ">⏶</a>
+    <a class="brand" href="../../">Asunaro Works</a>
+    <a class="go-up" href="../../" title="一つ上の階へ">⏶</a>
     <nav>
-      <a href="../gallery/">Gallery</a>
-      <a href="../about/">About/Contact</a>
-      <a href="../process/">制作技術blog</a>
-      <a href="../link/">Link</a>
-      <a href="../sitemap/">Sitemap</a>
-      <a href="../goods/">Goods</a>
+      <a href="../../gallery/">Gallery</a>
+      <a href="../../about/">About/Contact</a>
+      <a href="../../process/">制作技術blog</a>
+      <a href="../../link/">Link</a>
+      <a href="../../sitemap/">Sitemap</a>
+      <a href="../../goods/">Goods</a>
       <a href="https://www.patreon.com/Asunaro0000" style="color:#ffd54a;">Patreonで資料更新中</a>
     </nav>
   </header>
 
   <div id="chat-container">
     <div id="chat">
-      <div class="bubble ai">はじめまして✨ 私はウサ子。舞踊と三味線を嗜みながら、森の動物たちと静かに暮らしています。🌸
-もし、何をお話しするか迷ってしまったら……『お話して』と声をかけてみてくださいね。✨
-私の自慢の三味線のことや、可愛いリスさんのことを一生懸命お話しさせていただきます🌸<img src="./assets/main.webp" ></div>
-    </div>
+      </div>
   </div>
 
   <div id="input-area">
     <input type="text" id="msg" placeholder="ウサ子にお話しして..." autocomplete="off">
     <button id="send-btn">送信</button>
   </div>
+
+  <div id="guide-board">
+    </div>
 
   <div id="debug-log">
     デバッグログ: まだ通信していません
