@@ -1018,17 +1018,20 @@ function getGroupId(src) {
   return filename.split('-')[0];
 }
 
-// ギャラリー描画
+/**
+ * 【修正ポイント1】英語版ギャラリー描画
+ * 全ての画像に "Artwork of Risuko:" を含むaltを自動付与し、英語圏のSEOを強化します。
+ */
 function renderGallery(groupId) {
   currentGroupItems = items.filter(it => getGroupId(it.src) === groupId);
 
   gallery.innerHTML = currentGroupItems.map((it, i)=>`
-    <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title}">
+    <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title || 'Risuko' }">
       <div class="card__imgwrap">
-        <img src="${it.src}" alt="${it.title}" loading="lazy">
+        <img src="${it.src}" alt="Artwork of Risuko: ${it.title || ''} ${it.caption.substring(0, 40).replace(/\n/g, ' ')}..." loading="lazy">
       </div>
       <figcaption class="card__meta">
-        <h3 class="card__title">${it.title}</h3>
+        <h3 class="card__title">${it.title || 'Risuko'}</h3>
         <p class="card__caption">${it.caption}</p>
       </figcaption>
     </figure>
@@ -1059,12 +1062,14 @@ function setupFilters() {
   if(firstBtn) firstBtn.click();
 }
 
-// ライトボックス関連
+/**
+ * 【修正ポイント2】ライトボックスのalt付与
+ */
 function openLB(i){
   idx = (i + currentGroupItems.length) % currentGroupItems.length;
   const it = currentGroupItems[idx];
   lbImg.src = it.src;
-  lbImg.alt = it.title || "";
+  lbImg.alt = `Risuko: ${it.title || 'Forest Life'}`; // ここにもブランド名を挿入
   lbTitle.textContent = it.title || "";
   lbCaption.textContent = it.caption || "";
   lb.hidden = false;
@@ -1113,6 +1118,45 @@ document.addEventListener("keydown", (e)=>{
   if(e.key === "ArrowLeft") move(-1);
   if(e.key === "ArrowRight") move(1);
 });
+
+/**
+ * 【修正ポイント3】Google SEO対策（英語版・構造化データ）
+ * 英語圏のクローラー（Googleボット）に対し、Risukoの全作品を一括でインデックスさせます。
+ */
+function injectGoogleSEOData() {
+    const pageTitle = document.title;
+    const pageDescription = "Daily fantasy art depicting the life of Risuko, a squirrel with a fluffy tail. A collection of enchanting illustrations set in a magical forest.";
+
+    const ldJson = {
+        "@context": "https://schema.org",
+        "@type": "ImageGallery",
+        "name": "Risuko's Forest Gallery",
+        "description": pageDescription,
+        "inLanguage": "en-US", // 英語コンテンツであることを明示
+        "author": {
+            "@type": "Person",
+            "name": "Asunaro Works"
+        },
+        "hasPart": items.map(it => ({
+            "@type": "ImageObject",
+            "name": `Risuko: ${it.title || 'Tales from the Forest'}`,
+            "description": it.caption.replace(/\n/g, ' '),
+            "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
+        }))
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.innerHTML = JSON.stringify(ldJson);
+    document.head.appendChild(script);
+
+    // noscript: JS無効環境やクローラー向けの英語テキスト目録
+    const noscript = document.createElement('noscript');
+    noscript.innerHTML = `<div style="display:none;"><h2>Risuko Artwork Index</h2><ul>` + 
+        items.map(it => `<li>Artwork of Risuko - ${it.caption.substring(0, 60).replace(/\n/g, ' ')}</li>`).join('') + 
+        `</ul></div>`;
+    document.body.appendChild(noscript);
+}
 
 // 実行
 setupFilters();

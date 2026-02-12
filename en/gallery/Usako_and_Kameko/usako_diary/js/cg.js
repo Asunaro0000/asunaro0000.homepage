@@ -383,18 +383,21 @@ function getGroupId(src) {
   return id;
 }
 
-// ギャラリー描画
+/**
+ * 【修正ポイント1】英語版ギャラリー描画
+ * alt属性に "Artwork of Usako:" を一律付与し、英語圏の画像検索に最適化します。
+ */
 function renderGallery(groupId) {
   currentGroupItems = items.filter(it => getGroupId(it.src) === groupId);
 
   gallery.innerHTML = currentGroupItems.map((it, i)=>`
     <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title}">
       <div class="card__imgwrap">
-        <img src="${it.src}" alt="${it.title}" loading="lazy">
+        <img src="${it.src}" alt="Artwork of Usako: ${it.title} - ${it.caption || ''}" loading="lazy">
       </div>
       <figcaption class="card__meta">
         <h3 class="card__title">${it.title}</h3>
-        <p class="card__caption">${it.caption}</p>
+        <p class="card__caption">${it.caption || ''}</p>
       </figcaption>
     </figure>
   `).join("");
@@ -482,29 +485,27 @@ document.addEventListener("keydown", (e)=>{
 // 実行
 setupFilters();
 
-
 /**
- * Google SEO対策: 全作品のメタデータを検索エンジンに一括送信
- * フィルタで非表示になっているグループの画像・文字もすべてGoogleの評価対象になります。
+ * 【修正ポイント2】Google SEO対策（英語版・構造化データ）
+ * 700枚以上の全作品を「Usako: [Title]」という形式でGoogleに一括報告します。
  */
 function injectGoogleSEOData() {
     const pageTitle = document.title;
-    const pageDescription = document.querySelector('meta[name="description"]')?.content 
-                             || "A collection of fantasy backgrounds and stories depicting Usako's daily life.";
+    const pageDescription = "A collection of fantasy backgrounds and stories depicting Usako's daily life. Explore the world of Usako through enchanting illustrations.";
 
     const ldJson = {
         "@context": "https://schema.org",
         "@type": "ImageGallery",
-        "name": pageTitle,
+        "name": "Usako's Forest Art Gallery",
         "description": pageDescription,
+        "inLanguage": "en-US", // 英語コンテンツであることを明示
         "author": {
             "@type": "Person",
             "name": "Asunaro Works"
         },
-        // items配列の全データ（700枚以上）を一つのリストとしてGoogleに渡す
         "hasPart": items.map(it => ({
             "@type": "ImageObject",
-            "name": it.title,
+            "name": `Usako: ${it.title}`, // Googleのインデックス用名称
             "description": it.caption,
             "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
         }))
@@ -515,13 +516,13 @@ function injectGoogleSEOData() {
     script.innerHTML = JSON.stringify(ldJson);
     document.head.appendChild(script);
 
-    // バックアップ: JSが実行される前のクローラー向けテキスト
+    // noscript: JS無効時やクローラー向けの英語テキスト目録
     const noscript = document.createElement('noscript');
-    noscript.innerHTML = `<div style="display:none;"><h2>作品目録</h2><ul>` + 
-        items.map(it => `<li>${it.title}: ${it.caption}</li>`).join('') + 
+    noscript.innerHTML = `<div style="display:none;"><h2>Usako Artwork Index</h2><ul>` + 
+        items.map(it => `<li>Artwork of Usako - ${it.title}: ${it.caption}</li>`).join('') + 
         `</ul></div>`;
     document.body.appendChild(noscript);
 }
 
-// 初期化の最後に実行
+// 最後に実行
 injectGoogleSEOData();

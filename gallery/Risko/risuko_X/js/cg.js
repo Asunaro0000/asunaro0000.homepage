@@ -4,18 +4,16 @@ const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
 /**
  * 【ここを編集】グループごとの表示名を個別に設定します
- * 番号（ファイル名の頭文字）: "表示したい名前"
  */
 const groupNames = {
   "1": "1～",
   "2": "100～",
   "3": "200～",
-  // 4, 5... と増えたらここに追加するだけ
 };
 
 /**
  * データの管理
- * srcのファイル名を '1-1.webp', '2-1.webp' ... という形式で判別します
+ * ここにある全データに自動で「リス子」のaltが付与されます
  */
 const items = [
  { src: './images/1-1.webp', title: '',
@@ -961,7 +959,6 @@ const items = [
 
 
 ];
-
 const gallery = $("#cardGallery");
 const filterContainer = $("#filterButtons");
 
@@ -976,59 +973,55 @@ const zonePrev = $(".lb__zone--prev");
 const zoneNext = $(".lb__zone--next");
 const btnClose = $(".lb__close");
 
-// ファイル名からグループ番号を抽出
 function getGroupId(src) {
   const filename = src.split('/').pop();
   return filename.split('-')[0];
 }
 
-// ギャラリー描画
+/**
+ * 【修正ポイント1】ギャラリー描画
+ * 表示される画像すべてに「リス子」を含むaltを自動付与します
+ */
 function renderGallery(groupId) {
   currentGroupItems = items.filter(it => getGroupId(it.src) === groupId);
 
   gallery.innerHTML = currentGroupItems.map((it, i)=>`
-    <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title}">
+    <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title || 'リス子の日常'}">
       <div class="card__imgwrap">
-        <img src="${it.src}" alt="${it.title}" loading="lazy">
+        <img src="${it.src}" alt="リス子のアート作品: ${it.title || ''} ${it.caption.substring(0, 30)}..." loading="lazy">
       </div>
       <figcaption class="card__meta">
-        <h3 class="card__title">${it.title}</h3>
+        <h3 class="card__title">${it.title || 'リス子'}</h3>
         <p class="card__caption">${it.caption}</p>
       </figcaption>
     </figure>
   `).join("");
 }
 
-// 切り替えボタンの生成
+// フィルタボタン設定（中略：既存通り）
 function setupFilters() {
   const groupIds = [...new Set(items.map(it => getGroupId(it.src)))].sort((a, b) => a - b);
-  
   filterContainer.innerHTML = groupIds.map(id => {
-    // groupNamesに定義があればそれを使う、なければデフォルトを表示
     const label = groupNames[id] || `Group ${id}`;
     return `<button class="filter-btn" data-group="${id}">${label}</button>`;
   }).join("");
-
   filterContainer.addEventListener("click", (e) => {
     const btn = e.target.closest(".filter-btn");
     if(!btn) return;
-    
     $$(".filter-btn").forEach(b => b.classList.remove("is-active"));
     btn.classList.add("is-active");
-    
     renderGallery(btn.dataset.group);
   });
-
   const firstBtn = $(".filter-btn");
   if(firstBtn) firstBtn.click();
 }
 
-// ライトボックス関連
+// ライトボックス関連（修正：alt付与）
 function openLB(i){
   idx = (i + currentGroupItems.length) % currentGroupItems.length;
   const it = currentGroupItems[idx];
   lbImg.src = it.src;
-  lbImg.alt = it.title || "";
+  lbImg.alt = `リス子: ${it.title || '森の日常'}`;
   lbTitle.textContent = it.title || "";
   lbCaption.textContent = it.caption || "";
   lb.hidden = false;
@@ -1055,32 +1048,64 @@ function preloadAround(i){
   });
 }
 
-// イベントリスナー
+// イベントリスナー（既存通り）
 gallery.addEventListener("click", (e)=>{
   const card = e.target.closest(".card");
   if(!card) return;
   openLB(parseInt(card.dataset.i, 10));
 });
-
 btnClose.addEventListener("click", closeLB);
 zonePrev.addEventListener("click", ()=> move(-1));
 zoneNext.addEventListener("click", ()=> move(1));
-
 lbImg.addEventListener("click", (e)=>{
   const rect = lbImg.getBoundingClientRect();
   if(e.clientX < rect.left + rect.width/2) move(-1); else move(1);
 });
-
 document.addEventListener("keydown", (e)=>{
   if(lb.hidden) return;
   if(e.key === "Escape") closeLB();
   if(e.key === "ArrowLeft") move(-1);
   if(e.key === "ArrowRight") move(1);
 });
+lbCaption.addEventListener("click", (e) => { e.stopPropagation(); });
+
+/**
+ * 【修正ポイント2】Google SEO対策
+ * 700枚以上の全アイテムを「リス子」という名前と共にGoogleへ送信します。
+ */
+function injectGoogleSEOData() {
+    const pageTitle = document.title;
+    const pageDescription = "リス子の毎日を一枚絵で描く日常の物語アート。しっぽがふわふわなリス子のコレクション。";
+
+    const ldJson = {
+        "@context": "https://schema.org",
+        "@type": "ImageGallery",
+        "name": "リス子の森 アートギャラリー",
+        "description": pageDescription,
+        "author": {
+            "@type": "Person",
+            "name": "Asunaro Works"
+        },
+        "hasPart": items.map(it => ({
+            "@type": "ImageObject",
+            "name": `リス子: ${it.title || '森の物語'}`,
+            "description": it.caption.replace(/\n/g, ' '),
+            "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
+        }))
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.innerHTML = JSON.stringify(ldJson);
+    document.head.appendChild(script);
+
+    const noscript = document.createElement('noscript');
+    noscript.innerHTML = `<div style="display:none;"><h2>リス子 作品目録</h2><ul>` + 
+        items.map(it => `<li>リス子のアート作品 - ${it.caption.substring(0, 50)}</li>`).join('') + 
+        `</ul></div>`;
+    document.body.appendChild(noscript);
+}
 
 // 実行
 setupFilters();
-// キャプション内のクリックでは画像切り替えをさせない
-lbCaption.addEventListener("click", (e) => {
-  e.stopPropagation();
-});
+injectGoogleSEOData();

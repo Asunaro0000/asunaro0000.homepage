@@ -3,7 +3,6 @@ const isGitHub = window.location.hostname.includes('github.io');
 const isLocal = window.location.protocol === 'file:';
 
 // GitHub上ならリポジトリ名ありのパス、そうでなければルートからのパス
-// ※画像のエラー状況から、GitHub上ではリポジトリ名が必要なことが確定しています
 const base = (isGitHub && !isLocal) 
   ? '/asunaro0000.homepage/gallery/Usako_and_Kameko/kameko_diary' 
   : '/gallery/Usako_and_Kameko/kameko_diary';
@@ -11,7 +10,6 @@ const base = (isGitHub && !isLocal)
 // Minimal card gallery with lightbox navigation (left/right click zones)
 const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
-
 // 画像ごとに個別キャプションを設定
 
 const items = [
@@ -359,12 +357,16 @@ const items = [
 ];
 
 
-
 const gallery = $("#cardGallery");
+
+/**
+ * 【修正ポイント】英語版ギャラリー描画
+ * alt属性に "Artwork of Kameko:" を追加し、英語の画像検索に対応させます
+ */
 gallery.innerHTML = items.map((it, i)=>`
   <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title}">
     <div class="card__imgwrap">
-      <img src="${it.src}" alt="${it.title}" loading="lazy">
+      <img src="${it.src}" alt="Artwork of Kameko: ${it.title} - ${it.caption}" loading="lazy">
     </div>
     <figcaption class="card__meta">
       <h3 class="card__title">${it.title}</h3>
@@ -387,7 +389,7 @@ function openLB(i){
   idx = (i + items.length) % items.length;
   const it = items[idx];
   lbImg.src = it.src;
-  lbImg.alt = it.title || "";
+  lbImg.alt = `Kameko: ${it.title}`; // ライトボックス内もKameko名義で
   lbTitle.textContent = it.title || "";
   lbCaption.textContent = it.caption || "";
   lb.hidden = false;
@@ -414,7 +416,7 @@ function preloadAround(i){
   });
 }
 
-// Card click / Enter key
+// イベントリスナー
 gallery.addEventListener("click", (e)=>{
   const card = e.target.closest(".card");
   if(!card) return;
@@ -427,19 +429,16 @@ gallery.addEventListener("keydown", (e)=>{
   }
 });
 
-// Lightbox controls
 btnClose.addEventListener("click", closeLB);
 zonePrev.addEventListener("click", ()=> move(-1));
 zoneNext.addEventListener("click", ()=> move(1));
 
-// Click on image: decide left/right half
 lbImg.addEventListener("click", (e)=>{
   const rect = lbImg.getBoundingClientRect();
   const mid = rect.left + rect.width/2;
   if(e.clientX < mid) move(-1); else move(1);
 });
 
-// Keyboard navigation
 document.addEventListener("keydown", (e)=>{
   if(lb.hidden) return;
   if(e.key === "Escape") closeLB();
@@ -447,10 +446,10 @@ document.addEventListener("keydown", (e)=>{
   if(e.key === "ArrowRight") move(1);
 });
 
-// Swipe (basic)
+// Swipe設定
 let sx = null;
 lb.addEventListener("pointerdown", (e)=>{
-  if(e.pointerType === "mouse") return; // touch only
+  if(e.pointerType === "mouse") return;
   sx = e.clientX;
   lb.setPointerCapture(e.pointerId);
 });
@@ -461,7 +460,11 @@ lb.addEventListener("pointerup", (e)=>{
   sx = null;
 });
 
-// Google検索エンジンに文字情報を一括で認識させるための構造化データ
+/**
+ * 【修正ポイント】Google SEO対策（英語版）
+ * 全アイテムのnameに "Kameko:" を追加。
+ * また、inLanguage設定を補足して英語圏への露出を狙います。
+ */
 const scriptLD = document.createElement('script');
 scriptLD.type = 'application/ld+json';
 scriptLD.innerHTML = JSON.stringify({
@@ -469,15 +472,23 @@ scriptLD.innerHTML = JSON.stringify({
   "@type": "ImageGallery",
   "name": "Kameko’s Workshop — A Quiet Forest Atelier",
   "description": "Daily fantasy art of Kameko, quietly creating in a sun-drenched forest studio. A collection of over 100 enchanting backgrounds and stories.",
+  "inLanguage": "en-US", // 英語コンテンツであることを明示
   "author": {
     "@type": "Person",
     "name": "Asunaro Works"
   },
   "hasPart": items.map(it => ({
     "@type": "ImageObject",
-    "name": it.title,
+    "name": `Kameko: ${it.title}`, // ここが重要
     "description": it.caption,
     "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
   }))
 });
 document.head.appendChild(scriptLD);
+
+// noscript（クローラー向けテキスト）
+const noscript = document.createElement('noscript');
+noscript.innerHTML = `<div style="display:none;"><h2>Kameko Artwork Index</h2><ul>` + 
+    items.map(it => `<li>Artwork of Kameko - ${it.title}: ${it.caption}</li>`).join('') + 
+    `</ul></div>`;
+document.body.appendChild(noscript);
