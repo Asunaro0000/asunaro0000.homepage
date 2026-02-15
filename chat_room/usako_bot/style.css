@@ -90,7 +90,16 @@ body {
     border-top: 1px solid #ffcc80; 
     box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
 }
-
+#episode-list {
+    padding: 10px 5px;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    background: #fff;
+    color: #5d4037;
+    font-size: 14px;
+    max-width: 100px; /* あまり長くなりすぎないように */
+    cursor: pointer;
+}
 input { 
     flex: 1; 
     padding: 12px; 
@@ -170,4 +179,13 @@ button {
     max-height: 100px;
     overflow-y: auto;
     border-top: 1px solid #ccc;
+}
+/* style.css の最後の方に追加 */
+#lang-toggle-btn {
+    padding: 0 10px;
+    font-size: 12px;
+    background: #fff;
+    border: 1px solid #ffcc80;
+    color: #8d6e63;
+    min-width: 50px;
 }

@@ -2,6 +2,7 @@
  * 設定エリア
  */
 const GAS_URL = "https://script.google.com/macros/s/AKfycbyw8KuPAQifE85osH6RKUBlqEWdlbNTADrnTGLNCTDu9YWvn-Bo0H3u4Kh6vkpXqF9VsQ/exec";
+let currentLang = 'ja'; // 現在の言語状態を保持
 
 /**
  * 相互リンク（案内板）のデータ
@@ -21,121 +22,88 @@ const GUIDE_LINKS = {
   ]
 };
 
-// ★ここを false にすると画面下のデバッグログが完全に消えます
 const IS_DEBUG = true; 
 
 /**
  * 初期化処理
  */
 window.addEventListener('DOMContentLoaded', () => {
-    // 言語判定
+    // 1. 初期の言語判定（URLパラメータまたはブラウザ設定）
     const params = new URLSearchParams(window.location.search);
-    const isEn = params.get('lang') === 'en' || (!navigator.language.startsWith('ja'));
-    const lang = isEn ? 'en' : 'ja';
+    const isEnDefault = params.get('lang') === 'en' || (!navigator.language.startsWith('ja'));
+    currentLang = isEnDefault ? 'en' : 'ja';
 
-    // デバッグログ表示設定
-    const debugElement = document.getElementById('debug-log');
-    if (debugElement) {
-        debugElement.style.display = IS_DEBUG ? 'block' : 'none';
-        if (isEn) debugElement.innerText = "Debug Log: Ready";
+    // 2. 言語切り替えボタンのイベント登録
+    const toggleBtn = document.getElementById('lang-toggle-btn');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            currentLang = (currentLang === 'ja') ? 'en' : 'ja';
+            applyLanguage(currentLang);
+        });
     }
 
-    // UIのテキスト切り替え
-    if (isEn) {
-        document.getElementById("msg").placeholder = "Chat with Usako...";
-        document.getElementById("send-btn").textContent = "Send";
-    }
+    // 3. エピソードリストの選択イベント
+    document.getElementById('episode-list').addEventListener('change', (e) => {
+        const msgInput = document.getElementById('msg');
+        if (e.target.value) {
+            msgInput.value = e.target.value; 
+        }
+    });
 
-    // 案内板（相互リンク）の描画
-    renderGuideBoard(lang);
-
-    // 最初の挨拶を開始（言語を渡す）
-    initGreeting(lang);
+    // 4. 初回の表示適用
+    applyLanguage(currentLang);
 });
 
 /**
- * ライトボックスを表示する共通関数
+ * 言語に応じてUI（見た目）を更新する
  */
-function openLightbox(src) {
-    const lb = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lightbox-img');
-    if (lb && lbImg) {
-        lbImg.src = src;
-        lb.style.display = 'flex';
-    }
-}
-
-/**
- * 最初の挨拶を2回に分けて表示する処理
- */
-async function initGreeting(lang) {
-    const chat = document.getElementById('chat');
-    const container = document.getElementById('chat-container');
-    if (!chat) return;
-
-    chat.innerHTML = ""; // 初期化
-
+function applyLanguage(lang) {
     const isEn = (lang === 'en');
-
-    // 1通目：はじめまして
-    const msg1 = document.createElement('div');
-    msg1.className = 'bubble ai';
-    if (isEn) {
-        msg1.innerHTML = `Nice to meet you✨ I'm Usako. I live quietly in the forest with animals while enjoying dance and shamisen🌸<br><img src="./assets/main.webp">`;
-    } else {
-        msg1.innerHTML = `はじめまして✨ 私はウサ子。<br><br>この静かな森で、舞踊と三味線を嗜みながら動物たちと暮らしています🌸<br><img src="./assets/main.webp">`;
+    
+    // 入力欄やボタンの文字
+    document.getElementById("msg").placeholder = isEn ? "Chat with Usako..." : "ウサ子にお話しして...";
+    document.getElementById("send-btn").textContent = isEn ? "Send" : "送信";
+    
+    // エピソードリストの最初の項目
+    const epSelect = document.getElementById('episode-list');
+    if (epSelect.options.length > 0) {
+        epSelect.options[0].textContent = isEn ? "✨Select" : "✨選ぶ";
     }
-    chat.appendChild(msg1);
 
-    // 画像に拡大機能を付与
-    const img1 = msg1.querySelector('img');
-    if (img1) {
-        img1.style.cursor = "zoom-in";
-        img1.onclick = () => openLightbox(img1.src);
+    // デバッグログ
+    const debugElement = document.getElementById('debug-log');
+    if (debugElement) {
+        debugElement.style.display = IS_DEBUG ? 'block' : 'none';
+        debugElement.innerText = isEn ? "Debug Log: Ready" : "デバッグログ: 準備完了";
     }
-    container.scrollTop = container.scrollHeight;
 
-    // 1.5秒待機
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    // 2通目：ガイドライン
-    const msg2 = document.createElement('div');
-    msg2.className = 'bubble ai';
-    if (isEn) {
-        msg2.innerHTML = `If you're not sure what to talk about, try sending these words✨<br>
-・"What do you usually do?" ... Self-introduction
-・"Tell me a story" ... Daily life episodes
-・"Tell me about the scenery" ... Memories of scenery
-・"Dance (Perform)" ... I'll perform shamisen or dance
-・"Fortune-telling" ... I'll tell your fortune🌸<br>I'm looking forward to chatting with you🍵`;
-    } else {
-        msg2.innerHTML = `何をお話しするか迷ったら、この言葉をそのまま送ってみてくださいね✨<br>
-・「普段は何してるの？（好きなことは？）」 … 私自身の自己紹介
-・「日常を話して」 … 私の周りで起きた面白い小話
-・「景色を教えて」 … 私の思い出の風景
-・「踊って（演奏して）」 … 舞や三味線を披露します
-・「占って」 … あなたの運勢を舞いで占います。自慢の宝物もお見せするね🪭✨<br>
-あなたとのお喋り、楽しみにしていますよ🍵`;
-    }
-    chat.appendChild(msg2);
-    container.scrollTop = container.scrollHeight;
+    renderGuideBoard(lang); // 案内板の更新
+    initGreeting(lang);    // 挨拶の更新
+    loadEpisodeList(lang); // リストの再取得
 }
 
 /**
- * 案内板（リンク集）を描画する
+ * エピソードリストをGASから取得
  */
-function renderGuideBoard(lang) {
-    const board = document.getElementById('guide-board');
-    if (!board) return;
+async function loadEpisodeList(lang) {
+    try {
+        const res = await fetch(GAS_URL, {
+            method: "POST",
+            body: JSON.stringify({ type: "get_list", lang: lang })
+        });
+        const data = await res.json();
+        const select = document.getElementById('episode-list');
+        
+        // 「✨選ぶ」だけ残してクリア
+        while (select.options.length > 1) select.remove(1);
 
-    board.innerHTML = ""; 
-    GUIDE_LINKS[lang].forEach(link => {
-        const a = document.createElement('a');
-        a.href = link.url;
-        a.className = 'guide-chip';
-        a.innerText = link.name;
-        board.appendChild(a);
-    });
+        data.episodes.forEach(ep => {
+            const opt = document.createElement('option');
+            opt.value = ep;
+            opt.textContent = ep;
+            select.appendChild(opt);
+        });
+    } catch (e) { console.error("List load error", e); }
 }
 
 /**
@@ -150,6 +118,7 @@ async function send() {
     const text = input.value.trim();
     if (!text) return;
 
+    // ユーザーの吹き出し
     const userDiv = document.createElement('div');
     userDiv.className = 'bubble user';
     userDiv.innerText = text;
@@ -158,18 +127,17 @@ async function send() {
     input.value = "";
     container.scrollTop = container.scrollHeight;
 
+    // ローディング表示
     const loadingDiv = document.createElement('div');
     loadingDiv.className = 'bubble ai loading';
-    // 言語判定を簡易的に
-    const isEn = !navigator.language.startsWith('ja');
-    loadingDiv.innerText = isEn ? "Usako is thinking..." : "……考え中だよ🌸";
+    loadingDiv.innerText = (currentLang === 'en') ? "Usako is thinking..." : "……考え中だよ🌸";
     chat.appendChild(loadingDiv);
     container.scrollTop = container.scrollHeight;
 
     try {
         const res = await fetch(GAS_URL, {
             method: "POST",
-            body: JSON.stringify({ message: text })
+            body: JSON.stringify({ message: text, lang: currentLang }) 
         });
 
         const data = await res.json();
@@ -203,14 +171,93 @@ async function send() {
         if (loadingDiv) loadingDiv.remove();
         const errDiv = document.createElement('div');
         errDiv.className = 'bubble ai';
-        errDiv.innerText = "Error occurred.";
+        errDiv.innerText = (currentLang === 'en') ? "Error occurred." : "エラーが発生しました。";
         chat.appendChild(errDiv);
     }
     container.scrollTop = container.scrollHeight;
 }
 
 /**
- * イベントリスナー
+ * 最初の挨拶を表示する
+ */
+async function initGreeting(lang) {
+    const chat = document.getElementById('chat');
+    const container = document.getElementById('chat-container');
+    if (!chat) return;
+
+    chat.innerHTML = ""; // 画面をクリア
+    const isEn = (lang === 'en');
+
+    // 1通目
+    const msg1 = document.createElement('div');
+    msg1.className = 'bubble ai';
+    if (isEn) {
+        msg1.innerHTML = `Nice to meet you✨ I'm Usako. I live quietly in the forest with animals while enjoying dance and shamisen🌸<br><img src="./assets/main.webp">`;
+    } else {
+        msg1.innerHTML = `はじめまして✨ 私はウサ子。<br><br>この静かな森で、舞踊と三味線を嗜みながら動物たちと暮らしています🌸<br><img src="./assets/main.webp">`;
+    }
+    chat.appendChild(msg1);
+
+    const img1 = msg1.querySelector('img');
+    if (img1) {
+        img1.style.cursor = "zoom-in";
+        img1.onclick = () => openLightbox(img1.src);
+    }
+    container.scrollTop = container.scrollHeight;
+
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    // 2通目
+    const msg2 = document.createElement('div');
+    msg2.className = 'bubble ai';
+if (isEn) {
+        msg2.innerHTML = `If you're not sure what to talk about, try these options✨<br>
+・Please choose from the list to hear my stories.🐰<br>
+・"Fortune-telling" ... I'll tell your fortune with a dance and show you my precious treasures!🪭✨<br>
+Also, if you say **"Tell me more"** or **"And then?"**, I'll be delighted to share even more details with you!🍵`;
+    } else {
+        msg2.innerHTML = `何をお話しするか迷ったら、この言葉をそのまま送ってみてくださいね✨<br>
+・リストから選んで話してくださいね。ウサ子のエピソードをお話しします。🐰
+
+・「占い」 … あなたの運勢を舞いで占います。自慢の宝物もお見せするね🪭✨<br>
+「続きを話して」や「それから？」など、お話を促してくれたらウサ子はもっと喜んでお話ししますよ🍵`;
+    }
+    chat.appendChild(msg2);
+    container.scrollTop = container.scrollHeight;
+}
+
+/**
+ * 案内板（リンク集）を描画する
+ */
+function renderGuideBoard(lang) {
+    const board = document.getElementById('guide-board');
+    if (!board) return;
+
+    board.innerHTML = ""; 
+    const links = GUIDE_LINKS[lang] || GUIDE_LINKS['ja'];
+    links.forEach(link => {
+        const a = document.createElement('a');
+        a.href = link.url;
+        a.className = 'guide-chip';
+        a.innerText = link.name;
+        board.appendChild(a);
+    });
+}
+
+/**
+ * ライトボックス
+ */
+function openLightbox(src) {
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    if (lb && lbImg) {
+        lbImg.src = src;
+        lb.style.display = 'flex';
+    }
+}
+
+/**
+ * イベントリスナー登録
  */
 document.getElementById('send-btn').addEventListener('click', send);
 document.getElementById('msg').addEventListener('keypress', (e) => {

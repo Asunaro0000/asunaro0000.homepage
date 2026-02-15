@@ -27,6 +27,13 @@ const slides = [
     href: "./kameko_diary/index.html",
     title: "カメコの日常 ― Single Scene",
     caption: "今日も筆を取る。カメコの日常は、静かな制作の時間。"
+  },
+  {
+    src: "../../assets/banner/banner13.webp",
+    thumb: "../../assets/banner/banner13.webp",
+    href: "../../chat_room/usako_bot/index.html",
+    title: "ウサ子とAIチャット ― AI Chat",
+    caption: "空想と動物が大好きなウサ子。ちょっとカオスな会話が楽しめます。"
   }
 ];
 

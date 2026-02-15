@@ -4,13 +4,35 @@ const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 
 // ---- 編集ポイント：この配列を書き換えて使う ----
 const slides = [
-  {
+    {
     src: "./thumbnail/kv01.webp",
     thumb: "./thumbnail/kv01.webp",
     href: "./storyboard_room/index.html",
     title: "リス子 ― Storyboard room",
     caption: "リス子のストーリーボードをまとめています。"
   },
+    {
+    src: "../../assets/banner/risuko_bot.webp",
+    thumb: "../../assets/banner/risuko_bot.webp",
+    href: "../../chat_room/risuko_bot/index.html",
+    title: "リス子のAIチャット部屋",
+    caption: "リス子とゆる～い会話が楽しめます"
+  },
+  {
+    src: "../../assets/banner/banner14.webp",
+    thumb: "../../assets/banner/banner14.webp",
+    href: "../../chat_room/risuko_logroom/index.html",
+    title: "リス子とスズ子の森の観察日記～AIによる自動会話",
+    caption: "リス子とスズ子の会話が記憶された部屋。１～２時間ごとにつぶやいてます。"
+  },
+  {
+    src: "./thumbnail/kv04.webp",
+    thumb: "./thumbnail/kv04.webp",
+    href: "./risuko_X/index.html",
+    title: "森のつぶやき部屋",
+    caption: "Xで綴ってきた日々のつぶやきをまとめました。リス子とスズ子の、森での楽しい時間をお楽しみください。"
+  },
+
   {
     src: "./thumbnail/kv02.webp",
     thumb: "./thumbnail/kv02.webp",
@@ -25,13 +47,7 @@ const slides = [
     title: "リス子の友だち自慢部屋:白リスのスズ子 ― Single Scene",
     caption: "リス子がキラッキラの白リス“スズ子”連れてきた！"
   },
-  {
-    src: "./thumbnail/kv04.webp",
-    thumb: "./thumbnail/kv04.webp",
-    href: "./risuko_X/index.html",
-    title: "森のつぶやき部屋",
-    caption: "Xで綴ってきた日々のつぶやきをまとめました。リス子とスズ子の、森での楽しい時間をお楽しみください。"
-  },
+
 
 ];
 

@@ -1,0 +1,60 @@
+.g-wrap { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; }
+.g-block { margin-bottom: 5rem; }
+.g-block__title { text-align: center; color: #fff; margin-bottom: 1rem; }
+.g-block__lead { text-align: center; color: #999; margin-bottom: 2rem; }
+.g-stack { display: flex; flex-direction: column; gap: 3rem; }
+
+/* Slider Core */
+.sld-wrap { width: 100%; margin-bottom: 3rem; }
+.sld { position: relative; border-radius: 12px; overflow: hidden; background: #111; }
+
+.sld__viewport { overflow: hidden; touch-action: pan-y; }
+.sld__track { 
+  display: flex; 
+  align-items: flex-start;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.sld__slide { flex: 0 0 100%; width: 100%; }
+.sld__link { display: block; width: 100%; line-height: 0; }
+.sld__slide img { 
+  width: 100%; 
+  height: auto; 
+  display: block;
+  /* aspect-ratio は JSのインラインスタイルで動的に設定されます */
+  object-fit: cover; 
+}
+
+/* Nav & Meta */
+.sld__nav { 
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 10;
+  background: rgba(0,0,0,0.5); color: #fff; border: none; padding: 1rem; cursor: pointer; 
+  font-size: 1.5rem; line-height: 1;
+}
+.sld__prev { left: 0; border-radius: 0 8px 8px 0; }
+.sld__next { right: 0; border-radius: 8px 0 0 8px; }
+
+.sld__meta { 
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem; background: #1a1a1a; color: #eee;
+}
+.sld__title { margin: 0; font-size: 1rem; font-weight: normal; }
+.sld__dots { display: flex; gap: 6px; }
+.sld__dot { width: 8px; height: 8px; border-radius: 50%; background: #444; border: none; cursor: pointer; padding: 0; }
+.sld__dot.active { background: #ffd54a; }
+
+/* Thumbs */
+.sld__thumbs { display: flex; gap: 10px; margin-top: 1rem; overflow-x: auto; padding-bottom: 8px; }
+.sld__th { 
+  flex: 0 0 100px; height: 60px;
+  cursor: pointer; border: 2px solid transparent; background: #000; padding: 0;
+  border-radius: 4px; overflow: hidden;
+}
+.sld__th img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: 0.2s; }
+.sld__th.active { border-color: #ffd54a; }
+.sld__th.active img { opacity: 1; }
+.sld__th:hover img { opacity: 1; }
+/* 特殊な装飾が必要なければ、既存の .g-exhibit と同様のスタイルが適用されます */
+.g-ai-chat {
+  margin-bottom: 2rem;
+}

@@ -53,17 +53,22 @@
       </div>
   </div>
 
-  <div id="input-area">
-    <input type="text" id="msg" placeholder="ウサ子にお話しして..." autocomplete="off">
-    <button id="send-btn">送信</button>
-  </div>
+<div id="input-area">
+  <button id="lang-toggle-btn" title="Language Switch">JP/EN</button>
+
+  <select id="episode-list">
+    <option value="">✨選ぶ</option>
+  </select>
+  <input type="text" id="msg" placeholder="ウサ子にお話しして..." autocomplete="off">
+  <button id="send-btn">送信</button>
+</div>
 
   <div id="guide-board">
     </div>
 
-  <div id="debug-log">
+<!--   <div id="debug-log">
     デバッグログ: まだ通信していません
-  </div>
+  </div> -->
 
   <div id="lightbox" onclick="this.style.display='none'">
     <img id="lightbox-img">
