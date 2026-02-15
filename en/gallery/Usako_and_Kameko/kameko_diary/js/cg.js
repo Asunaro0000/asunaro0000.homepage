@@ -366,7 +366,9 @@ const gallery = $("#cardGallery");
 gallery.innerHTML = items.map((it, i)=>`
   <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title}">
     <div class="card__imgwrap">
-      <img src="${it.src}" alt="Artwork of Kameko: ${it.title} - ${it.caption}" loading="lazy">
+      <img src="${it.src}" 
+           alt="Green-haired Girl in Kimono, Kameko - ${it.title} | ${it.caption}" 
+           loading="lazy">
     </div>
     <figcaption class="card__meta">
       <h3 class="card__title">${it.title}</h3>
@@ -389,7 +391,7 @@ function openLB(i){
   idx = (i + items.length) % items.length;
   const it = items[idx];
   lbImg.src = it.src;
-  lbImg.alt = `Kameko: ${it.title}`; // ライトボックス内もKameko名義で
+  lbImg.alt = `Green-haired Girl in Kimono, Kameko: ${it.title}`; // ライトボックス内もKameko名義で
   lbTitle.textContent = it.title || "";
   lbCaption.textContent = it.caption || "";
   lb.hidden = false;
@@ -470,16 +472,17 @@ scriptLD.type = 'application/ld+json';
 scriptLD.innerHTML = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "ImageGallery",
-  "name": "Kameko’s Workshop — A Quiet Forest Atelier",
-  "description": "Daily fantasy art of Kameko, quietly creating in a sun-drenched forest studio. A collection of over 100 enchanting backgrounds and stories.",
-  "inLanguage": "en-US", // 英語コンテンツであることを明示
+  "name": "Kameko’s Workshop — Art Gallery of a Green-haired Girl in Kimono",
+  "description": "Daily fantasy art of Kameko, a green-haired girl in kimono, quietly creating in a forest studio. A collection of enchanting backgrounds and stories.",
+  "inLanguage": "en-US",
   "author": {
     "@type": "Person",
     "name": "Asunaro Works"
   },
   "hasPart": items.map(it => ({
     "@type": "ImageObject",
-    "name": `Kameko: ${it.title}`, // ここが重要
+    // 検索結果の「タイトル」として表示される部分に属性を挿入
+    "name": `Green-haired Girl in Kimono, Kameko: ${it.title}`, 
     "description": it.caption,
     "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
   }))
@@ -488,7 +491,7 @@ document.head.appendChild(scriptLD);
 
 // noscript（クローラー向けテキスト）
 const noscript = document.createElement('noscript');
-noscript.innerHTML = `<div style="display:none;"><h2>Kameko Artwork Index</h2><ul>` + 
-    items.map(it => `<li>Artwork of Kameko - ${it.title}: ${it.caption}</li>`).join('') + 
+noscript.innerHTML = `<div style="display:none;"><h2>Kameko: Green-haired Girl in Kimono - Artwork Index</h2><ul>` + 
+    items.map(it => `<li>Green-haired Girl in Kimono, Kameko - ${it.title}: ${it.caption}</li>`).join('') + 
     `</ul></div>`;
 document.body.appendChild(noscript);

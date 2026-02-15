@@ -393,7 +393,7 @@ function renderGallery(groupId) {
   gallery.innerHTML = currentGroupItems.map((it, i)=>`
     <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title}">
       <div class="card__imgwrap">
-        <img src="${it.src}" alt="Artwork of Usako: ${it.title} - ${it.caption || ''}" loading="lazy">
+        <img src="${it.src}" alt="Artwork of Usako (White Hair): ${it.title} - ${it.caption || ''}" loading="lazy">
       </div>
       <figcaption class="card__meta">
         <h3 class="card__title">${it.title}</h3>
@@ -490,22 +490,16 @@ setupFilters();
  * 700枚以上の全作品を「Usako: [Title]」という形式でGoogleに一括報告します。
  */
 function injectGoogleSEOData() {
-    const pageTitle = document.title;
-    const pageDescription = "A collection of fantasy backgrounds and stories depicting Usako's daily life. Explore the world of Usako through enchanting illustrations.";
-
     const ldJson = {
         "@context": "https://schema.org",
         "@type": "ImageGallery",
-        "name": "Usako's Forest Art Gallery",
-        "description": pageDescription,
-        "inLanguage": "en-US", // 英語コンテンツであることを明示
-        "author": {
-            "@type": "Person",
-            "name": "Asunaro Works"
-        },
+        "name": "Usako's Art Gallery - Kimono Girl & Fantasy Backgrounds",
+        "description": "Explore the collection of Usako, a white-haired girl in kimono. High-quality fantasy illustrations and stories.",
+        "inLanguage": "en-US",
         "hasPart": items.map(it => ({
             "@type": "ImageObject",
-            "name": `Usako: ${it.title}`, // Googleのインデックス用名称
+            // 検索結果に表示されるタイトルを英語の属性付きにする
+            "name": `Kimono Girl Usako: ${it.title}`, 
             "description": it.caption,
             "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
         }))

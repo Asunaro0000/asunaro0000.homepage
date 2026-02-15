@@ -295,7 +295,7 @@ const gallery = $("#cardGallery");
 gallery.innerHTML = items.map((it, i)=>`
   <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title}">
     <div class="card__imgwrap">
-      <img src="${it.src}" alt="カメコのアート作品: ${it.title} - ${it.caption}" loading="lazy">
+      <img src="${it.src}" alt="緑髪和服の少女 カメコのアート作品: ${it.title} - ${it.caption}" loading="lazy">
     </div>
     <figcaption class="card__meta">
       <h3 class="card__title">${it.title}</h3>
@@ -318,7 +318,7 @@ function openLB(i){
   idx = (i + items.length) % items.length;
   const it = items[idx];
   lbImg.src = it.src;
-  lbImg.alt = `カメコ: ${it.title}`; // ライトボックス内にもaltを付与
+  lbImg.alt = `緑髪和服の少女 カメコ: ${it.title}`; // ライトボックス内にもaltを付与
   lbTitle.textContent = it.title || "";
   lbCaption.textContent = it.caption || "";
   lb.hidden = false;
@@ -408,7 +408,7 @@ scriptLD.innerHTML = JSON.stringify({
   },
   "hasPart": items.map(it => ({
     "@type": "ImageObject",
-    "name": `カメコ: ${it.title}`, // 名前を「カメコ」で統一
+    "name": `緑髪和服の少女 カメコ: ${it.title}`, // 名前を「カメコ」で統一
     "description": it.caption,
     "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
   }))

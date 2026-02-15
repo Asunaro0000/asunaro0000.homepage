@@ -373,7 +373,7 @@ function renderGallery(groupId) {
   gallery.innerHTML = currentGroupItems.map((it, i)=>`
     <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title}">
       <div class="card__imgwrap">
-        <img src="${it.src}" alt="ウサ子のアート作品: ${it.title} - ${it.caption || ''}" loading="lazy">
+        <img src="${it.src}" alt="白髪和服の少女 ウサ子 - ${it.title} - ${it.caption || ''}" loading="lazy">
       </div>
       <figcaption class="card__meta">
         <h3 class="card__title">${it.title}</h3>
@@ -409,7 +409,7 @@ function openLB(i){
   idx = (i + currentGroupItems.length) % currentGroupItems.length;
   const it = currentGroupItems[idx];
   lbImg.src = it.src;
-  lbImg.alt = `ウサ子: ${it.title}`; // ライトボックス内にもaltを付与
+  lbImg.alt = `白髪和服の少女 ウサ子 - ${it.title}`; // ライトボックス内にもaltを付与
   lbTitle.textContent = it.title || "";
   lbCaption.textContent = it.caption || "";
   lb.hidden = false;
@@ -463,7 +463,7 @@ setupFilters();
 
 /**
  * 【修正ポイント】Google SEO対策
- * 700枚以上の全データを「ウサ子」という名前と共にGoogleへ一括送信します
+ * 200枚以上の全データを「ウサ子」という名前と共にGoogleへ一括送信します
  */
 function injectGoogleSEOData() {
     const pageTitle = document.title;
@@ -472,19 +472,20 @@ function injectGoogleSEOData() {
     const ldJson = {
         "@context": "https://schema.org",
         "@type": "ImageGallery",
-        "name": "ウサ子の森 アートギャラリー",
+        "name": "ウサ子 アートギャラリー",
         "description": pageDescription,
         "author": {
             "@type": "Person",
             "name": "Asunaro Works"
         },
         // 全アイテムに「ウサ子」を冠してGoogleに登録
-        "hasPart": items.map(it => ({
-            "@type": "ImageObject",
-            "name": `ウサ子: ${it.title}`,
-            "description": it.caption,
-            "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
-        }))
+      "hasPart": items.map(it => ({
+          "@type": "ImageObject",
+          // Google画像検索の「タイトル」として表示されやすくなる部分
+          "name": `白髪和服の少女 ウサ子: ${it.title}`, 
+          "description": it.caption || `白髪和服の少女ウサ子の日常を描いたアート作品：${it.title}`,
+          "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
+      }))
     };
 
     const script = document.createElement('script');
