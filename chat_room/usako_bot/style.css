@@ -1,17 +1,40 @@
-/* 基本レイアウト */
+/* ============================================
+   基本レイアウト
+   ============================================ */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 全体のスクロールを禁止 */
+}
+
 body { 
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
     background: #fff5e6; 
     display: flex; 
     flex-direction: column; 
-    height: 100vh; 
-    margin: 0; 
+    /* iOS/Androidのアドレスバーを考慮した動的な高さ設定 */
+    height: 100dvh; 
+    width: 100%;
+    position: fixed; /* 画面全体のバウンス（揺れ）を防止 */
 }
 
+/* ============================================
+   ヘッダー（外部CSSがある想定ですが、高さを維持）
+   ============================================ */
+.nav {
+    flex-shrink: 0; /* 潰れないように固定 */
+}
+
+/* ============================================
+   チャットエリア（ここだけをスクロールさせる）
+   ============================================ */
 #chat-container {
     flex: 1;
     overflow-y: auto;
-    padding: 20px;
+    padding: 15px;
+    -webkit-overflow-scrolling: touch; /* iOSでスルスル動くように */
+    background: #fff5e6;
 }
 
 #chat { 
@@ -21,23 +44,21 @@ body {
     box-sizing: border-box;
 }
 
-/* 吹き出しの基本設定 */
+/* 吹き出し */
 .bubble { 
     margin-bottom: 15px; 
     padding: 12px 18px; 
     border-radius: 18px; 
-    max-width: 500px; 
+    max-width: 80%; /* スマホで見やすい幅 */
     line-height: 1.6; 
     font-size: 15px;
-    white-space: pre-wrap;      /* 改行を反映 */
-    word-wrap: break-word;      /* 長い単語を強制折り返し */
+    white-space: pre-wrap;
+    word-wrap: break-word;
     overflow-wrap: break-word;
     display: block;
     width: fit-content;
-    min-width: 0;
 }
 
-/* AI（ウサ子）の吹き出し */
 .ai { 
     background: #ffffff; 
     align-self: flex-start; 
@@ -45,14 +66,12 @@ body {
     color: #333;
 }
 
-/* ユーザーの吹き出し */
 .user { 
     background: #ffcc80; 
     align-self: flex-end; 
     color: #5d4037;
 }
 
-/* 吹き出し内の画像設定 */
 .bubble img { 
     width: 100%;
     max-width: 100%; 
@@ -60,105 +79,111 @@ body {
     border-radius: 12px; 
     margin-top: 10px; 
     display: block; 
-    cursor: zoom-in; /* 虫眼鏡カーソル */
-    transition: transform 0.2s;
+    cursor: zoom-in;
 }
 
-/* モバイル向けの調整 */
-@media screen and (max-width: 768px) {
-    .bubble {
-        max-width: 90%; 
-    }
-    .bubble img { 
-        max-width: 100%; 
-    }
-}
-
-/* マウスホバー演出 (PCのみ) */
-@media (hover: hover) {
-    .bubble img:hover { 
-        transform: scale(1.02); 
-    }
-}
-
-/* 入力エリア */
-#input-area { 
-    padding: 15px 20px; 
-    background: #fff; 
-    display: flex; 
-    gap: 10px; 
-    border-top: 1px solid #ffcc80; 
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-}
-#episode-list {
-    padding: 10px 5px;
-    border: 1px solid #ffcc80;
-    border-radius: 8px;
+/* ============================================
+   下部固定エリア（入力欄 ＋ 案内板）
+   ============================================ */
+footer-area {
+    flex-shrink: 0;
     background: #fff;
-    color: #5d4037;
-    font-size: 14px;
-    max-width: 100px; /* あまり長くなりすぎないように */
-    cursor: pointer;
-}
-input { 
-    flex: 1; 
-    padding: 12px; 
-    border: 1px solid #ddd; 
-    border-radius: 8px; 
-    outline: none; 
-    font-size: 16px;
 }
 
-button { 
-    background: #ffcc80; 
-    border: none; 
-    padding: 0 20px; 
-    border-radius: 8px; 
-    cursor: pointer; 
-    font-weight: bold;
-    color: #5d4037;
-}
-
-/* --- 追加：作品案内板（GUIDE_LINKS）のスタイル --- */
+/* 作品案内板：スマホで場所を取らないよう横スクロール化 */
 #guide-board {
     display: flex;
-    flex-wrap: wrap;       /* 数が増えても折り返せるように */
-    justify-content: center;
+    flex-wrap: nowrap; 
+    overflow-x: auto;
     gap: 8px;
-    padding: 10px 15px 20px 15px; 
-    background: #fff;      
+    padding: 10px; 
+    background: #fff;
+    border-top: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+/* 横スクロールバーを非表示にする（任意） */
+#guide-board::-webkit-scrollbar {
+    display: none;
 }
 
 .guide-chip {
-    font-size: 0.75rem;
-    padding: 6px 14px;
+    flex: 0 0 auto; /* 幅が縮まないように固定 */
+    font-size: 11px;
+    padding: 6px 12px;
     background: #fff;
     color: #8d6e63;
     border: 1px solid #ffcc80;
     border-radius: 20px;
     text-decoration: none;
     white-space: nowrap;
-    transition: all 0.2s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
 }
 
-@media (hover: hover) {
-    .guide-chip:hover {
-        background: #ffcc80;
-        color: #5d4037;
-        transform: translateY(-1px);
-    }
+/* 入力エリア */
+#input-area { 
+    padding: 10px 10px calc(10px + env(safe-area-inset-bottom)); /* iPhoneのホームバー余白を確保 */
+    background: #fff; 
+    display: flex; 
+    gap: 8px; 
+    border-top: 1px solid #ffcc80; 
+    flex-shrink: 0;
+    align-items: center;
 }
 
-/* ライトボックス（画像拡大） */
+#lang-toggle-btn {
+    padding: 8px 5px;
+    font-size: 10px;
+    background: #fff;
+    border: 1px solid #ffcc80;
+    color: #8d6e63;
+    min-width: 45px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+#episode-list {
+    padding: 8px 2px;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    background: #fff;
+    color: #5d4037;
+    font-size: 13px;
+    max-width: 70px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+input { 
+    flex: 1; 
+    min-width: 0; /* flex内のinputがはみ出すのを防ぐ */
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    outline: none; 
+    font-size: 16px; /* 16px以上にするとiOSの自動ズームを防げる */
+}
+
+#send-btn { 
+    background: #ffcc80; 
+    border: none; 
+    padding: 10px 15px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: bold;
+    color: #5d4037;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   その他演出
+   ============================================ */
 #lightbox {
     display: none;
     position: fixed;
-    z-index: 2000; /* ヘッダーより上に表示 */
+    z-index: 2000;
     top: 0; left: 0;
     width: 100%; height: 100%;
     background: rgba(0,0,0,0.85);
-    cursor: zoom-out;
     align-items: center;
     justify-content: center;
 }
@@ -166,69 +191,14 @@ button {
 #lightbox img {
     max-width: 95%;
     max-height: 95%;
-    border: 2px solid white;
     border-radius: 4px;
 }
 
-/* デバッグログ */
-#debug-log {
-    background: #eee;
-    font-size: 10px;
-    padding: 10px;
-    color: #666;
-    max-height: 100px;
-    overflow-y: auto;
-    border-top: 1px solid #ccc;
-}
-/* style.css の最後の方に追加 */
-#lang-toggle-btn {
-    padding: 0 10px;
-    font-size: 12px;
-    background: #fff;
-    border: 1px solid #ffcc80;
-    color: #8d6e63;
-    min-width: 50px;
-}
-/* 基本レイアウトの修正 */
-body { 
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-    background: #fff5e6; 
-    display: flex; 
-    flex-direction: column; 
-    /* height: 100vh;  ← これを削除して以下に変更 */
-    height: 100dvh; /* Dynamic Viewport Height: アドレスバーを除いた実際の高さ */
-    margin: 0; 
-    overflow: hidden; /* body全体のスクロールを禁止 */
-}
-
-#chat-container {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-    -webkit-overflow-scrolling: touch; /* iOSのスクロールを滑らかに */
-}
-
-/* 入力エリアの調整 */
-#input-area { 
-    padding: 10px; /* 余白を少し詰める */
-    background: #fff; 
-    display: flex; 
-    gap: 5px; 
-    border-top: 1px solid #ffcc80; 
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-    flex-shrink: 0; /* 入力エリアが潰れないように固定 */
-}
-
-/* モバイルでのボタンサイズ調整 */
-@media screen and (max-width: 768px) {
-    #episode-list {
-        max-width: 70px; /* スマホではセレクトボックスを少し小さく */
-        font-size: 12px;
-    }
-    input {
-        font-size: 16px; /* 16px以上にするとiOSでズームするのを防げます */
-    }
-    button {
-        padding: 0 10px;
+/* PC用：マウスホバー */
+@media (hover: hover) {
+    .bubble img:hover { transform: scale(1.02); }
+    .guide-chip:hover {
+        background: #ffcc80;
+        color: #5d4037;
     }
 }
