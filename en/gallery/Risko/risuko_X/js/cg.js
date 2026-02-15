@@ -1485,9 +1485,11 @@ function renderGallery(groupId) {
   currentGroupItems = items.filter(it => getGroupId(it.src) === groupId);
 
   gallery.innerHTML = currentGroupItems.map((it, i)=>`
-    <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title || 'Risuko' }">
+    <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title || 'Risuko, Squirrel girl with a yellow scarf' }">
       <div class="card__imgwrap">
-        <img src="${it.src}" alt="Artwork of Risuko: ${it.title || ''} ${it.caption.substring(0, 40).replace(/\n/g, ' ')}..." loading="lazy">
+        <img src="${it.src}" 
+             alt="Squirrel girl with a yellow scarf, Risuko - ${it.title || ''} | ${it.caption.substring(0, 40).replace(/\n/g, ' ')}..." 
+             loading="lazy">
       </div>
       <figcaption class="card__meta">
         <h3 class="card__title">${it.title || 'Risuko'}</h3>
@@ -1528,7 +1530,8 @@ function openLB(i){
   idx = (i + currentGroupItems.length) % currentGroupItems.length;
   const it = currentGroupItems[idx];
   lbImg.src = it.src;
-  lbImg.alt = `Risuko: ${it.title || 'Forest Life'}`; // ここにもブランド名を挿入
+  // 拡大表示時も「属性名 + キャラ名」でSEO効果を持続
+  lbImg.alt = `Squirrel girl with a yellow scarf, Risuko: ${it.title || 'Forest Life'}`;
   lbTitle.textContent = it.title || "";
   lbCaption.textContent = it.caption || "";
   lb.hidden = false;
@@ -1583,22 +1586,22 @@ document.addEventListener("keydown", (e)=>{
  * 英語圏のクローラー（Googleボット）に対し、Risukoの全作品を一括でインデックスさせます。
  */
 function injectGoogleSEOData() {
-    const pageTitle = document.title;
-    const pageDescription = "Daily fantasy art depicting the life of Risuko, a squirrel with a fluffy tail. A collection of enchanting illustrations set in a magical forest.";
+    const pageDescription = "Explore the daily life of Risuko, a squirrel girl with a yellow scarf and a fluffy tail. A collection of enchanting fantasy art set in a magical forest.";
 
     const ldJson = {
         "@context": "https://schema.org",
         "@type": "ImageGallery",
-        "name": "Risuko's Forest Gallery",
+        "name": "Risuko's Forest Gallery - Squirrel girl with a yellow scarf",
         "description": pageDescription,
-        "inLanguage": "en-US", // 英語コンテンツであることを明示
+        "inLanguage": "en-US",
         "author": {
             "@type": "Person",
             "name": "Asunaro Works"
         },
         "hasPart": items.map(it => ({
             "@type": "ImageObject",
-            "name": `Risuko: ${it.title || 'Tales from the Forest'}`,
+            // 英語圏の検索結果でクリックされやすいタイトルに最適化
+            "name": `Squirrel girl with a yellow scarf, Risuko: ${it.title || 'Tales from the Forest'}`,
             "description": it.caption.replace(/\n/g, ' '),
             "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
         }))
@@ -1609,10 +1612,10 @@ function injectGoogleSEOData() {
     script.innerHTML = JSON.stringify(ldJson);
     document.head.appendChild(script);
 
-    // noscript: JS無効環境やクローラー向けの英語テキスト目録
+    // noscript: JS無効時やクローラー向けのテキスト目録
     const noscript = document.createElement('noscript');
-    noscript.innerHTML = `<div style="display:none;"><h2>Risuko Artwork Index</h2><ul>` + 
-        items.map(it => `<li>Artwork of Risuko - ${it.caption.substring(0, 60).replace(/\n/g, ' ')}</li>`).join('') + 
+    noscript.innerHTML = `<div style="display:none;"><h2>Squirrel girl with a yellow scarf, Risuko - Artwork Index</h2><ul>` + 
+        items.map(it => `<li>Squirrel girl with a yellow scarf, Risuko - ${it.caption.substring(0, 60).replace(/\n/g, ' ')}</li>`).join('') + 
         `</ul></div>`;
     document.body.appendChild(noscript);
 }

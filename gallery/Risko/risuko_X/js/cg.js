@@ -1441,17 +1441,19 @@ function renderGallery(groupId) {
   currentGroupItems = items.filter(it => getGroupId(it.src) === groupId);
 
   gallery.innerHTML = currentGroupItems.map((it, i)=>`
-    <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title || 'リス子の日常'}">
-      <div class="card__imgwrap">
-        <img src="${it.src}" alt="リス子のアート作品: ${it.title || ''} ${it.caption.substring(0, 30)}..." loading="lazy">
-      </div>
-      <figcaption class="card__meta">
-        <h3 class="card__title">${it.title || 'リス子'}</h3>
-        <p class="card__caption">${it.caption}</p>
-      </figcaption>
-    </figure>
-  `).join("");
-}
+      <figure class="card" data-i="${i}" tabindex="0" aria-label="${it.title || '黄色のマフラーを巻いたリス子'}">
+        <div class="card__imgwrap">
+          <img src="${it.src}" 
+              alt="黄色のマフラーを巻いたリスの女の子 リス子 - ${it.title || ''} | ${it.caption.substring(0, 30).replace(/\n/g, ' ')}..." 
+              loading="lazy">
+        </div>
+        <figcaption class="card__meta">
+          <h3 class="card__title">${it.title || 'リス子'}</h3>
+          <p class="card__caption">${it.caption}</p>
+        </figcaption>
+      </figure>
+    `).join("");
+  }
 
 // フィルタボタン設定（中略：既存通り）
 function setupFilters() {
@@ -1476,7 +1478,8 @@ function openLB(i){
   idx = (i + currentGroupItems.length) % currentGroupItems.length;
   const it = currentGroupItems[idx];
   lbImg.src = it.src;
-  lbImg.alt = `リス子: ${it.title || '森の日常'}`;
+  // 拡大画面でもしっかり属性を記述
+  lbImg.alt = `黄色のマフラーを巻いたリスの女の子 リス子: ${it.title || '森の日常'}`;
   lbTitle.textContent = it.title || "";
   lbCaption.textContent = it.caption || "";
   lb.hidden = false;
@@ -1529,13 +1532,12 @@ lbCaption.addEventListener("click", (e) => { e.stopPropagation(); });
  * 700枚以上の全アイテムを「リス子」という名前と共にGoogleへ送信します。
  */
 function injectGoogleSEOData() {
-    const pageTitle = document.title;
-    const pageDescription = "リス子の毎日を一枚絵で描く日常の物語アート。しっぽがふわふわなリス子のコレクション。";
+    const pageDescription = "黄色のマフラーがトレードマーク。しっぽがふわふわなリスの女の子「リス子」の毎日を描くアートギャラリー。";
 
     const ldJson = {
         "@context": "https://schema.org",
         "@type": "ImageGallery",
-        "name": "リス子の森 アートギャラリー",
+        "name": "リス子の森ギャラリー - 黄色のマフラーを巻いたリスの女の子",
         "description": pageDescription,
         "author": {
             "@type": "Person",
@@ -1543,7 +1545,8 @@ function injectGoogleSEOData() {
         },
         "hasPart": items.map(it => ({
             "@type": "ImageObject",
-            "name": `リス子: ${it.title || '森の物語'}`,
+            // 検索結果のタイトルを最適化
+            "name": `黄色のマフラーを巻いたリスの女の子 リス子: ${it.title || '森の物語'}`,
             "description": it.caption.replace(/\n/g, ' '),
             "contentUrl": window.location.origin + window.location.pathname.replace('index.html', '') + it.src.replace('./', '')
         }))
@@ -1554,9 +1557,10 @@ function injectGoogleSEOData() {
     script.innerHTML = JSON.stringify(ldJson);
     document.head.appendChild(script);
 
+    // noscript: JS無効時やクローラー向けの目録
     const noscript = document.createElement('noscript');
-    noscript.innerHTML = `<div style="display:none;"><h2>リス子 作品目録</h2><ul>` + 
-        items.map(it => `<li>リス子のアート作品 - ${it.caption.substring(0, 50)}</li>`).join('') + 
+    noscript.innerHTML = `<div style="display:none;"><h2>黄色のマフラーを巻いたリスの女の子 リス子 作品目録</h2><ul>` + 
+        items.map(it => `<li>リス子（黄色のマフラーのリス） - ${it.caption.substring(0, 50)}</li>`).join('') + 
         `</ul></div>`;
     document.body.appendChild(noscript);
 }
