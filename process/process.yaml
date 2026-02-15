@@ -32,3 +32,6 @@ logs:
   - title: "aiリス子とお喋り＆最新aiで動き続ける「自走するリスたちの森」の舞台裏"
     summary: "リス子のAIチャットと観測日記の自動おしゃべり部屋の技術紹介をしています。"
     url: "./article/20260211_behind-the-scenes-running-squirrels/behind-the-scenes-running-squirrels.html"
+  - title: "モデルマージ最適化ガイド：質感・安定性・構図を制御する「2割」の配合"
+    summary: "どのようなモデルをマージすると効果的なの？というのを経験に基づいて書きました。"
+    url: "./article/20260215_Model_Merge_20_Rule/Model_Merge_20_Rule.html"

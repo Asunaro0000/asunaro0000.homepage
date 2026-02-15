@@ -32,3 +32,6 @@ logs:
   - title: "Chat with AI Risuko & The Behind-the-Scenes of the Autonomous Squirrel Forest"
     summary: "An introduction to the technology behind Risuko's AI chat and the automated talking room for the observation diary."
     url: "./article/20260211_behind-the-scenes-running-squirrels/behind-the-scenes-running-squirrels.html"
+  - title: "Model Merge Optimization Guide: The '20 Percent' Blend That Controls Texture, Stability, and Composition"
+    summary: "Based on experience, this article explains which types of models are effective to merge and why."
+    url: "./article/20260215_Model_Merge_20_Rule/Model_Merge_20_Rule.html"
