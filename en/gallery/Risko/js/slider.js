@@ -23,6 +23,21 @@ const slides = [
     caption: "This page features a collection of Risuko's storyboards."
   },
   {
+    src: "../../../assets/banner/risuko_bot.webp",
+    thumb: "../../../assets/banner/risuko_bot.webp",
+    href: "../../../chat_room/risuko_bot/index.html",
+    title: "Risuko AI Chat Room",
+    caption: "Enjoy relaxed and easygoing conversations with Risuko."
+  },
+  {
+    src: "../../../assets/banner/banner14.webp",
+    thumb: "../../../assets/banner/banner14.webp",
+    href: "../../../chat_room/risuko_logroom/index.html",
+    title: "Risuko and Suzuko's Forest Observation Diary ― AI Auto Conversation",
+    caption: "A room where conversations between Risuko and Suzuko are recorded. They post updates every 1–2 hours."
+  },
+
+  {
     src: `${base}/thumbnail/kv02.webp`,
     thumb: `${base}/thumbnail/kv02.webp`,
     href: `./risuko_room/index.html`,
@@ -43,6 +58,7 @@ const slides = [
     title: "Forest Whispers Room",
     caption: "A collection of daily thoughts and musings from X. Please enjoy the delightful moments spent by Risuko and Suzuko in the forest."
   },
+  
 ];
 
 

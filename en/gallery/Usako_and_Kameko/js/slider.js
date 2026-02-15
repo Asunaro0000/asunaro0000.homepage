@@ -37,7 +37,15 @@ const slides = [
     title: "Kameko's Daily Life — Single Scene",
     caption:
       "Today again, she picks up her brush.\nKameko's days unfold in calm, focused hours of creation."
-  }
+  },
+  {
+  src: "../../../assets/banner/banner13.webp",
+  thumb: "../../../assets/banner/banner13.webp",
+  href: "../../../chat_room/usako_bot/index.html",
+  title: "Usako AI Chat ― AI Chat",
+  caption: "Usako loves imagination and animals. A free and delightful conversation awaits, where you never know what might pop up next."
+ }
+
 ];
 
 function createSlider(mount, slides = []){

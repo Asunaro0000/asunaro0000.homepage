@@ -33,7 +33,7 @@ const slides = [
     thumb: "../../assets/banner/banner13.webp",
     href: "../../chat_room/usako_bot/index.html",
     title: "ウサ子とAIチャット ― AI Chat",
-    caption: "空想と動物が大好きなウサ子。ちょっとカオスな会話が楽しめます。"
+    caption: "空想と動物が大好きなウサ子。何が飛び出すかわからない、自由で楽しいおしゃべりが待っています。"
   }
 ];
 
