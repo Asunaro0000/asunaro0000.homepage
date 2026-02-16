@@ -35,3 +35,6 @@ logs:
   - title: "Model Merge Optimization Guide: The '20 Percent' Blend That Controls Texture, Stability, and Composition"
     summary: "Based on experience, this article explains which types of models are effective to merge and why."
     url: "./article/20260215_Model_Merge_20_Rule/Model_Merge_20_Rule.html"
+  - title: "The Birth of AI Chat 'Usako': A New System That Tunes Emotion and Story"
+    summary: "An explanation of the functions, design philosophy, and control methods behind Usako's AI chat system."
+    url: "./article/20260216_usako-chat/usako-chat.html"

@@ -209,3 +209,57 @@ input {
     border: 2px solid white;
     border-radius: 4px;
 }
+
+/* style.css: ポップアップの基本スタイル */
+#expanded-input-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* JSで制御 */
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#expanded-input-card {
+    background: #fff;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #8d6e63;
+}
+
+#expanded-msg {
+    width: 100%;
+    height: 100px; /* 100文字程度に最適な高さ */
+    border: 1px solid #ffcc80;
+    border-radius: 10px;
+    padding: 12px;
+    box-sizing: border-box;
+    font-size: 16px; /* iOSズーム防止 */
+    resize: none;
+    outline: none;
+}
+
+#expanded-send-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    background: #ffcc80;
+    border: none;
+    border-radius: 10px;
+    color: #5d4037;
+    font-weight: bold;
+}

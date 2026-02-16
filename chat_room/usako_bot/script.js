@@ -10,14 +10,12 @@ let currentLang = 'ja'; // 現在の言語状態を保持
 const GUIDE_LINKS = {
   ja: [
     { name: "🎨 ギャラリー", url: "https://asunaro0000.github.io/asunaro0000.homepage/gallery/Usako_and_Kameko/usako_diary/index.html" },
-    { name: "📖 制作ブログ", url: "https://asunaro0000.github.io/asunaro0000.homepage/process/" },
-    { name: "🛍️ グッズショップ", url: "https://asunaro0000.github.io/asunaro0000.homepage/goods/" },
+    { name: "📖 機能と仕組み", url: "https://asunaro0000.github.io/asunaro0000.homepage/process/article/20260216_usako-chat/usako-chat.html" },
     { name: "✨ Patreon (資料更新中)", url: "https://www.patreon.com/Asunaro0000" }
   ],
   en: [
     { name: "🎨 Gallery", url: "https://asunaro0000.github.io/asunaro0000.homepage/en/gallery/Usako_and_Kameko/usako_diary/index.html" },
-    { name: "📖 Dev Blog", url: "https://asunaro0000.github.io/asunaro0000.homepage/en/process/" },
-    { name: "🛍️ Shop", url: "https://asunaro0000.github.io/asunaro0000.homepage/en/goods/" },
+    { name: "📖 Dev Blog", url: "https://asunaro0000.github.io/asunaro0000.homepage/en/process/article/20260216_usako-chat/usako-chat.html" },
     { name: "✨ Patreon", url: "https://www.patreon.com/Asunaro0000" }
   ]
 };
@@ -262,4 +260,48 @@ function openLightbox(src) {
 document.getElementById('send-btn').addEventListener('click', send);
 document.getElementById('msg').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') send();
+});
+
+/**
+ * スマホ用ポップアップ入力の制御
+ */
+const originalInput = document.getElementById('msg');
+const expandedContainer = document.getElementById('expanded-input-container');
+const expandedTextarea = document.getElementById('expanded-msg');
+const charCount = document.getElementById('char-count');
+
+// スマホ判定（768px以下）
+const isMobile = () => window.innerWidth <= 768;
+
+// 元の入力欄をクリックした時の挙動
+originalInput.addEventListener('mousedown', (e) => {
+    if (isMobile()) {
+        e.preventDefault(); // キーボード立ち上がりを防止
+        expandedTextarea.value = originalInput.value;
+        updateCharCount();
+        expandedContainer.style.display = 'flex';
+        expandedTextarea.focus();
+    }
+});
+
+// 文字数カウント
+function updateCharCount() {
+    charCount.textContent = `${expandedTextarea.value.length} / 100`;
+}
+expandedTextarea.addEventListener('input', updateCharCount);
+
+// 閉じる
+document.getElementById('close-expanded').addEventListener('click', () => {
+    originalInput.value = expandedTextarea.value;
+    expandedContainer.style.display = 'none';
+});
+
+// 拡大版から送信
+document.getElementById('expanded-send-btn').addEventListener('click', () => {
+    const text = expandedTextarea.value.trim();
+    if (text) {
+        originalInput.value = text;
+        send(); // 既存のsend()関数を流用
+        expandedContainer.style.display = 'none';
+    }
 });

@@ -35,3 +35,6 @@ logs:
   - title: "モデルマージ最適化ガイド：質感・安定性・構図を制御する「2割」の配合"
     summary: "どのようなモデルをマージすると効果的なの？というのを経験に基づいて書きました。"
     url: "./article/20260215_Model_Merge_20_Rule/Model_Merge_20_Rule.html"
+  - title: "AIチャット「ウサ子」誕生。情緒と物語を調律する新システム"
+    summary: "ウサ子のAIチャットの機能、設計思想と制御方法について解説しています。"
+    url: "./article/20260216_usako-chat/usako-chat.html"
