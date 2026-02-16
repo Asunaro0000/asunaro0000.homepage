@@ -42,7 +42,7 @@ body {
     margin-bottom: 15px; 
     padding: 12px 18px; 
     border-radius: 18px; 
-    max-width: 500px; /* PCでの最大幅 */
+    max-width: 400px; /* PCでの最大幅 */
     line-height: 1.6; 
     font-size: 15px;
     white-space: pre-wrap;
