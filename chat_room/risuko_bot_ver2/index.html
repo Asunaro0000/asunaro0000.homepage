@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ウサ子チャット</title>
+
+  <meta name="msvalidate.01" content="E3F43A180B49E6499200CE3AF81A637C" />
+
+  <meta property="og:site_name" content="Asunaro Works" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ja_JP" />
+
+  <meta property="og:title" content="Asunaro Works" />
+  <meta property="og:description" content="Asunaro Worksによるインタラクティブアートとストーリーボードの世界。" />
+  <meta property="og:url" content="https://asunaro0000.github.io/asunaro0000.homepage/" />
+
+  <meta property="og:image" content="https://asunaro0000.github.io/asunaro0000.homepage/assets/banner/banner1.webp" />
+  <meta property="og:image:alt" content="Asunaro Works バナー" />
+  <meta name="p:domain_verify" content="d57a228b61f6ea3435efa630b2165165"/>
+  
+  <link rel="icon" href="https://asunaro0000.github.io/asunaro0000.homepage/favicon.png" type="image/png">
+  <link rel="icon" href="https://asunaro0000.github.io/asunaro0000.homepage/favicon.ico" type="image/x-icon">
+  
+  <link rel="stylesheet" href="../../css/header.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script src="https://asunaro0000.github.io/asunaro0000.homepage/js/extensions/google-tag.js" defer></script>
+  <script type="module" src="../../js/extensions/nav-toggle.js"></script>
+</head>
+
+<body>
+
+  <header class="nav">
+    <a class="brand" href="../../">Asunaro Works</a>
+    <a class="go-up" href="../../" title="一つ上の階へ">⏶</a>
+    <nav>
+      <a href="../../gallery/">Gallery</a>
+      <a href="../../about/">About/Contact</a>
+      <a href="../../process/">制作技術blog</a>
+      <a href="../../link/">Link</a>
+      <a href="../../sitemap/">Sitemap</a>
+      <a href="../../goods/">Goods</a>
+      <a href="https://www.patreon.com/Asunaro0000" style="color:#ffd54a;">Patreonで資料更新中</a>
+    </nav>
+  </header>
+
+  <div id="chat-container">
+    <div id="chat">
+      </div>
+  </div>
+
+<div id="input-area">
+  <button id="lang-toggle-btn" title="Language Switch">JP/EN</button>
+
+  <select id="episode-list">
+    <option value="">✨選ぶ</option>
+  </select>
+  <input type="text" id="msg" placeholder="ウサ子にお話しして..." autocomplete="off">
+  <button id="send-btn">送信</button>
+</div>
+
+  <div id="guide-board">
+    </div>
+<div id="expanded-input-container" style="display: none;">
+  <div id="expanded-input-card">
+    <div class="card-header">
+      <span id="char-count">0 / 100</span>
+      <button id="close-expanded" type="button">✕</button>
+    </div>
+    <textarea id="expanded-msg" maxlength="100" placeholder="ウサ子にお話しして..."></textarea>
+    <button id="expanded-send-btn" type="button">メッセージを送る</button>
+  </div>
+</div>
+<!--   <div id="debug-log">
+    デバッグログ: まだ通信していません
+  </div> -->
+
+  <div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
