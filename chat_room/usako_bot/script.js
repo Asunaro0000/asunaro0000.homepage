@@ -1,7 +1,7 @@
 /**
  * 設定エリア
  */
-const GAS_URL = "https://script.google.com/macros/s/AKfycbyw8KuPAQifE85osH6RKUBlqEWdlbNTADrnTGLNCTDu9YWvn-Bo0H3u4Kh6vkpXqF9VsQ/exec";
+const GAS_URL = "https://script.google.com/macros/s/AKfycbzwGay6kQ9tpK1I5fdizjCJymiNb1utrZrm_Xdi9uPfGUkFa43Kj4lForfdnlyuCLWiLw/exec";
 let currentLang = 'ja'; // 現在の言語状態を保持
 
 /**
@@ -60,7 +60,7 @@ function applyLanguage(lang) {
     const isEn = (lang === 'en');
     
     // 既存の入力欄などの更新
-    document.getElementById("msg").placeholder = isEn ? "Chat with Risuko..." : "ウサ子にお話しして...";
+    document.getElementById("msg").placeholder = isEn ? "Chat with Usuko..." : "ウサ子にお話しして...";
     document.getElementById("send-btn").textContent = isEn ? "Send" : "送信";
 
     // --- 【追加】クイックボタンを生成・更新 ---
@@ -83,7 +83,7 @@ function renderQuickButtons(lang) {
 
     const isEn = (lang === 'en');
     const buttons = [
-        { label: isEn ? "🪭 Next?" : "🪭 続きは？", text: isEn ? "And then?" : "続きは？" },
+        { label: isEn ? "🪭 Next?" : "🪭 続きは？", text: isEn ? "Next?" : "続きは？" },
         // --- 「お話してぇ」ボタン：既存のリストを流用するよぉ！ ---
         { 
             label: isEn ? "📖 Story" : "📖 お話して", 
@@ -266,11 +266,10 @@ await new Promise(resolve => setTimeout(resolve, 1500));
 ・"Fortune-telling" ... I'll tell your fortune with a dance and show you my precious treasures!🪭✨<br>
 Also, if you say **"Tell me more"** or **"And then?"**, I'll be delighted to share even more details with you!🍵`;
     } else {
-        msg2.innerHTML = `何をお話しするか迷ったら、この言葉をそのまま送ってみてくださいね✨<br>
-・リストから選んで話してくださいね。ウサ子のエピソードをお話しします。🐰
-
-・「占い」 … あなたの運勢を舞いで占います。自慢の宝物もお見せするね🪭✨<br>
-「続きを話して」や「それから？」など、お話を促してくれたらウサ子はもっと喜んでお話ししますよ🍵`;
+        msg2.innerHTML = `何をお話しするか迷ったら、下の３つのボタンを押してね。<br>
+・「お話して」… ウサ子の思い出をお話しするよ！✨<br>
+・「続きは？」… ウサ子はもっと喜んでお話ししますよ🍵<br>
+・「占い」 … あなたの運勢を舞いで占います。自慢の宝物もお見せするね🪭✨`;
     }
     chat.appendChild(msg2);
     container.scrollTop = container.scrollHeight;
