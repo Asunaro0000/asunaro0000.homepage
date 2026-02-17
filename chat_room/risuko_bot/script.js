@@ -262,16 +262,16 @@ await new Promise(resolve => setTimeout(resolve, 1500));
     const msg2 = document.createElement('div');
     msg2.className = 'bubble ai';
     if (isEn) {
-        // ここも Risuko に修正したよぉ！
-        msg2.innerHTML = `If you're not sure what to talk about, just send me these words✨<br>
-・Please choose from the list and talk to me. I'll tell you some of Risuko's stories!🐿️🌰<br>
-・"Fortune-telling" ... I'll tell your fortune with a dance! I might even show you my favorite treasures!✨<br>
-If you say **"Tell me more"** or **"And then?"**, Risuko's tail will go fluffy and I'll tell you even more!🐾`;
-    } else {
-        msg2.innerHTML = `何をお話しするか迷ったら、この言葉をそのまま送ってみてねぇ✨<br>
-・リストから選んでお話ししてね。リス子のエピソードを教えてあげるよ。🐿️🌰<br>
-・「占い」 … あなたの運勢を舞いで占うよっ。自慢の宝物も見せてあげるねぇ✨<br>
-「続きを話して」や「それから？」って言ってくれたら、リス子はしっぽをふわふわさせて、もっとたくさんお話ししちゃうよぉ🐾`;
+            // 日本語の内容に合わせて、3つの選択肢を明確にしました！
+            msg2.innerHTML = `If you're not sure what to talk about, try pressing the buttons below!✨<br>
+・**"Tell me a story"**: I'll share some of Risuko's favorite memories!🐿️🌰<br>
+・**"And then?"**: If you ask that, Risuko's tail will go fluffy and I'll tell you even more!🐾<br>
+・**"Treasures!"**: I'll show you the pride of my collection found in the forest!✨`;
+        } else {
+            msg2.innerHTML = `何をお話しするか迷ったら、下の３つのボタンを押してね。<br>
+・「お話してぇ」でリス子の思い出をお話しするよ！✨<br>
+・「続きは？」って言ってくれたら、リス子はしっぽをふわふわさせて、もっとたくさんお話ししちゃうよぉ🐾<br>
+・「お宝っ！」 … 森の中で見つけた自慢の宝物も見せてあげるねぇ🐿️🌰`;
     }
     chat.appendChild(msg2);
     container.scrollTop = container.scrollHeight;
