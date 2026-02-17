@@ -1,46 +1,56 @@
+/* ============================================
+   基本レイアウト
+   ============================================ */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 全体のスクロールを禁止 */
+}
+
 body { 
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
     background: #fff5e6; 
     display: flex; 
     flex-direction: column; 
-    height: 100vh; 
-    margin: 0; 
+    /* iOS/Androidのアドレスバーを考慮した動的な高さ設定 */
+    height: 100dvh; 
+    width: 100%;
+    position: fixed; /* 画面全体のバウンス（揺れ）を防止 */
 }
 
+/* ============================================
+   チャットエリア（ここだけをスクロールさせる）
+   ============================================ */
 #chat-container {
     flex: 1;
     overflow-y: auto;
     padding: 20px;
+    -webkit-overflow-scrolling: touch; /* iOSでスルスル動くように */
+    background: #fff5e6;
 }
 
 #chat { 
     display: flex; 
     flex-direction: column; 
-    /* --- 追加：親の幅(100%)を基準にし、はみ出さないようにする --- */
     width: 100%;
     box-sizing: border-box;
 }
 
-/* 吹き出し：言葉が切れないための必須設定 */
+/* 吹き出し */
 .bubble { 
     margin-bottom: 15px; 
     padding: 12px 18px; 
     border-radius: 18px; 
-    
-    /* 修正点：最大幅を 85% から具体的な数値に変更 */
-    /* 450px〜500px程度にすると、画像赤線あたりの文字数で改行されます */
-    max-width: 500px; 
-    
+    max-width: 400px; /* PCでの最大幅 */
     line-height: 1.6; 
     font-size: 15px;
-
-    /* 折り返しと改行の維持 */
-    white-space: pre-wrap;      /* 改行を反映し、端で自動折り返し */
-    word-wrap: break-word;      /* 長い単語を強制折り返し */
-    overflow-wrap: break-word;  /* 最新のブラウザ用折り返し設定 */
-    display: block;             /* inline-blockより折り返しが安定します */
-    width: fit-content;         /* 中身が短い時は小さく、長い時はmax-widthまで */
-    min-width: 0;               /* flexboxの子要素として収縮を許可する呪文 */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: block;
+    width: fit-content;
+    min-width: 0;
 }
 
 .ai { 
@@ -56,75 +66,135 @@ body {
     color: #5d4037;
 }
 
-/* --- 画像の基本設定 (PC向け) --- */
+/* 吹き出し内の画像設定：物語の燃料を最大限活かす */
 .bubble img { 
-    /* 修正点：空白を埋めるために幅を100%にし、max-width制限を吹き出しに合わせる */
     width: 100%;
-    /* 吹き出しの最大幅を 500px にしたので、画像もそれに合わせて自動でフィットします */
     max-width: 100%; 
     height: auto;
     border-radius: 12px; 
     margin-top: 10px; 
-    /* 修正点：画像下の隙間を消すための block 化 */
     display: block; 
     cursor: zoom-in;
     transition: transform 0.2s;
 }
 
-/* --- モバイル向けの調整 (画面幅が768px以下の場合) --- */
-@media screen and (max-width: 768px) {
-    .bubble {
-        /* スマホでは500pxだと画面からはみ出す可能性があるため、％指定に戻す */
-        max-width: 90%; 
-    }
-
-    .bubble img { 
-        /* 修正点：スマホでは吹き出しの横幅いっぱいに広げる */
-        max-width: 100%; 
-    }
+/* ============================================
+   下部固定エリア（入力欄 ＋ 案内板）
+   ============================================ */
+footer-area {
+    flex-shrink: 0;
+    background: #fff;
 }
 
-/* マウスホバー (PCのみ反映される演出) */
-@media (hover: hover) {
-    .bubble img:hover { 
-        transform: scale(1.02); 
-    }
+/* 作品案内板：スマホで場所を取らないよう横スクロール化 */
+#guide-board {
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow-x: auto;
+    gap: 8px;
+    padding: 10px 15px; 
+    background: #fff;
+    border-top: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+#guide-board::-webkit-scrollbar {
+    display: none; /* スクロールバー非表示 */
+}
+
+.guide-chip {
+    flex: 0 0 auto;
+    font-size: 11px;
+    padding: 6px 14px;
+    background: #fff;
+    color: #8d6e63;
+    border: 1px solid #ffcc80;
+    border-radius: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
 }
 
 /* 入力エリア */
 #input-area { 
-    padding: 15px 20px; 
+    padding: 10px 10px calc(10px + env(safe-area-inset-bottom)); 
     background: #fff; 
     display: flex; 
-    gap: 10px; 
+    gap: 8px; 
     border-top: 1px solid #ffcc80; 
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    flex-shrink: 0;
+    align-items: center;
+}
+
+#lang-toggle-btn {
+    padding: 8px 10px;
+    font-size: 12px;
+    background: #fff;
+    border: 1px solid #ffcc80;
+    color: #8d6e63;
+    min-width: 50px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+#episode-list {
+    padding: 8px 5px;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    background: #fff;
+    color: #5d4037;
+    font-size: 13px;
+    max-width: 100px;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
 input { 
     flex: 1; 
-    padding: 12px; 
+    min-width: 0;
+    padding: 10px; 
     border: 1px solid #ddd; 
     border-radius: 8px; 
     outline: none; 
-    font-size: 16px;
+    font-size: 16px; /* iOSのズーム防止 */
 }
 
-button { 
+#send-btn { 
     background: #ffcc80; 
     border: none; 
-    padding: 0 20px; 
+    padding: 10px 20px; 
     border-radius: 8px; 
     cursor: pointer; 
     font-weight: bold;
     color: #5d4037;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   レスポンシブ・演出
+   ============================================ */
+@media screen and (max-width: 768px) {
+    .bubble {
+        max-width: 90%; 
+    }
+}
+
+/* PC用：マウスホバー */
+@media (hover: hover) {
+    .bubble img:hover { transform: scale(1.02); }
+    .guide-chip:hover {
+        background: #ffcc80;
+        color: #5d4037;
+        transform: translateY(-1px);
+    }
 }
 
 /* ライトボックス */
 #lightbox {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 2000;
     top: 0; left: 0;
     width: 100%; height: 100%;
     background: rgba(0,0,0,0.85);
@@ -137,46 +207,110 @@ button {
     max-width: 95%;
     max-height: 95%;
     border: 2px solid white;
+    border-radius: 4px;
 }
-/* デバッグログのスタイル調整 */
+
+/* style.css: ポップアップの基本スタイル */
+#expanded-input-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* JSで制御 */
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#expanded-input-card {
+    background: #fff;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #8d6e63;
+}
+
+#expanded-msg {
+    width: 100%;
+    height: 100px; /* 100文字程度に最適な高さ */
+    border: 1px solid #ffcc80;
+    border-radius: 10px;
+    padding: 12px;
+    box-sizing: border-box;
+    font-size: 16px; /* iOSズーム防止 */
+    resize: none;
+    outline: none;
+}
+
+#expanded-send-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    background: #ffcc80;
+    border: none;
+    border-radius: 10px;
+    color: #5d4037;
+    font-weight: bold;
+}
+/* デバッグログを最下部（入力欄の上）に配置 */
+/* --- デバッグログの配置修正 --- */
 #debug-log {
-    background: #eee;
+    /* position: fixed をやめて、通常の要素として最下部に配置 */
+    position: relative; 
+    background: #333; /* 背景を暗くしてデバッグ情報を際立たせる */
+    color: #00ff00;   /* 緑文字 */
+    font-family: monospace;
     font-size: 10px;
     padding: 10px;
-    color: #666;
-    max-height: 100px;
+    max-height: 80px; /* 高くなりすぎないよう制限 */
     overflow-y: auto;
-    border-top: 1px solid #ccc;
-    /* 初期状態はJSで制御するため、念のためそのまま */
+    border-top: 1px solid #444;
+    width: 100%;
+    box-sizing: border-box;
+    /* pointer-events: none; は外します。ログのコピーやスクロールができるようにするため */
 }
-/* 追加：作品案内板のスタイル */
-#guide-board {
+
+/* クイックボタンのコンテナ：少しだけ高さを抑える */
+#quick-btn-container {
     display: flex;
-    flex-wrap: wrap;       /* 数が増えても折り返せるように */
     justify-content: center;
-    gap: 8px;
-    padding: 10px 15px 20px 15px; /* 下に少し余裕を持たせる */
-    background: #fff;      /* 入力欄と同じ背景色 */
-}
-
-.guide-chip {
-    font-size: 0.75rem;
-    padding: 6px 14px;
+    gap: 8px; /* 間隔を少し詰める */
+    padding: 8px 10px; /* 上下パディングを小さく */
     background: #fff;
-    color: #8d6e63;
-    border: 1px solid #ffcc80;
-    border-radius: 20px;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: all 0.2s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    border-top: 1px solid #ffcc80;
+    flex-shrink: 0;
 }
 
-/* マウスホバー時（PC） */
+/* ボタン本体：一回り小さく、丸みを維持 */
+.quick-chip {
+    padding: 5px 12px; /* 小さく調整 */
+    background: #fff;
+    border: 1.5px solid #ffcc80; /* 線も少し細く */
+    border-radius: 15px; /* サイズに合わせて丸みを調整 */
+    color: #5d4037;
+    font-size: 12px; /* 13pxから12pxへ */
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(255, 204, 128, 0.1);
+    transition: all 0.2s;
+    white-space: nowrap; /* 改行防止 */
+}
+
+/* PCホバー時の動きを控えめに */
 @media (hover: hover) {
-    .guide-chip:hover {
+    .quick-chip:hover {
         background: #ffcc80;
-        color: #5d4037;
-        transform: translateY(-1px);
+        transform: translateY(-0.5px);
     }
 }

@@ -1,9 +1,11 @@
 /**
  * 設定エリア
  */
-const GAS_URL = "https://script.google.com/macros/s/AKfycbzTCcgpN10qdWm83UTH0_rV21nu-DK4X1croX-UQE6avoRPdWIJ4ixyAlTtrUolCRjVIw/exec";
+const GAS_URL = "https://script.google.com/macros/s/AKfycbzKJRLMvu3oPxOvaC8SUMs6MQ-kN8h9PloTCbwucyHX8MiBgf0xoFVMXvpgvZyhaaQEsg/exec";
+let currentLang = 'ja'; // 現在の言語状態を保持
+
 /**
- * 案内板（リンク集）のデータ
+ * 相互リンク（案内板）のデータ
  */
 const GUIDE_LINKS = {
   ja: [
@@ -19,21 +21,139 @@ const GUIDE_LINKS = {
   ]
 };
 
-
-
-// ★ここを false にすると画面下のデバッグログが完全に消えます
-const IS_DEBUG = false; 
+const IS_DEBUG = true; 
 
 /**
  * 初期化処理
  */
 window.addEventListener('DOMContentLoaded', () => {
-    const debugElement = document.getElementById('debug-log');
-    if (debugElement) {
-        // IS_DEBUGの設定に合わせて表示・非表示を切り替え
-        debugElement.style.display = IS_DEBUG ? 'block' : 'none';
+    // 1. 初期の言語判定（URLパラメータまたはブラウザ設定）
+    const params = new URLSearchParams(window.location.search);
+    const isEnDefault = params.get('lang') === 'en' || (!navigator.language.startsWith('ja'));
+    currentLang = isEnDefault ? 'en' : 'ja';
+
+    // 2. 言語切り替えボタンのイベント登録
+    const toggleBtn = document.getElementById('lang-toggle-btn');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            currentLang = (currentLang === 'ja') ? 'en' : 'ja';
+            applyLanguage(currentLang);
+        });
     }
+
+    // 3. エピソードリストの選択イベント
+    document.getElementById('episode-list').addEventListener('change', (e) => {
+        const msgInput = document.getElementById('msg');
+        if (e.target.value) {
+            msgInput.value = e.target.value; 
+        }
+    });
+
+    // 4. 初回の表示適用
+    applyLanguage(currentLang);
 });
+
+
+/**
+ * 言語に応じてUI（見た目）を更新する
+ */
+function applyLanguage(lang) {
+    const isEn = (lang === 'en');
+    
+    // 既存の入力欄などの更新
+    document.getElementById("msg").placeholder = isEn ? "Chat with Risuko..." : "リス子にお話ししてぇ...";
+    document.getElementById("send-btn").textContent = isEn ? "Send" : "送信";
+
+    // --- 【追加】クイックボタンを生成・更新 ---
+    renderQuickButtons(lang);
+
+    // 案内板や挨拶の更新
+    renderGuideBoard(lang);
+    initGreeting(lang);
+    loadEpisodeList(lang);
+}
+
+/**
+ * クイック送信ボタンを動的に生成する
+ */
+function renderQuickButtons(lang) {
+    const container = document.getElementById('quick-btn-container');
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const isEn = (lang === 'en');
+    const buttons = [
+        { label: isEn ? "🐾 Next?" : "🐾 続きは？", text: isEn ? "And then?" : "続きは？" },
+        // --- 「お話してぇ」ボタン：既存のリストを流用するよぉ！ ---
+        { 
+            label: isEn ? "📖 Story" : "📖 お話してぇ", 
+            action: () => sendRandomStoryFromList(lang) 
+        },
+        // ---------------------------------------------------
+        { label: isEn ? "✨ Item" : "✨ お宝っ", text: isEn ? "Show me your treasure" : "宝物を見せて" }
+    ];
+
+    buttons.forEach(btn => {
+        const button = document.createElement('button');
+        button.className = 'quick-chip';
+        button.innerText = btn.label;
+        
+        if (btn.action) {
+            button.onclick = btn.action;
+        } else {
+            button.onclick = () => quickSend(btn.text);
+        }
+        
+        container.appendChild(button);
+    });
+}
+/**
+ * すでに取得済みのエピソードリストからランダムに選んで送信する
+ */
+function sendRandomStoryFromList(lang) {
+    const select = document.getElementById('episode-list');
+    if (!select || select.options.length <= 1) {
+        // リストが空っぽの時の保険だおぉ
+        const failMsg = lang === 'en' ? "Tell me a story!" : "何かお話してぇ";
+        quickSend(failMsg);
+        return;
+    }
+
+    // 0番目は「✨選ぶ」だから、1番目以降からランダムに選ぶよぉ！
+    const randomIndex = Math.floor(Math.random() * (select.options.length - 1)) + 1;
+    const selectedStory = select.options[randomIndex].value;
+
+    // 「〜の話を聞かせて」というメッセージを作るねぇ
+    const message = lang === 'en' 
+        ? `Tell me the story of "${selectedStory}"` 
+        : `${selectedStory}の話を聞かせて`;
+
+    quickSend(message);
+}
+/**
+ * エピソードリストをGASから取得
+ */
+async function loadEpisodeList(lang) {
+    try {
+        const res = await fetch(GAS_URL, {
+            method: "POST",
+            body: JSON.stringify({ type: "get_list", lang: lang })
+        });
+        const data = await res.json();
+        const select = document.getElementById('episode-list');
+        
+        // 「✨選ぶ」だけ残してクリア
+        while (select.options.length > 1) select.remove(1);
+
+        data.episodes.forEach(ep => {
+            const opt = document.createElement('option');
+            opt.value = ep;
+            opt.textContent = ep;
+            select.appendChild(opt);
+        });
+    } catch (e) { console.error("List load error", e); }
+}
 
 /**
  * 送信処理
@@ -47,7 +167,7 @@ async function send() {
     const text = input.value.trim();
     if (!text) return;
 
-    // 1. ユーザー発言の追加
+    // ユーザーの吹き出し
     const userDiv = document.createElement('div');
     userDiv.className = 'bubble user';
     userDiv.innerText = text;
@@ -56,105 +176,106 @@ async function send() {
     input.value = "";
     container.scrollTop = container.scrollHeight;
 
-    // 2. ローディング表示
+    // ローディング表示
     const loadingDiv = document.createElement('div');
     loadingDiv.className = 'bubble ai loading';
-    loadingDiv.innerText = "リス子、考え中だねぇ...";
+    loadingDiv.innerText = (currentLang === 'en') ? "Risuko is thinking..." : "リス子、考え中だねぇ...";
     chat.appendChild(loadingDiv);
     container.scrollTop = container.scrollHeight;
 
     try {
         const res = await fetch(GAS_URL, {
             method: "POST",
-            body: JSON.stringify({ message: text })
+            body: JSON.stringify({ message: text, lang: currentLang }) 
         });
 
         const data = await res.json();
+        if (IS_DEBUG && debugLog) debugLog.innerText = "【RAW】: " + JSON.stringify(data);
 
-        // デバッグログの更新（IS_DEBUGがtrueの時のみ）
-        if (IS_DEBUG && debugLog) {
-            debugLog.innerText = "【RAWデータ】: " + JSON.stringify(data);
-        }
-
-        // ローディングを消してAIの返信を表示
         loadingDiv.remove();
 
-        const aiDiv = document.createElement('div');
-        aiDiv.className = 'bubble ai';
-        aiDiv.innerText = data.msg || "（リス子、考え込んじゃったみたい…）";
+        const responseItems = Array.isArray(data) ? data : [data];
+        for (let i = 0; i < responseItems.length; i++) {
+            const item = responseItems[i];
+            if (i > 0) await new Promise(resolve => setTimeout(resolve, 3000));
 
-        // 画像があれば追加
-        if (data.imgUrl && data.imgUrl !== "画像なし" && data.imgUrl !== "") {
-            const img = document.createElement('img');
-            img.src = data.imgUrl;
-            img.alt = "リス子の写真";
-            img.onclick = () => {
-                const lb = document.getElementById('lightbox');
-                const lbImg = document.getElementById('lightbox-img');
-                lbImg.src = img.src;
-                lb.style.display = 'flex';
-            };
-            aiDiv.appendChild(img);
+            const aiDiv = document.createElement('div');
+            aiDiv.className = 'bubble ai';
+            aiDiv.innerHTML = item.msg || "...";
+
+            if (item.imgUrl && item.imgUrl !== "画像なし" && item.imgUrl !== "") {
+                const img = document.createElement('img');
+                img.src = item.imgUrl;
+                img.style.cursor = "zoom-in";
+                img.onclick = () => openLightbox(img.src);
+                img.onload = () => { container.scrollTop = container.scrollHeight; };
+                aiDiv.appendChild(img);
+            }
+            chat.appendChild(aiDiv);
+            container.scrollTop = container.scrollHeight;
         }
-        
-        chat.appendChild(aiDiv);
 
     } catch (error) {
         console.error("Error:", error);
         if (loadingDiv) loadingDiv.remove();
-        
         const errDiv = document.createElement('div');
         errDiv.className = 'bubble ai';
-        errDiv.innerText = "ごめんね、エラーが起きちゃった。";
+        errDiv.innerText = (currentLang === 'en') ? "Error occurred." : "エラーが発生しました。";
         chat.appendChild(errDiv);
-
-        if (IS_DEBUG && debugLog) {
-            debugLog.innerText = "【エラーログ】: " + error.toString();
-        }
     }
-    
-    // 常に最新のメッセージが見えるようにスクロール
     container.scrollTop = container.scrollHeight;
 }
 
 /**
- * イベントリスナーの設定
+ * 最初の挨拶を表示する
  */
-document.getElementById('send-btn').addEventListener('click', send);
+async function initGreeting(lang) {
+    const chat = document.getElementById('chat');
+    const container = document.getElementById('chat-container');
+    if (!chat) return;
 
-document.getElementById('msg').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        send();
-    }
-});
+    chat.innerHTML = ""; 
+    const isEn = (lang === 'en');
 
-
-/**
- * 初期化処理
- */
-window.addEventListener('DOMContentLoaded', () => {
-    // 言語判定
-    const params = new URLSearchParams(window.location.search);
-    const isEn = params.get('lang') === 'en' || (!navigator.language.startsWith('ja'));
-    const lang = isEn ? 'en' : 'ja';
-
-    // デバッグログ表示設定
-    const debugElement = document.getElementById('debug-log');
-    if (debugElement) {
-        debugElement.style.display = IS_DEBUG ? 'block' : 'none';
-    }
-
-    // 案内板の描画
-    renderGuideBoard(lang);
-    
-    // 英語アクセス時のUI初期化（HTML内のscriptタグで行っていた処理を統合）
+    // 1通目
+    const msg1 = document.createElement('div');
+    msg1.className = 'bubble ai';
     if (isEn) {
-        const greeting = document.querySelector(".bubble.ai");
-        if (greeting) greeting.innerHTML = 'Hi there! I\'m Risuko. Let\'s chat!<img src="./assets/main.jpg" >';
-        document.getElementById("msg").placeholder = "Chat with Risuko...";
-        document.getElementById("send-btn").textContent = "Send";
+        // Lisko → Risuko に修正したよぉ！
+        msg1.innerHTML = `Hiya! I'm Risuko. Let's chat!🐿️<br><img src="./assets/main.webp">`;
+    } else {
+        msg1.innerHTML = `やっほー！リス子だよ。お話ししよ！<br><img src="./assets/main.webp">`;
     }
-});
+    chat.appendChild(msg1);
+
+
+    const img1 = msg1.querySelector('img');
+    if (img1) {
+        img1.style.cursor = "zoom-in";
+        img1.onclick = () => openLightbox(img1.src);
+    }
+    container.scrollTop = container.scrollHeight;
+
+await new Promise(resolve => setTimeout(resolve, 1500));
+
+    // 2通目
+    const msg2 = document.createElement('div');
+    msg2.className = 'bubble ai';
+    if (isEn) {
+        // ここも Risuko に修正したよぉ！
+        msg2.innerHTML = `If you're not sure what to talk about, just send me these words✨<br>
+・Please choose from the list and talk to me. I'll tell you some of Risuko's stories!🐿️🌰<br>
+・"Fortune-telling" ... I'll tell your fortune with a dance! I might even show you my favorite treasures!✨<br>
+If you say **"Tell me more"** or **"And then?"**, Risuko's tail will go fluffy and I'll tell you even more!🐾`;
+    } else {
+        msg2.innerHTML = `何をお話しするか迷ったら、この言葉をそのまま送ってみてねぇ✨<br>
+・リストから選んでお話ししてね。リス子のエピソードを教えてあげるよ。🐿️🌰<br>
+・「占い」 … あなたの運勢を舞いで占うよっ。自慢の宝物も見せてあげるねぇ✨<br>
+「続きを話して」や「それから？」って言ってくれたら、リス子はしっぽをふわふわさせて、もっとたくさんお話ししちゃうよぉ🐾`;
+    }
+    chat.appendChild(msg2);
+    container.scrollTop = container.scrollHeight;
+}
 
 /**
  * 案内板（リンク集）を描画する
@@ -163,12 +284,93 @@ function renderGuideBoard(lang) {
     const board = document.getElementById('guide-board');
     if (!board) return;
 
-    board.innerHTML = ""; // クリア
-    GUIDE_LINKS[lang].forEach(link => {
+    board.innerHTML = ""; 
+    const links = GUIDE_LINKS[lang] || GUIDE_LINKS['ja'];
+    links.forEach(link => {
         const a = document.createElement('a');
         a.href = link.url;
         a.className = 'guide-chip';
         a.innerText = link.name;
         board.appendChild(a);
     });
+}
+
+/**
+ * ライトボックス
+ */
+function openLightbox(src) {
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    if (lb && lbImg) {
+        lbImg.src = src;
+        lb.style.display = 'flex';
+    }
+}
+
+/**
+ * イベントリスナー登録
+ */
+document.getElementById('send-btn').addEventListener('click', send);
+document.getElementById('msg').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') send();
+});
+
+/**
+ * スマホ用ポップアップ入力の制御
+ */
+const originalInput = document.getElementById('msg');
+const expandedContainer = document.getElementById('expanded-input-container');
+const expandedTextarea = document.getElementById('expanded-msg');
+const charCount = document.getElementById('char-count');
+
+// スマホ判定（768px以下）
+const isMobile = () => window.innerWidth <= 768;
+
+// 元の入力欄をクリックした時の挙動
+originalInput.addEventListener('mousedown', (e) => {
+    if (isMobile()) {
+        e.preventDefault(); // キーボード立ち上がりを防止
+        expandedTextarea.value = originalInput.value;
+        updateCharCount();
+        expandedContainer.style.display = 'flex';
+        expandedTextarea.focus();
+    }
+});
+
+// 文字数カウント
+function updateCharCount() {
+    charCount.textContent = `${expandedTextarea.value.length} / 100`;
+}
+expandedTextarea.addEventListener('input', updateCharCount);
+
+// 閉じる
+document.getElementById('close-expanded').addEventListener('click', () => {
+    originalInput.value = expandedTextarea.value;
+    expandedContainer.style.display = 'none';
+});
+
+// 拡大版から送信
+document.getElementById('expanded-send-btn').addEventListener('click', () => {
+    const text = expandedTextarea.value.trim();
+    if (text) {
+        originalInput.value = text;
+        send(); // 既存のsend()関数を流用
+        expandedContainer.style.display = 'none';
+    }
+});
+/* script.js の最後の方に追加してねぇ！ */
+
+/**
+ * クイック送信ボタン用
+ */
+function quickSend(text) {
+    const input = document.getElementById('msg');
+    const expandedTextarea = document.getElementById('expanded-msg');
+    
+    // 入力欄に文字を入れてから send() を呼ぶよぉ
+    input.value = text;
+    if (expandedTextarea) expandedTextarea.value = text;
+    
+    // 既存の send 関数をそのまま実行！
+    send();
 }
