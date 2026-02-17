@@ -52,34 +52,84 @@ window.addEventListener('DOMContentLoaded', () => {
     applyLanguage(currentLang);
 });
 
+
 /**
  * 言語に応じてUI（見た目）を更新する
  */
 function applyLanguage(lang) {
     const isEn = (lang === 'en');
     
-    // 入力欄やボタンの文字
-    document.getElementById("msg").placeholder = isEn ? "Chat with Usako..." : "ウサ子にお話しして...";
+    // 既存の入力欄などの更新
+    document.getElementById("msg").placeholder = isEn ? "Chat with Risuko..." : "ウサ子にお話しして...";
     document.getElementById("send-btn").textContent = isEn ? "Send" : "送信";
-    
-    // エピソードリストの最初の項目
-    const epSelect = document.getElementById('episode-list');
-    if (epSelect.options.length > 0) {
-        epSelect.options[0].textContent = isEn ? "✨Select" : "✨選ぶ";
-    }
 
-    // デバッグログ
-    const debugElement = document.getElementById('debug-log');
-    if (debugElement) {
-        debugElement.style.display = IS_DEBUG ? 'block' : 'none';
-        debugElement.innerText = isEn ? "Debug Log: Ready" : "デバッグログ: 準備完了";
-    }
+    // --- 【追加】クイックボタンを生成・更新 ---
+    renderQuickButtons(lang);
 
-    renderGuideBoard(lang); // 案内板の更新
-    initGreeting(lang);    // 挨拶の更新
-    loadEpisodeList(lang); // リストの再取得
+    // 案内板や挨拶の更新
+    renderGuideBoard(lang);
+    initGreeting(lang);
+    loadEpisodeList(lang);
 }
 
+/**
+ * クイック送信ボタンを動的に生成する
+ */
+function renderQuickButtons(lang) {
+    const container = document.getElementById('quick-btn-container');
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const isEn = (lang === 'en');
+    const buttons = [
+        { label: isEn ? "🪭 Next?" : "🪭 続きは？", text: isEn ? "And then?" : "続きは？" },
+        // --- 「お話してぇ」ボタン：既存のリストを流用するよぉ！ ---
+        { 
+            label: isEn ? "📖 Story" : "📖 お話して", 
+            action: () => sendRandomStoryFromList(lang) 
+        },
+        // ---------------------------------------------------
+        { label: isEn ? "🔮 fortune" : "🔮占って", text: isEn ? "fortune telling" : "占って" }
+    ];
+
+    buttons.forEach(btn => {
+        const button = document.createElement('button');
+        button.className = 'quick-chip';
+        button.innerText = btn.label;
+        
+        if (btn.action) {
+            button.onclick = btn.action;
+        } else {
+            button.onclick = () => quickSend(btn.text);
+        }
+        
+        container.appendChild(button);
+    });
+}
+/**
+ * すでに取得済みのエピソードリストからランダムに選んで送信する
+ */
+function sendRandomStoryFromList(lang) {
+    const select = document.getElementById('episode-list');
+    if (!select || select.options.length <= 1) {
+        // リストが空っぽの時の保険だおぉ
+        const failMsg = lang === 'en' ? "Chat with Usako..." : "ウサ子にお話しして...";
+        quickSend(failMsg);
+        return;
+    }
+
+    // 0番目は「✨選ぶ」だから、1番目以降からランダムに選ぶよぉ！
+    const randomIndex = Math.floor(Math.random() * (select.options.length - 1)) + 1;
+    const selectedStory = select.options[randomIndex].value;
+
+    // 「〜の話を聞かせて」というメッセージを作るねぇ
+    const message = lang === 'en' 
+        ? `Tell me the story of "${selectedStory}"` 
+        : `${selectedStory}の話を聞かせて`;
+
+    quickSend(message);
+}
 /**
  * エピソードリストをGASから取得
  */
@@ -183,7 +233,7 @@ async function initGreeting(lang) {
     const container = document.getElementById('chat-container');
     if (!chat) return;
 
-    chat.innerHTML = ""; // 画面をクリア
+    chat.innerHTML = ""; 
     const isEn = (lang === 'en');
 
     // 1通目
@@ -196,6 +246,7 @@ async function initGreeting(lang) {
     }
     chat.appendChild(msg1);
 
+
     const img1 = msg1.querySelector('img');
     if (img1) {
         img1.style.cursor = "zoom-in";
@@ -203,12 +254,13 @@ async function initGreeting(lang) {
     }
     container.scrollTop = container.scrollHeight;
 
-    await new Promise(resolve => setTimeout(resolve, 1500));
+await new Promise(resolve => setTimeout(resolve, 1500));
 
     // 2通目
     const msg2 = document.createElement('div');
     msg2.className = 'bubble ai';
-if (isEn) {
+    if (isEn) {
+            // 日本語の内容に合わせて、3つの選択肢を明確にしました！
         msg2.innerHTML = `If you're not sure what to talk about, try these options✨<br>
 ・Please choose from the list to hear my stories.🐰<br>
 ・"Fortune-telling" ... I'll tell your fortune with a dance and show you my precious treasures!🪭✨<br>
@@ -305,3 +357,19 @@ document.getElementById('expanded-send-btn').addEventListener('click', () => {
         expandedContainer.style.display = 'none';
     }
 });
+/* script.js の最後の方に追加してねぇ！ */
+
+/**
+ * クイック送信ボタン用
+ */
+function quickSend(text) {
+    const input = document.getElementById('msg');
+    const expandedTextarea = document.getElementById('expanded-msg');
+    
+    // 入力欄に文字を入れてから send() を呼ぶよぉ
+    input.value = text;
+    if (expandedTextarea) expandedTextarea.value = text;
+    
+    // 既存の send 関数をそのまま実行！
+    send();
+}
