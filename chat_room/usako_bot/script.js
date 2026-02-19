@@ -62,7 +62,11 @@ function applyLanguage(lang) {
     // 既存の入力欄などの更新
     document.getElementById("msg").placeholder = isEn ? "Chat with Usuko..." : "ウサ子にお話しして...";
     document.getElementById("send-btn").textContent = isEn ? "Send" : "送信";
-
+// --- ここを修正：textContent ではなく最初の子要素（option）をターゲットにします ---
+    const episodeList = document.getElementById("episode-list");
+    if (episodeList && episodeList.options.length > 0) {
+        episodeList.options[0].textContent = isEn ? "Select" : "✨選ぶ";
+    }
     // --- 【追加】クイックボタンを生成・更新 ---
     renderQuickButtons(lang);
 
