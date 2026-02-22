@@ -81,4 +81,16 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
+  // アイコンのURLをブラウザに正しく教え直す魔法だよぉ！
+  (function() {
+    const iconUrl = "https://asunaro0000.github.io/asunaro0000.homepage/favicon.png?v=" + Date.now();
+    let link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'icon';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    link.href = iconUrl;
+  })();
+
 console.log('%c🚀 System Online: All events are being monitored.', 'color: #00ccff; font-weight: bold;');
