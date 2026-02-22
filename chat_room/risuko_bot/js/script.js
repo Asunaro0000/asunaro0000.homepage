@@ -42,19 +42,23 @@ window.addEventListener('DOMContentLoaded', () => {
     } // ← ここできちんと閉じる
 
     // 3. モード選択リストの変更イベント
+    // script.js 内の初期化処理 (DOMContentLoaded内) を書き換え
     const modeSelect = document.getElementById('mode-select');
     if (modeSelect) {
         modeSelect.addEventListener('change', () => {
+            const isEn = (currentLang === 'en');
+            
+            // 1. まずUI全体を現在の言語に合わせる
             applyLanguage(currentLang);
-        });
-    }
 
-    // 4. エピソードリストの選択イベント
-    const episodeList = document.getElementById('episode-list');
-    if (episodeList) {
-        episodeList.addEventListener('change', (e) => {
-            const msgInput = document.getElementById('msg');
-            if (e.target.value) msgInput.value = e.target.value;
+            // 2. モードが「リス子の森ナビ」なら、即座に開始メッセージを投げる
+            if (modeSelect.value === 'maze') {
+                // executeMazeSend を直接叩く（初期座標0,0）
+                executeMazeSend(isEn ? "Let's start exploration!" : "探検スタートだよぉ！", 0, 0, isEn);
+            } else {
+                // チャットに戻った場合はフラグを寝かせる
+                isMazeMode = false;
+            }
         });
     }
 
@@ -97,7 +101,7 @@ function renderQuickButtons(lang) {
     const isEn = (lang === 'en');
 
     if (mode === 'maze') {
-        // --- 迷路ゲームモードのボタン (maze.jsの関数を呼ぶ) ---
+        // --- リス子の森ナビゲームモードのボタン (maze.jsの関数を呼ぶ) ---
         renderMazeButtons(container, isEn);
     } else {
         // --- 通常チャットモードのボタン ---
@@ -122,7 +126,7 @@ function renderQuickButtons(lang) {
 function sendRandomStoryFromList(lang) {
     const select = document.getElementById('episode-list');
     if (!select || select.options.length <= 1) {
-        // リストが空っぽの時の保険だおぉ
+        // リストが空っぽの時の保険だよぉ
         const failMsg = lang === 'en' ? "Tell me a story!" : "何かお話してぇ";
         quickSend(failMsg);
         return;
@@ -237,25 +241,34 @@ async function send() {
 /**
  * 最初の挨拶を表示する
  */
+/**
+ * 最初の挨拶を表示する
+ */
 async function initGreeting(lang) {
     const chat = document.getElementById('chat');
     const container = document.getElementById('chat-container');
+    const modeSelect = document.getElementById('mode-select'); // モード選択を取得
     if (!chat) return;
 
     chat.innerHTML = ""; 
     const isEn = (lang === 'en');
 
-    // 1通目
+// --- 1通目（メイン画像と挨拶） ---
     const msg1 = document.createElement('div');
     msg1.className = 'bubble ai';
+    
     if (isEn) {
-        // Lisko → Risuko に修正したよぉ！
-        msg1.innerHTML = `Hiya! I'm Risuko. Let's chat!🐿️<br><img src="./assets/main.webp">`;
+        msg1.innerHTML = `Hiya! I'm Risuko🐿️✨
+I've been waiting for you with my tail wagging!
+Let's enjoy exploring and chatting together!
+<img src="./assets/main.webp">`;
     } else {
-        msg1.innerHTML = `やっほー！リス子だよ。お話ししよ！<br><img src="./assets/main.webp">`;
+        msg1.innerHTML = `やっほー！リス子だよ！🐿️✨
+あなたに会えるのを、しっぽを長くして待ってたよぉ！
+これからの探検や内緒のお話し、リス子と一緒にいっぱい楽しもうねぇ。
+<img src="./assets/main.webp">`;
     }
     chat.appendChild(msg1);
-
 
     const img1 = msg1.querySelector('img');
     if (img1) {
@@ -264,22 +277,47 @@ async function initGreeting(lang) {
     }
     container.scrollTop = container.scrollHeight;
 
-await new Promise(resolve => setTimeout(resolve, 1500));
+    // --- 【ここが重要！】 ---
+    // リス子の森ナビモードが選択されている場合は、ここでおしまいにするよぉ！
+    // 2通目の「使い方案内」は表示させないよぉ。
+    if (modeSelect && modeSelect.value === 'maze') {
+        return; 
+    }
 
-    // 2通目
+// --- チャットモード専用のプチ案内だよぉ！ ---
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
     const msg2 = document.createElement('div');
     msg2.className = 'bubble ai';
-    if (isEn) {
-            // 日本語の内容に合わせて、3つの選択肢を明確にしました！
-            msg2.innerHTML = `If you're not sure what to talk about, try pressing the buttons below!✨<br>
-・**"Tell me a story"**: I'll share some of Risuko's favorite memories!🐿️🌰<br>
-・**"And then?"**: If you ask that, Risuko's tail will go fluffy and I'll tell you even more!🐾<br>
-・**"Treasures!"**: I'll show you the pride of my collection found in the forest!✨`;
-        } else {
-            msg2.innerHTML = `何をお話しするか迷ったら、下の３つのボタンを押してね。<br>
-・「お話してぇ」でリス子の思い出をお話しするよ！✨<br>
-・「続きは？」って言ってくれたら、リス子はしっぽをふわふわさせて、もっとたくさんお話ししちゃうよぉ🐾<br>
-・「お宝っ！」 … 森の中で見つけた自慢の宝物も見せてあげるねぇ🐿️🌰`;
+    
+if (isEn) {
+        msg2.innerHTML = `Not sure what to say? Try these!✨
+・"Tell me a story"：My memories🐿️
+・"And then?"：More fluffy talk🐾
+・"Treasures!"：My forest collection✨
+
+------------Button Guide--------------
+
+🌎 Left: Language (JP/EN)
+🔄 Center: Mode Switch
+    ・Chat: Talk with me!💬
+    ・Forest Nav: Explore the woods!🌲
+✨ Right: Topics
+    ・Pick something to talk about!`;
+    } else {
+        msg2.innerHTML = `迷ったらボタンをポチッとしてねぇ✨
+・「お話してぇ」：リス子の思い出🐿️
+・「続きは？」：しっぽフリフリお話し🐾
+・「お宝っ！」：自慢のコレクション✨
+
+------------ボタン説明--------------
+
+🌎 左：言葉の切替 (日本語/英語)
+🔄 中央：モード切替
+    ・チャット：のんびりお話し💬
+    ・森ナビ：一緒に森を探検！🌲
+✨ 右：話題を選ぶ
+    ・お願いや質問が選べるよぉ！`;
     }
     chat.appendChild(msg2);
     container.scrollTop = container.scrollHeight;
