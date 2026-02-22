@@ -6,6 +6,48 @@ let isMazeMode = false;
 let currentX = 0;
 let currentY = 0;
 
+// --- ユーザーID（セーブデータ鍵）の確定ロジック ---
+function getPersistentUserId() {
+  // 1. まずブラウザの記憶(localStorage)を確認
+  let id = localStorage.getItem('maze_user_id');
+
+  // 2. なければランダムに新規発行
+  if (!id) {
+    id = "u_" + Math.random().toString(36).substring(2, 10);
+    // 3. ブラウザに保存して固定！
+    localStorage.setItem('maze_user_id', id);
+  }
+  
+  // URL書き換え(#)を廃止してスッキリさせたおぉ！
+  return id;
+}
+
+const MY_USER_ID = getPersistentUserId();
+
+
+
+// --- GASへ送る関数（アルバム形式のJSON送信） ---
+async function sendProgressToGAS(x, y, userText) {
+  const payload = {
+    userId: MY_USER_ID, // 固定されたID
+    x: x,
+    y: y,
+    message: userText,
+    lang: "ja" // 必要に応じて
+  };
+
+    const response = await fetch(MAZE_GAS_URL, {
+        method: "POST",
+        body: JSON.stringify({ 
+            userId: MY_USER_ID, // ← これを追加！これで固定されるおぉ！
+            message: text, 
+            x: currentX, 
+            y: currentY, 
+            lang: isEn ? "en" : "ja" 
+        })
+    });
+}
+
 function mazeAppendMessage(role, text, imgUrl = null) {
     const chat = document.getElementById('chat');
     const container = document.getElementById('chat-container');
@@ -168,11 +210,17 @@ async function executeMazeSend(text, x, y, isEn) {
     loadDiv.innerText = isEn ? "Thinking..." : "考え中...";
     chat.appendChild(loadDiv);
 
-    try {
+try {
         const response = await fetch(MAZE_GAS_URL, {
             method: "POST",
-            // 常に最新の座標を飛ばす
-            body: JSON.stringify({ message: text, x: currentX, y: currentY, lang: isEn ? "en" : "ja" })
+            // ★ここが大事！JSON.stringify の中身を全部これに入れ替えてねぇ！
+            body: JSON.stringify({ 
+                userId: MY_USER_ID, // ← これがないとGAS側で誰かわからないおぉ！
+                message: text, 
+                x: currentX, 
+                y: currentY, 
+                lang: isEn ? "en" : "ja" 
+            })
         });
         const data = await response.json();
         
