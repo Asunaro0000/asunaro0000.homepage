@@ -38,3 +38,6 @@ logs:
   - title: "The Birth of AI Chat 'Usako': A New System That Tunes Emotion and Story"
     summary: "An explanation of the functions, design philosophy, and control methods behind Usako's AI chat system."
     url: "./article/20260216_usako-chat/usako-chat.html"
+  - title: "Development Log: How 121 Grid Coordinates Became 'Memories' — The Design Philosophy Behind the Virtual Open-World Chat 'Mori Navi'"
+    summary: "An explanation of the operation, design philosophy, and implementation structure of the Mori Navi feature in the Risuko Chat."
+    url: "./article/20260223_morinavi-dev-log/morinavi-dev-log.html"

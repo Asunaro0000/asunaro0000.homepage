@@ -38,3 +38,6 @@ logs:
   - title: "AIチャット「ウサ子」誕生。情緒と物語を調律する新システム"
     summary: "ウサ子のAIチャットの機能、設計思想と制御方法について解説しています。"
     url: "./article/20260216_usako-chat/usako-chat.html"
+  - title: "【開発記】121マスの座標が「思い出」に変わる――仮想オープンワールドチャット「森ナビ」の設計思想"
+    summary: "リス子チャットの森ナビ機能についての操作と設計思想、実装の仕組みの話です。"
+    url: "./article/20260223_morinavi-dev-log/morinavi-dev-log.html"
