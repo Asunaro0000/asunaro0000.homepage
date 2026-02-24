@@ -1,7 +1,7 @@
 /**
  * 設定エリア
  */
-const GAS_URL = "https://script.google.com/macros/s/AKfycbzwGay6kQ9tpK1I5fdizjCJymiNb1utrZrm_Xdi9uPfGUkFa43Kj4lForfdnlyuCLWiLw/exec";
+const GAS_URL = "https://script.google.com/macros/s/AKfycbyo2S5ywIae6wC0NXUjQHfR0wBSnCyn-sFHitUoupx_PLlndBLk6fhYAGA3SsahS6dXHQ/exec";
 let currentLang = 'ja'; // 現在の言語状態を保持
 
 /**
@@ -19,6 +19,20 @@ const GUIDE_LINKS = {
     { name: "✨ Patreon", url: "https://www.patreon.com/Asunaro0000" }
   ]
 };
+/**
+ * ユーザーID（セーブデータ鍵）の確定ロジック
+ * localStorageを使用して、ブラウザを閉じても同じIDを保持するおぉ！
+ */
+function getPersistentUserId() {
+    let id = localStorage.getItem('usako_user_id');
+    if (!id) {
+        id = "u_" + Math.random().toString(36).substring(2, 10);
+        localStorage.setItem('usako_user_id', id);
+    }
+    return id;
+}
+
+const MY_USER_ID = getPersistentUserId();
 
 const IS_DEBUG = true; 
 
@@ -141,7 +155,11 @@ async function loadEpisodeList(lang) {
     try {
         const res = await fetch(GAS_URL, {
             method: "POST",
-            body: JSON.stringify({ type: "get_list", lang: lang })
+            body: JSON.stringify({ 
+                type: "get_list", 
+                userId: MY_USER_ID, // ← 追加
+                lang: lang 
+            })
         });
         const data = await res.json();
         const select = document.getElementById('episode-list');
@@ -186,10 +204,14 @@ async function send() {
     chat.appendChild(loadingDiv);
     container.scrollTop = container.scrollHeight;
 
-    try {
+try {
         const res = await fetch(GAS_URL, {
             method: "POST",
-            body: JSON.stringify({ message: text, lang: currentLang }) 
+            body: JSON.stringify({ 
+                userId: MY_USER_ID, // ← ここにIDを追加！これでGAS側のハッシュ構造と紐付くよぉ！
+                message: text, 
+                lang: currentLang 
+            }) 
         });
 
         const data = await res.json();
