@@ -1,39 +1,50 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Process | Asunaro Works</title>
 
-  
-<!-- pinterest -->
-<meta name="p:domain_verify" content="d57a228b61f6ea3435efa630b2165165"/>
+  <meta name="p:domain_verify" content="d57a228b61f6ea3435efa630b2165165"/>
 
-
-　<!-- アイコン -->
   <link rel="icon" href="https://asunaro0000.github.io/asunaro0000.homepage/favicon.png" type="image/png">
   <link rel="icon" href="https://asunaro0000.github.io/asunaro0000.homepage/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* グループ見出しのスタイルのみ追加（依存関係に影響なし） */
+    .group-heading {
+      width: 100%;
+      margin: 2.5rem 0 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #5de6ff;
+      color: #5de6ff;
+      font-size: 1.6rem;
+      grid-column: 1 / -1;
+    }
+    #logs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+  </style>
   <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
   <script src="https://asunaro0000.github.io/asunaro0000.homepage/js/extensions/google-tag.js" defer></script>
 </head>
 <body>
 
-
   <header class="nav">
     <a class="brand" href="../">Asunaro Works</a>
-    <a class="go-up" href="../" title="一つ上の階へ">⏶</a>
+    <a class="go-up" href="../" title="Go Up">⏶</a>
     <nav>
       <a href="../gallery/">Gallery</a>
       <a href="../about/">About/Contact</a>
       <a href="../process/">Tech Blog</a>
-      <!-- <a href="../contact/">Contact</a> -->
       <a href="../link/">Link</a>
       <a href="../sitemap/">Sitemap</a>
       <a href="../goods/">Goods</a>
       <a href="https://www.patreon.com/Asunaro0000">Patreon</a>
-      <a href="../en/">🌐 EN</a>
+      <a href="../">🌐 JP</a>
     </nav>
   </header>
 
@@ -46,7 +57,7 @@
       https://note.com/lovely_rhino8940
     </a>
 
-    <div id="logs" class="cards"></div>
+    <div id="logs"></div>
   </main>
 
   <footer>© 2025 Asunaro Works. All rights reserved.</footer>
@@ -57,14 +68,34 @@
       const data = await loadYAML('process.yaml');
       const wrap = document.getElementById('logs');
       if (!data?.logs) return;
-      wrap.innerHTML = data.logs.map(l => `
-        <article class="card">
-          <div class="body">
-            <h3>${l.title}</h3>
-            <p>${l.summary || ''}</p>
-            ${l.url ? `<p><a class="btn" href="${l.url}" target="_blank" rel="noopener">Read →</a></p>` : ''}
-          </div>
-        </article>`).join('');
+
+      // 英語版グループ定義（シンプルかつ分かりやすい表現）
+      const groupDefinitions = {
+        comfyui: "ComfyUI: Practical Workflows and Node Control",
+        editing: "Image Editing: Manual Refinement to Perfect AI Art",
+        chat:    "AI Interaction: Immersive Storytelling Experiences",
+        others:  "Creative Philosophy: Thoughts on Art and Design"
+      };
+
+      let finalHtml = '';
+
+      for (const [key, heading] of Object.entries(groupDefinitions)) {
+        const filteredLogs = data.logs.filter(l => l.category === key);
+        
+        if (filteredLogs.length > 0) {
+          finalHtml += `<h2 class="group-heading">${heading}</h2>`;
+          finalHtml += filteredLogs.map(l => `
+            <article class="card">
+              <div class="body">
+                <h3>${l.title_en || l.title}</h3>
+                <p>${l.summary_en || l.summary || ''}</p>
+                ${l.url ? `<p><a class="btn" href="${l.url}" target="_blank" rel="noopener">Read More →</a></p>` : ''}
+              </div>
+            </article>`).join('');
+        }
+      }
+
+      wrap.innerHTML = finalHtml;
     })();
   </script>
   <script type="module" src="../js/extensions/nav-toggle.js"></script>

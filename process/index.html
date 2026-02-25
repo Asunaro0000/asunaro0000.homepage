@@ -5,20 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Process | Asunaro Works</title>
 
+  <meta name="p:domain_verify" content="d57a228b61f6ea3435efa630b2165165"/>
 
-<!-- pinterest -->
-<meta name="p:domain_verify" content="d57a228b61f6ea3435efa630b2165165"/>
-
-  　<!-- アイコン -->
   <link rel="icon" href="https://asunaro0000.github.io/asunaro0000.homepage/favicon.png" type="image/png">
   <link rel="icon" href="https://asunaro0000.github.io/asunaro0000.homepage/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* グループ化用のスタイル調整 */
+    .group-heading {
+      width: 100%;
+      margin: 2.5rem 0 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #5de6ff;
+      color: #5de6ff;
+      font-size: 1.6rem;
+      grid-column: 1 / -1; /* グリッド内で横いっぱいに広げる */
+    }
+    #logs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+  </style>
   <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
   <script src="https://asunaro0000.github.io/asunaro0000.homepage/js/extensions/google-tag.js" defer></script>
 </head>
 <body>
-
 
   <header class="nav">
     <a class="brand" href="../">Asunaro Works</a>
@@ -27,7 +40,6 @@
       <a href="../gallery/">Gallery</a>
       <a href="../about/">About/Contact</a>
       <a href="../process/">制作技術blog</a>
-      <!-- <a href="../contact/">Contact</a> -->
       <a href="../link/">Link</a>
       <a href="../sitemap/">Sitemap</a>
       <a href="../goods/">Goods</a>
@@ -44,7 +56,7 @@
       https://note.com/lovely_rhino8940
     </a>
 
-    <div id="logs" class="cards"></div>
+    <div id="logs"></div>
   </main>
 
   <footer>© 2025 Asunaro Works. All rights reserved.</footer>
@@ -55,14 +67,36 @@
       const data = await loadYAML('process.yaml');
       const wrap = document.getElementById('logs');
       if (!data?.logs) return;
-      wrap.innerHTML = data.logs.map(l => `
-        <article class="card">
-          <div class="body">
-            <h3>${l.title}</h3>
-            <p>${l.summary || ''}</p>
-            ${l.url ? `<p><a class="btn" href="${l.url}" target="_blank" rel="noopener">Read →</a></p>` : ''}
-          </div>
-        </article>`).join('');
+
+      // カテゴリーの定義と表示順序、およびSEOを意識した見出し
+const groupDefinitions = {
+        comfyui: "ComfyUI：実践的ワークフロー構築と制御について",
+        editing: "画像編集：AIを補完する手描き・修正術",
+        chat:    "AI対話：物語を動かすチャット体験",
+        others:  "創作の思考：作品づくりの考え方"
+      };
+
+      let finalHtml = '';
+
+      // カテゴリーごとにループしてHTMLを生成
+      for (const [key, heading] of Object.entries(groupDefinitions)) {
+        const filteredLogs = data.logs.filter(l => l.category === key);
+        
+        // 該当する記事がある場合のみ見出しとカードを表示
+        if (filteredLogs.length > 0) {
+          finalHtml += `<h2 class="group-heading">${heading}</h2>`;
+          finalHtml += filteredLogs.map(l => `
+            <article class="card">
+              <div class="body">
+                <h3>${l.title}</h3>
+                <p>${l.summary || ''}</p>
+                ${l.url ? `<p><a class="btn" href="${l.url}" target="_blank" rel="noopener">Read →</a></p>` : ''}
+              </div>
+            </article>`).join('');
+        }
+      }
+
+      wrap.innerHTML = finalHtml;
     })();
   </script>
   <script type="module" src="../js/extensions/nav-toggle.js"></script>
