@@ -25,7 +25,7 @@
   
   <link rel="stylesheet" href="../../css/header.css">
   <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
   <script src="https://asunaro0000.github.io/asunaro0000.homepage/js/extensions/google-tag.js" defer></script>
@@ -56,12 +56,19 @@
 <div id="input-area">
   <button id="lang-toggle-btn" title="Language Switch">JP/EN</button>
 
+  <select id="mode-select">
+    <option value="story">💬 チャット</option>
+    <option value="dance">🪭演目</option>
+  </select>
+
   <select id="episode-list">
     <option value="">✨選ぶ</option>
   </select>
   <input type="text" id="msg" placeholder="ウサ子にお話しして..." autocomplete="off">
   <button id="send-btn">送信</button>
 </div>
+
+
 <div id="quick-btn-container"></div>
   <div id="guide-board">
     </div>
@@ -75,14 +82,15 @@
     <button id="expanded-send-btn" type="button">メッセージを送る</button>
   </div>
 </div>
-<!--    <div id="debug-log">
-    デバッグログ: まだ通信していません
-  </div>  -->
+<!--   <div id="dance-debug">演目デバッグ: 待機中...</div> -->
+<!--   <div id="debug-log">デバッグログ: 待機中...</div> -->
+    
 
   <div id="lightbox" onclick="this.style.display='none'">
     <img id="lightbox-img">
   </div>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/dance.js"></script>
 </body>
 </html>
