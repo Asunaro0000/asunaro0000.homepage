@@ -34,6 +34,10 @@ logs:
     category: "chat"
     summary: "リス子チャットの森ナビ機能についての操作と設計思想、実装の仕組みの話です。"
     url: "./article/20260223_morinavi-dev-log/morinavi-dev-log.html"
+  - title: "【アップデート】ウサ子チャット新機能「Plays Mode（演目モード）」追加のお知らせ"
+    category: "chat"
+    summary: "プロンプトを構造化し、起承転結の制御と情緒豊かな語りを両立させた物語エンジンの実装の話です。"
+    url: "./article/20260226_usako_update_20260226_plays/Usako_Update_20260226_plays.html"
 
   # --- 画像編集 ---
   - title: "レタッチとインペイントの基本"

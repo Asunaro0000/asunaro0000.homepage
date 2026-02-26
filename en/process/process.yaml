@@ -48,6 +48,10 @@ logs:
     category: "chat"
     summary: "An explanation of the operation, design philosophy, and implementation structure of the Mori Navi feature in the Risuko Chat."
     url: "./article/20260223_morinavi-dev-log/morinavi-dev-log.html"
+  - title: "[Update] Usako Chat Adds New Feature 'Plays Mode'"
+    category: "chat"
+    summary: "An overview of implementing a story engine that structures prompts while achieving both narrative control (introduction, development, twist, conclusion) and emotionally rich storytelling."
+    url: "./article/20260226_usako_update_20260226_plays/Usako_Update_20260226_plays.html"
 
   # --- Creative Philosophy: Thoughts on Art and Design ---
   - title: "How I Create Storyboards"
