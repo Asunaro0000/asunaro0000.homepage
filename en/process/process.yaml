@@ -20,6 +20,10 @@ logs:
     category: "comfyui"
     summary: "Based on experience, this article explains which types of models are effective to merge and why."
     url: "./article/20260215_Model_Merge_20_Rule/Model_Merge_20_Rule.html"
+  - title: "Mass-Produce Scene Prompts! Generate Stable AI Outputs with the CSV Header Method"
+    category: "comfyui"
+    summary: "A method for generating large volumes of scene prompts with AI. Extremely useful for automation workflows."
+    url: "./article/20260227_csv-prompt-gen.html/csv-prompt-gen.html"
 
   # --- Image Editing: Manual Refinement to Perfect AI Art ---
   - title: "Basics of Retouching and Inpainting"

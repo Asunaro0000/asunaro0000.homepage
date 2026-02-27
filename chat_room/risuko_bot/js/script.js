@@ -169,27 +169,39 @@ function sendRandomStoryFromList(lang) {
 /**
  * エピソードリストをGASから取得
  */
+/**
+ * エピソードリストを取得してセレクトボックスを更新するおぉ！
+ */
 async function loadEpisodeList(lang) {
+    const episodeSelect = document.getElementById('episode-list');
+    if (!episodeSelect) return;
+
+    // --- 修正箇所：まず「読み込み中...」にするお ---
+    episodeSelect.innerHTML = `<option value="">${lang === 'en' ? '⌛ Loading...' : '⌛ 読み込み中...'}</option>`;
+
     try {
-        const res = await fetch(GAS_URL, {
+        const response = await fetch(GAS_URL, {
             method: "POST",
             body: JSON.stringify({ type: "get_list", lang: lang })
         });
-        const data = await res.json();
-        const select = document.getElementById('episode-list');
-        
-        // 「✨選ぶ」だけ残してクリア
-        while (select.options.length > 1) select.remove(1);
+        const data = await response.json();
 
-        data.episodes.forEach(ep => {
-            const opt = document.createElement('option');
-            opt.value = ep;
-            opt.textContent = ep;
-            select.appendChild(opt);
-        });
-    } catch (e) { console.error("List load error", e); }
+        // 読み込みが終わったら中身をクリアして作り直すお！
+        episodeSelect.innerHTML = `<option value="">${lang === 'en' ? '✨ Choose an Episode' : '✨ エピソードを選ぶ'}</option>`;
+
+        if (data.episodes && data.episodes.length > 0) {
+            data.episodes.forEach(ep => {
+                const opt = document.createElement('option');
+                opt.value = ep;
+                opt.textContent = ep;
+                episodeSelect.appendChild(opt);
+            });
+        }
+    } catch (e) {
+        console.error("リスト取得エラーだおぉ:", e);
+        episodeSelect.innerHTML = `<option value="">${lang === 'en' ? '❌ Error' : '❌ 読み込み失敗'}</option>`;
+    }
 }
-
 /**
  * 送信処理
  */

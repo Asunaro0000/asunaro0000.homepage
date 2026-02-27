@@ -20,6 +20,10 @@ logs:
     category: "comfyui"
     summary: "どのようなモデルをマージすると効果的なの？というのを経験に基づいて書きました。"
     url: "./article/20260215_Model_Merge_20_Rule/Model_Merge_20_Rule.html"
+  - title: "シーンのプロンプトを量産！CSVヘッダー法でAIに安定したプロンプトを出力させる"
+    category: "comfyui"
+    summary: "AIに大量にシーン用のプロンプトを作らせる方法です。自動化する時に非常に便利です"
+    url: "./article/20260227_csv-prompt-gen.html/csv-prompt-gen.html"
 
   # --- チャット系 ---
   - title: "aiリス子とお喋り＆最新aiで動き続ける「自走するリスたちの森」の舞台裏"
