@@ -1,7 +1,7 @@
 /**
  * リス子ガイドゲーム専用ロジック (maze.js)
  */
-const MAZE_GAS_URL = "https://script.google.com/macros/s/AKfycby6K0DqTElScVeZBmHGEOibYJdqA5qSKU5OqSnDjvzdstS_dCnrhrkBmKQdc61wVSdZSw/exec";
+const MAZE_GAS_URL = "https://script.google.com/macros/s/AKfycbwhke9FBPyByy05ZXz7CuqiWDt5dbzYIpgJ1K9ltYyEpPXLKtgrfgIY15tZiW9vQcbS/exec";
 let isMazeMode = false;
 let currentX = 0;
 let currentY = 0;
@@ -23,7 +23,53 @@ function getPersistentUserId() {
 }
 
 const MY_USER_ID = getPersistentUserId();
+/**
+ * リス子ガイドシートから座標リストを取得してセレクトボックスを更新するおぉ！
+ */
+/**
+ * 森ナビ専用：座標リストを取得して「専用リスト」を更新するおぉ！
+ */
+async function updateMazeLocationList() {
+    // チャット用とは別の、森ナビ専用IDを指定するお！
+    const mazeList = document.getElementById('maze-location-list');
+    if (!mazeList) return;
 
+    mazeList.innerHTML = '<option value="">🗺️ 座標を読み込み中...</option>';
+
+    try {
+        const response = await fetch(MAZE_GAS_URL, {
+            method: "POST",
+            body: JSON.stringify({ type: "getMapList" }) 
+        });
+        const locations = await response.json();
+
+        mazeList.innerHTML = '<option value="">📍 目的地を選ぶおぉ</option>';
+        
+        locations.forEach(loc => {
+            const option = document.createElement('option');
+            // 座標をvalueに入れて、表示名をinnerTextにするお！
+            option.value = `${loc.x},${loc.y}`;
+            option.innerText = `${loc.display || ""} ${loc.name}`;
+            mazeList.appendChild(option);
+        });
+
+        // 専用リスト側の選択イベント
+        mazeList.onchange = (e) => {
+            if (!e.target.value) return;
+            const [nx, ny] = e.target.value.split(',').map(Number);
+            currentX = nx;
+            currentY = ny;
+            
+            // 言語設定があるか確認して送信！
+            const isEn = (typeof currentLang !== 'undefined' && currentLang === 'en');
+            executeMazeSend("ここに行きたいおぉ！", currentX, currentY, isEn);
+        };
+
+    } catch (e) {
+        console.error("座標リストの取得失敗:", e);
+        mazeList.innerHTML = '<option value="">❌ 読み込み失敗</option>';
+    }
+}
 
 
 // --- GASへ送る関数（アルバム形式のJSON送信） ---
@@ -245,4 +291,30 @@ try {
         // 通信が終わったら、その言語とモードに合わせたボタン（方向キー）を出す
         renderMazeButtons(qContainer, isEn);
     }
+}
+/**
+ * モード切替を監視して、mazeモードならボタンを強制的に書き換えるお！
+ */
+function observeModeAndRenderButtons() {
+    const modeSelect = document.getElementById('mode-select');
+    if (!modeSelect) return;
+
+    // 1. 最初の一回実行（リロード対策）
+    if (modeSelect.value === 'maze') {
+        renderQuickButtons(typeof currentLang !== 'undefined' ? currentLang : 'ja');
+    }
+
+    // 2. モード選択が変わるのを監視
+    modeSelect.addEventListener('change', () => {
+        const lang = typeof currentLang !== 'undefined' ? currentLang : 'ja';
+        // モードが変わった直後にボタンを再描画するお！
+        renderQuickButtons(lang);
+    });
+}
+
+// ページ読み込み時に監視を開始！
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', observeModeAndRenderButtons);
+} else {
+    observeModeAndRenderButtons();
 }

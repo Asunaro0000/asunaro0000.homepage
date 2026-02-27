@@ -125,7 +125,7 @@ footer-area {
 }
 
 /* 1段目：3つのパーツを横幅いっぱいに3等分して並べる */
-#lang-toggle-btn, #mode-select, #episode-list {
+#lang-toggle-btn, #mode-select, #episode-list, #maze-location-list{
     flex: 1 1 30%; /* 3つで幅を均等に分け、合計約90%以上にして次を押し出す */
     min-width: 0;
     padding: 8px 5px;
@@ -309,4 +309,8 @@ input {
         background: #ffcc80;
         transform: translateY(-0.5px);
     }
+}
+/* 普段は隠しておくためのクラスだお */
+.hidden {
+    display: none !important;
 }

@@ -45,23 +45,46 @@ window.addEventListener('DOMContentLoaded', () => {
     // script.js 内の初期化処理 (DOMContentLoaded内) を書き換え
     const modeSelect = document.getElementById('mode-select');
     if (modeSelect) {
+        // script.js のモード切替部分
         modeSelect.addEventListener('change', () => {
-            const isEn = (currentLang === 'en');
-            
-            // 1. まずUI全体を現在の言語に合わせる
-            applyLanguage(currentLang);
+            const episodeList = document.getElementById('episode-list');
+            const mazeList = document.getElementById('maze-location-list');
 
-            // 2. モードが「リス子の森ナビ」なら、即座に開始メッセージを投げる
             if (modeSelect.value === 'maze') {
-                // executeMazeSend を直接叩く（初期座標0,0）
-                executeMazeSend(isEn ? "Let's start exploration!" : "探検スタートだよぉ！", 0, 0, isEn);
+                // 森ナビモード：チャットを隠してナビを出す
+                episodeList.classList.add('hidden');
+                mazeList.classList.remove('hidden');
+                
+                // リストの読み込みだけはJSで実行するお！
+                updateMazeLocationList(); 
             } else {
-                // チャットに戻った場合はフラグを寝かせる
+                // チャットモード：ナビを隠してチャットを出す
+                episodeList.classList.remove('hidden');
+                mazeList.classList.add('hidden');
                 isMazeMode = false;
             }
         });
     }
+// --- script.js の DOMContentLoaded 内に追加するおぉ！ ---
 
+const episodeSelect = document.getElementById('episode-list');
+if (episodeSelect) {
+    episodeSelect.addEventListener('change', () => {
+        const selectedValue = episodeSelect.value;
+        if (!selectedValue) return; // 「✨選ぶ」に戻した時は何もしないお
+
+        // 言語に合わせてメッセージを作るお
+        const message = (currentLang === 'en') 
+            ? `Tell me the story of "${selectedValue}"` 
+            : `${selectedValue}の話を聞かせて`;
+
+        // クイック送信！
+        quickSend(message);
+        
+        // 送信した後はセレクトボックスを「✨選ぶ」に戻しておくと親切だお
+        episodeSelect.selectedIndex = 0;
+    });
+}
     // 5. 初回の表示適用
     applyLanguage(currentLang);
 });
