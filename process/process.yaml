@@ -42,6 +42,10 @@ logs:
     category: "chat"
     summary: "プロンプトを構造化し、起承転結の制御と情緒豊かな語りを両立させた物語エンジンの実装の話です。"
     url: "./article/20260226_usako_update_20260226_plays/Usako_Update_20260226_plays.html"
+  - title: "【制作ログ】画像IDから物語を自動生成？121マスのマップを「生きた世界」に変えるシナリオエンジンの挑戦"
+    category: "chat"
+    summary: "自作ブラウザからGeminiを使ってストーリーボード画像と物語を自動選別、生成するアプリの開発話です。"
+    url: "./article/20260301_ScenarioEngine_Log.html/ScenarioEngine_Log.html"
 
   # --- 画像編集 ---
   - title: "レタッチとインペイントの基本"

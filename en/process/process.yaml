@@ -56,6 +56,10 @@ logs:
     category: "chat"
     summary: "An overview of implementing a story engine that structures prompts while achieving both narrative control (introduction, development, twist, conclusion) and emotionally rich storytelling."
     url: "./article/20260226_usako_update_20260226_plays/Usako_Update_20260226_plays.html"
+  - title: "Production Log From Image IDs to Automatically Generated Stories Transforming a 121 Tile Map into a Living World with a Scenario Engine"
+    category: "chat"
+    summary: "This article discusses the development of an application that uses Gemini through a custom built browser to automatically select and generate storyboard images and narrative content."
+    url: "./article/20260301_ScenarioEngine_Log.html/ScenarioEngine_Log.html"
 
   # --- Creative Philosophy: Thoughts on Art and Design ---
   - title: "How I Create Storyboards"
