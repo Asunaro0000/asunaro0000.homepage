@@ -1,0 +1,70 @@
+{
+  "scenarios": [
+    {
+      "id": "E001-1",
+      "title": {
+        "ja": "ピザの関税局",
+        "en": "The Pizza Customs Office"
+      },
+      "steps": {
+        "序": {
+          "bgImage": "https://drive.google.com/file/d/16iubkAWadHq6zKidsl4EbcJk5QG1EARg/view?usp=drive_link",
+          "dialogue": [
+            {
+              "ch": { "ja": "リス子", "en": "Risuko" },
+              "msg": {
+                "ja": "スズ子、あそこにいるカラスさんは『ピザの関税局』の職員だよぉ。リス子のピザが輸入制限に引っかからないか、鋭いクチバシでチェックしてるんだねぇ。まさに『空飛ぶ検疫所』だよぉ",
+                "en": "Suzuko, look! That crow over there is an officer from the 'Pizza Customs Office'. He's checking if my pizza is stuck at import restrictions with his sharp beak! It's literally a flying quarantine! 🐿️"
+              }
+            },
+            {
+              "ch": { "ja": "スズ子", "en": "Suzuko" },
+              "msg": {
+                "ja": "リス子ちゃん、それはただの『つまみ食い志望』なカラスさんだよぉー。難しい名前をつけても、ピザをあげる口実にはならないんだからっ。お耳がぴょこんって呆れてるよぉ",
+                "en": "Risuko-chan, that's just a crow who wants a free snack! Giving it a fancy name won't make it a valid excuse to give him our pizza! My ears are twitching with disbelief! 🐰"
+              }
+            }
+          ]
+        },
+        "破": {
+          "bgImage": "https://drive.google.com/file/d/10Niwfxt941zBhPkY3gU-FWq94HvDv_4I/view?usp=drive_link",
+          "dialogue": [
+            {
+              "ch": { "ja": "リス子", "en": "Risuko" },
+              "msg": {
+                "ja": "わわわっ！チーズがこんなに伸びるなんて、これはカラスさんへの『贈賄（ぞうわい）』の証拠だねぇ！夕焼けをバックにピザの平和的譲渡……まさに『雪上のピザ・サミット』だよぉ。カラスさんも『条件を飲もう』って鳴いてるねぇ",
+                "en": "Whoa! Look at that cheese stretch! This must be evidence of 'bribery' for the crow! A peaceful transfer of pizza against the sunset... it's like a 'Pizza Summit on the Snow'. Even the crow is cawing 'I accept your terms'! 🍕"
+              }
+            },
+            {
+              "ch": { "ja": "スズ子", "en": "Suzuko" },
+              "msg": {
+                "ja": "ため息がふわぁ……。段ボールをテーブルにするのはいいけど、そんなにチーズを伸ばして見せつけないでぇー！それは駆け引きじゃなくて、ただの『飯テロ』だよぉー！",
+                "en": "*Sigh*... Using a cardboard box as a table is fine, but stop teasing me with that stretching cheese! That's not a negotiation, it's just pure 'food torture'! 🧀"
+              }
+            }
+          ]
+        },
+        "急": {
+          "bgImage": "https://drive.google.com/file/d/1Cz7OgcV8vnU28_VRchIa3aEtj1zAR8yY/view?usp=drive_link",
+          "dialogue": [
+            {
+              "ch": { "ja": "リス子", "en": "Risuko" },
+              "msg": {
+                "ja": "ふぅ、最終的にカラスさんとは『平和維持活動』として、ピザのミミの端っこで妥協案が成立したよぉ。黄昏時の屋上、一切れのピザ……。まさに『リスとカラスの終戦協定』だねぇ。もぐもぐ、しっぽも和解のふわふわだよぉ",
+                "en": "Phew! We finally reached a compromise with the crow as a 'peacekeeping operation'—he gets the edge of the pizza crust. A slice of pizza on the rooftop at twilight... It's the 'Peace Treaty of Squirrel and Crow'. *Munch munch*, my tail is fluffy with reconciliation! 🐿️✨"
+              }
+            },
+            {
+              "ch": { "ja": "スズ子", "en": "Suzuko" },
+              "msg": {
+                "ja": "鼻をひくひく……結局、リス子ちゃんがカラスさんの可愛さに負けちゃったんだねぇ。でも、街の灯りが綺麗だから、この残りのピザを食べてる間だけは、わたしたちも『休戦』にしよっか",
+                "en": "*Sniff sniff*... In the end, you just gave in to the crow's cuteness, Risuko-chan. But since the city lights are so pretty, let's call a 'truce' ourselves while we finish the rest of this pizza. 🌃"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
