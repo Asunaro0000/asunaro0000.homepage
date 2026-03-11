@@ -26,6 +26,13 @@ const slides = [
     caption: "リス子とスズ子の会話が記憶された部屋。１～２時間ごとにつぶやいてます。"
   },
   {
+    src: "./thumbnail/kv05.webp",
+    thumb: "./thumbnail/kv05.webp",
+    href: "./risuko_manga/index.html",
+    title: "森の漫画喫茶",
+    caption: "大好きな漫画と森の空気。リス子とスズ子の、とっておきの休息時間をお届けするよっ📚🌳"
+  },
+  {
     src: "./thumbnail/kv04.webp",
     thumb: "./thumbnail/kv04.webp",
     href: "./risuko_X/index.html",

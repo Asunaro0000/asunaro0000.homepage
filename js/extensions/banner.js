@@ -10,6 +10,12 @@
   // ★ ここを差し替えれば内容を自由に増減できる
   const banners = [
     {
+      src: "./assets/banner/risuko_manga.webp",
+      caption: "リス子とスズ子の、とっておきの休息時間をお届けするよっ",
+      href: "./gallery/Risko/risuko_manga/index.html",
+      btnLabel: "▶ X投稿まとめ「森の漫画喫茶」へ"
+    }, 
+    {
       src: "./assets/banner/banner11.webp",
       caption: "Xの日々のつぶやきをまとめています。",
       href: "./gallery/Risko/risuko_X/index.html",
