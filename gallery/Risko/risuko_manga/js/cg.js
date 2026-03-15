@@ -30,7 +30,21 @@ const items = [
   { "src": "./images/1-009.webp", "title": "究極のキノコ出汁とお茶会マジック", "tags": ["日常"], "caption": "" },
   { "src": "./images/1-010.webp", "title": "終わらないお弁当タイムと渓流の誘惑", "tags": ["幻想的"], "caption": "" },
   { "src": "./images/1-011.webp", "title": "真夜中のピクニックと星屑のデザート", "tags": ["冒険"], "caption": "" },
- 
+  { "src": "./images/1-012.webp", "title": "カエルとお宝と逃走劇", "tags": ["冒険", "探索"], "caption": "" },
+  { "src": "./images/1-013.webp", "title": "白銀のフルコースと幻の魚を求めて", "tags": ["グルメ", "冬"], "caption": "" },
+  { "src": "./images/1-014.webp", "title": "クッキーの隠し味と幻の粉もの", "tags": ["グルメ", "日常"], "caption": "" },
+  { "src": "./images/1-015.webp", "title": "スズ子のための伝説の食材を追え", "tags": ["冒険"], "caption": "" },
+  { "src": "./images/1-016.webp", "title": "ベーグルと激流川下り", "tags": ["冒険", "グルメ"], "caption": "" },
+  { "src": "./images/1-017.webp", "title": "遺跡のハトと幻の川魚定食", "tags": ["探索", "グルメ"], "caption": "" },
+  { "src": "./images/1-018.webp", "title": "黄金のどんぐりと強欲なリス", "tags": ["冒険", "森"], "caption": "" },
+  { "src": "./images/1-019.webp", "title": "果てしなき一攫千金ドリーム", "tags": ["冒険"], "caption": "" },
+  { "src": "./images/1-020.webp", "title": "究極のどんぐりクッキー材料探求の旅", "tags": ["グルメ", "森"], "caption": "" },
+  { "src": "./images/1-021.webp", "title": "究極の読書スペースを探して", "tags": ["日常"], "caption": "" },
+  { "src": "./images/1-022.webp", "title": "空飛ぶサンドイッチと究極の香辛料", "tags": ["グルメ", "ファンタジー"], "caption": "" },
+  { "src": "./images/1-023.webp", "title": "幻のアイスキャンディー錬成陣", "tags": ["グルメ"], "caption": "" },
+  { "src": "./images/1-024.webp", "title": "幻のふかふかサンドイッチ具材ツアー", "tags": ["グルメ"], "caption": "" },
+  { "src": "./images/1-025.webp", "title": "至高のポップコーン特等席", "tags": ["日常", "グルメ"], "caption": "" },
+  { "src": "./images/1-026.webp", "title": "森の奥の謎ディナーコース", "tags": ["グルメ", "探索"], "caption": "" }
 ];
 const gallery = $("#cardGallery");
 const filterContainer = $("#filterButtons");

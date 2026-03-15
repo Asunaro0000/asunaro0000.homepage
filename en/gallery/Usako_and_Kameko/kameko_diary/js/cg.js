@@ -13,7 +13,7 @@ const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
 // 画像ごとに個別キャプションを設定
 
 const items = [
-  /* { 
+   { 
     src: `${base}/images/185.webp`, 
     title: 'Brush of Dappled Light', 
     tags: ['Afternoon', 'Study', 'Writing Tools', 'Writing & Recording'],
@@ -222,7 +222,7 @@ const items = [
     title: 'Gift of Steam', 
     tags: ['Afternoon', 'Veranda', 'Steamer', 'Daily Life'], 
     caption: 'Feeling the breeze from the bamboo grove. Delivering freshly steamed warmth to a loved one.' 
-  }, */
+  }, 
   { 
     src: `${base}/images/150.webp`, 
     title: 'Reflections on the Desk', 
