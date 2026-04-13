@@ -1477,7 +1477,366 @@ The scent of spring is everywhere,
 making my tail and my heart puff up with fluffiness.
 #StrawberryPicking #ArrivalOfSpring`
   },
-  
+
+{ src: `${base}/images/2-163.webp`, title: 'Forest Concert', tags: ['Concert', 'Conductor', 'Risuko'],
+    caption:
+`#163
+It’s Risuko! 🐿️️
+The forest concert is about to begin! The conductor is this little one on my lap.
+They wag their tail like a baton in time with my performance.
+#ForestConcert #ConductorSquirrel`
+ },
+ { src: `${base}/images/2-164.webp`, title: 'Four-Leaf Clover', tags: ['Four-Leaf Clover', 'Trivia', 'Risuko'],
+    caption:
+`#164
+It’s Risuko! 🐿️
+Did you know the four leaves of a clover stand for
+"Cookies, Detours, Naps, and Refills"? 🍀
+With this, Risuko’s life is guaranteed to be super happy!
+#FourLeafClover #RisukosTrivia`
+ },
+ { src: `${base}/images/2-165.webp`, title: 'Forest Attraction', tags: ['Bluebird', 'Sky', 'Risuko'],
+    caption:
+`#165
+It’s Risuko! 🐿️
+I wanted to fly through the sky with the bluebirds, so I pedaled as hard as I could!
+I’m almost reaching them... Risuko is becoming a bird!
+#ForestAttraction #FlyRisuko`
+ },
+ { src: `${base}/images/2-166.webp`, title: 'Puppy Hat', tags: ['Puppy', 'Fluffy Outfit', 'Risuko'],
+    caption:
+`#166
+It’s Risuko! 🐿
+I put a little puppy on my head to make a "Puppy Hat"!
+It’s like fluffy earmuffs and it's so warm.
+The puppy doesn't seem to mind it either!
+#FluffyOutfit #ForestFashion`
+ },
+ { src: `${base}/images/2-167.webp`, title: 'Snack Time Clock Tower', tags: ['Clock Tower', 'Tea Time', 'Risuko'],
+    caption:
+`#167
+It’s Risuko! 🐿️
+I heard this clock tower only moves to let everyone in town know it's snack time!
+It’s the best partner I could ask for. Come on, it's tea time!
+#SnackChime #StomachCountdown`
+ },
+ { src: `${base}/images/2-168.webp`, title: 'Finding the Greedy Culprit', tags: ['Cookie', 'Chipmunk', 'Risuko'],
+    caption:
+`#168
+It’s Risuko! 🐿️
+Oh? One of the cookies I lined up is missing...
+Hey, little chipmunk who was just there,
+why is there sweet crumbs around your mouth?
+#GreedyEater #SharingInTheEnd`
+ },
+ { src: `${base}/images/2-169.webp`, title: 'I Love Corn', tags: ['Corn', 'Autumn', 'Risuko'],
+    caption:
+`#169
+It’s Risuko! 🐿️
+Should I boil this corn in halves? Or maybe roast it...
+Smearing it with butter and taking a big crunchy bite would be pure bliss! 🍂
+#SavoryIsTheBest #LoveCorn`
+ },
+ { src: `${base}/images/2-170.webp`, title: 'Forest Adventure', tags: ['Owl', 'Friends', 'Risuko'],
+    caption:
+`#170
+It’s Risuko! 🐿️
+A tiny friend at my feet is working hard to tell me something.
+Adventure preparations are complete! I’m heading out with Mr. Owl to find a delicious spring!
+#ForestFriends #AdventureJourney`
+ },
+ { src: `${base}/images/2-171.webp`, title: 'Rapids Rafting', tags: ['Bagel', 'River Rafting', 'Risuko'],
+    caption:
+`#171
+It’s Risuko! 🐿️
+I’m using all my squirrel reflexes to make sure I don't drop my bagel in the rapids!
+A supreme snack time is waiting for me at the end of this river!
+#RapidsRafting #BagelLove`
+ },
+ { src: `${base}/images/2-172.webp`, title: 'Secret Picnic', tags: ['Cave Exploration', 'Snacks', 'Risuko'],
+    caption:
+`#172
+It’s Risuko! 🐿️
+The true purpose of exploring this cave is to find a spot for a secret picnic!
+Snacks eaten in a place no one else knows must taste like the best in the world!
+#ExplorationAmbition #SecretPicnic`
+ },
+ { src: `${base}/images/2-173.webp`, title: 'Fried Egg Power', tags: ['Breakfast', 'Fried Egg', 'Risuko'],
+    caption:
+`#173
+It’s Risuko! 🐿️
+Eating a fried egg to give my tail some yellow nutrition!
+Now my tail is fluffy and I’m ready for today's adventure!
+The forest chipmunks are cheering me on, too!
+#MunchingAdventure #FriedEggPower`
+ },
+ { src: `${base}/images/2-174.webp`, title: 'Night Sky Stalls', tags: ['Festival', 'Late Night Snack', 'Risuko'],
+    caption:
+`#174
+It’s Risuko! 🐿️
+On festival nights, I focus more on the smell of the food stalls than the glow of the lanterns! ✨
+This excitement makes my tail so fluffy I feel like I could fly to outer space!
+Heading out for the best night snack with plenty of detours!
+#NightSkyStalls #FluffyNight`
+ },
+ { src: `${base}/images/2-175.webp`, title: 'Painting the World', tags: ['Rainbow', 'Art', 'Risuko'],
+    caption:
+`#175
+It’s Risuko! 🐿️
+I tried painting a rainbow! The line between inside and outside the canvas has vanished...
+Next, I’ll paint a delicious "Acorn Rainbow" and surprise everyone! ✨
+#PaintingTheWorld #RisukosCanvasDiary`
+ },
+ { src: `${base}/images/2-176.webp`, title: 'Street Performer Debut', tags: ['Market', 'Street Performance', 'Risuko'],
+    caption:
+`#176
+It’s Risuko! 🐿️
+I’ve made my debut as a street performer!
+Payment in bread and nuts, please!
+Forgive me—I need the energy for practice! 🐿️💨
+#MarketScene #StreetPerformerDebut`
+ },
+ { src: `${base}/images/2-177.webp`, title: 'Playing Hero', tags: ['Baguette', 'Holy Sword', 'Risuko'],
+    caption:
+`#177
+It’s Risuko! 🐿️
+I have obtained the legendary holy sword, "Baguette"!
+Attack Power +10, Aroma +100! Now, off to the toaster!
+#FrenchBread #PlayingHero`
+ },
+ { src: `${base}/images/2-178.webp`, title: 'Forest Restaurant', tags: ['Stew', 'Magic', 'Risuko'],
+    caption:
+`#178
+It’s Risuko! 🐿️
+Welcome to the Forest Restaurant!
+Today's menu is "Magic Stew that turns you into a squirrel for 10 minutes."
+I’m not responsible if you grow a tail!
+#ForestRestaurant #MagicStew`
+ },
+ { src: `${base}/images/2-179.webp`, title: 'Board Game', tags: ['Competitive', 'Board Game', 'Risuko'],
+    caption:
+`#179
+It’s Risuko! 🐿️
+Umm, that last loss was just a "strategic withdrawal"!
+If I flip the board and start over, Risuko’s comeback victory is guaranteed!
+#BoardGame #Competitive`
+ },
+ { src: `${base}/images/2-180.webp`, title: 'Spring Pickled Plum', tags: ['Cherry Blossom', 'Spring', 'Risuko'],
+    caption:
+`#180
+It’s Risuko! 🐿️
+Oh, a cherry blossom petal drifted on the wind and landed right in the middle of my white rice.
+Is this a "Spring Pickled Plum" substitute?
+#CherryBlossomViewing #SignsOfSpring`
+ },
+ { src: `${base}/images/2-181.webp`, title: 'Winter Morning', tags: ['Snowy Mountain', 'Sunrise', 'Risuko'],
+    caption:
+`#181
+It’s Risuko! 🐿️
+The mountains are glowing gold because the sun is saying "Good morning."
+Snowy mountains are harsh, but they look so mystical in the morning light.
+#WinterMorning #SnowyMountain`
+ },
+ { src: `${base}/images/2-182.webp`, title: 'Summer Memories', tags: ['Say Ahh', 'Shaved Ice', 'Risuko'],
+    caption:
+`#182
+It’s Risuko! 🐿️
+The distance during a "say ahh" is so nerve-wracking.
+If I get 5mm closer, my nose might touch the cold ice!
+I’m carrying this delicious bite very carefully.
+#NotCrunchyButFluffy #SummerMemories`
+ },
+ { src: `${base}/images/2-183.webp`, title: 'Smile Ambassador Lost Dog', tags: ['Lost Dog', 'Healing', 'Risuko'],
+    caption:
+`#183
+It’s Risuko! 🐿️
+I’m looking after a lost puppy!
+But this little one doesn't seem anxious at all; instead, they're giving me the best smile.
+They’re not a lost dog anymore—they’re a "Smile Ambassador"!
+#LostDog #ForestHealing`
+ },
+ { src: `${base}/images/2-184.webp`, title: 'Forest Outdoor Meal', tags: ['Hot Pot', 'Marinated Egg', 'Risuko'],
+    caption:
+`#184
+It’s Risuko! 🐿️
+Acorns are good, but sometimes a hearty hot pot with meat and marinated eggs is the best!
+An outdoor meal in the forest warms my heart and my belly.
+#OutdoorDining #VerySatisfied`
+ },
+ { src: `${base}/images/2-185.webp`, title: 'Winter Etiquette', tags: ['Cat', 'Healing', 'Risuko'],
+    caption:
+`#185
+It’s Risuko! 🐿️
+Letting a kitty sleep on your lap is part of being an elegant lady.
+Staying still so I don't wake them up makes my heart feel calm and peaceful.
+#CatTime #WinterEtiquette`
+ },
+ { src: `${base}/images/2-186.webp`, title: 'A Little Friendship', tags: ['Apple', 'Present', 'Risuko'],
+    caption:
+`#186
+It’s Risuko! 🐿️
+Seeing them stretch their tiny body to give me an apple makes me want to give them my whole bag of acorns.
+A gift from a tiny friend in the forest!
+#Heartwarming #LittleFriendship`
+ },
+ { src: `${base}/images/2-187.webp`, title: 'Cat Lover’s Limit', tags: ['Cat', 'Heartwarming', 'Risuko'],
+    caption:
+`#187
+It’s Risuko! 🐿️
+You’re too close! The kitty’s nose is touching mine, and I’m about to sneeze!
+It’s cute, but I’m at my limit~!
+#CatLover #Heartwarming`
+ },
+ { src: `${base}/images/2-188.webp`, title: 'Snack Defense', tags: ['Owl', 'Walnut', 'Risuko'],
+    caption:
+`#188
+It’s Risuko! 🐿️
+For some reason, they’re charging right at the snack pouch on my waist! 🦅
+It’s just walnuts inside!? I’m not giving them to you!
+#WildOwl #SnackDefense`
+ },
+ { src: `${base}/images/2-189.webp`, title: 'Dawn of the Hungry', tags: ['Fantasy', 'Adventure', 'Risuko'],
+    caption:
+`#189
+It’s Risuko! 🐿️
+Beyond the ancient cobblestones, a snack I’ve never seen awaits...! ✨
+Risuko’s Adventure, Chapter One: "Dawn of the Hungry" begins!
+#AdventurePose #Fantasy`
+ },
+ { src: `${base}/images/2-190.webp`, title: 'Forest Hide and Seek', tags: ['Puppy', 'Play Meeting', 'Risuko'],
+    caption:
+`#190
+It’s Risuko! 🐿️
+Hey puppy, what should we play today?
+First, hide and seek in the forest... but wait,
+whenever I hide, I always get caught because I start eating a snack! 🤔
+#Puppy #PlayMeeting`
+ },
+ { src: `${base}/images/2-191.webp`, title: 'Peaceful Walnut Conference', tags: ['Pigeon', 'Symbol of Peace', 'Risuko'],
+    caption:
+`#191
+It’s Risuko! 🐿️
+Hello, Mr. Pigeon, the "Symbol of Peace"!
+If you’re a messenger of peace, you’ll share this walnut I’m holding
+in a "peaceful" way... right? Right?
+#Pigeon #Walnut`
+ },
+ { src: `${base}/images/2-192.webp`, title: 'Great View Observatory', tags: ['Observatory', 'Great View', 'Risuko'],
+    caption:
+`#192
+It’s Risuko! 🐿️
+The view from up high is truly beautiful!
+While looking through the telescope, I felt like I locked eyes with someone far away.
+I wonder if everyone was looking at me too?
+#GreatView #Observatory`
+ },
+ { src: `${base}/images/2-193.webp`, title: 'Forest Exploration', tags: ['Parrot', 'Map', 'Risuko'],
+    caption:
+`#193
+It’s Risuko! 🐿️
+The parrot keeps pointing at the map saying "Here!",
+but they peck it so much I’m afraid it’ll be full of holes!
+Find some snacks instead of treasure!
+#ForestExploration #Parrot`
+ },
+ { src: `${base}/images/2-194.webp`, title: 'Library Daily Life', tags: ['Owl', 'Librarian', 'Risuko'],
+    caption:
+`#194
+It’s Risuko! 🐿️
+This owl is actually the library’s librarian.
+My mission today is to turn the pages quietly
+so I don't wake up Suzuko, who is dozing off!
+#Owl #LibraryDailyLife`
+ },
+ { src: `${base}/base/images/2-195.webp`, title: 'Forest Taxi', tags: ['Frog', 'Rainy Walk', 'Risuko'],
+    caption:
+`#195
+It’s Risuko! 🐿️
+Does this frog think I’m a forest taxi?
+They won't get off my shoulder at all.
+We look like a matching exploration team—it's fun!
+#RainyWalk #Partner`
+ },
+ { src: `${base}/images/2-196.webp`, title: 'Snack Time Mischief', tags: ['Chocolate', 'Mischief', 'Risuko'],
+    caption:
+`#196
+It’s Risuko! 🐿️
+The moment Suzuko looked away from the kitchen, I took a bite!
+The thrill makes the chocolate taste even better.
+Suzuko’s surprised face is the best!
+#Mischief #SnackTime`
+ },
+ { src: `${base}/images/2-197.webp`, title: 'Special Curry', tags: ['Curry', 'Greedy Eater', 'Risuko'],
+    caption:
+`#197
+It’s Risuko! 🐿️
+Lunch today is special curry! The plate is bigger than my face,
+but Risuko’s stomach is infinite, so no problem!
+Eat up, everyone!
+#Curry #GreedyEater`
+ },
+ { src: `${base}/images/2-198.webp`, title: 'Friendship Comparison', tags: ['Friends', 'Squirrel', 'Risuko'],
+    caption:
+`#198
+It’s Risuko! 🐿️
+This squirrel and I are competing to see who's cuter!...
+But since Suzuko is watching with a smile, maybe we both win?
+It’s a draw!
+#Friends #SpringMemories`
+ },
+ { src: `${base}/images/2-199.webp`, title: 'Spring River Play', tags: ['Bamboo Grove', 'River Play', 'Risuko'],
+    caption:
+`#199
+It’s Risuko! 🐿️
+Heading to the bamboo grove to fix my post-hibernation lack of exercise!
+The river water was so cold it woke me up instantly.
+Spring weather is the best!
+#RiverPlay #SignsOfSpring`
+ },
+ { src: `${base}/images/3-200.webp`, title: 'Squirrel VIP Seat', tags: ['Lounge', 'Sunbathing', 'Risuko'],
+    caption:
+`#200
+It’s Risuko! 🐿️
+This branch is our best private lounge!
+Bathed in sunlight, our chat is really going to thrive today.
+#SquirrelVIPSeat #SpringAfternoon`
+ },
+ { src: `${base}/images/3-201.webp`, title: 'Secret of the Tail', tags: ['Walking', 'Tail', 'Risuko'],
+    caption:
+`#201
+It’s Risuko! 🐿️
+When I run up the stairs, my tail hits the steps making a "pon-pon" sound.
+It’s so funny it's becoming a habit!
+The rhythm of this sound is so much fun!
+#Walking #TailSecret`
+ },
+ { src: `${base}/images/3-202.webp`, title: 'Cherry Blossom Season', tags: ['Cherry Blossom', 'Takeout', 'Suzuko'],
+    caption:
+`#202
+It’s Suzuko! 🔔
+Filling my little basket with cherry blossom petals,
+I’m all ready to take spring home!
+I want to decorate my house and enjoy spring forever.
+#Suzuko #Takeout #CherryBlossomSeason`
+ },
+ { src: `${base}/images/3-203.webp`, title: 'Tail Sofa', tags: ['Sofa', 'Fluffy', 'Risuko'],
+    caption:
+`#203
+It’s Risuko! 🐿️
+When I sit on the sofa, my big tail ends up taking all the space.
+Half of it is a special seat just for my tail!
+It’s so fluffy it works as a cushion too.
+#TailSofa #Fluffy`
+ },
+ { src: `${base}/images/3-204.webp`, title: 'The Ultimate Choice', tags: ['Reading', 'Cat', 'Risuko'],
+    caption:
+`#204
+It’s Risuko! 🐿️
+Stuck in the ultimate choice: pet the kitty’s fur or the open book!
+Both are so healing, I never have enough time~!
+#ReadingTime #ForestKitty`
+ },
+
 ];
 
 const gallery = $("#cardGallery");
