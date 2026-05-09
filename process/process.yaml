@@ -24,6 +24,10 @@ logs:
     category: "comfyui"
     summary: "AIに大量にシーン用のプロンプトを作らせる方法です。自動化する時に非常に便利です"
     url: "./article/20260227_csv-prompt-gen.html/csv-prompt-gen.html"
+  - title: "AIインペイントと3D転写による高精細パノラママップ制作"
+    category: "comfyui"
+    summary: "AIインペイントと3D転写による高精細パノラママップ制作です。Unity6、Blender、ComfyUIを使用しています。"
+    url: "./article/20260509_panorama-map/panorama-map.html"
 
   # --- チャット系 ---
   - title: "aiリス子とお喋り＆最新aiで動き続ける「自走するリスたちの森」の舞台裏"

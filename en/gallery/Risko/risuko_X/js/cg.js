@@ -1836,6 +1836,249 @@ Stuck in the ultimate choice: pet the kitty’s fur or the open book!
 Both are so healing, I never have enough time~!
 #ReadingTime #ForestKitty`
  },
+  { src: `${base}/images/3-205.webp`, title: 'The Magic Flute', tags: ['magic', 'flute', 'flowers', 'deer'],
+    caption:
+`#205
+It's Risuko! 🐿️
+There's a rumor that if you play this flute, the flowers bloom a little bit faster.
+I'm currently undergoing special magic training with the deer to make lots of flowers bloom!
+
+#MagicFlute #MysteriousForest`
+  },
+  { src: `${base}/images/3-206.webp`, title: 'Giant Omelet Dream', tags: ['eggs', 'omelet', 'hungry', 'cooking'],
+    caption:
+`#206
+It's Risuko! 🐿️
+How many eggs do you think are in this basket?
+I'm already getting hungry just thinking about how big the omelet would be if I used them all! 🍳
+
+#GiantOmeletDream #PremonitionOfAFeast`
+  },
+  { src: `${base}/images/3-207.webp`, title: 'Relaxing Day by the River', tags: ['river', 'fishing', 'everyday', 'healing'],
+    caption:
+`#207
+It's Risuko! 🐿️
+I'm on a fishing date with an otter by the green riverbank.
+Even if we don't catch anything, just soaking in the dappled sunlight and relaxing feels like pure happiness.
+
+#ForestHoliday #HealingTime`
+  },
+  { src: `${base}/images/3-208.webp`, title: 'Potato Showdown', tags: ['potato', 'squirrel', 'walk', 'everyday'],
+    caption:
+`#208
+It's Risuko! 🐿️
+A squirrel and a potato peeking out of a paper bag—it looks like they're competing to see who's cuter!
+They’re both adorable, but as a snack, I think the potato wins.
+
+#RoastedPotato #WhosCuter`
+  },
+  { src: `${base}/images/3-209.webp`, title: 'Snow Artist', tags: ['snow', 'sculpture', 'winter', 'art'],
+    caption:
+`#209
+It's Risuko! 🐿️
+This snowy landscape is the perfect canvas for art!
+I’m planning to use my knife to turn this snowman into a masterpiece of cuteness.
+Stay tuned!
+
+#SnowSculpture #ArtistRisuko`
+  },
+  { src: `${base}/images/3-210.webp`, title: 'Hot Spring Dreams', tags: ['capybara', 'hotspring', 'autumn', 'travel'],
+    caption:
+`#210
+It's Risuko! 🐿️
+Since the capybara is leading the way, I have a feeling there might be a hot spring ahead!
+My dream for today is to soak in the warm water while looking at the autumn leaves.
+
+#Capybara #HotSpringDreams`
+  },
+  { src: `${base}/images/3-211.webp`, title: 'Gentle Snow Mountain Stroll', tags: ['horse', 'snow', 'stroll', 'winter'],
+    caption:
+`#211
+It's Risuko! 🐿️
+This horse can run at 300km/h... just kidding!
+In reality, he’s a very gentle soul who walks slowly to match my pace.
+
+#TallTales #SnowyStroll`
+  },
+  { src: `${base}/images/3-212.webp`, title: 'Tail Talk', tags: ['squirrel', 'communication', 'teamwork', 'forest'],
+    caption:
+`#212
+It's Risuko! 🐿️
+"Right! No, left!" Trying to communicate with the other squirrels.
+We don't use words; we use our tails to give instructions.
+This is what I call true squirrel teamwork!
+
+#Communication #SquirrelLanguage`
+  },
+  { src: `${base}/images/3-213.webp`, title: 'Full-Speed Snow Play', tags: ['snow', 'winter', 'play', 'memories'],
+    caption:
+`#213
+It's Risuko! 🐿️
+My ears are standing straight up from the speed!
+The cold snow and Suzuko's enthusiasm make the winter forest look like it's sparkling.
+Today, I'm forgetting about acorns and playing with all my might!
+
+#SnowPlay #WinterMemories`
+  },
+  { src: `${base}/images/3-214.webp`, title: 'Forest Detective Diary', tags: ['detective', 'observation', 'acorns', 'forest'],
+    caption:
+`#214
+It's Risuko! 🐿️
+As a forest detective, here is my observation log #1: "Everyone in the forest is hungry."
+...Yeah, I'm getting super hungry too. Time to go look for acorns!
+
+#DetectivePlay #ForestLife`
+  },
+  { src: `${base}/images/3-215.webp`, title: 'Mysterious Cake Plate', tags: ['sweets', 'snack', 'bird', 'mystery'],
+    caption:
+`#215
+It's Risuko! 🐿️
+I asked the little bird what was written on the cake plate, but all he said was "Piyo!"
+...Could it possibly say "Reserved for Risuko"?
+
+#SnackTime #ForestConversation`
+  },
+  { src: `${base}/images/3-216.webp`, title: 'Proper Snack-Strolling', tags: ['donut', 'streetfood', 'Suzuko', 'sweets'],
+    caption:
+`#216
+It's Risuko! 🐿️
+Suzuko carries the bag, and I’m the professional taster!
+That’s the correct way to snack-stroll, right? We were supposed to share, but before I knew it, the donut vanished from my mouth!
+
+#SnackStrolling #SweetHappiness`
+  },
+  { src: `${base}/images/3-217.webp`, title: 'Dinner Planning at Sunset', tags: ['sunset', 'dinner', 'nuts', 'wayhome'],
+    caption:
+`#217
+It's Risuko! 🐿️
+When I said the sunset was beautiful, Suzuko asked, "What's for dinner?"
+...Oh! That's important too! Now I can't decide what to make with these nuts.
+
+#Sunset #WayHome`
+  },
+  { src: `${base}/images/3-218.webp`, title: 'Picnic Under the Cherry Blossoms', tags: ['sakura', 'picnic', 'spring', 'outing'],
+    caption:
+`#218
+It's Risuko! 🐿️
+The goal of our trip? To have a picnic under the most beautiful cherry blossom tree, of course!
+Even carrying the snacks feels lighter today.
+
+#UnderTheSakura #PerfectDayForAnOuting`
+  },
+  { src: `${base}/images/3-219.webp`, title: 'Carrot Balance Dash', tags: ['carrot', 'meeting', 'sprint', 'hungry'],
+    caption:
+`#219
+It's Risuko! 🐿️
+Dashing to our meeting spot while keeping my carrot balanced!
+This way, I’ll never lose it. I’m getting hungry, but I won’t drop it!
+
+#MeetingUp #DesperateBalance`
+  },
+  { src: `${base}/images/3-220.webp`, title: 'Searching for Four-Leaf Clovers', tags: ['clover', 'lucky', 'sheep', 'happiness'],
+    caption:
+`#220
+It's Suzuko! 🔔
+Today I'm looking for four-leaf clovers with the fluffy sheep!
+It's a contest to see who finds one first.
+If we find one, let's be happy together!
+
+#LuckyClover #Sheep`
+  },
+  { src: `${base}/images/3-221.webp`, title: 'Cleaning or Hiding?', tags: ['cleaning', 'hideandseek', 'game', 'forest'],
+    caption:
+`#221
+It's Risuko! 🐿️
+Cleaning with a broom! ...Or at least that's what I'm pretending to do, while actually looking for the best hide-and-seek spot.
+Partner, can you find me?
+
+#SpringCleaning #HideAndSeek`
+  },
+  { src: `${base}/images/3-222.webp`, title: 'Pickaxe Adventure', tags: ['pickaxe', 'digging', 'potato', 'adventure'],
+    caption:
+`#222
+It's Risuko! 🐿️
+I’ve equipped my pickaxe, so I can dig anything!
+For now, I’ll just keep digging until I find some delicious potatoes.
+
+#Pickaxe #DigUntilYouFindSomething`
+  },
+  { src: `${base}/images/3-223.webp`, title: 'Tulip Field Rendezvous', tags: ['tulips', 'flowers', 'grownup', 'spring'],
+    caption:
+`#223
+It's Risuko! 🐿️
+Meeting at the tulip field. "The flowers are extra beautiful today, aren't they?" I said, trying to sound a bit more mature.
+Do I look like a grown-up yet?
+
+#FlowerField #SpringMeeting`
+  },
+  { src: `${base}/images/3-224.webp`, title: 'Ruins Flute Concert', tags: ['ruins', 'flute', 'music', 'squirrel'],
+    caption:
+`#224
+It's Risuko! 🐿️
+I played my flute in the ruins, and a squirrel with an acorn came to listen!
+It was such a lovely concert, I could have played forever.
+
+#RuinsExploration #Flute`
+  },
+  { src: `${base}/images/3-225.webp`, title: 'Dual-Wielding Carrot Strategy', tags: ['carrot', 'strategy', 'genius', 'survival'],
+    caption:
+`#225
+It's Risuko! 🐿️
+This carrot is actually a "dual-wielding bait-and-weapon" style!
+When hungry, it's food; when fighting, it’s a distraction.
+I have to say, my strategy is perfect!
+
+#GeniusStrategy #CarrotLife`
+  },
+  { src: `${base}/images/3-226.webp`, title: 'Power-Up on the Snowy Trail', tags: ['snowyroad', 'energy', 'adventure', 'bottle'],
+    caption:
+`#226
+It's Risuko! 🐿️
+The path ahead looks tough, so I’m refueling now!
+What's in my bottle? It’s a secret energy drink.
+With this, I’m not afraid of any snowy road!
+
+#Risuko #Adventure #PowerCharge`
+  },
+  { src: `${base}/images/3-227.webp`, title: 'Forest Exploration Pilots', tags: ['exploration', 'lost', 'partner', 'forest'],
+    caption:
+`#227
+It's Risuko! 🐿️
+The partner on my head is my pilot.
+She gives me directions like "Go this way!" but sometimes she gets distracted by the smell of something delicious and leads us to a dead end.
+
+#ForestExploration #DynamicDuo`
+  },
+  { src: `${base}/images/3-228.webp`, title: 'Springtime Butterfly Chat', tags: ['butterfly', 'basket', 'flowers', 'spring'],
+    caption:
+`#228
+It's Risuko! 🐿️
+While I was picking flowers, a butterfly took the best seat in my basket!
+It matches my blue hair accessory perfectly.
+I’m so happy to be sharing this spring moment with her.
+
+#Risuko #PickingFlowers #ArrivalOfSpring`
+  },
+  { src: `${base}/images/3-229.webp`, title: 'Bread and Puppy Brunch', tags: ['bread', 'dog', 'sharing', 'stroll'],
+    caption:
+`#229
+It's Risuko! 🐿️
+A cute customer flew in, eyeing my walking bread!
+To sniff out that it's filled with cheese? What a genius!
+When looked at with those hungry eyes, I have no choice but to share!
+
+#BreadAndDog #GluttonousHoliday`
+  },
+  { src: `${base}/images/3-230.webp`, title: 'Rainy Day Shared Umbrella', tags: ['rainyday', 'umbrella', 'frog', 'Suzuko'],
+    caption:
+`#230
+It's Suzuko! 🐿️
+It started raining. It's a bit tight, but won't you come under my leaf umbrella?
+With the frog and the squirrel here too, it feels just like we're sharing a romantic moment!
+
+#RainyDay #LeafUmbrella`
+  }
+
 
 ];
 
