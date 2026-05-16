@@ -28,6 +28,10 @@ logs:
     category: "comfyui"
     summary: "AIインペイントと3D転写による高精細パノラママップ制作です。Unity6、Blender、ComfyUIを使用しています。"
     url: "./article/20260509_panorama-map/panorama-map.html"
+  - title: "画像1枚を起点とする3Dアセット制作：AIインペイントによる効率化フロー"
+    category: "comfyui"
+    summary: "３面図を基にして3Dモデルを作ります。AIインペイントとテクスチャの効率化記事です"
+    url: "./article/20260516_3DAsset_Flow_AI/3DAsset_Flow_AI.html"
 
   # --- チャット系 ---
   - title: "aiリス子とお喋り＆最新aiで動き続ける「自走するリスたちの森」の舞台裏"

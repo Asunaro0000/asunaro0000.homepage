@@ -24,10 +24,10 @@ logs:
     category: "comfyui"
     summary: "A method for generating large volumes of scene prompts with AI. Extremely useful for automation workflows."
     url: "./article/20260227_csv-prompt-gen.html/csv-prompt-gen.html"
-  - title: "High-Detail Panorama Map Creation Using AI Inpainting and 3D Projection Transfer"
+  - title: "3D Asset Production from a Single Image Using an AI Inpainting Efficiency Workflow"
     category: "comfyui"
-    summary: "A high-detail panorama map creation workflow using AI inpainting and 3D projection transfer. Created with Unity 6, Blender, and ComfyUI."
-    url: "./article/20260509_panorama-map/panorama-map.html"
+    summary: "An article about creating 3D models from orthographic views using AI inpainting and texture optimization workflows."
+    url: "./article/20260516_3DAsset_Flow_AI/3DAsset_Flow_AI.html"
 
   # --- Image Editing: Manual Refinement to Perfect AI Art ---
   - title: "Basics of Retouching and Inpainting"
