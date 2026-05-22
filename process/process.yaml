@@ -32,6 +32,10 @@ logs:
     category: "comfyui"
     summary: "３面図を基にして3Dモデルを作ります。AIインペイントとテクスチャの効率化記事です"
     url: "./article/20260516_3DAsset_Flow_AI/3DAsset_Flow_AI.html"
+  - title: "AIインペイントとBlender投影による3Dパノラママップ生成、鳥居マップ編【Unity×Blender×ComfyUI】"
+    category: "comfyui"
+    summary: "3Dパノラママップの鳥居マップ編です。モデルの作り方、ビルボードの使い方を解説しています。"
+    url: "./article/20260523_torii-3dmap-workflow/torii-3dmap-workflow.html"
 
   # --- チャット系 ---
   - title: "aiリス子とお喋り＆最新aiで動き続ける「自走するリスたちの森」の舞台裏"
