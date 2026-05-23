@@ -2,7 +2,20 @@
  * Asunaro Works 統合計測スクリプト (最終安定版)
  * GA4 / Pinterest / Click / Scroll / Debug 全盛り
  */
+(function() {
+    const head = document.getElementsByTagName('head')[0];
 
+    // AI学習を拒否するタグを生成
+    const metaNoAI = document.createElement('meta');
+    metaNoAI.name = 'robots';
+    metaNoAI.content = 'noai';
+    head.appendChild(metaNoAI);
+
+    const metaNoImageAI = document.createElement('meta');
+    metaNoImageAI.name = 'robots';
+    metaNoImageAI.content = 'noimageai';
+    head.appendChild(metaNoImageAI);
+})();
 // --- (1) タグの読み込みと初期化 ---
 const initAsunaroTags = () => {
   // GA4
