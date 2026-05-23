@@ -2077,8 +2077,204 @@ It started raining. It's a bit tight, but won't you come under my leaf umbrella?
 With the frog and the squirrel here too, it feels just like we're sharing a romantic moment!
 
 #RainyDay #LeafUmbrella`
-  }
+  },
 
+
+  { src: `${base}/images/3-231.webp`, title: 'Feast in the Snowy Mountains', tags: ['SnowyMountain', 'Winter', 'Food', 'DailyLife'],
+    caption:
+`#231
+It's Risuko! 🐿️
+I have a theory that food tastes three times better after running around the snowy mountains with all your might than any luxury meal!
+I'm so hungry, I can't wait! ❄️🥘
+
+#SnowyMountain #WinterFeast`
+  },
+  { src: `${base}/images/3-232.webp`, title: 'The Secret Acorn', tags: ['DailyLife', 'Planter', 'Gardening', 'Acorn'],
+    caption:
+`#232
+It's Risuko! 🐿️
+Grow up quickly, little flowers! ...Ah, but guess what? 
+Earlier, I secretly buried my favorite acorn in the corner of the planter.
+Don't you think it would be fun if it grew together with the flowers? 🌱✨
+
+#SecretAcorn #Gardening`
+  },
+  { src: `${base}/images/3-233.webp`, title: 'Hot Pot with Everyone', tags: ['SnowyMountain', 'Winter', 'HotPot', 'Animals'],
+    caption:
+`#233
+It's Risuko! 🐿️
+The snowy mountains are freezing, but we're totally fine because we have a hot pot to share together!
+It tastes like a pure treasure.
+Ah, Mr. Boar, don't peek too closely into the pot! It's hot! 🍲❄️
+
+#WinterDinner #WarmTogether`
+  },
+  { src: `${base}/images/3-234.webp`, title: 'The Rules of the Bun Party', tags: ['Forest', 'DailyLife', 'Party', 'SteamedBun'],
+    caption:
+`#234
+It's Risuko! 🐿️
+The entry fee for today's steamed bun party is "one acorn"!
+I'll give a premium bun to anyone who brings an acorn.
+Wait, Mr. Chipmunk? Everything inside those puffy cheeks counts as the entry fee too! ✨
+
+#ForestRules #AcornTax #PartyWithEveryone`
+  },
+  { src: `${base}/images/3-235.webp`, title: 'Night Market Feast', tags: ['DailyLife', 'NightMarket', 'FoodCrawl', 'Detour'],
+    caption:
+`#235
+It's Risuko! 🐿️
+Next is baked sweet potato! And after that, takoyaki!
+We are not going home tonight until we conquer the entire night market!
+Suzuko, keep up with me! My appetite is as vast as the universe! 🏮
+
+#NightMarketTour #GluttonousRisuko`
+  },
+  { src: `${base}/images/3-236.webp`, title: 'The Delicious Mountain Wind', tags: ['DailyLife', 'Mountain', 'Walk', 'Adventure'],
+    caption:
+`#236
+It's Risuko! 🐿️
+Walking is great, but stopping like this to feel the breeze is also a part of the adventure.
+The mountain wind is a magical wind that carries delicious smells.
+Deep breath taken, ready to head out! ✨
+
+#AdventureBreak #AdventureWithRisuko`
+  },
+  { src: `${base}/images/3-237.webp`, title: 'Spring Forest Session', tags: ['Forest', 'Spring', 'Music', 'Animals'],
+    caption:
+`#237
+It's Risuko! 🐿️
+The spring forest is full of musicians!
+The sound of the wind, the songs of the birds—everyone is my session partner.
+Welcome to the forest concert hall with my chipmunk friend! 🎶✨
+
+#ForestSession #SpringMelody`
+  },
+  { src: `${base}/images/3-238.webp`, title: 'Tea Party with a Bird', tags: ['DailyLife', 'Bird', 'Cake', 'TeaParty'],
+    caption:
+`#238
+It's Suzuko! 🔔
+Hey little bird, no pecking at the cake cream! ...I keep telling him that, but he's just staring so intently that I might give in.
+Shall we start our tea party for two? 🐦🍰
+
+#TeaPartyWithBird #SweetReward`
+  },
+  { src: `${base}/images/3-239.webp`, title: 'The Red Thread of Fate', tags: ['DailyLife', 'Yarn', 'Chipmunk', 'Misunderstanding'],
+    caption:
+`#239
+It's Risuko! 🐿️
+They say the "red thread" connects you to your destined person, right?
+But no matter how I look at it, this yarn is connecting my chipmunk friend and me.
+...Wait, are we destined for each other?! 🧶
+
+#RedThreadOfFate #YarnBall`
+  },
+  { src: `${base}/images/3-240.webp`, title: 'A Stylish Encounter', tags: ['DailyLife', 'Walk', 'Parrot', 'Fashion'],
+    caption:
+`#240
+It's Risuko! 🐿️
+I met a very stylish parrot while on my walk!
+I feel like he's complimenting my fashion.
+Our color schemes are so similar, I feel a strange sense of kinship! 🦜✨
+
+#OutfitOfTheDay #PerfectDayForAWalk`
+  },
+  { src: `${base}/images/3-241.webp`, title: 'The Red Bridge and the Parasol', tags: ['DailyLife', 'Walk', 'Parasol', 'Bridge'],
+    caption:
+`#241
+It's Risuko! 🐿️
+The sun is so bright, so I'm taking a walk with my parasol!
+Oh, I found a red bridge.
+The sunlight filters through the parasol, making me feel like I've stepped into a whole different world. It's so exciting! ☀️⛱️
+
+#Stroll #ParasolGirl`
+  },
+  { src: `${base}/images/3-242.webp`, title: 'Winter Ice Cream', tags: ['Winter', 'IceCream', 'Animals', 'DailyLife'],
+    caption:
+`#242
+It's Risuko! 🐿️
+When I said, "Ice cream in winter is exceptional!", Mr. Penguin just gave me a freezing look...
+Wait, is it not allowed? The cold is completely powerless against delicious food! 🍦❄️
+
+#WinterIceCream #FoodieRisuko`
+  },
+  { src: `${base}/images/3-243.webp`, title: 'Delicious Strawberries', tags: ['DailyLife', 'Strawberry', 'Sweets', 'Fruit'],
+    caption:
+`#243
+It's Risuko! 🐿️
+The me who is great at finding strawberries, and the me who is great at eating them.
+Wait, they're both me! ...
+No, strawberries are always the most delicious when you eat them with friends! 🍓✨
+
+#GoodFriends #StrawberrySweets`
+  },
+  { src: `${base}/images/3-244.webp`, title: 'Risuko-Style Cheese Plate', tags: ['DailyLife', 'Cooking', 'Cheese', 'HomeCooking'],
+    caption:
+`#244
+It's Risuko! 🐿️
+Today I'm trying my hand at cooking with cheese!
+I just cut it into small pieces, but this is the ultimate Risuko-style cheese plate.
+My partner, the chipmunk, is waiting eagerly right there! 🧀
+
+#CheeseDish #HomeCooking`
+  },
+  { src: `${base}/images/3-245.webp`, title: 'Chipmunk Detective Investigation', tags: ['DailyLife', 'Detective', 'Chipmunk', 'SnackBreak'],
+    caption:
+`#245
+It's Risuko! 🐿️
+"This chipmunk's pose... it definitely knows something," I thought with a suspicious glance!
+...Nah, she's probably just being cute.
+The detective duo's investigation will continue right after a snack break!🔍
+
+#ChipmunkDetective #StrategyMeeting`
+  },
+  { src: `${base}/images/3-246.webp`, title: 'A Sudden Shower and the Red Umbrella', tags: ['Forest', 'Rain', 'RainShelter', 'Umbrella'],
+    caption:
+`#246
+It's Risuko! 🐿️
+Whoa, a sudden rain shower!
+But it's okay because I have my favorite red umbrella.
+Why don't you come and take shelter from the rain with me? ☔🌿
+
+#SuddenShower #RainShelterForest`
+  },
+  { src: `${base}/images/3-247.webp`, title: 'Bonfire Feast', tags: ['Forest', 'DailyLife', 'Bonfire', 'Food'],
+    caption:
+`#247
+It's Risuko! 🐿️
+Moving from taking shelter in the rain to warming up by a bonfire.
+The hot food thoroughly soothes my chilled body...!
+This contrast might be the best feast of the day! 🔥🍲
+
+#BonfireCooking #ForestLife`
+  },
+  { src: `${base}/images/3-248.webp`, title: 'A Wish Before the Torii Gate', tags: ['DailyLife', 'ToriiGate', 'ShrineVisit', 'Squirrel'],
+    caption:
+`#248
+It's Risuko! 🐿️
+I'm visiting the shrine with a local squirrel in front of the quiet Torii gate.
+My wish is, of course, "May I get to eat lots of delicious things tomorrow too!" ⛩️✨
+
+#MakingAWish #PeacefulDay`
+  },
+  { src: `${base}/images/3-249.webp`, title: 'The Guardian Squirrel of the Forest', tags: ['Forest', 'Fantasy', 'Mystery', 'MysticStone'],
+    caption:
+`#249
+It's Risuko! 🐿️
+I found a glowing mystic orb in the forest!
+The way the squirrel holds it so carefully looks somewhat divine...
+Could it be that this was the Guardian Squirrel of the Forest?! 🔮🌟
+
+#MysteriousStone #Fantasy`
+  },
+  { src: `${base}/images/3-250.webp`, title: 'The Sandcastle on the Beach', tags: ['Sea', 'Beach', 'Sandcastle', 'Fantasy'],
+    caption:
+`#250
+It's Risuko! 🐿️
+There is a magnificent sandcastle on the beach! Who made it?
+Could it be the home of the Sea God? It takes a bit of courage to get any closer... 🏰🌊
+
+#Beach #MysteriousSandcastle`
+  }
 
 ];
 
