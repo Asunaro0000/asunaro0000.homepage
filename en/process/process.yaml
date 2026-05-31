@@ -36,6 +36,10 @@ logs:
     category: "comfyui"
     summary: "A Torii-themed 3D panorama map workflow covering model creation techniques and billboard usage."
     url: "./article/20260523_torii-3dmap-workflow/torii-3dmap-workflow.html"
+  - title: "Building Usako's 3D Model: Workflow and Blender Tutorial [Blender & ComfyUI]"
+    category: "comfyui"
+    summary: "An overview of the Usako modeling workflow, a tutorial on creating character models in Blender, and a discussion on the differences between AI-generated 3D models and hand-crafted assets."
+    url: "./article/20260531_Creating-Usako3d-Blender-Tutorial/Creating-Usako3d-Blender-Tutorial.html"
 
   # --- Image Editing: Manual Refinement to Perfect AI Art ---
   - title: "Basics of Retouching and Inpainting"

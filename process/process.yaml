@@ -36,6 +36,10 @@ logs:
     category: "comfyui"
     summary: "3Dパノラママップの鳥居マップ編です。モデルの作り方、ビルボードの使い方を解説しています。"
     url: "./article/20260523_torii-3dmap-workflow/torii-3dmap-workflow.html"
+  - title: "ウサ子の3Dモデル作ってみた。制作過程とBlenderチュートリアル紹介【Blender×ComfyUI】"
+    category: "comfyui"
+    summary: "ウサ子制作過程とBlenderのキャラモデルのチュートリアル紹介、AI３Dモデルと自作モデルのの差についてです。"
+    url: "./article/20260531_Creating-Usako3d-Blender-Tutorial/Creating-Usako3d-Blender-Tutorial.html"
 
   # --- チャット系 ---
   - title: "aiリス子とお喋り＆最新aiで動き続ける「自走するリスたちの森」の舞台裏"
