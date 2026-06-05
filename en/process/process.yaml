@@ -90,3 +90,9 @@ logs:
     category: "others"
     summary: "This article introduces the characters Usako and Kameko and outlines the artistic direction of their character art."
     url: "./article/20260201_character-profile-img2img-base/character-profile-img2img-base.html"
+  - title: "Creating Animations for Usako's 3D Model Production Process and Blender Tutorial Guide"
+    category: "comfyui"
+    summary: "An article about the production process of Usako's 3D model including Mixamo animation retargeting and manual animation creation in Blender."
+    url: "./article/20260605_blender-animation-note/blender-animation-note.html"
+
+

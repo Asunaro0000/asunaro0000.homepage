@@ -90,3 +90,8 @@ logs:
     category: "others"
     summary: "ウサ子とカメコの人物紹介とキャラクターアートの方針です。"
     url: "./article/20260201_character-profile-img2img-base/character-profile-img2img-base.html"
+  - title: "ウサ子の3Dモデルアニメーション作ってみた。制作過程とBlenderチュートリアル紹介【Blender】"
+    category: "comfyui"
+    summary: "ウサ子3Dモデル制作過程とBlenderでのmixamoアニメーションの同期と手動アニメーション作成についての記事です。"
+    url: "./article/20260605_blender-animation-note/blender-animation-note.html"
+
