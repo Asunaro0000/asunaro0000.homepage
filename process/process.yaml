@@ -91,7 +91,10 @@ logs:
     summary: "ウサ子とカメコの人物紹介とキャラクターアートの方針です。"
     url: "./article/20260201_character-profile-img2img-base/character-profile-img2img-base.html"
   - title: "ウサ子の3Dモデルアニメーション作ってみた。制作過程とBlenderチュートリアル紹介【Blender】"
-    category: "comfyui"
+    category: "others"
     summary: "ウサ子3Dモデル制作過程とBlenderでのmixamoアニメーションの同期と手動アニメーション作成についての記事です。"
     url: "./article/20260605_blender-animation-note/blender-animation-note.html"
-
+  - title: "【ウサ子3Dモデル】VRM制作ワークフロー、Blender-Unity往復で踏み抜いた知見の備忘録(Bleder-Unityのリギング設定、Rigify、VRMバージョン比較など）"
+    category: "others"
+    summary: "ウサ子3Dモデル制作過程VRM対応及びコライダー設定、VRMバージョン比較等々、ワークフロー全体の参考資料集です。"
+    url: "./article/20260614_vrm-workflow/vrm-workflow.html"
