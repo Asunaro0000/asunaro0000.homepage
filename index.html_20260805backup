@@ -165,34 +165,57 @@
 </div>
 
 <!-- ------------------ -->
-    <!-- ▼ 2. BOOTH Avatar Shop + Banner -->
+    <!-- ▼ 2. Risuko + Banner -->
     <section class="feature-row">
 
-      <!-- Left: BOOTH / VRChat・VRoid Avatar Shop -->
+      <!-- Left: Risuko -->
       <div class="feature-row__col feature-row__col--main">
+        <section class="risuko"></section>
         <div class="risuko-wrap">
-          <div id="booth-avatar-card" class="risuko-stamp" aria-label="BOOTH Avatar Shop">
-            <img
-              id="booth-avatar-img"
-              src="./assets/booth/shinano_classical_outfit.webp"
-              alt="SHINANO Classical Outfit Set"
-              loading="lazy"
-            >
+          <div id="risuko-dynamic" aria-live="polite">
 
-            <p id="booth-avatar-title" class="risuko-caption">VRChat / VRoid Avatar Shop</p>
-            <p>BOOTHでアバター・衣装を販売しています。</p>
+            <!-- A mode (calendar) -->
+            <div id="risuko-calendar" class="risuko-stamp is-hidden" aria-hidden="true">
+              <img id="risuko-calendar-img" src="" alt="Risuko calendar">
+              <p id="risuko-calendar-text" class="risuko-caption"></p>
+              <p>リス子カレンダー2026 / Boothで販売中🐿️</p>
+              <button id="risuko-calendar-btn" class="risuko-btn" type="button">Go to shop</button>
+              
+            </div>
+
+            <!-- B mode (stamp) -->
+            <div id="risuko-stamp" class="risuko-stamp" aria-hidden="false">
+              <img id="risuko-stamp-img" src="" alt="Risuko of the day">
+              <p id="risuko-stamp-text" class="risuko-caption"></p>
+              <p>リス子スタンプ / LineStoreで販売中🐿️</p>
+              <button id="risuko-stamp-btn" class="risuko-btn" type="button">Go to shop</button>
+            </div>
+
+            <!-- C mode (stamp2) -->
+            <!--<div id="risuko-stamp-2" class="risuko-stamp is-hidden" aria-hidden="true">
+              <img id="risuko-stamp-img-2" src="" alt="Risuko alternate">
+              <p id="risuko-stamp-text-2" class="risuko-caption"></p>
+              <button id="risuko-stamp-btn-2" class="risuko-btn" type="button">Go to goods</button>
+            </div>-->
 
 
           </div>
 
+          <!-- Mode switch controls -->
           <div class="controls" style="display:flex;gap:12px;justify-content:center;margin-top:8px">
-            <a
-              id="booth-avatar-link"
-              class="goods-link"
-              href="https://asunaro0000.booth.pm/"
-              target="_blank"
-              rel="noopener"
-            >BOOTH Shop</a>
+            <button id="prevMode" class="ctrl" type="button" aria-label="Previous"
+              style="width:34px;height:34px;border:none;border-radius:8px;background:#ffd86a;color:#333;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+              </svg>
+            </button>
+            <button id="nextMode" class="ctrl" type="button" aria-label="Next"
+              style="width:34px;height:34px;border:none;border-radius:8px;background:#ffd86a;color:#333;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.35);">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/>
+              </svg>
+            </button>
+            <a id="risuko-stamp-link" class="goods-link" href="./goods/">Goods Room</a>
           </div>
         </div>
       </div>
@@ -296,16 +319,15 @@
         <li><strong>2025-12-25：</strong>
         Kindle Unlimited対応および90日間の独占配信に伴い、ウサ子とカメコストーリーボードを一時的に非公開にしました。
         </li>-->
-        <li><strong>2026-8-05：</strong> BoothでVroid、VRchat関連の衣装、ツール販売を始めました。</li>
         <li><strong>2026-5-23：</strong> 製作ブログに3Dパノラママップのメイキングを書きました</li>
         <li><strong>2026-3-15：</strong> カメコの作業小屋「部屋アート」を🐢、リス子の３コマ漫画を追加しました🐿️</li>
         <li><strong>2026-3-11：</strong> リス子の漫画喫茶を追加しました🐿️</li>
- <!--         <li><strong>2026-2-26：</strong> ウサ子チャットに演目モードを追加しました。🐰</li>
+        <li><strong>2026-2-26：</strong> ウサ子チャットに演目モードを追加しました。🐰</li>
         <li><strong>2026-2-21：</strong> カメコの作業小屋「部屋アート」を追加しました。🐢</li>
         <li><strong>2026-2-15：</strong> ウサ子チャット部屋を追加しました。🐰</li>
         <li><strong>2026-2-10：</strong> リス子とスズ子の観察日記部屋を追加しました。1時間毎に森の日常を記録し続けています🐿️</li>
         <li><strong>2026-2-08：</strong> カメコの作業小屋「部屋アート」を追加しました。</li>
-      <li><strong>2026-2-07：</strong> リス子チャット部屋を追加しました。🐿️</li>
+ <!--       <li><strong>2026-2-07：</strong> リス子チャット部屋を追加しました。🐿️</li>
         <li><strong>2026-2-01：</strong> ウサ子の日常「煌めきアート」を追加しました。</li>
         <li><strong>2026-1-30：</strong> 制作技術blog始めました。</li>
         <li><strong>2026-1-23：</strong> カメコの作業小屋「部屋アート」を追加しました。</li>
@@ -352,7 +374,11 @@
 
   <!-- ▼ スクリプト群 -->
   <script type="module" src="./js/extensions/nav-toggle.js"></script>
-  <script src="./js/extensions/booth-avatar.js" defer></script>
+  <script src="./js/extensions/risuko-calender.js" defer></script>
+  <!-- <script src="./js/extensions/risuko-stamp2.js" defer></script>-->
+  <script src="./js/extensions/risuko-stamp.js" defer></script>
+  <script src="./js/extensions/risuko-stamp-toggle.js" defer></script>
+  <script src="./js/extensions/risuko-preload.js" defer></script>
   <script src="./js/extensions/banner.js" defer></script>
  <!--  <script src="./js/extensions/banner2.js" defer></script> -->
   <script src="./js/extensions/banner3.js" defer></script>
