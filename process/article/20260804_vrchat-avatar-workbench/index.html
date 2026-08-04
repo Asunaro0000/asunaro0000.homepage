@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VRChat Avatar Workbench | Asunaro Works</title>
+  <meta name="description" content="VRChatアバター制作向けUnity Editor拡張 VRChat Avatar Workbench の機能紹介と操作マニュアル。">
+  <meta name="robots" content="noai">
+  <meta name="robots" content="noimageai">
+  <meta name="p:domain_verify" content="d57a228b61f6ea3435efa630b2165165"/>
+  <link rel="icon" href="https://asunaro0000.github.io/asunaro0000.homepage/favicon.png" type="image/png">
+  <link rel="icon" href="https://asunaro0000.github.io/asunaro0000.homepage/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../../../css/header.css">
+  <link rel="stylesheet" href="../../../css/style.css">
+  <link rel="stylesheet" href="manual.css">
+  <script src="https://asunaro0000.github.io/asunaro0000.homepage/js/extensions/google-tag.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="../../../">Asunaro Works</a>
+    <a class="go-up" href="../../" title="一つ上の階へ">⏶</a>
+    <nav>
+      <a href="../../../gallery/">Gallery</a>
+      <a href="../../../about/">About/Contact</a>
+      <a href="../../../process/">制作技術blog</a>
+      <a href="../../../link/">Link</a>
+      <a href="../../../sitemap/">Sitemap</a>
+      <a href="../../../goods/">Goods</a>
+      <a href="https://www.patreon.com/Asunaro0000">Patreon</a>
+      <a href="https://asunaro0000.github.io/asunaro0000.homepage/en/process/">🌐 EN</a>
+    </nav>
+  </header>
+
+  <main class="manual-shell">
+    <div class="manual-breadcrumb"><a href="../../../process/">制作技術blog</a><span>›</span><span>VRChat Avatar Workbench</span></div>
+
+    <section class="manual-hero">
+      <div class="manual-kicker">Unity Editor Tool / VRChat</div>
+      <h1>VRChat Avatar Workbench</h1>
+      <p class="manual-lead">VRChatアバター制作時に使うPhysBone、マスク、マテリアル、アニメーション確認を、共通のAvatar Rootから扱うためのUnity Editor拡張です。各機能は個別Editorとして開き、このページから操作マニュアルへ移動できます。</p>
+    </section>
+
+    <section class="manual-section">
+      <h2>マニュアル構成</h2>
+      <div class="tree-view">VRChat Avatar Workbench
+├─ PhysBone Editor
+├─ Mask Editor
+├─ Animation Preview
+├─ Material Viewer
+└─ PhysBone Preset Library</div>
+      <div class="manual-tree">
+        <a class="manual-card" href="manual/physbone-editor.html"><strong>PhysBone Editor</strong><span>PhysBone・Colliderの一覧管理、値の編集、コピー、プリセット、バックアップ。</span></a>
+        <a class="manual-card" href="manual/mask-editor.html"><strong>Mask Editor</strong><span>マスクスロットの確認、UVオーバーレイ、ブラシ編集、保存・プリセット管理。</span></a>
+        <a class="manual-card" href="manual/animation-preview.html"><strong>Animation Preview</strong><span>Animation Clipの再生確認、速度・時間操作、初期ポーズへのリセット。</span></a>
+        <a class="manual-card" href="manual/material-viewer.html"><strong>Material Viewer</strong><span>Renderer / Material / Textureの確認と差し替え、lilToon設定の確認。</span></a>
+        <a class="manual-card" href="manual/physbone-preset-library.html"><strong>PhysBone Preset Library</strong><span>CSV候補の検索・比較・動作確認・採否判定とライブラリ登録。</span></a>
+      </div>
+    </section>
+
+    <section class="manual-section">
+      <h2>共通の使い方</h2>
+      <ol class="step-list">
+        <li><strong>Tools → VRChat Avatar Workbench</strong> からランチャーを開きます。</li>
+        <li><strong>共通 Avatar Root</strong> に編集対象のAvatarを指定します。自動検出または候補から選択できます。</li>
+        <li>目的に応じて <strong>PhysBone / Mask / Animation / Material / Preset Library</strong> の各Editorを開きます。</li>
+        <li>Avatar Rootは各Editor間で共有されるため、同じAvatarを基準に作業を切り替えられます。</li>
+      </ol>
+    </section>
+
+    <section class="manual-section">
+      <h2>機能別ガイド</h2>
+      <p>各ページでは、画面構成・基本操作・保存や復元時の注意点をまとめています。</p>
+      <div class="manual-page-nav">
+        <a href="manual/physbone-editor.html">PhysBone Editor →</a>
+        <a href="manual/mask-editor.html">Mask Editor →</a>
+        <a href="manual/animation-preview.html">Animation Preview →</a>
+        <a href="manual/material-viewer.html">Material Viewer →</a>
+        <a href="manual/physbone-preset-library.html">Preset Library →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2025 Asunaro Works. All rights reserved.</footer>
+  <script type="module" src="../../../js/extensions/nav-toggle.js"></script>
+</body>
+</html>

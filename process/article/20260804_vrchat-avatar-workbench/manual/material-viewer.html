@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Material Viewer | VRChat Avatar Workbench | Asunaro Works</title>
+  <meta name="robots" content="noai">
+  <meta name="robots" content="noimageai">
+  <meta name="p:domain_verify" content="d57a228b61f6ea3435efa630b2165165"/>
+  <link rel="icon" href="https://asunaro0000.github.io/asunaro0000.homepage/favicon.png" type="image/png">
+  <link rel="icon" href="https://asunaro0000.github.io/asunaro0000.homepage/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../../../../css/header.css">
+  <link rel="stylesheet" href="../../../../css/style.css">
+  <link rel="stylesheet" href="../manual.css">
+  <script src="https://asunaro0000.github.io/asunaro0000.homepage/js/extensions/google-tag.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="../../../../">Asunaro Works</a>
+    <a class="go-up" href="../" title="一つ上の階へ">⏶</a>
+    <nav>
+      <a href="../../../../gallery/">Gallery</a>
+      <a href="../../../../about/">About/Contact</a>
+      <a href="../../../../process/">制作技術blog</a>
+      <a href="../../../../link/">Link</a>
+      <a href="../../../../sitemap/">Sitemap</a>
+      <a href="../../../../goods/">Goods</a>
+      <a href="https://www.patreon.com/Asunaro0000">Patreon</a>
+      <a href="https://asunaro0000.github.io/asunaro0000.homepage/en/process/">🌐 EN</a>
+    </nav>
+  </header>
+
+  <main class="manual-shell">
+    <div class="manual-breadcrumb"><a href="../../../../process/">制作技術blog</a><span>›</span><a href="../">VRChat Avatar Workbench</a><span>›</span><span>Material Viewer</span></div>
+    <div class="quick-nav">
+      <a href="physbone-editor.html">PhysBone</a><a href="mask-editor.html">Mask</a><a href="animation-preview.html">Animation</a><a href="material-viewer.html">Material</a><a href="physbone-preset-library.html">Preset Library</a>
+    </div>
+    <section class="manual-hero">
+      <div class="manual-kicker">Material / Texture</div>
+      <h1>Material Viewer</h1>
+      <p class="manual-lead">Avatar内のRenderer・Material・Textureを一覧で確認し、Texture差し替えやlilToon設定確認を行うためのViewerです。</p>
+    </section>
+    <figure class="guide-figure">
+      <img src="../images/material-viewer-guide.png" alt="Material Viewer 操作ガイド画像" loading="lazy">
+      <figcaption>Material Viewer の画面構成と主な操作箇所。</figcaption>
+    </figure>
+    <section class="manual-section"><h2>基本操作</h2><ol class="step-list">
+<li><strong>Avatar Rootを指定してRefresh。</strong> RendererとMaterialの一覧を取得します。</li>
+<li><strong>左側からMaterialを選択。</strong> Renderer階層ごとのMaterial Slotを確認できます。</li>
+<li><strong>基本情報を確認。</strong> Renderer、Path、Slot Index、Render Mode、Texture数などを確認します。</li>
+<li><strong>Texture Property一覧を確認。</strong> Main Texture、Mask、Normal MapなどのTextureを一覧で確認・差し替えできます。</li>
+<li><strong>Texture Previewを確認。</strong> Asset Path、解像度、Format、Import設定を確認します。</li>
+<li><strong>lilToon Inspectorを確認。</strong> 選択MaterialのlilToon設定を同じ画面で確認・編集できます。</li>
+</ol></section>
+<section class="manual-section"><h2>用途</h2><p>Material ViewerはフルMaterial Editorではなく、制作中のMaterial / Texture状態確認と差し替えを中心にしたViewerです。Rendererを跨いでTextureやMaterial構成を確認するときに使用します。</p></section>
+<div class="manual-note">Render Mode変更など、対応する一括操作はUndo対象として処理されます。</div>
+    <div class="manual-page-nav"><a href="../">← VRChat Avatar Workbench トップへ</a><a href="../../../../process/">制作技術blogへ</a></div>
+  </main>
+  <footer>© 2025 Asunaro Works. All rights reserved.</footer>
+  <script type="module" src="../../../../js/extensions/nav-toggle.js"></script>
+</body>
+</html>

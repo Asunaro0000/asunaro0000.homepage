@@ -1,4 +1,10 @@
 logs:
+  # --- 制作ツール ---
+  - title: "VRChat Avatar Workbench — Unity向けVRChatアバター制作支援ツール"
+    category: "tools"
+    summary: "PhysBone、マスク、マテリアル、アニメーション確認をまとめたUnity Editor拡張の機能紹介と操作マニュアル。"
+    url: "./article/20260804_vrchat-avatar-workbench/"
+
   # --- ComfyUI ---
   - title: "【初心者向け】LoRAで一貫性の高いキャラクターを作成する"
     category: "comfyui"
