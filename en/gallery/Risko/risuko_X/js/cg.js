@@ -137,9 +137,7 @@ caption:
 `#9
 It’s Risuko! 🐿️️
 Snack time! 🍪✨
-For now, everything is still up for grabs!
-
-#FirstComeFirstServed #SweetsAreJustice`
+For now, everything is still up for grabs!`
 },
 
 { src: `${base}/images/1-10.webp`, title: '',
@@ -166,9 +164,11 @@ The sound comes later.
 },
 
 { src: `${base}/images/1-12.webp`, title: '',
-  tags: ["Suzuko", "frozen river", "fishing", "winter kindness"],
+  tags: ["Risuko", "frozen river", "fishing", "winter kindness"],
 caption:
 `#12
+It's Risuko! 🐿️
+
 The river is frozen,
 but my feelings aren’t.
 Today’s fish
@@ -609,8 +609,6 @@ it’s time to give up.
   tags: ["Risuko", "dreaming", "fishing dreams", "sleeping", "book"],
 caption:
 `#47
-Good morning ☀️
-
 It’s Risuko! 🐿️️
 I must have tried too hard at fishing.
 Book open, already dreaming.
@@ -919,8 +917,6 @@ The only requirement is a happy face.
   tags: ["Risuko", "fox", "festival", "town walk", "morning"],
 caption:
 `#71
-Good morning ☀️
-
 It’s Risuko! 🐿️️️
 The lights, the smells, the voices—
 everything is fun.
@@ -942,7 +938,7 @@ I’m not moving from here today!
 
 { src: `${base}/images/1-73.webp`, title: 'A New Family Member',
   tags: ["Risuko", "baby", "bodyguard", "new family", "cuteness"],
-  caption:
+caption:
 `#73
 It's Risuko! 🐿️️
 Look, look! A tiny, snowy-white baby has joined our home! ✨
@@ -954,7 +950,7 @@ Big sister Risuko is now officially on bodyguard duty! *Salute* 🐿️️💨
 
 { src: `${base}/images/1-74.webp`, title: 'Forest Judge',
   tags: ["Risuko", "tanuki", "judge", "high tension", "forest"],
-  caption:
+caption:
 `#74
 It's Risuko! 🐿️️
 Mr. Tanuki, the judge, is silent.
@@ -965,11 +961,13 @@ Is this... a pass, or is it on hold?
 
 { src: `${base}/images/1-75.webp`, title: 'Playing Baby',
   tags: ["Risuko", "Suzuko", "stroller", "baby play", "rattle"],
-  caption:
+caption:
 `#75
-We found an old stroller, so 
-suddenly it's "playing baby" time! 
-Big sister Suzuko looks like she's about to cry, thinking "Is this some kind of training...?" 
+It's Risuko! 🐿️
+
+We found an old stroller, so
+suddenly it's "playing baby" time!
+Big sister Suzuko looks like she's about to cry, thinking "Is this some kind of training...?"
 But she never stops helping—she really is the best big sister!
 
 #RattleSound #RisukoIsThrilled`
@@ -977,11 +975,11 @@ But she never stops helping—she really is the best big sister!
 
 { src: `${base}/images/1-76.webp`, title: 'Snowy Mountain Hike',
   tags: ["Risuko", "hawk", "binoculars", "mountain hiking", "snow"],
-  caption:
+caption:
 `#76
 It's Risuko!
 
-Today is snowy mountain climbing! While looking through my binoculars, 
+Today is snowy mountain climbing! While looking through my binoculars,
 I made friends with a cool Mr. Hawk.
 This view is absolutely thrilling!
 
@@ -990,10 +988,10 @@ This view is absolutely thrilling!
 
 { src: `${base}/images/1-77.webp`, title: 'White Moustache Championship',
   tags: ["Risuko", "milk", "white moustache", "winter challenge"],
-  caption:
+caption:
 `#77
 It's Risuko! 🐿
-Drinking it all at once gives me a brain freeze, 
+Drinking it all at once gives me a brain freeze,
 but I can't back down from this challenge! Refills are more than welcome!
 
 #WinterShowdown #WhiteMoustacheChampionship`
@@ -1001,7 +999,7 @@ but I can't back down from this challenge! Refills are more than welcome!
 
 { src: `${base}/images/1-78.webp`, title: 'Dancing by the Water',
   tags: ["Risuko", "swan", "dancing", "water splash", "magic spring"],
-  caption:
+caption:
 `#78
 It's Risuko! 🐿️️
 Dancing by the water with Mr. Swan!
@@ -1013,11 +1011,11 @@ it's like being in a magic spring!
 
 { src: `${base}/images/1-79.webp`, title: 'Fluffy Duo',
   tags: ["Risuko", "swan", "fluffy", "white", "cute"],
-  caption:
+caption:
 `#79
 It's Risuko! 🐿
 He’s pure white and fluffy, but his beak is so flat and cute!
-Is he a "long-necked duck" or a "big-mouthed swan"? 
+Is he a "long-necked duck" or a "big-mouthed swan"?
 Either way, he's adorable!
 
 #CuteEitherWay #FluffyDuo`
@@ -1025,12 +1023,12 @@ Either way, he's adorable!
 
 { src: `${base}/images/1-80.webp`, title: 'Wishing on a Star',
   tags: ["Risuko", "Suzuko", "shooting star", "wish", "nuts"],
-  caption:
+caption:
 `#80
 It's Risuko! 🐿
 
-The moment the star shot across the sky, 
-I yelled "Acorns, Walnuts, Pistachios!" 
+The moment the star shot across the sky,
+I yelled "Acorns, Walnuts, Pistachios!"
 Suzuko snapped at me, "That's just a food order!"
 
 #ShootingStarWish #HungryList`
@@ -1038,7 +1036,7 @@ Suzuko snapped at me, "That's just a food order!"
 
 { src: `${base}/images/1-81.webp`, title: 'Sharing the Happiness',
   tags: ["Risuko", "squirrel friends", "nuts", "sharing", "winter munching"],
-  caption:
+caption:
 `#81
 It's Risuko! 🐿
 My squirrel friends gathered around, and we can't stop munching!
@@ -1049,11 +1047,11 @@ Packing in all the "yummy" moments of winter.
 
 { src: `${base}/images/1-82.webp`, title: 'Night Picnic',
   tags: ["Risuko", "popcorn", "stars", "night picnic", "winter"],
-  caption:
+caption:
 `#82
 It's Risuko! 🐿
 
-Before I can say "The stars are beautiful," 
+Before I can say "The stars are beautiful,"
 the popcorn might be all gone!
 Crunching away on the snow—this is the best part of winter.
 
@@ -1062,7 +1060,7 @@ Crunching away on the snow—this is the best part of winter.
 
 { src: `${base}/images/1-83.webp`, title: 'Head Over Heels for Fluff',
   tags: ["Risuko", "rabbit", "brushing", "fluffy", "bunny lovers"],
-  caption:
+caption:
 `#83
 It's Risuko! 🐿️️
 Done brushing Mr. Rabbit!
@@ -1074,7 +1072,7 @@ He's so fluffy, I'm totally head over heels!
 
 { src: `${base}/images/1-84.webp`, title: 'The Temptation of Food Stalls',
   tags: ["Risuko", "food stalls", "festival", "hungry", "temptation"],
-  caption:
+caption:
 `#84
 It's Risuko! 🐿️️
 
@@ -1087,127 +1085,605 @@ I'm so hungry, I want to eat everything in sight!
 
 { src: `${base}/images/1-85.webp`, title: 'To the Magical Land',
   tags: ["Suzuko", "sheep", "magical land", "fairytale", "dreamy"],
-  caption:
+caption:
 `#85
-It's Suzu-ko.
+It's Suzuko.
 
 The sky, the mountains, and the flowers—everything is on my side today!
 I’m heading off to a magical land with the sheep.
 
 #FluffyFairytale #DreamyLand`
-  },
+},
 
-{ src: `${base}/images/2-101.webp`, title: 'Giant Cotton Candy',
-  tags: ["Suzuko", "cotton candy", "sweets", "cloud", "dreamy"],
-  caption:
+{ src: `${base}/images/1-86.webp`, title: 'Fluffy Sleepover',
+  tags: ["Risuko", "Suzuko", "sleepover", "pajamas", "friendship"],
+caption:
+`#86
+It's Risuko! 🐿️
+
+Sleepover with Suzuko!
+We're going to chat until morning in our fluffy pajamas.
+
+#FluffyPajamaClub #GirlsNightEvenInDreams`
+},
+
+{ src: `${base}/images/1-87.webp`, title: "Risuko's Dream Journal",
+  tags: ["Risuko", "sheep", "meadow", "fairytale", "happiness"],
+caption:
+`#87
+It's Risuko! 🐿️
+
+Surrounded by the scent of flowers,
+I'm chasing pastel-colored clouds with the sheep!
+
+When I rolled around in the soft meadow,
+I felt as sweet and happy as sugar. ✨
+
+#FairytaleResident #RisukosDreamJournal`
+},
+
+{ src: `${base}/images/1-88.webp`, title: 'Giant Yarn Meeting',
+  tags: ["Risuko", "cat", "giant yarn", "meeting", "indoors"],
+caption:
+`#88
+It's Risuko! 🐿
+
+We're holding a meeting in front of a giant ball of yarn:
+the "unravel it" side versus the "protect it" side!
+
+The cat is definitely treating it like prey.
+
+#RedTemptation #PawPadDefense`
+},
+
+{ src: `${base}/images/1-89.webp`, title: "Making of Risuko's Adventure",
+  tags: ["Risuko", "illustration", "storyboard", "making of", "website"],
+caption:
+`#89
+It's Risuko! 🐿
+
+One notebook isn't enough!?
+
+A big squirrel adventure told through more than 100 storyboard images. 🐿️📖
+The answer to "How do you make these?" is on my website!
+
+English version available.
+
+#MakingOfOnMyWebsite #FromMenuProcess`
+},
+
+{ src: `${base}/images/1-90.webp`, title: "Owl's Impossible Request",
+  tags: ["Risuko", "owl", "letter", "forest", "confused"],
+caption:
+`#90
+It's Risuko! 🐿
+
+Mr. Owl, handing me a white feather doesn't give me any clue at all!
+Isn't this letter upside down to begin with?
+
+Could you at least tell me that part first?
+
+#OwlsImpossibleRequest #NoHintWalkthrough`
+},
+
+{ src: `${base}/images/1-91.webp`, title: 'Dressed Up in Magic Light',
+  tags: ["Risuko", "sunlight", "dress up", "atmosphere"],
+caption:
+`#91
+It's Risuko! 🐿
+
+I was drawn with a different kind of mood today.
+The soft sunlight is so beautiful!
+
+#DressedUpRisuko #MagicOfLight`
+},
+
+{ src: `${base}/images/1-92.webp`, title: 'Lantern in the Snowy Night',
+  tags: ["Risuko", "snow", "lantern", "winter", "sleeping"],
+caption:
+`#92
+It's Risuko! 🐿
+
+Even on the snow, a lantern makes everything feel warm.
+Good night, everyone... 💤
+
+#SnowyNight #LanternLight`
+},
+
+{ src: `${base}/images/1-93.webp`, title: 'Steaming Winter Nikuman',
+  tags: ["Risuko", "nikuman", "winter", "food", "happiness"],
+caption:
+`#93
+It's Risuko! 🐿
+
+Freshly steamed is the best!
+One bite and the juicy filling bursts out.
+
+This kind of happiness is a winter-only luxury!
+
+#StreetFood #Nikuman`
+},
+
+{ src: `${base}/images/1-94.webp`, title: 'Fluffy Sheep Comfort',
+  tags: ["Risuko", "sheep", "winter", "fluffy", "cozy"],
+caption:
+`#94
+It's Risuko! 🐿
+
+Every home needs one fluffy bundle of comfort... one sheep, maybe?
+Give it a big hug and the cold disappears!
+
+#LifeWithSheep #Fluffy`
+},
+
+{ src: `${base}/images/1-95.webp`, title: 'Bunny Encirclement',
+  tags: ["Risuko", "Suzuko", "rabbit", "fluffy", "friendship"],
+caption:
+`#95
+It's Risuko! 🐿️
+
+Suzuko is all smiles surrounded by rabbits.
+She's been swallowed by a wave of fluff and can't escape on her own anymore.
+
+#FluffyEncirclement #CutenessTrap`
+},
+
+{ src: `${base}/images/1-96.webp`, title: 'Tanuki in the Kamakura',
+  tags: ["Risuko", "Suzuko", "tanuki", "kamakura", "snow"],
+caption:
+`#96
+It's Risuko! 🐿
+
+We caught a mysterious tanuki inside the snow hut!
+Suzuko, isn't that a real tanuki, not a stuffed toy?
+
+It's so still it looks like an ornament.
+
+#Kamakura #TanukiPretendingToSleep`
+},
+
+{ src: `${base}/images/1-97.webp`, title: 'Into the Silver-White World',
+  tags: ["Risuko", "snow", "winter", "scenery", "adventure"],
+caption:
+`#97
+It's Risuko! 🐿
+
+We've arrived in a silver-white world!
+The cold, crisp air feels so good.
+
+I wonder if everyone else is enjoying the winter scenery too?
+
+#WinterScenery #RisukosAdventure`
+},
+
+{ src: `${base}/images/1-98.webp`, title: 'A Feast with a Snowy View',
+  tags: ["Risuko", "snow", "winter", "food", "outdoors"],
+caption:
+`#98
+It's Risuko! 🐿
+
+Why does food taste so good outdoors?
+The sparkling snowy view is the perfect side dish.
+
+Time to eat!
+
+#WinterFeast #Risuko`
+},
+
+{ src: `${base}/images/1-99.webp`, title: 'Bluebird of Happiness',
+  tags: ["Suzuko", "bluebird", "bird", "good luck", "happiness"],
+caption:
+`#99
+It's Suzuko!
+
+A bluebird of happiness came to visit!
+Sharing some of that happiness with everyone. ✨
+
+#BluebirdOfHappiness #RetweetsWelcome`
+},
+
+{ src: `${base}/images/1-100.webp`, title: 'Forest Starry Sky',
+  tags: ["Risuko", "night", "starry sky", "project", "greeting"],
+caption:
+`#100
+It's Risuko! 🐿
+
+Hello, Neko no Shippo.
+I'm joining your project. Nice to meet you! ✨🌲
+
+#BeautifulStarrySkiesAndGirlsInAI #ForestStarrySky`
+},
+
+{ src: `${base}/images/2-101.webp`, title: 'Giant Cotton Candy Dream',
+  tags: ["Suzuko", "cotton candy", "sweets", "dreamy", "happiness"],
+caption:
 `#101
-It's Suzu-ko.
+It's Suzuko.
 
-I have this big, fluffy cotton candy all to myself!
+I have this huge, fluffy cotton candy all to myself!
 It smells so sweet and happy, like my mouth is floating on a cloud.
 
-#Dreamy #Bliss`
-  },
+#Dreamy #BlissfulMoment`
+},
 
-{ src: `${base}/images/2-113.webp`, title: 'Snowy Potato Party',
-  tags: ["Risuko", "baked potato", "snow", "winter feast", "fluffy"],
-  caption:
+{ src: `${base}/images/2-102.webp`, title: 'Forest Fashion Show',
+  tags: ["Risuko", "forest", "fashion", "flower crown", "birds"],
+caption:
+`#102
+It's Risuko! 🐿
+
+Look, look! I made a new flower crown!
+The birds complimented it too, and I'm so happy.
+
+I'm going to aim for forest fashion leader!
+
+#Handmade #LifeWithFlowers`
+},
+
+{ src: `${base}/images/2-103.webp`, title: 'Sparrow in My Palm',
+  tags: ["Risuko", "sparrow", "bird", "friendship", "birdwatching"],
+caption:
+`#103
+It's Risuko! 🐿
+
+A cute little sparrow came to visit the terrace!
+It's perched so neatly on my hand.
+
+I have a feeling we're going to become good friends.
+
+#Birdwatching #HealingTime`
+},
+
+{ src: `${base}/images/2-104.webp`, title: 'Colorful Art on the Snowfield',
+  tags: ["Risuko", "parrot", "snow", "art", "winter"],
+caption:
+`#104
+It's Risuko! 🐿️
+
+In this silver-white world,
+the parrot's feathers and rainbow-colored brushstrokes sparkle.
+
+Even on a cold day, conversation and art can make your heart feel like spring is in full bloom!
+
+#WinterColors #ColorfulLife`
+},
+
+{ src: `${base}/images/2-105.webp`, title: 'Rainbow at the Falls with a Swan',
+  tags: ["Risuko", "waterfall", "swan", "rainbow", "nature"],
+caption:
+`#105
+It's Risuko! 🐿
+
+Look! The power of the waterfall made a rainbow!
+The swan looks happy too, spreading its wings wide.
+
+It turned into a wonderful day of appreciating the beauty of nature together!
+
+#PowerOfNature #WaterfallMagic`
+},
+
+{ src: `${base}/images/2-106.webp`, title: 'Counting Beans for Setsubun',
+  tags: ["Risuko", "Setsubun", "beans", "snacking", "daily life"],
+caption:
+`#106
+It's Risuko! 🐿
+
+I was counting the beans and started wanting to eat them!
+Don't forget, you're supposed to eat one for every year of your age, okay?
+
+#Setsubun #DemonsOutFortuneIn`
+},
+
+{ src: `${base}/images/2-107.webp`, title: 'Picnic with a Fox',
+  tags: ["Risuko", "fox", "picnic", "forest", "friendship"],
+caption:
+`#107
+It's Risuko! 🐿
+
+We ran into a fox while having a picnic in the forest! 🦊
+Making a new friend made lunchtime even more fun. ✨
+
+#BlueSkyPicnic #SlowLife`
+},
+
+{ src: `${base}/images/2-108.webp`, title: 'The View Beyond the Bridge',
+  tags: ["Risuko", "bridge", "scenery", "sky", "adventure"],
+caption:
+`#108
+It's Risuko! 🐿️
+
+I wonder what kind of world lies beyond that huge bridge in the distance?
+The air is so clear that I can see the faraway scenery sharply!
+
+#ScenicSpot #HintOfAdventure`
+},
+
+{ src: `${base}/images/2-109.webp`, title: 'Snacks at the Secret Base',
+  tags: ["Risuko", "mouse", "secret base", "snacks", "forest"],
+caption:
+`#109
+It's Risuko! 🐿️
+
+Sunbathing with a tiny mouse in the best seat at our secret base.
+When the bell rings, that's the signal for snack time!
+
+#ForestPlayground #WarmthOfWood`
+},
+
+{ src: `${base}/images/2-110.webp`, title: 'Rainy-Day Walk',
+  tags: ["Risuko", "frog", "rain", "umbrella", "walk"],
+caption:
+`#110
+It's Risuko! 🐿️
+
+Even a rainy day is perfect for a walk when I have my favorite rain boots and umbrella!
+Let's play in the puddles with the frog.
+
+#SplashingInTheRain #HappyStroll`
+},
+
+{ src: `${base}/images/2-111.webp`, title: 'Sunshine and a Mouse',
+  tags: ["Risuko", "mouse", "snacks", "sunshine", "daily life"],
+caption:
+`#111
+It's Risuko! 🐿️
+
+Snack time while basking in the sunshine. 🍎
+Looks like the mouse in the basket followed the delicious smell over too!
+
+#PeekabooMouse #SunnyAfternoon`
+},
+
+{ src: `${base}/images/2-112.webp`, title: 'Stairway Stage',
+  tags: ["Risuko", "stairs", "rhythm", "music", "tail"],
+caption:
+`#112
+It's Risuko! 🐿️
+
+A staircase on a slope is a natural stage!
+I sway my tail and tap out a cheerful rhythm.
+
+#PuffedCheekSquad #TailMetronome`
+},
+
+{ src: `${base}/images/2-113.webp`, title: 'Snowy Mountain Potato Party',
+  tags: ["Risuko", "potato", "snow", "mountain", "winter feast"],
+caption:
 `#113
-It's Risuko! 🐿️️
+It's Risuko! 🐿️
 
-Potatoes baked in the snow are the best! I want to eat them with butter.
-So hot and fluffy!
+Potatoes baked in the snow are the best!
+I want to eat them with butter.
 
-#WinterFeast #ForestPotatoParty`
-  },
+Piping hot and fluffy!
+
+#SnowDayFeast #ForestPotatoParty`
+},
 
 { src: `${base}/images/2-114.webp`, title: 'Ramen in the Snow',
-  tags: ["Risuko", "duck", "ramen", "snow", "hot food"],
-  caption:
+  tags: ["Risuko", "duck", "ramen", "snow", "winter"],
+caption:
 `#114
-It's Risuko! 🐿️️
+It's Risuko! 🐿️
 
-Ramen time in the snow! Blowing on it to cool it down is the best part ✨
+Ramen time in the snow!
+Blowing on it before every bite is the best. ✨
+
 Is the duck waiting for a share too? 🦆
 
-#RamenLover #DuckWantsBite`
-  },
+#RamenLover #DuckEyesThePrize`
+},
 
-{ src: `${base}/images/2-119.webp`, title: 'Ice Cream from Penguin',
-  tags: ["Risuko", "penguin", "ice cream", "winter treat", "kindness"],
-  caption:
+{ src: `${base}/images/2-115.webp`, title: 'Vitamin-Colored Afternoon',
+  tags: ["Suzuko", "fruit", "bird", "relaxing", "afternoon"],
+caption:
+`#115
+It's Suzuko!
+
+Here's a basket full of vitamins. 🍋
+Together with a yellow bird that brings happiness,
+I hope you can spend an afternoon relaxing from the heart.
+
+#ThanksForYourHardWork #VitaminColorsForEnergy`
+},
+
+{ src: `${base}/images/2-116.webp`, title: 'The Squirrel-Calling Flute',
+  tags: ["Risuko", "Suzuko", "flute", "music", "squirrels"],
+caption:
+`#116
+It's Risuko! 🐿️
+
+That "peeeep!" from Suzuko's flute
+seems to have reached the squirrels in the forest too.
+
+The quiet winter woods suddenly feel lively!
+
+#ForestFluteLeader #SquirrelCallingFlute`
+},
+
+{ src: `${base}/images/2-117.webp`, title: 'Burger with a Spectacular View',
+  tags: ["Risuko", "Suzuko", "burger", "mountain", "scenic view"],
+caption:
+`#117
+It's Risuko! 🐿️
+
+While Suzuko is chatting elegantly with the birds,
+I'm choosing food over flowers!
+
+A burger eaten with this incredible view tastes extra special!
+
+#ScenicLunch #BurgerClub`
+},
+
+{ src: `${base}/images/2-118.webp`, title: 'Chasing Butterflies in a Flower Field',
+  tags: ["Risuko", "Suzuko", "butterfly", "flower field", "adventure"],
+caption:
+`#118
+It's Risuko! 🐿️
+
+Suzuko's bug net is chasing a blue butterfly as it gently flutters around.
+I'm following behind, swishing my big fluffy tail as I go.
+
+#SoftAndFluffyAdventure #FlowerField`
+},
+
+{ src: `${base}/images/2-119.webp`, title: "Penguin's Ice Cream",
+  tags: ["Risuko", "penguin", "ice cream", "winter", "daily life"],
+caption:
 `#119
-It's Risuko! 🐿️️
+It's Risuko! 🐿️
 
-A penguin is holding out an ice cream for a "say aah"!
-The hard-working penguin and us being spoiled...
-It's such a relaxing time.
+A penguin is holding out an ice cream and saying, "Say aah."
+The hard-working penguin and us happily being spoiled...
 
-#KindestIceCream #WinterTreat`
-  },
+Such a wonderfully laid-back moment.
 
-{ src: `${base}/images/2-124.webp`, title: 'Ambush for Popcorn',
-  tags: ["Risuko", "sparrows", "squirrels", "popcorn", "siege"],
-  caption:
-`#124
-It's Risuko! 🐿️️
+#KindestIceCreamInTheWorld #WinterSayAhFestival`
+},
+
+{ src: `${base}/images/2-120.webp`, title: 'Special Topped Ice Cream',
+  tags: ["Risuko", "ice cream", "sweets", "cookies", "reward"],
+caption:
+`#120
+It's Risuko! 🐿️
+
+Look, look! It's a special ice cream loaded with toppings. 🍦
+The cookies are crunchy too—it's so good my cheeks might fall off!
+
+#SweetsClub #TodaysReward`
+},
+
+{ src: `${base}/images/2-121.webp`, title: 'Castle Bells and Ice Cream',
+  tags: ["Risuko", "castle", "ice cream", "music", "town"],
+caption:
+`#121
+It's Risuko! 🐿️
+
+I lick my ice cream along with the sound of the castle bells!
+Eating in rhythm makes me feel like I can hear a cheerful little song. ♪
+
+#CastleMelody #CozyTime`
+},
+
+{ src: `${base}/images/2-122.webp`, title: 'Steamer as Floor Heating?',
+  tags: ["Risuko", "steamer", "daily life", "imagination", "warmth"],
+caption:
+`#122
+It's Risuko! 🐿️
+
+If you put this bamboo steamer by your feet,
+it can work like floor heating... no, of course it can't.
+
+#WarmLifeHack #ImaginingThings`
+},
+
+{ src: `${base}/images/2-123.webp`, title: 'Popcorn Encirclement',
+  tags: ["Risuko", "popcorn", "sparrows", "squirrels", "begging"],
+caption:
+`#123
+It's Risuko! 🐿️
 
 Sparrows from the sky, squirrels from my lap!
-A siege for the popcorn has been completed!
-I'm in a pinch!
+The popcorn encirclement is complete!
+
+I'm in trouble now.
 
 #SparrowScouts #SquirrelBegging`
-  },
-{ src: `${base}/images/2-125.webp`, title: 'Strawberry One-Bite Challenge', tags: ['strawberry', 'sparrow', 'heartwarming', 'Risuko'],
-    caption:
+},
+
+{ src: `${base}/images/2-124.webp`, title: 'Begging Squirrel Recon',
+  tags: ["Risuko", "popcorn", "squirrel", "friendship", "daily life"],
+caption:
+`#124
+It's Risuko! 🐿️
+
+I couldn't wait for spring,
+so I made flowers bloom on top of my head first!
+
+Now I can feel like it's spring anytime.
+
+#EarlySpring #SelfCare`
+},
+
+{ src: `${base}/images/2-125.webp`, title: 'Strawberry One-Bite Challenge',
+  tags: ["Risuko", "strawberry", "sparrow", "heartwarming"],
+caption:
 `#125
 It's Risuko! 🐿️
-Ris-kun was so surprised, asking "Sparrow-san, are you really going for that in one bite!?"
-Just watching them makes my heart feel all warm.
+
+Ris-kun was so surprised:
+"Sparrow, are you really going to eat that in one bite!?"
+
+Just watching them makes me feel all warm inside.
+
 #StrawberryClub #OneBiteChallenge`
-  },
-  { src: `${base}/images/2-126.webp`, title: 'Winter\'s Best Seat', tags: ['winter gear', 'grill', 'piping hot', 'Risuko'],
-    caption:
+},
+
+{ src: `${base}/images/2-126.webp`, title: "Winter's Best Seat",
+  tags: ["Risuko", "winter gear", "grill", "piping hot"],
+caption:
 `#126
 It's Risuko! 🐿️
-I wonder what the temperature is outside? But right here on top of this grill,
-it feels as hot as a tropical island!
+
+I wonder how cold it is outside?
+But right here on top of this grill,
+it's as hot as a tropical island!
+
 #SquirrelWinterSurvival #BestSeatInWinter`
-  },
-  { src: `${base}/images/2-127.webp`, title: 'Reel in the Legend!', tags: ['fishing', 'winter', 'challenge', 'Risuko'],
-    caption:
+},
+
+{ src: `${base}/images/2-127.webp`, title: 'Reel in the Legend!',
+  tags: ["Risuko", "fishing", "winter", "challenge"],
+caption:
 `#127
 It's Risuko! 🐿️
-Today is the day I finally catch the legendary "Master" of the lake!
-What if it's bigger than my own tail!?
+
+Today I'm finally going to catch the legendary "Master" of the lake!
+What if the fish is bigger than Risuko's tail!?
+
 #WinterAngler #FeelingOfABigCatch`
-  },
-  { src: `${base}/images/2-128.webp`, title: 'Secret Choco-Party', tags: ['sweets', 'winter', 'friends', 'Risuko'],
-    caption:
+},
+
+{ src: `${base}/images/2-128.webp`, title: 'Secret Chocolate Party',
+  tags: ["Risuko", "sweets", "winter", "friends", "chocolate"],
+caption:
 `#128
 It's Risuko! 🐿️
-Secret sweets party in progress!
-We tried to eat without anyone finding us,
-but the sweet aroma drew all the forest friends right to us!
-#SecretChocolat #FragrantTrackers`
-  },
-  { src: `${base}/images/2-129.webp`, title: 'A Sweet Moment', tags: ['chocolate', 'parakeet', 'daily life', 'Suzuko'],
-    caption:
+
+Our secret sweets party is underway!
+We were going to eat without anyone finding us,
+
+but the sweet smell keeps drawing more and more forest friends over!
+
+#SecretChocolate #FragrantTrackers`
+},
+
+{ src: `${base}/images/2-129.webp`, title: 'A Sweet Moment',
+  tags: ["Suzuko", "chocolate", "parakeet", "daily life"],
+caption:
 `#129
 It's Suzuko!
+
 Sweet chocolate and my favorite parakeet friend.
 Browsing for treats side by side.
-This alone is enough to fill me with happiness.
-#ChocolatAndRest #ParakeetAndSuzuko`
-  },
-  { src: `${base}/images/2-130.webp`, title: 'Sunset Glow', tags: ['sunset', 'scenery', 'winter', 'Risuko'],
-    caption:
+
+That's enough to make me completely happy.
+
+#ChocolateAndRest #ParakeetAndSuzuko`
+},
+
+{ src: `${base}/images/2-130.webp`, title: 'Toasty Sunset',
+  tags: ["Risuko", "sunset", "scenery", "winter"],
+caption:
 `#130
 It's Risuko! 🐿️
-This sunset has such a delicious toasted color.
+
+This sunset has such a delicious, toasty color.
 Winter scenery isn't so bad after all!
+
 #Sunset #WarmthInTheHeart`
-  },
+},
+
   { src: `${base}/images/2-131.webp`, title: 'Snowy Day Chats', tags: ['snow', 'chatting', 'winter', 'Risuko'],
     caption:
 `#131
